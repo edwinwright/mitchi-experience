@@ -19,7 +19,7 @@ Namespaces, and no twelfth without a reason: `meta`, `nav`, `home`, `rules`, `re
 
 **No arrays.** `t()` throws on an array value and `t.raw()` gives up type safety. Use numbered keys: `rules.quickStart.step1` to `step6`.
 
-**No markup inside strings.** Translators should never have to preserve asterisks, tags or attributes. Emphasis and links come from next-intl rich text tags with a small fixed vocabulary, mapped in one place: the `Prose` component provides them through a render prop. Do not use `defaultTranslationValues`, it is deprecated.
+**No markup inside strings.** Translators should never have to preserve asterisks, tags or attributes. Emphasis, strong emphasis and links come from next-intl rich text tags (`t.rich`) with a small fixed vocabulary: `<term>`, `<em>`, `<strong>`, `<link>`, `<p>`. Mapped in one place, the `Prose` component provides them through a render prop; no component maps its own tags. Do not use `defaultTranslationValues`, it is deprecated.
 
 **Variables, not concatenation.** Worked examples take player letters as ICU parameters, so one pattern is translated once and A, B and C are substituted.
 
