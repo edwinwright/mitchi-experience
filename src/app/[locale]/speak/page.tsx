@@ -9,7 +9,9 @@ export default function SpeakPage() {
   return (
     <Container className="py-8">
       <PageHeader title={t("title")} standfirst={t("standfirst")} />
+      <hr />
       <SpeakTable />
+      <hr />
       <RichText>{(tags) => <p>{t.rich("footnote", tags)}</p>}</RichText>
     </Container>
   );
