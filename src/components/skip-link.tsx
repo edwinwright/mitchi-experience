@@ -1,0 +1,10 @@
+import { useTranslations } from "next-intl";
+
+export function SkipLink() {
+  const t = useTranslations("nav");
+  return (
+    <a href="#main" className="sr-only focus:not-sr-only fixed top-0 left-0">
+      {t("skip")}
+    </a>
+  );
+}

@@ -13,6 +13,10 @@ export const routing = defineRouting({
   // The internal-to-external path dictionary.
   // Keys are internal route paths. Values are per-locale external paths.
   pathnames: {
-    '/': '/'
+    '/': '/',
+    '/about': '/about',
+    '/reference': '/reference',
+    '/rules': '/rules',
+    '/speak': '/speak',
   }
 });

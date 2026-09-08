@@ -1,13 +1,21 @@
 # Site map
 
-Placeholder. Write this at the end of the shell slice, once the routes exist.
+English has no locale prefix. Spanish is `/es` plus the same slug until localised slugs are added.
 
-It records, for each route: the English path, the localised path, and one line on what the page is for. Then the list of things the site deliberately does not have, which is the half that stops a later session adding them back.
+| English      | Spanish (this phase) | Purpose                                                           |
+| ------------ | -------------------- | ----------------------------------------------------------------- |
+| `/`          | `/es`                | What the game is, the one twist, and where to read on.            |
+| `/rules`     | `/es/rules`          | The full rules, from setup to the end of the game.                |
+| `/reference` | `/es/reference`      | Hand ranking and scoring on one screen, for use mid-game.         |
+| `/speak`     | `/es/speak`          | Table nicknames and the official hands they stand for.            |
+| `/about`     | `/es/about`          | Where the game came from, and how these rules were reconstructed. |
 
-To fill in:
+Unknown paths render a 404. That is not a nav route.
 
-- [ ] Route table: path, localised path, purpose in one line
-- [ ] Deliberately not built: score tracker, hand comparison tool, search, scroll spy, breadcrumbs, animated dice, dark-mode toggle, print stylesheet, strategy page
-- [ ] Canonical source rule: the site is canonical once live, the vault rules note is the working draft, changes flow note, then `en.json`, then the other locales
+## Deliberately not built
 
-Sources: `Mitchi Site - Content Design` in the project vault folder.
+Score tracker, hand comparison tool, search, scroll spy, breadcrumbs, animated dice, dark-mode toggle, print stylesheet, strategy page.
+
+## Canonical source
+
+Once the site is live it is the canonical rules. The vault rules note is the working draft. Changes go note → `en.json` → the other locales.

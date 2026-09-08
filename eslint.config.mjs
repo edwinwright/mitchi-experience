@@ -13,6 +13,33 @@ const eslintConfig = defineConfig([
     "build/**",
     "next-env.d.ts",
   ]),
+  {
+    rules: {
+      "no-restricted-imports": [
+        "error",
+        {
+          paths: [
+            {
+              name: "next/link",
+              message:
+              "Import Link from @/i18n/navigation so locale pathnames are applied.",
+            },
+            {
+              name: "next/navigation",
+              importNames: [
+                "redirect",
+                "permanentRedirect",
+                "usePathname",
+                "useRouter",
+              ],
+              message:
+              "Import redirect, usePathname and useRouter from @/i18n/navigation.",
+            },
+          ],
+        },
+      ],
+    },
+  }
 ]);
 
 export default eslintConfig;
