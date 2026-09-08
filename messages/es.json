@@ -1,6 +1,262 @@
 {
+  "meta": {
+    "home": {
+      "title": "[ES] Mitchi, a dice game",
+      "description": "[ES] A dice game for two or more players. Avoid the worst hand, take the fewest points, win."
+    },
+    "rules": {
+      "title": "[ES] Mitchi rules",
+      "description": "[ES] The full rules of Mitchi: hands, the roll limit, scoring and tie-breaks."
+    },
+    "reference": {
+      "title": "[ES] Mitchi quick reference",
+      "description": "[ES] Hand ranking and scoring on one screen, for use mid-game."
+    },
+    "speak": {
+      "title": "[ES] Mitchi Speak",
+      "description": "[ES] The nicknames used at the table, and the official hands they stand for."
+    },
+    "about": {
+      "title": "[ES] About Mitchi",
+      "description": "[ES] Where the game came from, and how these rules were reconstructed."
+    }
+  },
+  "nav": {
+    "wordmark": "[ES] Mitchi",
+    "rules": "[ES] Rules",
+    "reference": "[ES] Reference",
+    "speak": "[ES] Speak",
+    "about": "[ES] About",
+    "language": "[ES] Language",
+    "skip": "[ES] Skip to content",
+    "footer": "[ES] Mitchi. The rules, written down.",
+    "onward": {
+      "reference": "[ES] Next: Quick reference",
+      "rules": "[ES] The full rules",
+      "speak": "[ES] The official names"
+    }
+  },
   "home": {
     "title": "[ES] Mitchi",
-    "tagline": "[ES] A dice game for two or more players."
+    "tagline": "[ES] A dice game for two or more players.",
+    "twist": "[ES] You are never trying to roll the best hand. You are trying not to be left with the worst.",
+    "scoring": "[ES] Whoever ends the round with the worst hand takes the points, and points are bad: the lowest score wins.",
+    "need": "[ES] <strong>You need:</strong> two dice, a pen, something to write on, and at least one other player.",
+    "cta": {
+      "rules": "[ES] Read the rules",
+      "reference": "[ES] Quick reference"
+    },
+    "provenance": "[ES] Learnt while travelling in Spain. Origin unknown. <link>More about the game</link>"
+  },
+  "rules": {
+    "title": "[ES] Mitchi rules",
+    "standfirst": "[ES] The full rules, from setup to the end of the game.",
+    "quickStart": {
+      "heading": "[ES] Mitchi in 60 seconds",
+      "step1": "[ES] Everyone rolls one die. The highest roll starts.",
+      "step2": "[ES] The starting player rolls both dice and may roll up to three times. The number of rolls they use is the <term>roll limit</term> for everyone else that round.",
+      "step3": "[ES] Everyone else rolls in turn, up to that limit. You only need to beat the <term>current worst hand</term>, meaning the lowest-ranked hand rolled so far. You never need the best.",
+      "step4": "[ES] The best hand is a Mitchi, a 2 and a 1. Then doubles, then six-high, five-high, four-high, three-high. The worst hand in the game is three-one.",
+      "step5": "[ES] Whoever is left with the worst hand <term>takes the table</term>: 1 point, or 2 points for every Mitchi rolled that round.",
+      "step6": "[ES] First player to 25 points ends the game. Fewest points wins.",
+      "footnote": "[ES] The full rules are below."
+    },
+    "overview": {
+      "heading": "[ES] Overview",
+      "body": "[ES] Mitchi is a dice game for two or more players, played over a series of rounds. Each round, players roll to avoid being left with the worst hand.",
+      "objective": "[ES] The objective is to finish the game with the fewest points."
+    },
+    "need": {
+      "heading": "[ES] What you need",
+      "dice": "[ES] Two six-sided dice.",
+      "paper": "[ES] A pen and something to write on.",
+      "players": "[ES] At least one other player."
+    },
+    "setup": {
+      "heading": "[ES] Setup",
+      "step1": "[ES] Agree the point limit before play begins. 25 is typical.",
+      "step2": "[ES] Decide who starts. Everyone rolls a single die once, in any order, and the highest roll starts. If players tie for the highest roll, those players roll again until one is highest.",
+      "step3": "[ES] Play proceeds clockwise."
+    },
+    "hands": {
+      "heading": "[ES] Hands",
+      "intro": "[ES] A hand is the two dice you finish your turn with. Hands are ranked from best to worst.",
+      "mitchi": "[ES] A 2 and a 1. The best hand in the game.",
+      "doubles": "[ES] Both dice showing the same number. Beaten only by a Mitchi. Double-six is the best of them, double-one the worst.",
+      "sixHigh": "[ES] A 6 with a lower die.",
+      "fiveHigh": "[ES] A 5 with a lower die.",
+      "fourHigh": "[ES] A 4 with a lower die.",
+      "threeHigh": "[ES] A 3 with a lower die.",
+      "withinGroup": "[ES] Within a group, the higher the lower die, the better the hand: six-five beats six-four. The worst hand in the game is three-one.",
+      "onward": "[ES] All 21 hands are listed on the <link>quick reference</link>."
+    },
+    "round": {
+      "heading": "[ES] Playing a round",
+      "rollLimit": {
+        "heading": "[ES] The roll limit",
+        "body": "[ES] The starting player rolls both dice, and may roll up to three times.",
+        "choices": "[ES] After each roll they may re-roll both dice, keep either die and re-roll the other, or stop and keep the hand they have.",
+        "fresh": "[ES] Every roll is a fresh choice. Keeping a die on one roll does not commit them to keeping it on the next. Re-rolling a single die still counts as a roll.",
+        "sets": "[ES] The number of rolls the starting player uses is the <term>roll limit</term> for the round. One roll, and every other player gets one. Three rolls, and every other player gets up to three.",
+        "example": "[ES] The starting player rolls six-three in two rolls, so every other player gets up to two rolls."
+      },
+      "others": {
+        "heading": "[ES] The other players",
+        "body": "[ES] Each remaining player rolls in clockwise order, under the same rules, up to the roll limit. You do not have to use every roll: stop as soon as you are happy with your hand.",
+        "beat": "[ES] You never need the best hand, only to avoid being left with the worst. The hand to beat is the <term>current worst hand</term>, the lowest-ranked hand rolled so far this round. It changes as players finish, so a later player may have less to do than an earlier one.",
+        "example1": "[ES] Player {a} starts and rolls six-four in one roll. Player {b} rolls five-one. Player {c} now needs five-two or better, because five-one is the current worst hand.",
+        "example2": "[ES] Player {a} starts and rolls five-four in three rolls. Player {b} rolls six-two on the first roll, which already beats it, so Player {b} stops rather than using the other two."
+      }
+    },
+    "scoring": {
+      "heading": "[ES] Scoring the round",
+      "body": "[ES] Every round is played for the points on <term>the table</term>. The player left with the worst hand <term>takes the table</term>, adding those points to their score.",
+      "mitchis": "[ES] Mitchi points count whoever rolled them.",
+      "next": "[ES] The player who took the table starts the next round."
+    },
+    "tieBreaks": {
+      "heading": "[ES] Tie-breaks",
+      "body": "[ES] If two or more players are level on the worst hand, they play a tie-break. A tie-break is not a normal round.",
+      "rule1": "[ES] Only the tied players take part.",
+      "rule2": "[ES] Each player gets one roll, not up to three.",
+      "rule3": "[ES] The points on the table double before the tie-break is rolled.",
+      "rule4": "[ES] The order reverses, starting with the last player to roll.",
+      "rule5": "[ES] Each Mitchi rolled adds 2 more points to the table.",
+      "outcome": "[ES] The player left with the worst hand in the tie-break takes the table.",
+      "again": "[ES] If players are level again, only those still level play another tie-break. The table doubles again and the order reverses again. This repeats until one player is left with the worst hand.",
+      "example": "[ES] <p>Three players tie in the round, with 1 point on the table.</p><p>The first tie-break doubles the table to 2 points. One player rolls a Mitchi, adding 2 more, and the other two tie again.</p><p>The second tie-break doubles the table to 8 points. If they tie again, the third starts on 16.</p>"
+    },
+    "winning": {
+      "heading": "[ES] Winning the game",
+      "body": "[ES] The game ends as soon as any player reaches or exceeds the point limit. The player with the fewest points wins.",
+      "level": "[ES] If players are level on fewest points, they roll one hand each and the better hand wins."
+    },
+    "terms": {
+      "heading": "[ES] Terms"
+    }
+  },
+  "terms": {
+    "mitchi": {
+      "name": "[ES] Mitchi",
+      "definition": "[ES] The game, and also its best hand: a 2 and a 1."
+    },
+    "hand": {
+      "name": "[ES] Hand",
+      "definition": "[ES] The two dice you finish your turn with."
+    },
+    "roll": {
+      "name": "[ES] Roll",
+      "definition": "[ES] One throw of one or both dice. Re-rolling a single die still counts as a roll."
+    },
+    "rollLimit": {
+      "name": "[ES] Roll limit",
+      "definition": "[ES] The number of rolls available to each player in a round, set by the starting player."
+    },
+    "currentWorstHand": {
+      "name": "[ES] Current worst hand",
+      "definition": "[ES] The lowest-ranked hand rolled so far this round. What you have to beat."
+    },
+    "table": {
+      "name": "[ES] The table",
+      "definition": "[ES] The points at stake in the current round."
+    },
+    "takeTheTable": {
+      "name": "[ES] Take the table",
+      "definition": "[ES] To add every point on the table to your score."
+    },
+    "tieBreak": {
+      "name": "[ES] Tie-break",
+      "definition": "[ES] A play-off between players level on the worst hand."
+    },
+    "pointLimit": {
+      "name": "[ES] Point limit",
+      "definition": "[ES] The score that ends the game once any player reaches it. Usually 25."
+    }
+  },
+  "reference": {
+    "title": "[ES] Quick reference",
+    "standfirst": "[ES] Everything you need mid-game, on one screen.",
+    "ranking": {
+      "heading": "[ES] Hand ranking",
+      "caption": "[ES] Mitchi hands, ranked from best to worst",
+      "groupHeader": "[ES] Group",
+      "diceHeader": "[ES] Dice",
+      "handHeader": "[ES] Hand"
+    },
+    "scoring": {
+      "heading": "[ES] Points on the table",
+      "roundHeader": "[ES] Round",
+      "tableHeader": "[ES] On the table",
+      "none": "[ES] No Mitchi rolled",
+      "noneValue": "[ES] 1 point",
+      "one": "[ES] One Mitchi rolled",
+      "oneValue": "[ES] 2 points",
+      "two": "[ES] Two Mitchis rolled",
+      "twoValue": "[ES] 4 points",
+      "note": "[ES] Mitchi points count whoever rolled them. The worst hand takes the table and starts the next round."
+    },
+    "tieBreaks": {
+      "heading": "[ES] Tie-breaks",
+      "rule1": "[ES] Tied players only.",
+      "rule2": "[ES] One roll each, not up to three.",
+      "rule3": "[ES] The table doubles before the roll.",
+      "rule4": "[ES] The order reverses, starting with the last player to roll.",
+      "rule5": "[ES] Each Mitchi rolled adds 2 more points to the table.",
+      "rule6": "[ES] Still level? Repeat. The table doubles again and the order reverses again."
+    },
+    "ending": {
+      "heading": "[ES] Ending the game",
+      "body": "[ES] The game ends as soon as any player reaches the point limit, usually 25. Fewest points wins. If players are level on fewest points, they roll one hand each and the better hand wins."
+    }
+  },
+  "speak": {
+    "title": "[ES] Mitchi Speak",
+    "standfirst": "[ES] The names used at the table in place of the official ones. None of it changes how the game is played: a hand called by its Mitchi Speak name plays exactly as its official name.",
+    "caption": "[ES] Hands and their Mitchi Speak names",
+    "officialHeader": "[ES] Official name",
+    "speakHeader": "[ES] Mitchi Speak",
+    "footnote": "[ES] Most of the names have been forgotten. This list is what has been recovered so far."
+  },
+  "about": {
+    "title": "[ES] About Mitchi",
+    "origin": "[ES] Mitchi was learnt while travelling in Spain, though not from a Spanish player. Where it came from before that is not known, and this site does not pretend it is a traditional Spanish game.",
+    "reconstruction": "[ES] These rules are a reconstruction. Some were remembered, some were recovered by asking the people who played. Where a rule had to be settled rather than recalled, it has been settled the way the game was actually played.",
+    "speak": "[ES] There is also a private vocabulary. Hands have nicknames that mean nothing to anyone who was not at the table. They are not part of the game, but they are <link>written down anyway</link>.",
+    "colophon": "[ES] Built with Next.js and next-intl. English and Spanish now, more languages to come."
+  },
+  "notFound": {
+    "title": "[ES] That page does not exist",
+    "body": "[ES] Try the <link>rules</link> or the <link>quick reference</link>."
+  },
+  "groups": {
+    "mitchi": "[ES] Mitchi",
+    "doubles": "[ES] Doubles",
+    "sixHigh": "[ES] Six-high",
+    "fiveHigh": "[ES] Five-high",
+    "fourHigh": "[ES] Four-high",
+    "threeHigh": "[ES] Three-high"
+  },
+  "hands": {
+    "2-1": "[ES] two-one",
+    "6-6": "[ES] double-six",
+    "5-5": "[ES] double-five",
+    "4-4": "[ES] double-four",
+    "3-3": "[ES] double-three",
+    "2-2": "[ES] double-two",
+    "1-1": "[ES] double-one",
+    "6-5": "[ES] six-five",
+    "6-4": "[ES] six-four",
+    "6-3": "[ES] six-three",
+    "6-2": "[ES] six-two",
+    "6-1": "[ES] six-one",
+    "5-4": "[ES] five-four",
+    "5-3": "[ES] five-three",
+    "5-2": "[ES] five-two",
+    "5-1": "[ES] five-one",
+    "4-3": "[ES] four-three",
+    "4-2": "[ES] four-two",
+    "4-1": "[ES] four-one",
+    "3-2": "[ES] three-two",
+    "3-1": "[ES] three-one"
   }
 }
