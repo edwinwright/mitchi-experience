@@ -20,7 +20,7 @@ Read the plan for the current work item and do one slice at a time. Stop at the 
 - Import `Link`, `usePathname`, `useRouter` and `redirect` from `@/i18n/navigation`, never from `next/link` or `next/navigation`. The plain versions compile, type-check and emit the wrong URLs on non-English pages.
 - Hands are data, hand names are messages. Never compose a name from two number words.
 - No arrays in message files. `t()` throws on them.
-- No markup inside message strings. Rich text tags only, provided by `Prose`.
+- No markup inside message strings. Inline rich text tags only, provided by `RichText`. See `docs/architecture/i18n-conventions.md`.
 - Section anchor IDs stay in English in every locale.
 - Copy changes come from the work item's source copy, not from improvisation. If a string is missing, ask.
 

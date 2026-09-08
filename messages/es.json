@@ -46,7 +46,7 @@
       "rules": "[ES] Read the rules",
       "reference": "[ES] Quick reference"
     },
-    "provenance": "[ES] Learnt while travelling in Spain. Origin unknown. <link>More about the game</link>"
+    "provenance": "[ES] Learnt while travelling in Spain. Origin unknown. <about>More about the game</about>"
   },
   "rules": {
     "title": "[ES] Mitchi rules",
@@ -88,7 +88,7 @@
       "fourHigh": "[ES] A 4 with a lower die.",
       "threeHigh": "[ES] A 3 with a lower die.",
       "withinGroup": "[ES] Within a group, the higher the lower die, the better the hand: six-five beats six-four. The worst hand in the game is three-one.",
-      "onward": "[ES] All 21 hands are listed on the <link>quick reference</link>."
+      "onward": "[ES] All 21 hands are listed on the <reference>quick reference</reference>."
     },
     "round": {
       "heading": "[ES] Playing a round",
@@ -221,12 +221,12 @@
     "title": "[ES] About Mitchi",
     "origin": "[ES] Mitchi was learnt while travelling in Spain, though not from a Spanish player. Where it came from before that is not known, and this site does not pretend it is a traditional Spanish game.",
     "reconstruction": "[ES] These rules are a reconstruction. Some were remembered, some were recovered by asking the people who played. Where a rule had to be settled rather than recalled, it has been settled the way the game was actually played.",
-    "speak": "[ES] There is also a private vocabulary. Hands have nicknames that mean nothing to anyone who was not at the table. They are not part of the game, but they are <link>written down anyway</link>.",
+    "speak": "[ES] There is also a private vocabulary. Hands have nicknames that mean nothing to anyone who was not at the table. They are not part of the game, but they are <speak>written down anyway</speak>.",
     "colophon": "[ES] Built with Next.js and next-intl. English and Spanish now, more languages to come."
   },
   "notFound": {
     "title": "[ES] That page does not exist",
-    "body": "[ES] Try the <link>rules</link> or the <link>quick reference</link>."
+    "body": "[ES] Try the <rules>rules</rules> or the <reference>quick reference</reference>."
   },
   "groups": {
     "mitchi": "[ES] Mitchi",
@@ -237,26 +237,26 @@
     "threeHigh": "[ES] Three-high"
   },
   "hands": {
-    "2-1": "[ES] two-one",
-    "6-6": "[ES] double-six",
-    "5-5": "[ES] double-five",
-    "4-4": "[ES] double-four",
-    "3-3": "[ES] double-three",
-    "2-2": "[ES] double-two",
-    "1-1": "[ES] double-one",
-    "6-5": "[ES] six-five",
-    "6-4": "[ES] six-four",
-    "6-3": "[ES] six-three",
-    "6-2": "[ES] six-two",
-    "6-1": "[ES] six-one",
-    "5-4": "[ES] five-four",
-    "5-3": "[ES] five-three",
-    "5-2": "[ES] five-two",
-    "5-1": "[ES] five-one",
-    "4-3": "[ES] four-three",
-    "4-2": "[ES] four-two",
-    "4-1": "[ES] four-one",
-    "3-2": "[ES] three-two",
-    "3-1": "[ES] three-one"
+    "2-1": "dos-uno",
+    "6-6": "doble-seis",
+    "5-5": "doble-cinco",
+    "4-4": "doble-cuatro",
+    "3-3": "doble-tres",
+    "2-2": "doble-dos",
+    "1-1": "doble-uno",
+    "6-5": "seis-cinco",
+    "6-4": "seis-cuatro",
+    "6-3": "seis-tres",
+    "6-2": "seis-dos",
+    "6-1": "seis-uno",
+    "5-4": "cinco-cuatro",
+    "5-3": "cinco-tres",
+    "5-2": "cinco-dos",
+    "5-1": "cinco-uno",
+    "4-3": "cuatro-tres",
+    "4-2": "cuatro-dos",
+    "4-1": "cuatro-uno",
+    "3-2": "tres-dos",
+    "3-1": "tres-uno"
   }
 }

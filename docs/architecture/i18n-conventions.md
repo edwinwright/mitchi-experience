@@ -7,27 +7,55 @@ How message content is structured and authored. The routing decisions (`localePr
 | Thing | Home |
 |---|---|
 | Message content | `messages/<locale>.json`, one file per locale, dynamically imported per locale in `src/i18n/request.ts` |
-| Hand data, group order, Mitchi Speak nicknames | `src/data/hands.ts` |
+| Hand data, group order | `src/data/hands.ts` |
+| Mitchi Speak nicknames | `src/data/speak.ts` |
 | Section anchor IDs | The components that render the sections |
 | Routing and slugs | `src/i18n/routing.ts` |
+| Rich text tag map | `src/components/rich-text.tsx` |
 
 Namespaces, and no twelfth without a reason: `meta`, `nav`, `home`, `rules`, `reference`, `speak`, `terms`, `about`, `groups`, `hands`, `notFound`.
 
 ## Key rules
 
-**One key per rendered block.** A paragraph, a list item, a heading. Named for its job, `rules.round.rollLimit`, not `rules.round.p3`. Never one key per sentence: a sentence is not a translatable unit. Never a whole section in one string, except where a short narrative section reads as one block and is rendered as rich text.
+**One key per independently translatable unit.** A heading, a paragraph, a list item, a button label. Named for its job, `rules.round.rollLimit`, not `rules.round.p3`. Never one key per sentence: a sentence is not a translatable unit, and splitting it into prefix/suffix fragments stops translators from reordering. Never a whole section in one string: headings, paragraphs and lists are document structure, and they belong in the component.
 
 **No arrays.** `t()` throws on an array value and `t.raw()` gives up type safety. Use numbered keys: `rules.quickStart.step1` to `step6`.
 
-**No markup inside strings.** Translators should never have to preserve asterisks, tags or attributes. Emphasis, strong emphasis and links come from next-intl rich text tags (`t.rich`) with a small fixed vocabulary: `<term>`, `<em>`, `<strong>`, `<link>`, `<p>`. Mapped in one place, the `Prose` component provides them through a render prop; no component maps its own tags. Do not use `defaultTranslationValues`, it is deprecated.
+**No markup inside strings.** Translators should never have to preserve asterisks, HTML, attributes or URLs. Inline emphasis and in-text actions use next-intl rich text tags (`t.rich`), listed below. Mapped in one place, `RichText`. No component maps its own tags. Do not use `defaultTranslationValues`, it is deprecated.
 
 **Variables, not concatenation.** Worked examples take player letters as ICU parameters, so one pattern is translated once and A, B and C are substituted.
 
 **Hands are data, names are messages.** The visible name of a hand comes from ``t(`hands.${hand.id}`)``. Never compose a hand name from two number words at runtime: "six-five" is not "six" plus "five" in Polish or Japanese, and "double-six" is not "six-six" in any language. Twenty-one whole strings per locale is the cheap option, not the expensive one. Group names work the same way, under `groups`.
 
-**Proper nouns stay out of the message files.** Mitchi Speak nicknames have one form in every language. They live in `src/data/hands.ts`, because putting them in `en.json` invites a translator to translate them.
+**Proper nouns stay out of the message files.** Mitchi Speak nicknames have one form in every language. They live in `src/data/speak.ts`, because putting them in `en.json` invites a translator to translate them.
 
 **Anchor IDs stay English in every locale.** `#hands`, `#round`, `#scoring`, `#tie-breaks`, `#winning`, `#terms`. Visible headings translate, IDs do not. A URL fragment is never sent to the server, so no routing layer can rewrite it the way `pathnames` rewrites a slug. Localised IDs would break every shared link on a locale switch and add a per-locale fragment map to the language switcher.
+
+## Rich text
+
+Messages own linguistic structure. Components own document structure: `<p>`, `<h1>`, `<ul>`, `<table>`, `<section>`. A tag in a message is a semantic marker, not HTML. `t.rich` maps it to an element; attributes, hrefs and class names never appear in locale files.
+
+**Inline only.** The vocabulary is emphasis plus actions. There is no `<p>`, `<div>`, `<h2>` or `<ul>` in a message. Wrapping `t.rich` in `<p>` is the page's job, and it is safe only because messages cannot contain a `<p>` of their own.
+
+**No generic `<link>`.** A tag that can point anywhere forces the URL into the component as a prop, and two `<link>`s in one string cannot carry two destinations. Each in-text action is its own tag, baked to one target in `RichText`.
+
+| Tag | Action |
+|---|---|
+| `<em>` | Emphasis |
+| `<strong>` | Strong emphasis |
+| `<term>` | Glossary reference. Jumps to `#terms` on `/rules`. |
+| `<speak>` | Opens `/speak`. |
+| `<about>` | Opens `/about`. |
+| `<rules>` | Opens `/rules`. |
+| `<reference>` | Opens `/reference`. |
+
+Names are identifiers: letters only, so they are valid ICU tags and unquoted keys in the `RichText` map. Not `<speak-link>`, `<link-to-about>` or `<a>`. A `Link` suffix would show translators that the span is a link; at this size the table above is the legend. If the site grows a large set of in-text actions, revisit.
+
+Add a tag to this table and to `RichText` when a message needs a new action. Do not invent a tag on a page.
+
+`t.rich`'s second argument is one object: tag mappers (functions) and ICU values (strings, numbers). A tag name and a variable cannot share a key.
+
+Until later slices unwind them, a few strings still use the old `<link>` or `<p>`. New copy follows this table. `rules.tieBreaks.example` is three paragraphs in one key; split it when `/rules` is built.
 
 ## Type safety
 

@@ -46,7 +46,7 @@
       "rules": "Read the rules",
       "reference": "Quick reference"
     },
-    "provenance": "Learnt while travelling in Spain. Origin unknown. <link>More about the game</link>"
+    "provenance": "Learnt while travelling in Spain. Origin unknown. <about>More about the game</about>"
   },
   "rules": {
     "title": "Mitchi rules",
@@ -88,7 +88,7 @@
       "fourHigh": "A 4 with a lower die.",
       "threeHigh": "A 3 with a lower die.",
       "withinGroup": "Within a group, the higher the lower die, the better the hand: six-five beats six-four. The worst hand in the game is three-one.",
-      "onward": "All 21 hands are listed on the <link>quick reference</link>."
+      "onward": "All 21 hands are listed on the <reference>quick reference</reference>."
     },
     "round": {
       "heading": "Playing a round",
@@ -221,12 +221,12 @@
     "title": "About Mitchi",
     "origin": "Mitchi was learnt while travelling in Spain, though not from a Spanish player. Where it came from before that is not known, and this site does not pretend it is a traditional Spanish game.",
     "reconstruction": "These rules are a reconstruction. Some were remembered, some were recovered by asking the people who played. Where a rule had to be settled rather than recalled, it has been settled the way the game was actually played.",
-    "speak": "There is also a private vocabulary. Hands have nicknames that mean nothing to anyone who was not at the table. They are not part of the game, but they are <link>written down anyway</link>.",
+    "speak": "There is also a private vocabulary. Hands have nicknames that mean nothing to anyone who was not at the table. They are not part of the game, but they are <speak>written down anyway</speak>.",
     "colophon": "Built with Next.js and next-intl. English and Spanish now, more languages to come."
   },
   "notFound": {
     "title": "That page does not exist",
-    "body": "Try the <link>rules</link> or the <link>quick reference</link>."
+    "body": "Try the <rules>rules</rules> or the <reference>quick reference</reference>."
   },
   "groups": {
     "mitchi": "Mitchi",
