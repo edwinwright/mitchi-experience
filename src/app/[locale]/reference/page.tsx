@@ -15,6 +15,8 @@ export default function ReferencePage() {
       <hr />
       <HandTable />
       <hr />
+      <h2 className="text-xl font-bold mb-6">{t("scoring.heading")}</h2>
+      <p>{t("scoring.note")}</p>
       <ScoringTable />
       <hr />
       <h2 className="text-xl font-bold mb-6">{tTieBreaks("heading")}</h2>

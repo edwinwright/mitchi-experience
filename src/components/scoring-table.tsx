@@ -2,10 +2,8 @@ import { useTranslations } from "next-intl";
 
 export function ScoringTable() {
   const t = useTranslations("reference.scoring");
-
   return (
     <>
-      <h2 className="text-xl font-bold mb-6">{t("heading")}</h2>
       <table>
         <thead>
           <tr>
@@ -28,7 +26,6 @@ export function ScoringTable() {
           </tr>
         </tbody>
       </table>
-      <p>{t("note")}</p>
     </>
   );
 }

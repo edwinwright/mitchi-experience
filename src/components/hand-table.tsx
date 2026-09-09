@@ -1,5 +1,6 @@
 import { useTranslations } from "next-intl";
 import { rankedGroups } from "@/data/hands";
+import { DicePair } from "@/components/dice-pair";
 
 export function HandTable() {
   const tRanking = useTranslations("reference.ranking");
@@ -10,13 +11,19 @@ export function HandTable() {
   return (
     <>
       <h2 className="text-xl font-bold mb-6">{tRanking("heading")}</h2>
-      <table>
+      <table className="border-collapse border border-border">
         <caption>{tRanking("caption")}</caption>
         <thead>
           <tr>
-            <th scope="col">{tRanking("groupHeader")}</th>
-            <th scope="col">{tRanking("diceHeader")}</th>
-            <th scope="col">{tRanking("handHeader")}</th>
+            <th scope="col" className="px-3 py-2 text-left">
+              {tRanking("groupHeader")}
+            </th>
+            <th scope="col" className="px-3 py-2 text-left">
+              {tRanking("diceHeader")}
+            </th>
+            <th scope="col" className="px-3 py-2 text-left">
+              {tRanking("handHeader")}
+            </th>
           </tr>
         </thead>
         {groups.map((group) => (
@@ -24,14 +31,18 @@ export function HandTable() {
             {group.hands.map((hand, i) => (
               <tr key={hand.id}>
                 {i === 0 && (
-                  <th scope="rowgroup" rowSpan={group.hands.length}>
+                  <th
+                    scope="rowgroup"
+                    rowSpan={group.hands.length}
+                    className="px-3 py-2 align-top text-left"
+                  >
                     {tGroups(group.group)}
                   </th>
                 )}
-                <td>
-                  {hand.high} - {hand.low}
+                <td className="px-3 py-2">
+                  <DicePair high={hand.high} low={hand.low} />
                 </td>
-                <td>{tHands(hand.id)}</td>
+                <td className="px-3 py-2">{tHands(hand.id)}</td>
               </tr>
             ))}
           </tbody>

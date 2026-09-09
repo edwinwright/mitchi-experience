@@ -79,16 +79,16 @@
       "step3": "[ES] Play proceeds clockwise."
     },
     "hands": {
-      "heading": "[ES] Hands",
-      "intro": "[ES] A hand is the two dice you finish your turn with. Hands are ranked from best to worst.",
-      "mitchi": "[ES] A 2 and a 1. The best hand in the game.",
-      "doubles": "[ES] Both dice showing the same number. Beaten only by a Mitchi. Double-six is the best of them, double-one the worst.",
-      "sixHigh": "[ES] A 6 with a lower die.",
-      "fiveHigh": "[ES] A 5 with a lower die.",
-      "fourHigh": "[ES] A 4 with a lower die.",
-      "threeHigh": "[ES] A 3 with a lower die.",
-      "withinGroup": "[ES] Within a group, the higher the lower die, the better the hand: six-five beats six-four. The worst hand in the game is three-one.",
-      "onward": "[ES] All 21 hands are listed on the <reference>quick reference</reference>."
+      "heading": "Manos",
+      "intro": "Una mano está formada por los dos dados con los que terminas tu turno. Las manos se clasifican de mejor a peor.",
+      "mitchi": "Un 2 y un 1. La mejor mano del juego.",
+      "doubles": "Ambos dados muestran el mismo número. Solo Mitchi puede vencer a un doble. Doble-seis es el mejor de ellos y doble-uno el peor.",
+      "sixHigh": "Un 6 y un dado de menor valor.",
+      "fiveHigh": "Un 5 y un dado de menor valor.",
+      "fourHigh": "Un 4 y un dado de menor valor.",
+      "threeHigh": "Un 3 y un dado de menor valor.",
+      "withinGroup": "Dentro de un grupo, cuanto mayor sea el dado de menor valor, mejor será la mano: seis-cinco vence a seis-cuatro. La peor mano del juego es tres-uno.",
+      "onward": "Las 21 manos están incluidas en la <reference>referencia rápida</reference>."
     },
     "round": {
       "heading": "[ES] Playing a round",
@@ -230,11 +230,11 @@
   },
   "groups": {
     "mitchi": "[ES] Mitchi",
-    "doubles": "[ES] Doubles",
-    "sixHigh": "[ES] Six-high",
-    "fiveHigh": "[ES] Five-high",
-    "fourHigh": "[ES] Four-high",
-    "threeHigh": "[ES] Three-high"
+    "doubles": "Dobles",
+    "sixHigh": "Seis alto",
+    "fiveHigh": "Cinco alto",
+    "fourHigh": "Cuatro alto",
+    "threeHigh": "Tres alto"
   },
   "hands": {
     "2-1": "dos-uno",
