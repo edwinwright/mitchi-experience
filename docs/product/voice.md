@@ -31,6 +31,7 @@ Said once, on Home, and never again. `/rules` and `/reference` do not repeat it,
 - In-text term references on `/rules` link to `#terms`.
 - About says nothing about the site being a practice project. The game stands on its own.
 - The origin line is fixed: learnt while travelling in Spain, origin unknown. The site does not claim Mitchi is a traditional Spanish game, and the person who taught it is not named.
+- The locale 404 is rulebook-neutral and uses `notFound.*`. The root 404 is a standalone English page with no chrome; it only points back to `/`. It does not use the message files.
 
 ## Why cutting matters
 

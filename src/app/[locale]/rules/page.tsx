@@ -1,13 +1,14 @@
 import { useTranslations } from "next-intl";
 import { PageHeader } from "@/components/page-header";
 import { Container } from "@/components/layout/container";
-import { RichText } from "@/components/rich-text";
 import { TermList } from "@/components/term-list";
 import { StepList } from "@/components/step-list";
 import { RankList } from "@/components/rank-list";
 import { Example } from "@/components/example";
 import { OnThisPage } from "@/components/on-this-page";
 import { ScoringTable } from "@/components/scoring-table";
+import { Prose } from "@/components/prose";
+import { tags } from "@/i18n/rich-text";
 
 export default function RulesPage() {
   const t = useTranslations("rules");
@@ -55,22 +56,19 @@ export default function RulesPage() {
 
 function QuickStart() {
   const t = useTranslations("rules.quickStart");
+  const items = [
+    t.rich("step1", tags),
+    t.rich("step2", tags),
+    t.rich("step3", tags),
+    t.rich("step4", tags),
+    t.rich("step5", tags),
+    t.rich("step6", tags),
+  ];
+
   return (
     <div id="quick-start" className="py-6">
       <h2 className="text-xl font-bold mb-6">{t("heading")}</h2>
-      <RichText>
-        {(tags) => {
-          const items = [
-            t.rich("step1", tags),
-            t.rich("step2", tags),
-            t.rich("step3", tags),
-            t.rich("step4", tags),
-            t.rich("step5", tags),
-            t.rich("step6", tags),
-          ];
-          return <StepList items={items} />;
-        }}
-      </RichText>
+      <StepList items={items} />
       <p>{t("footnote")}</p>
     </div>
   );
@@ -119,7 +117,7 @@ function Hands() {
       <p>{t("intro")}</p>
       <RankList />
       <p>{t("withinGroup")}</p>
-      <RichText>{(tags) => <p>{t.rich("onward", tags)}</p>}</RichText>
+      <p>{t.rich("onward", tags)}</p>
     </div>
   );
 }
@@ -130,42 +128,34 @@ function Round() {
     <div id="round" className="py-6">
       <h2 className="text-xl font-bold mb-6">{t("heading")}</h2>
       <h3 className="text-lg font-bold mb-4">{t("rollLimit.heading")}</h3>
-      <RichText>
-        {(tags) => (
-          <>
-            <p>{t.rich("rollLimit.body", tags)}</p>
-            <p>{t.rich("rollLimit.choices", tags)}</p>
-            <p>{t.rich("rollLimit.fresh", tags)}</p>
-            <p>{t.rich("rollLimit.sets", tags)}</p>
-            <Example>{t.rich("rollLimit.example", tags)}</Example>
-          </>
-        )}
-      </RichText>
+      <Prose>
+        <p>{t.rich("rollLimit.body", tags)}</p>
+        <p>{t.rich("rollLimit.choices", tags)}</p>
+        <p>{t.rich("rollLimit.fresh", tags)}</p>
+        <p>{t.rich("rollLimit.sets", tags)}</p>
+      </Prose>
+      <Example>{t.rich("rollLimit.example", tags)}</Example>
       <h3 className="text-lg font-bold mb-4">{t("others.heading")}</h3>
-      <RichText>
-        {(tags) => (
-          <>
-            <p>{t.rich("others.body", tags)}</p>
-            <p>{t.rich("others.beat", tags)}</p>
-            <Example>
-              {t.rich("others.example1", {
-                ...tags,
-                a: "A",
-                b: "B",
-                c: "C",
-              })}
-            </Example>
-            <Example>
-              {t.rich("others.example2", {
-                ...tags,
-                a: "A",
-                b: "B",
-                c: "C",
-              })}
-            </Example>
-          </>
-        )}
-      </RichText>
+      <Prose>
+        <p>{t.rich("others.body", tags)}</p>
+        <p>{t.rich("others.beat", tags)}</p>
+      </Prose>
+      <Example>
+        {t.rich("others.example1", {
+          ...tags,
+          a: "A",
+          b: "B",
+          c: "C",
+        })}
+      </Example>
+      <Example>
+        {t.rich("others.example2", {
+          ...tags,
+          a: "A",
+          b: "B",
+          c: "C",
+        })}
+      </Example>
     </div>
   );
 }
@@ -175,15 +165,11 @@ function Scoring() {
   return (
     <div id="scoring" className="py-6">
       <h2 className="text-xl font-bold mb-6">{t("heading")}</h2>
-      <RichText>
-        {(tags) => (
-          <>
-            <p>{t.rich("body", tags)}</p>
-            <p>{t.rich("mitchis", tags)}</p>
-            <p>{t.rich("next", tags)}</p>
-          </>
-        )}
-      </RichText>
+      <Prose>
+        <p>{t.rich("body", tags)}</p>
+        <p>{t.rich("mitchis", tags)}</p>
+        <p>{t.rich("next", tags)}</p>
+      </Prose>
       <ScoringTable />
     </div>
   );
@@ -194,21 +180,17 @@ function TieBreaks() {
   return (
     <div id="tie-breaks" className="py-6">
       <h2 className="text-xl font-bold mb-6">{t("heading")}</h2>
-      <RichText>
-        {(tags) => (
-          <>
-            <p>{t.rich("body", tags)}</p>
-            <p>{t.rich("rule1", tags)}</p>
-            <p>{t.rich("rule2", tags)}</p>
-            <p>{t.rich("rule3", tags)}</p>
-            <p>{t.rich("rule4", tags)}</p>
-            <p>{t.rich("rule5", tags)}</p>
-            <p>{t.rich("outcome", tags)}</p>
-            <p>{t.rich("again", tags)}</p>
-            <Example>{t.rich("example", tags)}</Example>
-          </>
-        )}
-      </RichText>
+      <Prose>
+        <p>{t.rich("body", tags)}</p>
+        <p>{t.rich("rule1", tags)}</p>
+        <p>{t.rich("rule2", tags)}</p>
+        <p>{t.rich("rule3", tags)}</p>
+        <p>{t.rich("rule4", tags)}</p>
+        <p>{t.rich("rule5", tags)}</p>
+        <p>{t.rich("outcome", tags)}</p>
+        <p>{t.rich("again", tags)}</p>
+        <Example>{t.rich("example", tags)}</Example>
+      </Prose>
     </div>
   );
 }
@@ -218,14 +200,10 @@ function Winning() {
   return (
     <div id="winning" className="py-6">
       <h2 className="text-xl font-bold mb-6">{t("heading")}</h2>
-      <RichText>
-        {(tags) => (
-          <>
-            <p>{t.rich("body", tags)}</p>
-            <p>{t.rich("level", tags)}</p>
-          </>
-        )}
-      </RichText>
+      <Prose>
+        <p>{t.rich("body", tags)}</p>
+        <p>{t.rich("level", tags)}</p>
+      </Prose>
     </div>
   );
 }

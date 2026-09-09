@@ -1,22 +1,22 @@
-import { defineRouting } from 'next-intl/routing';
+import { defineRouting } from "next-intl/routing";
 
 export const routing = defineRouting({
   // Ship order from the project note. Add pl, de, ja one at a time in phase 6.
-  locales: ['en', 'es'],
+  locales: ["en", "es"],
 
-  defaultLocale: 'en',
+  defaultLocale: "en",
 
   // English at /rules, Spanish at /es/reglas.
   // Settled in the hosting decision record. Expensive to change after launch.
-  localePrefix: 'as-needed',
+  localePrefix: "as-needed",
 
   // The internal-to-external path dictionary.
   // Keys are internal route paths. Values are per-locale external paths.
   pathnames: {
-    '/': '/',
-    '/about': '/about',
-    '/reference': '/reference',
-    '/rules': '/rules',
-    '/speak': '/speak',
-  }
+    "/": "/",
+    "/about": "/about",
+    "/reference": "/reference",
+    "/rules": "/rules",
+    "/speak": "/speak",
+  },
 });

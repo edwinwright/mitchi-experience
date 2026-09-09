@@ -2,7 +2,6 @@ import { useTranslations } from "next-intl";
 import { PageHeader } from "@/components/page-header";
 import { Container } from "@/components/layout/container";
 import { SpeakTable } from "@/components/speak-table";
-import { RichText } from "@/components/rich-text";
 
 export default function SpeakPage() {
   const t = useTranslations("speak");
@@ -12,7 +11,7 @@ export default function SpeakPage() {
       <hr />
       <SpeakTable />
       <hr />
-      <RichText>{(tags) => <p>{t.rich("footnote", tags)}</p>}</RichText>
+      <p>{t("footnote")}</p>
     </Container>
   );
 }

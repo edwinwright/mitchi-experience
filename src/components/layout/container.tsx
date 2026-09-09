@@ -1,10 +1,11 @@
+import { ComponentProps } from "react";
 import { cn } from "@/lib/utils";
 
 export function Container({
-  className,
   children,
+  className,
   ...props
-}: React.ComponentProps<"div">) {
+}: ComponentProps<"div">) {
   return (
     <div
       className={cn(

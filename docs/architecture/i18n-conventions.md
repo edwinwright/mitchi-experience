@@ -11,7 +11,7 @@ How message content is structured and authored. The routing decisions (`localePr
 | Mitchi Speak nicknames | `src/data/speak.ts` |
 | Section anchor IDs | The components that render the sections |
 | Routing and slugs | `src/i18n/routing.ts` |
-| Rich text tag map | `src/components/rich-text.tsx` |
+| Rich text tag map | `src/i18n/rich-text.tsx` (`tags`) |
 
 Namespaces, and no twelfth without a reason: `meta`, `nav`, `home`, `rules`, `reference`, `speak`, `terms`, `about`, `groups`, `hands`, `notFound`.
 
@@ -21,7 +21,7 @@ Namespaces, and no twelfth without a reason: `meta`, `nav`, `home`, `rules`, `re
 
 **No arrays.** `t()` throws on an array value and `t.raw()` gives up type safety. Use numbered keys: `rules.quickStart.step1` to `step6`.
 
-**No markup inside strings.** Translators should never have to preserve asterisks, HTML, attributes or URLs. Inline emphasis and in-text actions use next-intl rich text tags (`t.rich`), listed below. Mapped in one place, `RichText`. No component maps its own tags. Do not use `defaultTranslationValues`, it is deprecated.
+**No markup inside strings.** Translators should never have to preserve asterisks, HTML, attributes or URLs. Inline emphasis and in-text actions use next-intl rich text tags (`t.rich`), listed below. Mapped in one place, `tags` in `src/i18n/rich-text.tsx`. No component maps its own tags. Do not use `defaultTranslationValues`, it is deprecated.
 
 **Variables, not concatenation.** Worked examples take player letters as ICU parameters, so one pattern is translated once and A, B and C are substituted.
 
@@ -37,7 +37,7 @@ Messages own linguistic structure. Components own document structure: `<p>`, `<h
 
 **Inline only.** The vocabulary is emphasis plus actions. There is no `<p>`, `<div>`, `<h2>` or `<ul>` in a message. Wrapping `t.rich` in `<p>` is the page's job, and it is safe only because messages cannot contain a `<p>` of their own.
 
-**No generic `<link>`.** A tag that can point anywhere forces the URL into the component as a prop, and two `<link>`s in one string cannot carry two destinations. Each in-text action is its own tag, baked to one target in `RichText`.
+**No generic `<link>`.** A tag that can point anywhere forces the URL into the component as a prop, and two `<link>`s in one string cannot carry two destinations. Each in-text action is its own tag, baked to one target in `tags`.
 
 | Tag | Action |
 |---|---|
@@ -49,13 +49,15 @@ Messages own linguistic structure. Components own document structure: `<p>`, `<h
 | `<rules>` | Opens `/rules`. |
 | `<reference>` | Opens `/reference`. |
 
-Names are identifiers: letters only, so they are valid ICU tags and unquoted keys in the `RichText` map. Not `<speak-link>`, `<link-to-about>` or `<a>`. A `Link` suffix would show translators that the span is a link; at this size the table above is the legend. If the site grows a large set of in-text actions, revisit.
+Names are identifiers: letters only, so they are valid ICU tags and unquoted keys in the `tags` map. Not `<speak-link>`, `<link-to-about>` or `<a>`. A `Link` suffix would show translators that the span is a link; at this size the table above is the legend. If the site grows a large set of in-text actions, revisit.
 
-Add a tag to this table and to `RichText` when a message needs a new action. Do not invent a tag on a page.
+Add a tag to this table and to `tags` when a message needs a new action. Do not invent a tag on a page.
 
 `t.rich`'s second argument is one object: tag mappers (functions) and ICU values (strings, numbers). A tag name and a variable cannot share a key.
 
-Until later slices unwind them, a few strings still use the old `<link>` or `<p>`. New copy follows this table. `rules.tieBreaks.example` is three paragraphs in one key; split it when `/rules` is built.
+Body copy rendered in a `<p>` (or other inline-rich block) always goes through `t.rich(key, tags)`, even when the current English string has no tags, so a later locale can add them. Titles, headings, nav labels and CTA labels stay on `t()`: they are `string`s, and `t.rich` returns a `ReactNode`.
+
+`rules.tieBreaks.example` still uses `<p>` in one key; that is the remaining exception. New copy follows this table.
 
 ## Type safety
 
@@ -76,6 +78,10 @@ A missing or misspelled key is then a compile error rather than a runtime fallba
 ## Navigation
 
 Import `Link`, `usePathname`, `useRouter` and `redirect` from `@/i18n/navigation`, never from `next/link` or `next/navigation`. The plain versions know nothing about `pathnames` and emit English paths on non-English pages. It compiles and type-checks, and nothing warns you.
+
+The root `src/app/not-found.tsx` is outside the locale tree and has no provider. It uses a plain `<a href="/">` to the English home. Do not import `next/link` there. `@next/next/no-html-link-for-pages` is disabled on that line.
+
+Unknown paths that the proxy has already placed in `[locale]` are caught by `src/app/[locale]/[...rest]/page.tsx`, which calls `notFound()` so `[locale]/not-found.tsx` can render inside the site chrome. That page uses `notFound.*` from the message files.
 
 ## Adding a locale
 
