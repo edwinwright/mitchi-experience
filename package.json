@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
-    "i18n:mirror": "node scripts/mirror-messages.mjs"
+    "i18n:new": "node scripts/new-locale.mjs",
+    "i18n:check": "node scripts/check-messages.mjs"
   },
   "dependencies": {
     "clsx": "^2.1.1",

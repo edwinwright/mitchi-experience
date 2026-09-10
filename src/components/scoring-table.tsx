@@ -8,7 +8,7 @@ export function ScoringTable() {
         <thead>
           <tr>
             <th scope="col">{t("roundHeader")}</th>
-            <th scope="col">{t("tableHeader")}</th>
+            <th scope="col">{t("potHeader")}</th>
           </tr>
         </thead>
         <tbody>

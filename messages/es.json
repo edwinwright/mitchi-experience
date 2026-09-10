@@ -55,9 +55,9 @@
       "heading": "[ES] Mitchi in 60 seconds",
       "step1": "[ES] Everyone rolls one die. The highest roll starts.",
       "step2": "[ES] The starting player rolls both dice and may roll up to three times. The number of rolls they use is the <term>roll limit</term> for everyone else that round.",
-      "step3": "[ES] Everyone else rolls in turn, up to that limit. You only need to beat the <term>current worst hand</term>, meaning the lowest-ranked hand rolled so far. You never need the best.",
+      "step3": "[ES] Everyone else rolls in turn, up to that limit. You only need to beat the <term>worst hand so far</term>, the lowest-ranked hand rolled this round. You never need the best.",
       "step4": "[ES] The best hand is a Mitchi, a 2 and a 1. Then doubles, then six-high, five-high, four-high, three-high. The worst hand in the game is three-one.",
-      "step5": "[ES] Whoever is left with the worst hand <term>takes the table</term>: 1 point, or 2 points for every Mitchi rolled that round.",
+      "step5": "[ES] Whoever is left with the worst hand <term>takes the pot</term>: 1 point, or 2 points for every Mitchi rolled that round.",
       "step6": "[ES] First player to 25 points ends the game. Fewest points wins.",
       "footnote": "[ES] The full rules are below."
     },
@@ -82,7 +82,7 @@
       "heading": "Manos",
       "intro": "Una mano está formada por los dos dados con los que terminas tu turno. Las manos se clasifican de mejor a peor.",
       "mitchi": "Un 2 y un 1. La mejor mano del juego.",
-      "doubles": "Ambos dados muestran el mismo número. Solo Mitchi puede vencer a un doble. Doble-seis es el mejor de ellos y doble-uno el peor.",
+      "doubles": "Ambos dados muestran el mismo número. Solo Mitchi puede vencer a un doble. Doble seis es el mejor de ellos y doble uno el peor.",
       "sixHigh": "Un 6 y un dado de menor valor.",
       "fiveHigh": "Un 5 y un dado de menor valor.",
       "fourHigh": "Un 4 y un dado de menor valor.",
@@ -103,28 +103,28 @@
       "others": {
         "heading": "[ES] The other players",
         "body": "[ES] Each remaining player rolls in clockwise order, under the same rules, up to the roll limit. You do not have to use every roll: stop as soon as you are happy with your hand.",
-        "beat": "[ES] You never need the best hand, only to avoid being left with the worst. The hand to beat is the <term>current worst hand</term>, the lowest-ranked hand rolled so far this round. It changes as players finish, so a later player may have less to do than an earlier one.",
-        "example1": "[ES] Player {a} starts and rolls six-four in one roll. Player {b} rolls five-one. Player {c} now needs five-two or better, because five-one is the current worst hand.",
+        "beat": "[ES] You never need the best hand, only to avoid being left with the worst. The hand to beat is the <term>worst hand so far</term>, the lowest-ranked hand rolled this round. It changes as players finish, so a later player may have less to do than an earlier one.",
+        "example1": "[ES] Player {a} starts and rolls six-four in one roll. Player {b} rolls five-one. Player {c} now needs five-two or better, because five-one is the worst hand so far.",
         "example2": "[ES] Player {a} starts and rolls five-four in three rolls. Player {b} rolls six-two on the first roll, which already beats it, so Player {b} stops rather than using the other two."
       }
     },
     "scoring": {
       "heading": "[ES] Scoring the round",
-      "body": "[ES] Every round is played for the points on <term>the table</term>. The player left with the worst hand <term>takes the table</term>, adding those points to their score.",
+      "body": "[ES] Every round is played for the points in <term>the pot</term>. The player left with the worst hand <term>takes the pot</term>, adding those points to their score.",
       "mitchis": "[ES] Mitchi points count whoever rolled them.",
-      "next": "[ES] The player who took the table starts the next round."
+      "next": "[ES] The player who took the pot starts the next round."
     },
     "tieBreaks": {
       "heading": "[ES] Tie-breaks",
       "body": "[ES] If two or more players are level on the worst hand, they play a tie-break. A tie-break is not a normal round.",
       "rule1": "[ES] Only the tied players take part.",
       "rule2": "[ES] Each player gets one roll, not up to three.",
-      "rule3": "[ES] The points on the table double before the tie-break is rolled.",
+      "rule3": "[ES] The points in the pot double before the tie-break is rolled.",
       "rule4": "[ES] The order reverses, starting with the last player to roll.",
-      "rule5": "[ES] Each Mitchi rolled adds 2 more points to the table.",
-      "outcome": "[ES] The player left with the worst hand in the tie-break takes the table.",
-      "again": "[ES] If players are level again, only those still level play another tie-break. The table doubles again and the order reverses again. This repeats until one player is left with the worst hand.",
-      "example": "[ES] <p>Three players tie in the round, with 1 point on the table.</p><p>The first tie-break doubles the table to 2 points. One player rolls a Mitchi, adding 2 more, and the other two tie again.</p><p>The second tie-break doubles the table to 8 points. If they tie again, the third starts on 16.</p>"
+      "rule5": "[ES] Each Mitchi rolled adds 2 more points to the pot.",
+      "outcome": "[ES] The player left with the worst hand in the tie-break takes the pot.",
+      "again": "[ES] If players are level again, only those still level play another tie-break. The pot doubles again and the order reverses again. This repeats until one player is left with the worst hand.",
+      "example": "[ES] <p>Three players tie in the round, with 1 point in the pot.</p><p>The first tie-break doubles the pot to 2 points. One player rolls a Mitchi, adding 2 more, and the other two tie again.</p><p>The second tie-break doubles the pot to 8 points. If they tie again, the third starts on 16.</p>"
     },
     "winning": {
       "heading": "[ES] Winning the game",
@@ -152,21 +152,29 @@
       "name": "[ES] Roll limit",
       "definition": "[ES] The number of rolls available to each player in a round, set by the starting player."
     },
-    "currentWorstHand": {
-      "name": "[ES] Current worst hand",
-      "definition": "[ES] The lowest-ranked hand rolled so far this round. What you have to beat."
+    "worstHand": {
+      "name": "[ES] Worst hand",
+      "definition": "[ES] The lowest-ranked hand. At the end of a round, the player left with it takes the pot."
     },
-    "table": {
-      "name": "[ES] The table",
+    "worstHandSoFar": {
+      "name": "[ES] Worst hand so far",
+      "definition": "[ES] The worst hand during a round, while players are still to roll. What you have to beat, and it can still change."
+    },
+    "pot": {
+      "name": "[ES] The pot",
       "definition": "[ES] The points at stake in the current round."
     },
-    "takeTheTable": {
-      "name": "[ES] Take the table",
-      "definition": "[ES] To add every point on the table to your score."
+    "takeThePot": {
+      "name": "[ES] Take the pot",
+      "definition": "[ES] To add every point in the pot to your score."
     },
     "tieBreak": {
       "name": "[ES] Tie-break",
       "definition": "[ES] A play-off between players level on the worst hand."
+    },
+    "points": {
+      "name": "[ES] Points",
+      "definition": "[ES] The running score. Points are bad: you take them by losing a round, and the fewest wins."
     },
     "pointLimit": {
       "name": "[ES] Point limit",
@@ -184,25 +192,25 @@
       "handHeader": "[ES] Hand"
     },
     "scoring": {
-      "heading": "[ES] Points on the table",
+      "heading": "[ES] Points in the pot",
       "roundHeader": "[ES] Round",
-      "tableHeader": "[ES] On the table",
+      "potHeader": "[ES] In the pot",
       "none": "[ES] No Mitchi rolled",
       "noneValue": "[ES] 1 point",
       "one": "[ES] One Mitchi rolled",
       "oneValue": "[ES] 2 points",
       "two": "[ES] Two Mitchis rolled",
       "twoValue": "[ES] 4 points",
-      "note": "[ES] Mitchi points count whoever rolled them. The worst hand takes the table and starts the next round."
+      "note": "[ES] Mitchi points count whoever rolled them. The worst hand takes the pot and starts the next round."
     },
     "tieBreaks": {
       "heading": "[ES] Tie-breaks",
       "rule1": "[ES] Tied players only.",
       "rule2": "[ES] One roll each, not up to three.",
-      "rule3": "[ES] The table doubles before the roll.",
+      "rule3": "[ES] The pot doubles before the roll.",
       "rule4": "[ES] The order reverses, starting with the last player to roll.",
-      "rule5": "[ES] Each Mitchi rolled adds 2 more points to the table.",
-      "rule6": "[ES] Still level? Repeat. The table doubles again and the order reverses again."
+      "rule5": "[ES] Each Mitchi rolled adds 2 more points to the pot.",
+      "rule6": "[ES] Still level? Repeat. The pot doubles again and the order reverses again."
     },
     "ending": {
       "heading": "[ES] Ending the game",
@@ -238,12 +246,12 @@
   },
   "hands": {
     "2-1": "dos-uno",
-    "6-6": "doble-seis",
-    "5-5": "doble-cinco",
-    "4-4": "doble-cuatro",
-    "3-3": "doble-tres",
-    "2-2": "doble-dos",
-    "1-1": "doble-uno",
+    "6-6": "doble seis",
+    "5-5": "doble cinco",
+    "4-4": "doble cuatro",
+    "3-3": "doble tres",
+    "2-2": "doble dos",
+    "1-1": "doble uno",
     "6-5": "seis-cinco",
     "6-4": "seis-cuatro",
     "6-3": "seis-tres",

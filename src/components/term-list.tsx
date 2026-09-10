@@ -25,24 +25,34 @@ export function TermList() {
       value: t("rollLimit.definition"),
     },
     {
-      key: "currentWorstHand",
-      title: t("currentWorstHand.name"),
-      value: t("currentWorstHand.definition"),
+      key: "worstHand",
+      title: t("worstHand.name"),
+      value: t("worstHand.definition"),
     },
     {
-      key: "table",
-      title: t("table.name"),
-      value: t("table.definition"),
+      key: "worstHandSoFar",
+      title: t("worstHandSoFar.name"),
+      value: t("worstHandSoFar.definition"),
     },
     {
-      key: "takeTheTable",
-      title: t("takeTheTable.name"),
-      value: t("takeTheTable.definition"),
+      key: "pot",
+      title: t("pot.name"),
+      value: t("pot.definition"),
+    },
+    {
+      key: "takeThePot",
+      title: t("takeThePot.name"),
+      value: t("takeThePot.definition"),
     },
     {
       key: "tieBreak",
       title: t("tieBreak.name"),
       value: t("tieBreak.definition"),
+    },
+    {
+      key: "points",
+      title: t("points.name"),
+      value: t("points.definition"),
     },
     {
       key: "pointLimit",

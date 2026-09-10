@@ -2,16 +2,23 @@
 
 How the site is written, in every language. Binding on English and on every translation.
 
-## The default: neutral rulebook
+## Two registers
 
-The rules are instructional and impersonal. Second person, present tense, short sentences. No jokes, no asides, no "simply" and no "just". A reader mid-game wants an answer, not a personality.
+**Procedure and definitions are impersonal.** Third person, present tense, short sentences. The rules describe what happens and what a player does, they do not address the reader: "The starting player rolls both dice", not "Roll both dice".
+
+**The reader's own position is second person.** Where a sentence is about what you are trying to achieve rather than what the procedure is, `you` is correct and clearer: "You never need the best hand, only to avoid being left with the worst."
+
+No jokes, no asides, no "simply" and no "just". A reader mid-game wants an answer, not a personality.
 
 | Do | Do not |
 |---|---|
-| "Roll both dice." | "Go ahead and roll both dice." |
-| "You may re-roll either die." | "You're free to re-roll either die if you fancy it." |
-| "The worst hand takes the table." | "Bad luck: the worst hand takes the table." |
+| "The starting player rolls both dice." | "Go ahead and roll both dice." |
+| "A player may re-roll either die." | "You're free to re-roll either die if you fancy it." |
+| "You never need the best hand." (the reader's position) | "You'll want to think carefully about this one." |
+| "The worst hand takes the pot." | "Bad luck: the worst hand takes the pot." |
 | Use the terms in `docs/domain/glossary.md` | Introduce a synonym because a sentence reads better |
+
+In translation, the same split applies. Procedure takes whatever impersonal form the language uses for game instructions; the reader's position takes the informal second person singular.
 
 ## The exception: Home and About
 
