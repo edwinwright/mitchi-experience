@@ -85,9 +85,26 @@ Unknown paths that the proxy has already placed in `[locale]` are caught by `src
 
 ## Adding a locale
 
-1. Add the code to `locales` in `src/i18n/routing.ts`.
-2. Add the localised slugs to `pathnames`.
-3. Add `messages/<locale>.json` with the full key set. Until real copy exists, mirror `en.json` with a `[XX] ` prefix on every value, so the routes render and a missed translation is visible rather than silent.
-4. Add the language to the switcher in its own name.
+Decisions first, then scaffolding, then translation. Doing it in that order is what stops one concept acquiring three words in the same locale.
+
+**1. Settle the vocabulary.** Before a word of copy is written, agree that locale's form for every term in `docs/domain/glossary.md`, the hand and group naming pattern, and the localised slugs. Where a choice is contested, decide it once and write down why. Terms run through every page, so translating them in flow guarantees inconsistency.
+
+**2. Write `docs/domain/glossary.<locale>.md`.** Term forms and the reasoning behind contested choices. Not definitions: those live in the message file, and repeating them here gives the site two sources of truth for the same sentence.
+
+**3. Scaffold the message file.**
+
+```bash
+npm run i18n:new -- <locale>
+```
+
+Copies `en.json` with `[XX] ` on every string, so an untranslated string is visible rather than a silent fallback to English. It refuses to overwrite an existing file and has no force flag: regenerating a locale means deleting its file yourself.
+
+**4. Add the locale to `src/i18n/routing.ts`,** both `locales` and the localised slugs in `pathnames`.
+
+**5. Translate,** deleting the `[XX] ` marker from each string as you go. The markers are the only progress bar this work has, and once they are gone a silent fallback looks exactly like a correct page.
+
+**6. Add the language to the switcher,** named in its own language.
+
+**7. Run `npm run i18n:check`** before committing: key parity against `en.json`, and the same rich text tags and ICU parameters in every string. A translation that drops a `<term>` or renames a `{a}` fails at render, on a page nobody is looking at.
 
 Locale message files are separate chunks, so an added locale does not grow any other locale's bundle.

@@ -152,6 +152,10 @@
       "name": "Roll limit",
       "definition": "The number of rolls available to each player in a round, set by the starting player."
     },
+    "worstHand": {
+      "name": "Worst hand",
+      "definition": "The lowest-ranked hand. In a round, the one that loses it and takes the pot. In the game as a whole, three-one."
+    },
     "currentWorstHand": {
       "name": "Current worst hand",
       "definition": "The lowest-ranked hand rolled so far this round. What you have to beat."
