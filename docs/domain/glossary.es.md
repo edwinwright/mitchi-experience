@@ -11,10 +11,13 @@ Variety: European Spanish, informal.
 | English | Spanish | Note |
 |---|---|---|
 | Mitchi (game, and the hand) | Mitchi | Untranslated and uninflected, in every language |
+| Game | el juego / la partida | The system versus the session played. See below |
 | Hand | la mano | |
 | Die / dice | el dado / los dados | |
-| Roll | la tirada, tirar | `tirar los dados` is the idiomatic game verb. `lanzar` is the athletic one |
+| Roll (the noun, and the throw) | la tirada, tirar | `tirar los dados` is the idiomatic game verb. `lanzar` is the athletic one |
+| Roll (the result) | sacar | `saca seis-cuatro`. See below |
 | Roll limit | el límite de tiradas | |
+| Stop | plantarse | The verb Spanish games use for ending a turn, from blackjack and mus. `detenerse` and `parar` read as translation |
 | Round | la ronda | |
 | Starting player | el jugador inicial | The standard term in Spanish board game rules |
 | Worst hand | la peor mano | The base term. The Spanish pair mirrors the English pair exactly |
@@ -44,6 +47,36 @@ The load-bearing scoring metaphor, so it was chosen once and is used everywhere.
 It carries the same false ring of victory as the English "takes the pot", where the player taking it is the one losing the round. That inversion is in the source and is preserved deliberately, not translated away.
 
 `el pozo` does the same job with a Latin American lean. It was rejected on the Europe-first decision rather than on merit: revisit it only if a Latin American locale is ever added, and if so, as a separate locale rather than by changing this one.
+
+## Why "roll" takes two verbs
+
+English uses one verb for both halves of a roll: you roll the dice, and you roll six-four. Spanish splits them. `tirar` is the act of throwing, `sacar` is what comes up.
+
+`tira los dados` and `saca seis-cuatro` are both idiomatic. `tira seis-cuatro` is not, and reads as a translation.
+
+So `tirar` wherever the sentence is about the act:
+
+- Everyone rolls one die → `cada jugador tira un dado`
+- They may re-roll both dice → `puede volver a tirar ambos dados`
+
+And `sacar` wherever it is about the outcome:
+
+- The starting player rolls six-three in two rolls → `el jugador inicial saca seis-tres en dos tiradas`
+- Each Mitchi rolled adds 2 more points → `cada Mitchi que se saque añade 2 puntos más`
+
+The noun `la tirada` covers both senses and is unaffected. `glossary.md` has a single entry for **Roll** because English needs only one: the split is a fact about Spanish, not a change to the term.
+
+## `el juego` and `la partida`
+
+`el juego` is Mitchi as a system: its rules, its hands, its ranking. `la partida` is one session, played to the point limit and then over.
+
+English says "game" for both, so each occurrence has to be read for which one it means:
+
+- The best hand in the game → `la mejor mano del juego`, the system
+- The game ends as soon as any player reaches the point limit → `la partida termina en cuanto un jugador alcanza el límite de puntos`, the session
+- Hand ranking and scoring, for use mid-game → `durante la partida`, the session
+
+The test: if the English could say "in Mitchi", it is `el juego`. If it could say "this game" and mean tonight's, it is `la partida`. The hand strings translated first already use `del juego`, which is correct and is what leaves `la partida` free for the other sense.
 
 ## Register
 
