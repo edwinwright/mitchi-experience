@@ -14,9 +14,18 @@ export const routing = defineRouting({
   // Keys are internal route paths. Values are per-locale external paths.
   pathnames: {
     "/": "/",
-    "/about": "/about",
-    "/reference": "/reference",
-    "/rules": "/rules",
+    "/about": {
+      en: "/about",
+      es: "/acerca-de",
+    },
+    "/reference": {
+      en: "/reference",
+      es: "/referencia",
+    },
+    "/rules": {
+      en: "/rules",
+      es: "/reglas",
+    },
     "/speak": "/speak",
   },
 });

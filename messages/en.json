@@ -23,12 +23,14 @@
   },
   "nav": {
     "wordmark": "Mitchi",
-    "rules": "Rules",
-    "reference": "Reference",
-    "speak": "Speak",
-    "about": "About",
-    "language": "Language",
     "skip": "Skip to content",
+    "language": "Language",
+    "main": {
+      "rules": "Rules",
+      "reference": "Reference",
+      "speak": "Speak",
+      "about": "About"
+    },
     "footer": "Mitchi. The rules, written down.",
     "onward": {
       "reference": "Next: Quick reference",

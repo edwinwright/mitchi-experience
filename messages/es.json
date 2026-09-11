@@ -23,12 +23,14 @@
   },
   "nav": {
     "wordmark": "Mitchi",
-    "rules": "Reglas",
-    "reference": "Referencia",
-    "speak": "Speak",
-    "about": "Acerca de",
-    "language": "Idioma",
     "skip": "Saltar al contenido",
+    "language": "Idioma",
+    "main": {
+      "rules": "Reglas",
+      "reference": "Referencia",
+      "speak": "Speak",
+      "about": "Acerca de"
+    },
     "footer": "Mitchi. Las reglas, por escrito.",
     "onward": {
       "reference": "Siguiente: referencia rápida",

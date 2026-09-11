@@ -1,14 +1,14 @@
 # Site map
 
-English has no locale prefix. Spanish is `/es` plus the same slug until localised slugs are added.
+English has no locale prefix. Spanish is `/es` plus a localised slug, except `/speak`, which is a proper noun and stays untranslated in every locale.
 
 | English      | Spanish (this phase) | Purpose                                                           |
 | ------------ | -------------------- | ----------------------------------------------------------------- |
 | `/`          | `/es`                | What the game is, the one twist, and where to read on.            |
-| `/rules`     | `/es/rules`          | The full rules, from setup to the end of the game.                |
-| `/reference` | `/es/reference`      | Hand ranking and scoring on one screen, for use mid-game.         |
+| `/rules`     | `/es/reglas`         | The full rules, from setup to the end of the game.                |
+| `/reference` | `/es/referencia`     | Hand ranking and scoring on one screen, for use mid-game.         |
 | `/speak`     | `/es/speak`          | Table nicknames and the official hands they stand for.            |
-| `/about`     | `/es/about`          | Where the game came from, and how these rules were reconstructed. |
+| `/about`     | `/es/acerca-de`      | Where the game came from, and how these rules were reconstructed. |
 
 Unknown paths are not a nav route. Two files handle them:
 
