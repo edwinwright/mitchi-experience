@@ -49,34 +49,34 @@
     "provenance": "Aprendido viajando por España. Origen desconocido. <about>Más sobre el juego</about>"
   },
   "rules": {
-    "title": "[ES] Mitchi rules",
-    "standfirst": "[ES] The full rules, from setup to the end of the game.",
+    "title": "Reglas de Mitchi",
+    "standfirst": "Las reglas completas, desde la preparación hasta el final de la partida.",
     "quickStart": {
-      "heading": "[ES] Mitchi in 60 seconds",
-      "step1": "[ES] Everyone rolls one die. The highest roll starts.",
-      "step2": "[ES] The starting player rolls both dice and may roll up to three times. The number of rolls they use is the <term>roll limit</term> for everyone else that round.",
-      "step3": "[ES] Everyone else rolls in turn, up to that limit. You only need to beat the <term>worst hand so far</term>, the lowest-ranked hand rolled this round. You never need the best.",
-      "step4": "[ES] The best hand is a Mitchi, a 2 and a 1. Then doubles, then six-high, five-high, four-high, three-high. The worst hand in the game is three-one.",
-      "step5": "[ES] Whoever is left with the worst hand <term>takes the pot</term>: 1 point, or 2 points for every Mitchi rolled that round.",
-      "step6": "[ES] First player to 25 points ends the game. Fewest points wins.",
-      "footnote": "[ES] The full rules are below."
+      "heading": "Mitchi en 60 segundos",
+      "step1": "Cada jugador tira un dado. Empieza quien saque el número más alto.",
+      "step2": "El jugador inicial tira los dos dados y puede tirar hasta tres veces. El número de tiradas que use es el <term>límite de tiradas</term> para el resto de jugadores en esa ronda.",
+      "step3": "Los demás jugadores tiran por turno, hasta ese límite. Solo necesitas superar la <term>peor mano hasta ahora</term>, la mano peor clasificada de esta ronda. Nunca necesitas la mejor.",
+      "step4": "La mejor mano es Mitchi, un 2 y un 1. Después los dobles, y luego seis alto, cinco alto, cuatro alto y tres alto. La peor mano del juego es tres-uno.",
+      "step5": "Quien se queda con la peor mano <term>se lleva el bote</term>: 1 punto, o 2 puntos por cada Mitchi que se saque en la ronda.",
+      "step6": "El primer jugador que llegue a 25 puntos termina la partida. Gana quien menos puntos tenga.",
+      "footnote": "Las reglas completas están más abajo."
     },
     "overview": {
-      "heading": "[ES] Overview",
-      "body": "[ES] Mitchi is a dice game for two or more players, played over a series of rounds. Each round, players roll to avoid being left with the worst hand.",
-      "objective": "[ES] The objective is to finish the game with the fewest points."
+      "heading": "Resumen",
+      "body": "Mitchi es un juego de dados para dos o más jugadores que se juega a lo largo de varias rondas. En cada ronda, los jugadores tiran para evitar quedarse con la peor mano.",
+      "objective": "El objetivo es terminar la partida con los menos puntos posibles."
     },
     "need": {
-      "heading": "[ES] What you need",
-      "dice": "[ES] Two six-sided dice.",
-      "paper": "[ES] A pen and something to write on.",
-      "players": "[ES] At least one other player."
+      "heading": "Qué necesitas",
+      "dice": "Dos dados de seis caras.",
+      "paper": "Un bolígrafo y algo donde escribir.",
+      "players": "Al menos otro jugador."
     },
     "setup": {
-      "heading": "[ES] Setup",
-      "step1": "[ES] Agree the point limit before play begins. 25 is typical.",
-      "step2": "[ES] Decide who starts. Everyone rolls a single die once, in any order, and the highest roll starts. If players tie for the highest roll, those players roll again until one is highest.",
-      "step3": "[ES] Play proceeds clockwise."
+      "heading": "Preparación",
+      "step1": "El límite de puntos se acuerda antes de empezar. Lo normal es 25.",
+      "step2": "Se decide quién empieza. Cada jugador tira un solo dado una vez, en cualquier orden, y empieza quien saque el número más alto. Si varios jugadores empatan en el número más alto, vuelven a tirar entre ellos hasta que uno saque más que los demás.",
+      "step3": "Se juega en el sentido de las agujas del reloj."
     },
     "hands": {
       "heading": "Manos",
@@ -91,48 +91,48 @@
       "onward": "Las 21 manos están incluidas en la <reference>referencia rápida</reference>."
     },
     "round": {
-      "heading": "[ES] Playing a round",
+      "heading": "Cómo se juega una ronda",
       "rollLimit": {
-        "heading": "[ES] The roll limit",
-        "body": "[ES] The starting player rolls both dice, and may roll up to three times.",
-        "choices": "[ES] After each roll they may re-roll both dice, keep either die and re-roll the other, or stop and keep the hand they have.",
-        "fresh": "[ES] Every roll is a fresh choice. Keeping a die on one roll does not commit them to keeping it on the next. Re-rolling a single die still counts as a roll.",
-        "sets": "[ES] The number of rolls the starting player uses is the <term>roll limit</term> for the round. One roll, and every other player gets one. Three rolls, and every other player gets up to three.",
-        "example": "[ES] The starting player rolls six-three in two rolls, so every other player gets up to two rolls."
+        "heading": "El límite de tiradas",
+        "body": "El jugador inicial tira los dos dados y puede tirar hasta tres veces.",
+        "choices": "Después de cada tirada puede volver a tirar los dos dados, quedarse con uno de los dos y volver a tirar el otro, o plantarse y quedarse con la mano que tiene.",
+        "fresh": "Cada tirada es una decisión nueva. Quedarse con un dado en una tirada no obliga a quedárselo en la siguiente. Volver a tirar un solo dado sigue contando como una tirada.",
+        "sets": "El número de tiradas que use el jugador inicial es el <term>límite de tiradas</term> de la ronda. Si tira una vez, los demás tiran una. Si tira tres, los demás tiran hasta tres.",
+        "example": "El jugador inicial saca seis-tres en dos tiradas, así que los demás tienen hasta dos tiradas."
       },
       "others": {
-        "heading": "[ES] The other players",
-        "body": "[ES] Each remaining player rolls in clockwise order, under the same rules, up to the roll limit. You do not have to use every roll: stop as soon as you are happy with your hand.",
-        "beat": "[ES] You never need the best hand, only to avoid being left with the worst. The hand to beat is the <term>worst hand so far</term>, the lowest-ranked hand rolled this round. It changes as players finish, so a later player may have less to do than an earlier one.",
-        "example1": "[ES] Player {a} starts and rolls six-four in one roll. Player {b} rolls five-one. Player {c} now needs five-two or better, because five-one is the worst hand so far.",
-        "example2": "[ES] Player {a} starts and rolls five-four in three rolls. Player {b} rolls six-two on the first roll, which already beats it, so Player {b} stops rather than using the other two."
+        "heading": "Los demás jugadores",
+        "body": "Cada jugador restante tira en el sentido de las agujas del reloj, con las mismas reglas, hasta el límite de tiradas. No tienes que gastar todas las tiradas: plántate en cuanto la mano te convenza.",
+        "beat": "Nunca necesitas la mejor mano, solo evitar quedarte con la peor. La mano que hay que superar es la <term>peor mano hasta ahora</term>, la mano peor clasificada de esta ronda. Cambia a medida que los jugadores terminan, así que quien tira más tarde puede tenerlo más fácil que quien tira antes.",
+        "example1": "El jugador {a} empieza y saca seis-cuatro en una tirada. El jugador {b} saca cinco-uno. El jugador {c} ya necesita cinco-dos o mejor, porque cinco-uno es la peor mano hasta ahora.",
+        "example2": "El jugador {a} empieza y saca cinco-cuatro en tres tiradas. El jugador {b} saca seis-dos en la primera tirada, que ya vence a esa mano, así que el jugador {b} se planta en lugar de usar las otras dos."
       }
     },
     "scoring": {
-      "heading": "[ES] Scoring the round",
-      "body": "[ES] Every round is played for the points in <term>the pot</term>. The player left with the worst hand <term>takes the pot</term>, adding those points to their score.",
-      "mitchis": "[ES] Mitchi points count whoever rolled them.",
-      "next": "[ES] The player who took the pot starts the next round."
+      "heading": "La puntuación de la ronda",
+      "body": "Cada ronda se juega por los puntos que hay en <term>el bote</term>. El jugador que se queda con la peor mano <term>se lleva el bote</term> y suma esos puntos a su puntuación.",
+      "mitchis": "Los puntos de Mitchi cuentan los saque quien los saque.",
+      "next": "El jugador que se ha llevado el bote empieza la siguiente ronda."
     },
     "tieBreaks": {
-      "heading": "[ES] Tie-breaks",
-      "body": "[ES] If two or more players are level on the worst hand, they play a tie-break. A tie-break is not a normal round.",
-      "rule1": "[ES] Only the tied players take part.",
-      "rule2": "[ES] Each player gets one roll, not up to three.",
-      "rule3": "[ES] The points in the pot double before the tie-break is rolled.",
-      "rule4": "[ES] The order reverses, starting with the last player to roll.",
-      "rule5": "[ES] Each Mitchi rolled adds 2 more points to the pot.",
-      "outcome": "[ES] The player left with the worst hand in the tie-break takes the pot.",
-      "again": "[ES] If players are level again, only those still level play another tie-break. The pot doubles again and the order reverses again. This repeats until one player is left with the worst hand.",
-      "example": "[ES] <p>Three players tie in the round, with 1 point in the pot.</p><p>The first tie-break doubles the pot to 2 points. One player rolls a Mitchi, adding 2 more, and the other two tie again.</p><p>The second tie-break doubles the pot to 8 points. If they tie again, the third starts on 16.</p>"
+      "heading": "Desempates",
+      "body": "Si dos o más jugadores empatan en la peor mano, juegan un desempate. Un desempate no es una ronda normal.",
+      "rule1": "Solo participan los jugadores empatados.",
+      "rule2": "Cada jugador tiene una sola tirada, no hasta tres.",
+      "rule3": "Los puntos del bote se doblan antes de tirar el desempate.",
+      "rule4": "El orden se invierte, empezando por el último jugador que tiró.",
+      "rule5": "Cada Mitchi que se saque añade 2 puntos más al bote.",
+      "outcome": "El jugador que se queda con la peor mano del desempate se lleva el bote.",
+      "again": "Si vuelven a empatar, juegan otro desempate solo los que siguen empatados. El bote se dobla otra vez y el orden se invierte otra vez. Esto se repite hasta que un jugador se quede con la peor mano.",
+      "example": "<p>Tres jugadores empatan en la ronda, con 1 punto en el bote.</p><p>El primer desempate dobla el bote a 2 puntos. Un jugador saca Mitchi, lo que añade 2 más, y los otros dos vuelven a empatar.</p><p>El segundo desempate dobla el bote a 8 puntos. Si vuelven a empatar, el tercero empieza con 16.</p>"
     },
     "winning": {
-      "heading": "[ES] Winning the game",
-      "body": "[ES] The game ends as soon as any player reaches or exceeds the point limit. The player with the fewest points wins.",
-      "level": "[ES] If players are level on fewest points, they roll one hand each and the better hand wins."
+      "heading": "Ganar la partida",
+      "body": "La partida termina en cuanto un jugador alcanza o supera el límite de puntos. Gana el jugador con menos puntos.",
+      "level": "Si varios jugadores empatan con la puntuación más baja, cada uno saca una mano y gana la mejor."
     },
     "terms": {
-      "heading": "[ES] Terms"
+      "heading": "Términos"
     }
   },
   "terms": {
