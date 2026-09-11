@@ -85,9 +85,16 @@ Unknown paths that the proxy has already placed in `[locale]` are caught by `src
 
 ## Adding a locale
 
-Decisions first, then scaffolding, then translation. Doing it in that order is what stops one concept acquiring three words in the same locale.
+Decisions first, then scaffolding, then translation. Doing it in that order is what stops one concept acquiring three words in the same locale. Spanish (WO-0003) is the worked example; Polish, German and Japanese repeat this sequence.
 
-**1. Settle the vocabulary.** Before a word of copy is written, agree that locale's form for every term in `docs/domain/glossary.md`, the hand and group naming pattern, and the localised slugs. Where a choice is contested, decide it once and write down why. Terms run through every page, so translating them in flow guarantees inconsistency.
+**1. Settle the vocabulary and the slugs.** Before a word of copy is written, agree that locale's form for every term in `docs/domain/glossary.md`, the hand and group naming pattern, and the localised pathnames. Where a choice is contested, decide it once and write down why. Terms run through every page, so translating them in flow guarantees inconsistency. Slugs are expensive once indexed and shared: settle them before implementing `pathnames`.
+
+Binding from the Spanish pass, and from the glossary translation rules:
+
+- **Mitchi** stays untranslated and uninflected in every language.
+- **Mitchi Speak** is a proper noun: `/speak` stays `/speak` in every locale (plain string in `pathnames`, not a per-locale object).
+- Hand names keep higher-die-first order. Translate the number words, not the structure. Never compose a name at runtime.
+- Anchor IDs stay English in every locale (`#terms`, `#hands`, …). Visible headings translate; fragments do not.
 
 **2. Write `docs/domain/glossary.<locale>.md`.** Term forms and the reasoning behind contested choices. Not definitions: those live in the message file, and repeating them here gives the site two sources of truth for the same sentence.
 
@@ -99,12 +106,38 @@ npm run i18n:new -- <locale>
 
 Copies `en.json` with `[XX] ` on every string, so an untranslated string is visible rather than a silent fallback to English. It refuses to overwrite an existing file and has no force flag: regenerating a locale means deleting its file yourself.
 
-**4. Add the locale to `src/i18n/routing.ts`,** both `locales` and the localised slugs in `pathnames`.
+There is no mirror script. Key parity is maintained by hand and enforced by `i18n:check` (step 9).
 
-**5. Translate,** deleting the `[XX] ` marker from each string as you go. The markers are the only progress bar this work has, and once they are gone a silent fallback looks exactly like a correct page.
+**4. Add the locale to `src/i18n/routing.ts`.** Append it to `locales`. In `pathnames`:
 
-**6. Add the language to the switcher,** named in its own language.
+- Paths that are the same in every language stay plain strings (`/`, `/speak`).
+- Paths whose slug differs become per-locale objects, e.g. `/rules`: `{ en: "/rules", es: "/reglas", … }`.
 
-**7. Run `npm run i18n:check`** before committing: key parity against `en.json`, and the same rich text tags and ICU parameters in every string. A translation that drops a `<term>` or renames a `{a}` fails at render, on a page nobody is looking at.
+Update `docs/product/site-map.md` when the new slugs are real in routing, not later: the site map describes what the site does.
+
+**5. Translate,** deleting the `[XX] ` marker from each string as you go. The markers are the only progress bar this work has, and once they are gone a silent fallback looks exactly like a correct page. Rich text tags and ICU parameter names survive untouched; word order around them may change.
+
+`nav.main` holds the main-nav link labels only (grouped by function). Other `nav.*` keys are chrome and onward CTAs. Do not put autonyms (English, Español, …) in the message files.
+
+**6. Add the language to the switcher.** `src/components/language-switcher.tsx` is a client leaf: it needs `usePathname()` from `@/i18n/navigation`, and reading the path on the server would turn the locale layout dynamic. Add the locale to `LOCALE_NAMES` with the language named in its own language. Keep it a nav of links with `locale`, `hreflang`, `lang` and `aria-current` — not a `<select>`.
+
+Passing `locale` to `Link` emits a prefix even for the default locale (`/en/rules`). That is deliberate: the prefix updates `NEXT_LOCALE` before navigation; the proxy then redirects to the unprefixed English path under `localePrefix: "as-needed"`.
+
+**7. Prove the locale.** Switching must keep the same page (including localised slugs). `/es/reglas#terms` (and the equivalent for the new locale) must land on the Terms section. `lang` on `<html>` comes from the locale layout; Speak nicknames stay `lang="en"` and `translate="no"`.
+
+**8. Build.** `npm run build`: every real route shows `●` with both (all) locale paths listed, and a `proxy` entry is present. Exactly one `ƒ` is expected: `/[locale]/[...rest]`, the 404 catch-all. It cannot get `generateStaticParams` for arbitrary paths. Do not try to make it static.
+
+The build route table lists **internal** App Router paths (e.g. `/es/rules`). External localised URLs are what `Link` and the proxy emit; confirm those with smoke and prerendered HTML if needed.
+
+**9. Run the checks before committing.**
+
+```bash
+npm run i18n:check
+./scripts/smoke.sh http://localhost:3000   # or production, no args
+```
+
+`i18n:check` compares every locale file to `en.json` for key parity and for matching rich text tags and ICU parameters. A string that drops `<term>` or renames `{a}` fails at render, on a page nobody is looking at.
+
+`scripts/smoke.sh` is the request-time half the build cannot cover: Accept-Language negotiation, `NEXT_LOCALE` precedence, a localised slug (`/es/reglas`), the English switcher prefix strip (`/en/reference` → `/reference`), and cookie rewrite of an English path to the localised slug.
 
 Locale message files are separate chunks, so an added locale does not grow any other locale's bundle.
