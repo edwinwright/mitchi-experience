@@ -137,48 +137,48 @@
   },
   "terms": {
     "mitchi": {
-      "name": "[ES] Mitchi",
-      "definition": "[ES] The game, and also its best hand: a 2 and a 1."
+      "name": "Mitchi",
+      "definition": "El juego, y también su mejor mano: un 2 y un 1."
     },
     "hand": {
-      "name": "[ES] Hand",
-      "definition": "[ES] The two dice you finish your turn with."
+      "name": "Mano",
+      "definition": "Los dos dados con los que terminas tu turno."
     },
     "roll": {
-      "name": "[ES] Roll",
-      "definition": "[ES] One throw of one or both dice. Re-rolling a single die still counts as a roll."
+      "name": "Tirada",
+      "definition": "Cada vez que se tiran uno o los dos dados. Volver a tirar un solo dado sigue contando como una tirada."
     },
     "rollLimit": {
-      "name": "[ES] Roll limit",
-      "definition": "[ES] The number of rolls available to each player in a round, set by the starting player."
+      "name": "Límite de tiradas",
+      "definition": "El número de tiradas que tiene cada jugador en una ronda, fijado por el jugador inicial."
     },
     "worstHand": {
-      "name": "[ES] Worst hand",
-      "definition": "[ES] The lowest-ranked hand. At the end of a round, the player left with it takes the pot."
+      "name": "Peor mano",
+      "definition": "La mano peor clasificada. Al final de la ronda, el jugador que se queda con ella se lleva el bote."
     },
     "worstHandSoFar": {
-      "name": "[ES] Worst hand so far",
-      "definition": "[ES] The worst hand during a round, while players are still to roll. What you have to beat, and it can still change."
+      "name": "Peor mano hasta ahora",
+      "definition": "La peor mano durante la ronda, mientras quedan jugadores por tirar. Es lo que tienes que superar, y todavía puede cambiar."
     },
     "pot": {
-      "name": "[ES] The pot",
-      "definition": "[ES] The points at stake in the current round."
+      "name": "El bote",
+      "definition": "Los puntos en juego en la ronda actual."
     },
     "takeThePot": {
-      "name": "[ES] Take the pot",
-      "definition": "[ES] To add every point in the pot to your score."
+      "name": "Llevarse el bote",
+      "definition": "Sumar a tu puntuación todos los puntos del bote."
     },
     "tieBreak": {
-      "name": "[ES] Tie-break",
-      "definition": "[ES] A play-off between players level on the worst hand."
+      "name": "Desempate",
+      "definition": "Una tirada entre los jugadores que empatan en la peor mano."
     },
     "points": {
-      "name": "[ES] Points",
-      "definition": "[ES] The running score. Points are bad: you take them by losing a round, and the fewest wins."
+      "name": "Puntos",
+      "definition": "La puntuación que llevas. Los puntos son malos: los acumulas perdiendo una ronda, y gana quien menos tenga."
     },
     "pointLimit": {
-      "name": "[ES] Point limit",
-      "definition": "[ES] The score that ends the game once any player reaches it. Usually 25."
+      "name": "Límite de puntos",
+      "definition": "La puntuación que termina la partida en cuanto un jugador la alcanza. Normalmente 25."
     }
   },
   "reference": {
