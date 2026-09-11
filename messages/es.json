@@ -218,23 +218,23 @@
     }
   },
   "speak": {
-    "title": "[ES] Mitchi Speak",
-    "standfirst": "[ES] The names used at the table in place of the official ones. None of it changes how the game is played: a hand called by its Mitchi Speak name plays exactly as its official name.",
-    "caption": "[ES] Hands and their Mitchi Speak names",
-    "officialHeader": "[ES] Official name",
-    "speakHeader": "[ES] Mitchi Speak",
-    "footnote": "[ES] Most of the names have been forgotten. This list is what has been recovered so far."
+    "title": "Mitchi Speak",
+    "standfirst": "Los nombres que se usan en la mesa en lugar de los oficiales. Nada de esto cambia cómo se juega: una mano llamada por su nombre en Mitchi Speak se juega exactamente igual que con su nombre oficial.",
+    "caption": "Las manos y sus nombres en Mitchi Speak",
+    "officialHeader": "Nombre oficial",
+    "speakHeader": "Mitchi Speak",
+    "footnote": "La mayoría de los nombres se han olvidado. Esta lista es lo que se ha recuperado hasta ahora."
   },
   "about": {
-    "title": "[ES] About Mitchi",
-    "origin": "[ES] Mitchi was learnt while travelling in Spain, though not from a Spanish player. Where it came from before that is not known, and this site does not pretend it is a traditional Spanish game.",
-    "reconstruction": "[ES] These rules are a reconstruction. Some were remembered, some were recovered by asking the people who played. Where a rule had to be settled rather than recalled, it has been settled the way the game was actually played.",
-    "speak": "[ES] There is also a private vocabulary. Hands have nicknames that mean nothing to anyone who was not at the table. They are not part of the game, but they are <speak>written down anyway</speak>.",
-    "colophon": "[ES] Built with Next.js and next-intl. English and Spanish now, more languages to come."
+    "title": "Acerca de Mitchi",
+    "origin": "Mitchi se aprendió viajando por España, aunque no de un jugador español. De dónde venía antes no se sabe, y esta web no lo presenta como un juego tradicional español.",
+    "reconstruction": "Estas reglas son una reconstrucción. Algunas se recordaban, otras se recuperaron preguntando a quienes jugaban. Donde ha habido que fijar una regla en lugar de recordarla, se ha fijado tal y como se jugaba en realidad.",
+    "speak": "También hay un vocabulario propio. Las manos tienen apodos que no significan nada para quien no estuviera en la mesa. No forman parte del juego, pero <speak>están escritos igualmente</speak>.",
+    "colophon": "Hecho con Next.js y next-intl. De momento en inglés y español, y más idiomas en camino."
   },
   "notFound": {
-    "title": "[ES] That page does not exist",
-    "body": "[ES] Try the <rules>rules</rules> or the <reference>quick reference</reference>."
+    "title": "Esa página no existe",
+    "body": "Prueba con las <rules>reglas</rules> o con la <reference>referencia rápida</reference>."
   },
   "groups": {
     "mitchi": "Mitchi",
