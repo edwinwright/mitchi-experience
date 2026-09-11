@@ -48,7 +48,7 @@ The ranking itself is defined once, in `src/data/hands.ts`, and is not restated 
 
 ## Rules binding every translation
 
-- **Mitchi** is a proper noun and stays untranslated in every language. Where a language would normally inflect it, leave it uninflected and have a native speaker confirm it reads acceptably.
+- **Mitchi** is a proper noun and stays untranslated in every language. The name of the game never inflects. The hand does take a plural where the copy counts hands, as English does in "two Mitchis" and Spanish in `dos Mitchis`: each locale uses its own ordinary plural, confirmed by a native speaker. Any other inflection, for case or gender, is left off.
 - Hand names are structural, not idiomatic. Translate the number words and keep the higher-die-first order.
 - **The pot** and **take the pot** are the load-bearing scoring metaphor. If a language has no natural equivalent, pick one phrase and use it everywhere rather than varying it.
 - **One English word may need two in another language.** Spanish splits **roll** into the throw (`tirar`) and the result (`sacar`), and **game** into the system (`el juego`) and the session played (`la partida`). Where a language does this, record both forms and the test for choosing between them in its `glossary.<locale>.md`. Do not pick one and use it everywhere: half the sentences will read as translation.

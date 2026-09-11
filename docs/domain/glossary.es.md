@@ -10,7 +10,7 @@ Variety: European Spanish, informal.
 
 | English | Spanish | Note |
 |---|---|---|
-| Mitchi (game, and the hand) | Mitchi | Untranslated and uninflected, in every language |
+| Mitchi (game, and the hand) | Mitchi | Untranslated. The game's name never inflects; the hand pluralises, `dos Mitchis`. See below |
 | Game | el juego / la partida | The system versus the session played. See below |
 | Hand | la mano | |
 | Die / dice | el dado / los dados | |
@@ -37,6 +37,16 @@ Variety: European Spanish, informal.
 The hyphen marks a coined name and keeps a 21-row table scannable. It is a coinage: Spanish does not hyphenate numeral pairs by convention, so a later reader may take it for an error. `doble seis` takes no hyphen because it is a real Spanish collocation, from dominoes. The asymmetry is deliberate.
 
 **Groups:** Mitchi, Dobles, Seis alto, Cinco alto, Cuatro alto, Tres alto. Follows `as alto` in Spanish poker: masculine, agreeing with the numeral rather than with `mano`.
+
+## `Mitchi` and `Mitchis`
+
+The name of the game never inflects. `Mitchi` in every position, and never bent to agree with anything around it.
+
+The hand is different. Where the copy counts hands that were rolled, the plural is ordinary Spanish: `dos Mitchis`, in `reference.scoring.two`. English does the same, "Two Mitchis rolled", so this is not a Spanish departure from the source but the same distinction the source already makes.
+
+The test: if the sentence is about the game, it is `Mitchi`. If it is counting hands, it pluralises.
+
+Singular uses of the hand stay bare and without an article: `solo Mitchi puede vencer a un doble`, `cada Mitchi que se saque`.
 
 ## Why `el bote`
 

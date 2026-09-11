@@ -182,39 +182,39 @@
     }
   },
   "reference": {
-    "title": "[ES] Quick reference",
-    "standfirst": "[ES] Everything you need mid-game, on one screen.",
+    "title": "Referencia rápida",
+    "standfirst": "Todo lo que necesitas durante la partida, en una sola pantalla.",
     "ranking": {
-      "heading": "[ES] Hand ranking",
-      "caption": "[ES] Mitchi hands, ranked from best to worst",
-      "groupHeader": "[ES] Group",
-      "diceHeader": "[ES] Dice",
-      "handHeader": "[ES] Hand"
+      "heading": "Clasificación de las manos",
+      "caption": "Las manos de Mitchi, clasificadas de mejor a peor",
+      "groupHeader": "Grupo",
+      "diceHeader": "Dados",
+      "handHeader": "Mano"
     },
     "scoring": {
-      "heading": "[ES] Points in the pot",
-      "roundHeader": "[ES] Round",
-      "potHeader": "[ES] In the pot",
-      "none": "[ES] No Mitchi rolled",
-      "noneValue": "[ES] 1 point",
-      "one": "[ES] One Mitchi rolled",
-      "oneValue": "[ES] 2 points",
-      "two": "[ES] Two Mitchis rolled",
-      "twoValue": "[ES] 4 points",
-      "note": "[ES] Mitchi points count whoever rolled them. The worst hand takes the pot and starts the next round."
+      "heading": "Puntos del bote",
+      "roundHeader": "Ronda",
+      "potHeader": "En el bote",
+      "none": "Ningún Mitchi",
+      "noneValue": "1 punto",
+      "one": "Un Mitchi",
+      "oneValue": "2 puntos",
+      "two": "Dos Mitchis",
+      "twoValue": "4 puntos",
+      "note": "Los puntos de Mitchi cuentan los saque quien los saque. La peor mano se lleva el bote y empieza la siguiente ronda."
     },
     "tieBreaks": {
-      "heading": "[ES] Tie-breaks",
-      "rule1": "[ES] Tied players only.",
-      "rule2": "[ES] One roll each, not up to three.",
-      "rule3": "[ES] The pot doubles before the roll.",
-      "rule4": "[ES] The order reverses, starting with the last player to roll.",
-      "rule5": "[ES] Each Mitchi rolled adds 2 more points to the pot.",
-      "rule6": "[ES] Still level? Repeat. The pot doubles again and the order reverses again."
+      "heading": "Desempates",
+      "rule1": "Solo los jugadores empatados.",
+      "rule2": "Una tirada cada uno, no hasta tres.",
+      "rule3": "El bote se dobla antes de tirar.",
+      "rule4": "El orden se invierte, empezando por el último jugador que tiró.",
+      "rule5": "Cada Mitchi que se saque añade 2 puntos más al bote.",
+      "rule6": "¿Sigue el empate? Se repite. El bote se dobla otra vez y el orden se invierte otra vez."
     },
     "ending": {
-      "heading": "[ES] Ending the game",
-      "body": "[ES] The game ends as soon as any player reaches the point limit, usually 25. Fewest points wins. If players are level on fewest points, they roll one hand each and the better hand wins."
+      "heading": "El final de la partida",
+      "body": "La partida termina en cuanto un jugador alcanza el límite de puntos, normalmente 25. Gana quien menos puntos tenga. Si varios jugadores empatan con la puntuación más baja, cada uno saca una mano y gana la mejor."
     }
   },
   "speak": {
