@@ -75,6 +75,22 @@ expect "/es serves the Spanish page" \
   "200|" \
   "$(probe "$BASE/es" -H "$EN")"
 
+expect "localised Spanish rules slug serves" \
+  "200|" \
+  "$(probe "$BASE/es/reglas" -H "$EN")"
+
+expect "switcher English prefix strips to unprefixed path" \
+  "${LOCALE_REDIRECT}|/reference" \
+  "$(probe "$BASE/en/reference" -H "$EN")"
+
+expect "NEXT_LOCALE rewrites an English path to the Spanish slug" \
+  "${LOCALE_REDIRECT}|/es/reglas" \
+  "$(probe "$BASE/rules" -H "$EN" -H 'Cookie: NEXT_LOCALE=es')"
+
+expect "old Spanish rules slug redirects to localised slug" \
+  "${LOCALE_REDIRECT}|/es/reglas" \
+  "$(probe "$BASE/es/rules" -H "$EN")"
+
 # Domain-level checks only make sense against production.
 if [[ "$BASE" == "$PROD" ]]; then
   expect "apex redirects to www" \
