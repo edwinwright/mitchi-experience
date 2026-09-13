@@ -1,6 +1,6 @@
 import { useTranslations } from "next-intl";
 import { rankedGroups } from "@/data/hands";
-import { DicePair } from "@/components/dice-pair";
+import { MitchiHand } from "./mitchi-hand";
 
 export function HandTable() {
   const tRanking = useTranslations("reference.ranking");
@@ -41,7 +41,7 @@ export function HandTable() {
                     </th>
                   )}
                   <td className="px-3 py-2">
-                    <DicePair high={hand.high} low={hand.low} />
+                    <MitchiHand high={hand.high} low={hand.low} />
                   </td>
                   <td className="px-3 py-2">{tHands(hand.id)}</td>
                 </tr>

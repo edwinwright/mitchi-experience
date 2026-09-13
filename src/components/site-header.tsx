@@ -1,5 +1,6 @@
-import { ComponentProps } from "react";
+import Image from "next/image";
 import { useTranslations } from "next-intl";
+import { ComponentProps } from "react";
 import { Link } from "@/i18n/navigation";
 import { Container } from "@/components/layout/container";
 import { LanguageSwitcher } from "@/components/language-switcher";
@@ -24,7 +25,12 @@ export function SiteHeader() {
       <Container className="py-4 grid grid-cols-[auto_1fr] grid-rows-[auto_auto] gap-y-4 items-start">
         <div className="col-start-1 row-span-2">
           <Link href="/" className="focus-ring">
-            <span className="text-4xl font-bold">{t("wordmark")}</span>
+            <Image
+              src="/mitchi-logo-primary.svg"
+              alt={t("wordmark")}
+              width={240}
+              height={33}
+            />
           </Link>
         </div>
         <nav className="col-start-2 row-start-2 justify-self-end">

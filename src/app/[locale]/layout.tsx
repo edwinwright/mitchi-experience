@@ -15,6 +15,16 @@ export function generateStaticParams() {
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_ORIGIN),
+  icons: {
+    icon: [
+      { url: "/mitchi-favicon.svg", type: "image/svg+xml" },
+      {
+        url: "/mitchi-favicon-dark.svg",
+        type: "image/svg+xml",
+        media: "(prefers-color-scheme: dark)",
+      },
+    ],
+  },
 };
 
 export default async function LocaleLayout({
