@@ -1,12 +1,22 @@
 import { Container } from "@/components/layout/container";
 import { PageHeader } from "@/components/page-header";
 import { Prose } from "@/components/prose";
-import "./globals.css";
+import { cn } from "@/lib/utils";
+import { archivo, sourceSerif, jetbrainsMono, lato } from "@/app/fonts";
+import "@/app/globals.css";
 
 export default function NotFound() {
   return (
-    <Container className="min-h-screen flex items-center justify-center">
-      <div className="text-center">
+    <Container
+      className={cn(
+        "min-h-screen flex items-center justify-center",
+        archivo.variable,
+        sourceSerif.variable,
+        jetbrainsMono.variable,
+        lato.variable,
+      )}
+    >
+      <div className="font-sans text-center">
         <PageHeader title="This page does not exist" />
         <Prose>
           <p>

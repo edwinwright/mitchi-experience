@@ -60,32 +60,25 @@
   --color-muted: var(--color-stone-600);
   --color-surface: var(--color-stone-50);
   --color-border: var(--color-stone-200);
+}
 
-  --font-sans: ui-sans-serif, system-ui, sans-serif;
+/* inline: the font variables are declared by next/font on whatever element
+   carries the class, which is not always :root — the root 404 puts them on a
+   div. Utilities must substitute the value at the point of use, not resolve
+   it once on :root. */
+@theme inline {
+  --font-sans: var(--font-archivo, ui-sans-serif), system-ui, sans-serif;
+  --font-serif: var(--font-source-serif, Georgia), serif;
+  --font-mono: var(--font-jetbrains, ui-monospace), monospace;
+  --font-wordmark: var(--font-lato, ui-sans-serif), sans-serif;
 }
 
 @layer base {
-  .prose {
-    --tw-prose-body: var(--color-stone-900);
-    --tw-prose-headings: var(--color-stone-950);
-    --tw-prose-lead: var(--color-stone-700);
-    --tw-prose-links: var(--color-blue-600);
-    --tw-prose-bold: var(--color-stone-950);
-    --tw-prose-counters: var(--color-stone-600);
-    --tw-prose-bullets: var(--color-stone-300);
-    --tw-prose-hr: var(--color-stone-200);
-    --tw-prose-quotes: var(--color-stone-950);
-    --tw-prose-quote-borders: var(--color-stone-200);
-    --tw-prose-captions: var(--color-stone-600);
-    --tw-prose-th-borders: var(--color-stone-300);
-    --tw-prose-td-borders: var(--color-stone-200);
+  body {
+    background: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
   }
-}
-
-body {
-  background: var(--color-background);
-  color: var(--color-foreground);
-  font-family: var(--font-sans);
 }
 
 /*
@@ -100,4 +93,26 @@ body {
     outline: 2px solid var(--color-blue-600);
     outline-offset: 2px;
   }
+}
+
+/*
+ * Unlayered deliberately. The typography plugin puts its own `.prose` in
+ * @layer utilities, so the same selector in @layer base loses to it whatever
+ * its specificity. Unlayered declarations outrank every layer, and that is
+ * the only place these tokens reliably win.
+ */
+.prose {
+  --tw-prose-body: var(--color-stone-900);
+  --tw-prose-headings: var(--color-stone-950);
+  --tw-prose-lead: var(--color-stone-700);
+  --tw-prose-links: var(--color-blue-600);
+  --tw-prose-bold: var(--color-stone-950);
+  --tw-prose-counters: var(--color-stone-600);
+  --tw-prose-bullets: var(--color-stone-300);
+  --tw-prose-hr: var(--color-stone-200);
+  --tw-prose-quotes: var(--color-stone-950);
+  --tw-prose-quote-borders: var(--color-stone-200);
+  --tw-prose-captions: var(--color-stone-600);
+  --tw-prose-th-borders: var(--color-stone-300);
+  --tw-prose-td-borders: var(--color-stone-200);
 }

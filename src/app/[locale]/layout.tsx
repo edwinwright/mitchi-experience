@@ -7,7 +7,9 @@ import { SkipLink } from "@/components/skip-link";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { SITE_ORIGIN } from "@/lib/config";
-import "../globals.css";
+import { cn } from "@/lib/utils";
+import { archivo, sourceSerif, jetbrainsMono, lato } from "@/app/fonts";
+import "@/app/globals.css";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -35,7 +37,15 @@ export default async function LocaleLayout({
   const locale = await getLocale();
 
   return (
-    <html lang={locale}>
+    <html
+      lang={locale}
+      className={cn(
+        archivo.variable,
+        sourceSerif.variable,
+        jetbrainsMono.variable,
+        lato.variable,
+      )}
+    >
       <body>
         <NextIntlClientProvider>
           <div className="min-h-screen flex flex-col">
