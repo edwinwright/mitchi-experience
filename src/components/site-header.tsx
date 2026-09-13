@@ -1,10 +1,10 @@
-import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { ComponentProps } from "react";
 import { Link } from "@/i18n/navigation";
 import { Container } from "@/components/layout/container";
 import { LanguageSwitcher } from "@/components/language-switcher";
 import type en from "../../messages/en.json";
+import { Wordmark } from "@/components/wordmark";
 
 type NavHref = ComponentProps<typeof Link>["href"];
 type NavKey = keyof typeof en.nav.main;
@@ -24,13 +24,12 @@ export function SiteHeader() {
     <header className="bg-background border-b border-border">
       <Container className="py-4 grid grid-cols-[auto_1fr] grid-rows-[auto_auto] gap-y-4 items-start">
         <div className="col-start-1 row-span-2">
-          <Link href="/" className="focus-ring">
-            <Image
-              src="/mitchi-logo-primary.svg"
-              alt={t("wordmark")}
-              width={240}
-              height={33}
-            />
+          <Link
+            href="/"
+            aria-label={t("wordmark")}
+            className="focus-ring inline-flex"
+          >
+            <Wordmark />
           </Link>
         </div>
         <nav className="col-start-2 row-start-2 justify-self-end">
