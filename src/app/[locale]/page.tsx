@@ -1,10 +1,20 @@
+import { Metadata } from "next";
 import { useTranslations } from "next-intl";
 import { PageHeader } from "@/components/page-header";
 import { Container } from "@/components/layout/container";
-import { Link } from "@/i18n/navigation";
 import { Prose } from "@/components/prose";
 import { tags } from "@/i18n/rich-text";
+import { pageMetadata } from "@/i18n/metadata";
 import { CtaLink } from "@/components/cta-link";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return pageMetadata(locale, "home");
+}
 
 export default function HomePage() {
   const t = useTranslations("home");

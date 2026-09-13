@@ -23,7 +23,7 @@ export function SiteHeader() {
     <header className="bg-background border-b">
       <Container className="py-4 grid grid-cols-[auto_1fr] grid-rows-[auto_auto] gap-y-4 items-start">
         <div className="col-start-1 row-span-2">
-          <Link href="/">
+          <Link href="/" className="focus-ring">
             <span className="text-4xl font-bold">{t("wordmark")}</span>
           </Link>
         </div>
@@ -31,7 +31,7 @@ export function SiteHeader() {
           <ul className="flex items-center gap-4">
             {NAV_ITEMS.map((item) => (
               <li key={item.key}>
-                <Link href={item.href} className="hover:underline">
+                <Link href={item.href} className="hover:underline focus-ring">
                   {tMain(item.key)}
                 </Link>
               </li>

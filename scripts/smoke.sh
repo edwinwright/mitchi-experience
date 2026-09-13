@@ -1,16 +1,18 @@
 #!/usr/bin/env bash
 #
-# Smoke tests for Mitchi site locale routing.
+# Smoke tests for Mitchi site locale routing and HTML alternates.
 #
-# These check the one thing that is not covered by a build: what the proxy
-# does at request time. Locale negotiation, cookie precedence and the apex
-# redirect are all request-time behaviour, so they can only be verified
-# against a running deployment.
+# These check what a build cannot: request-time proxy behaviour (locale
+# negotiation, cookie precedence, apex redirect) and that served HTML
+# advertises the correct canonical and hreflang URLs.
 #
 # Usage:
 #   ./scripts/smoke.sh                          # production
 #   ./scripts/smoke.sh https://mitchi-web.vercel.app
 #   ./scripts/smoke.sh http://localhost:3000    # after `npm run dev`
+#
+# HTML alternate checks need a build that includes Slice 2 metadata. Against
+# production they fail until that ships; use localhost to verify earlier.
 #
 # Exits non-zero if any check fails, so it can go in CI later.
 
@@ -19,6 +21,10 @@ set -uo pipefail
 PROD="https://www.mitchidice.com"
 BASE="${1:-$PROD}"
 BASE="${BASE%/}"
+
+# Absolute URLs in <link rel="canonical|alternate"> come from metadataBase,
+# not from $BASE. Fetch HTML from $BASE; assert href hosts against ORIGIN.
+ORIGIN="https://www.mitchidice.com"
 
 # Observed status codes. If a Next.js or next-intl upgrade changes these,
 # fix them here: the location is the assertion that matters, the exact
@@ -54,6 +60,46 @@ expect() {
   else
     printf '  FAIL  %s\n          want: %s\n          got:  %s\n' "$desc" "$want" "$got"
     FAILS=$((FAILS + 1))
+  fi
+}
+
+# fetch_html <url> [curl args...] -> body
+fetch_html() {
+  local url="$1"; shift
+  curl -sS "$@" "$url" 2>/dev/null || true
+}
+
+# html_link_has <html> <rel> <href> -> "yes"|"no"
+# Matches either attribute order on one <link> tag. Case-insensitive on
+# hreflang/hrefLang so a Next render change does not flake the smoke.
+html_link_has() {
+  local html="$1" rel="$2" href="$3"
+  if printf '%s' "$html" | tr '\n' ' ' | grep -Eiq \
+    "<link[^>]*rel=\"${rel}\"[^>]*href=\"${href}\"|<link[^>]*href=\"${href}\"[^>]*rel=\"${rel}\""; then
+    printf 'yes'
+  else
+    printf 'no'
+  fi
+}
+
+# html_hreflang_has <html> <lang> <href> -> "yes"|"no"
+html_hreflang_has() {
+  local html="$1" lang="$2" href="$3"
+  if printf '%s' "$html" | tr '\n' ' ' | grep -Eiq \
+    "<link[^>]*hreflang=\"${lang}\"[^>]*href=\"${href}\"|<link[^>]*href=\"${href}\"[^>]*hreflang=\"${lang}\""; then
+    printf 'yes'
+  else
+    printf 'no'
+  fi
+}
+
+# html_lacks <html> <needle> -> "yes"|"no"  (yes = needle absent)
+html_lacks() {
+  local html="$1" needle="$2"
+  if printf '%s' "$html" | grep -Fq -- "$needle"; then
+    printf 'no'
+  else
+    printf 'yes'
   fi
 }
 
@@ -97,6 +143,51 @@ if [[ "$BASE" == "$PROD" ]]; then
     "${DOMAIN_REDIRECT}|${PROD}/" \
     "$(probe "https://mitchidice.com/" -H "$EN")"
 fi
+
+# Per-locale title/description are covered by view-source during the slice.
+# These assert the Slice 2 contract: canonical + hreflang on 200 URLs only.
+RULES_HTML="$(fetch_html "$BASE/rules" -H "$EN")"
+REGLAS_HTML="$(fetch_html "$BASE/es/reglas" -H "$EN")"
+
+expect "/rules has rel=canonical for unprefixed English URL" \
+  "yes" \
+  "$(html_link_has "$RULES_HTML" "canonical" "${ORIGIN}/rules")"
+
+expect "/rules hreflang=en points at /rules" \
+  "yes" \
+  "$(html_hreflang_has "$RULES_HTML" "en" "${ORIGIN}/rules")"
+
+expect "/rules hreflang=es points at /es/reglas" \
+  "yes" \
+  "$(html_hreflang_has "$RULES_HTML" "es" "${ORIGIN}/es/reglas")"
+
+expect "/rules hreflang=x-default points at /rules" \
+  "yes" \
+  "$(html_hreflang_has "$RULES_HTML" "x-default" "${ORIGIN}/rules")"
+
+expect "/rules never advertises /en/rules" \
+  "yes" \
+  "$(html_lacks "$RULES_HTML" "${ORIGIN}/en/rules")"
+
+expect "/es/reglas has rel=canonical for Spanish URL" \
+  "yes" \
+  "$(html_link_has "$REGLAS_HTML" "canonical" "${ORIGIN}/es/reglas")"
+
+expect "/es/reglas hreflang=en points at /rules" \
+  "yes" \
+  "$(html_hreflang_has "$REGLAS_HTML" "en" "${ORIGIN}/rules")"
+
+expect "/es/reglas hreflang=es points at /es/reglas" \
+  "yes" \
+  "$(html_hreflang_has "$REGLAS_HTML" "es" "${ORIGIN}/es/reglas")"
+
+expect "/es/reglas hreflang=x-default points at /rules" \
+  "yes" \
+  "$(html_hreflang_has "$REGLAS_HTML" "x-default" "${ORIGIN}/rules")"
+
+expect "/es/reglas never advertises /en/rules" \
+  "yes" \
+  "$(html_lacks "$REGLAS_HTML" "${ORIGIN}/en/rules")"
 
 echo
 if (( FAILS > 0 )); then

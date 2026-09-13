@@ -1,8 +1,19 @@
+import { Metadata } from "next";
 import { useTranslations } from "next-intl";
 import { PageHeader } from "@/components/page-header";
 import { Container } from "@/components/layout/container";
 import { HandTable } from "@/components/hand-table";
 import { ScoringTable } from "@/components/scoring-table";
+import { pageMetadata } from "@/i18n/metadata";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return pageMetadata(locale, "reference");
+}
 
 export default function ReferencePage() {
   const t = useTranslations("reference");

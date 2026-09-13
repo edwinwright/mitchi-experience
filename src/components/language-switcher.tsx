@@ -29,7 +29,7 @@ export function LanguageSwitcher({ className }: LanguageSwitcherProps) {
               hrefLang={locale}
               lang={locale}
               aria-current={locale === currentLocale ? "page" : undefined}
-              className="aria-[current=page]:font-bold"
+              className="aria-[current=page]:font-bold focus-ring"
             >
               {LOCALE_NAMES[locale]}
             </Link>

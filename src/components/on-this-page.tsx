@@ -10,7 +10,7 @@ export function OnThisPage({ items }: OnThisPageProps) {
           <li key={item.id}>
             <a
               href={`#${item.id}`}
-              className="text-blue-500 hover:text-blue-600"
+              className="text-blue-500 hover:text-blue-600 focus-ring"
             >
               {item.title}
             </a>
