@@ -12,8 +12,13 @@ How message content is structured and authored. The routing decisions (`localePr
 | Section anchor IDs | The components that render the sections |
 | Routing and slugs | `src/i18n/routing.ts` |
 | Rich text tag map | `src/i18n/rich-text.tsx` (`tags`) |
+| Page metadata | `src/i18n/metadata.ts` (`pageMetadata`, `PAGES`) — titles and descriptions from `meta.*` |
+| Production origin | `src/lib/config.ts` (`SITE_ORIGIN`) — `metadataBase`, sitemap, robots |
+| Sitemap and robots | `src/app/sitemap.ts`, `src/app/robots.ts` (App Router built-ins; outside `[locale]`) |
 
 Namespaces, and no twelfth without a reason: `meta`, `nav`, `home`, `rules`, `reference`, `speak`, `terms`, `about`, `groups`, `hands`, `notFound`.
+
+**`meta.*` is titles and descriptions only.** Wired through `generateMetadata` via `pageMetadata`. Each real page has `meta.<page>.title` and `meta.<page>.description` in every locale. Do not add message keys without asking. Canonicals and hreflang are built with `getPathname` from the same `PAGES` map; never list `/en/...` as a 200 URL.
 
 ## Key rules
 
@@ -113,7 +118,7 @@ There is no mirror script. Key parity is maintained by hand and enforced by `i18
 - Paths that are the same in every language stay plain strings (`/`, `/speak`).
 - Paths whose slug differs become per-locale objects, e.g. `/rules`: `{ en: "/rules", es: "/reglas", … }`.
 
-Update `docs/product/site-map.md` when the new slugs are real in routing, not later: the site map describes what the site does.
+Update `docs/product/site-map.md` when the new slugs are real in routing, not later: the site map describes what the site does. Sitemap entries follow `routing.locales` and `PAGES` in `src/i18n/metadata.ts` — no hand-edited URL list.
 
 **5. Translate,** deleting the `[XX] ` marker from each string as you go. The markers are the only progress bar this work has, and once they are gone a silent fallback looks exactly like a correct page. Rich text tags and ICU parameter names survive untouched; word order around them may change.
 
@@ -138,6 +143,6 @@ npm run i18n:check
 
 `i18n:check` compares every locale file to `en.json` for key parity and for matching rich text tags and ICU parameters. A string that drops `<term>` or renames `{a}` fails at render, on a page nobody is looking at.
 
-`scripts/smoke.sh` is the request-time half the build cannot cover: Accept-Language negotiation, `NEXT_LOCALE` precedence, a localised slug (`/es/reglas`), the English switcher prefix strip (`/en/reference` → `/reference`), and cookie rewrite of an English path to the localised slug.
+`scripts/smoke.sh` is the request-time half the build cannot cover: Accept-Language negotiation, `NEXT_LOCALE` precedence, a localised slug (`/es/reglas`), the English switcher prefix strip (`/en/reference` → `/reference`), cookie rewrite of an English path to the localised slug, and HTML `rel="canonical"` / `hreflang` on `/rules` and `/es/reglas` (absolute hrefs use `SITE_ORIGIN`, not the smoke base URL).
 
 Locale message files are separate chunks, so an added locale does not grow any other locale's bundle.

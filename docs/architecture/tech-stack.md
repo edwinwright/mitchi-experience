@@ -42,7 +42,11 @@ Inline SVG, written here. No icon or illustration package for a site whose only 
 
 ## Testing
 
-None yet, and none added to satisfy a convention. If a unit needs a test, Vitest with Testing Library is the choice. The build output and a keyboard pass are the current checks.
+None yet, and none added to satisfy a convention. If a unit needs a test, Vitest with Testing Library is the choice. The current checks are the build route table, a keyboard pass, and `./scripts/smoke.sh` (request-time locale routing and HTML canonical / hreflang).
+
+## Discovery
+
+App Router `src/app/sitemap.ts` and `src/app/robots.ts`. No sitemap or robots package. Absolute URLs use `SITE_ORIGIN` from `src/lib/config.ts` (same value as `metadataBase`). Not `VERCEL_URL`.
 
 ## Tooling and deployment
 
