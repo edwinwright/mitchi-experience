@@ -21,7 +21,7 @@ export function SiteHeader() {
   const tMain = useTranslations("nav.main");
 
   return (
-    <header className="bg-background border-b">
+    <header className="bg-background border-b border-border">
       <Container className="py-4 grid grid-cols-[auto_1fr] grid-rows-[auto_auto] gap-y-4 items-start">
         <div className="col-start-1 row-span-2">
           <Link href="/" className="focus-ring">

@@ -3,5 +3,5 @@ type ExampleProps = {
 };
 
 export function Example({ children }: ExampleProps) {
-  return <aside className="my-6 bg-gray-100 p-4 rounded-lg">{children}</aside>;
+  return <aside className="my-6 bg-stone-100 p-4 rounded-lg">{children}</aside>;
 }

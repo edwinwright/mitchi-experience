@@ -1,39 +1,103 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --muted: #525252;
-  --border: #e5e5e5;
-}
+/*
+ * Brand palettes, brand sheet v2 section 04. The brand stop is 600 in both
+ * hues: red-600 is pip red, blue-600 is pip blue. Pinned at 600 and not at
+ * 500 because pip red's lightness (OKLCH 0.567) is where Tailwind puts its
+ * own 600, and pinning it at 500 pushes the derived 600 outside sRGB.
+ *
+ * MitchiDie's RED and BLUE constants are these same two hexes. Move one,
+ * move the other.
+ *
+ * Stops are derived in OKLCH from the pinned hex with the hue held constant,
+ * and written out here. Nothing is computed at runtime.
+ */
+@theme {
+  /* red — pip red, the Mitchi hand, the pot, the hero band */
+  --color-red-50: #fdf3f2;
+  --color-red-100: #fbe3e1;
+  --color-red-200: #f9ccc7;
+  --color-red-300: #f6a7a0;
+  --color-red-400: #f0706a;
+  --color-red-500: #e84847;
+  --color-red-600: #d42b32; /* pip red */
+  --color-red-700: #b12328;
+  --color-red-800: #912224;
+  --color-red-900: #772322;
+  --color-red-950: #3f0e0e;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-    --muted: #a3a3a3;
-    --border: #262626;
-  }
-}
+  /* blue — pip blue, links, focus */
+  --color-blue-50: #f2f5fd;
+  --color-blue-100: #dfe6f8;
+  --color-blue-200: #c5d3f2;
+  --color-blue-300: #a0b6ed;
+  --color-blue-400: #6e8ee1;
+  --color-blue-500: #486cd6;
+  --color-blue-600: #2b4bc4; /* pip blue */
+  --color-blue-700: #203cb3;
+  --color-blue-800: #1b3390;
+  --color-blue-900: #1b2f6f;
+  --color-blue-950: #121f43;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-muted: var(--muted);
-  --color-border: var(--border);
+  /* stone — warm neutrals. Every stop but 400 is a brand sheet or Home
+     canvas colour: page, linen, rule, dashed, muted-on-dark, slate, the two
+     prose greys, the Home prose grey, ink. */
+  --color-stone-50: #fdfcfa; /* page */
+  --color-stone-100: #efebe4; /* linen */
+  --color-stone-200: #e4e4e0; /* rule */
+  --color-stone-300: #c9c9c4;
+  --color-stone-400: #b1b1ac; /* derived */
+  --color-stone-500: #9a9a95; /* muted on dark */
+  --color-stone-600: #6b6b66; /* slate */
+  --color-stone-700: #4a4a46;
+  --color-stone-800: #3a3a36;
+  --color-stone-900: #2a2a26;
+  --color-stone-950: #14141a; /* ink */
+
+  --color-background: #ffffff;
+  --color-foreground: var(--color-stone-950);
+  --color-muted: var(--color-stone-600);
+  --color-surface: var(--color-stone-50);
+  --color-border: var(--color-stone-200);
+
   --font-sans: ui-sans-serif, system-ui, sans-serif;
 }
 
+@layer base {
+  .prose {
+    --tw-prose-body: var(--color-stone-900);
+    --tw-prose-headings: var(--color-stone-950);
+    --tw-prose-lead: var(--color-stone-700);
+    --tw-prose-links: var(--color-blue-600);
+    --tw-prose-bold: var(--color-stone-950);
+    --tw-prose-counters: var(--color-stone-600);
+    --tw-prose-bullets: var(--color-stone-300);
+    --tw-prose-hr: var(--color-stone-200);
+    --tw-prose-quotes: var(--color-stone-950);
+    --tw-prose-quote-borders: var(--color-stone-200);
+    --tw-prose-captions: var(--color-stone-600);
+    --tw-prose-th-borders: var(--color-stone-300);
+    --tw-prose-td-borders: var(--color-stone-200);
+  }
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--color-background);
+  color: var(--color-foreground);
   font-family: var(--font-sans);
 }
 
+/*
+ * Pip blue on white is 7.23:1. On ink it is 2.54:1, under the 3:1 minimum for
+ * a non-text indicator, so the dark footer needs an inverse ring of its own
+ * (Slice 5) rather than this one. Blue-500 would pass on both grounds
+ * (4.78:1 and 3.84:1) at the cost of the light-ground ring; try it by hand
+ * before settling on two utilities.
+ */
 @utility focus-ring {
   &:focus-visible {
-    outline: 2px solid var(--foreground);
+    outline: 2px solid var(--color-blue-600);
     outline-offset: 2px;
   }
 }
