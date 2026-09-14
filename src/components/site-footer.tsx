@@ -32,9 +32,12 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div className="flex justify-between items-center gap-6 border-t border-stone-800 pt-5">
-          <p className="font-mono text-xs text-stone-500">mitchidice.com</p>
-          <LanguageSwitcher variant="list" inverse />
+        <div className="flex flex-col gap-4 border-t border-stone-800 pt-5">
+          <div className="flex justify-between items-center gap-6">
+            <p className="font-mono text-xs text-stone-500">mitchidice.com</p>
+            <LanguageSwitcher variant="list" inverse />
+          </div>
+          <p className="font-mono text-xs text-stone-500">{t("privacy")}</p>
         </div>
       </Container>
     </footer>

@@ -48,6 +48,16 @@ None yet, and none added to satisfy a convention. If a unit needs a test, Vitest
 
 App Router `src/app/sitemap.ts` and `src/app/robots.ts`. No sitemap or robots package. Absolute URLs use `SITE_ORIGIN` from `src/lib/config.ts` (same value as `metadataBase`). Not `VERCEL_URL`.
 
+## Analytics
+
+Vercel Web Analytics, via `@vercel/analytics`, mounted once in the locale layout. It sets no cookie, reads and writes nothing on the device, and identifies visitors by a hash of the incoming request that is discarded after 24 hours. It therefore needs no consent banner, and the site must stay that way: anything that later writes to the device changes that answer.
+
+Google Analytics was considered and rejected. Consent under PECR reg 6 is triggered by touching the device, not by what is measured, so page views and country are collectable without a banner. GA4 cannot do it without one and still be useful: cookieless pings give unreliable user and session counts, and behavioural modelling needs traffic thresholds this site will not reach. The alternative, a real consent banner, is a feature in its own right and costs banner and privacy copy in every locale.
+
+No environment variables and no dev/prod split. Endpoints come from build-time config injected by Vercel, and the package detects `NODE_ENV`, so local development logs to the console and transmits nothing.
+
+No custom events: they are Pro-only, and the brief is page views.
+
 ## Tooling and deployment
 
 npm, with the lockfile committed. ESLint via `eslint-config-next`. Vercel builds and deploys from `main`, so there is no CI pipeline to maintain.
