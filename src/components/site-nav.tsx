@@ -17,8 +17,8 @@ const NAV_ITEMS: { key: NavKey; href: NavHref }[] = [
 ];
 
 type SiteNavProps = {
-  /** "row" is the desktop header, "stack" the mobile panel. */
-  layout?: "row" | "stack";
+  layout?: "row" | "stack" | "grid";
+  inverse?: boolean;
   className?: string;
 };
 
@@ -28,18 +28,40 @@ type SiteNavProps = {
  * dynamic. usePathname returns the internal path, so /es/reglas compares equal
  * to /rules.
  */
-export function SiteNav({ layout = "row", className }: SiteNavProps) {
+export function SiteNav({
+  layout = "row",
+  inverse = false,
+  className,
+}: SiteNavProps) {
   const t = useTranslations("nav.main");
   const pathname = usePathname();
 
+  const ulClasses = {
+    row: "flex items-center gap-7",
+    stack: "flex flex-col gap-4",
+    grid: "grid grid-cols-2 gap-x-4 gap-y-3.5",
+  }[layout];
+
+  const linkChrome = {
+    default: {
+      idle: "border-transparent hover:text-blue-600 hover:border-blue-600",
+      current: "border-red-600",
+    },
+    inverse: {
+      idle: "border-transparent hover:text-red-500",
+      current: "border-red-500",
+    },
+  } as const;
+
+  const linkClasses = (current: boolean) =>
+    cn(
+      "focus-ring border-b-2 pb-0.5 text-base font-medium transition-colors",
+      linkChrome[inverse ? "inverse" : "default"][current ? "current" : "idle"],
+    );
+
   return (
     <nav className={className}>
-      <ul
-        className={cn(
-          "flex",
-          layout === "row" ? "items-center gap-7" : "flex-col items-end gap-4",
-        )}
-      >
+      <ul className={ulClasses}>
         {NAV_ITEMS.map(({ key, href }) => {
           const current = pathname === href;
           return (
@@ -47,12 +69,7 @@ export function SiteNav({ layout = "row", className }: SiteNavProps) {
               <Link
                 href={href}
                 aria-current={current ? "page" : undefined}
-                className={cn(
-                  "focus-ring border-b-2 pb-0.5 text-base font-medium transition-colors",
-                  current
-                    ? "border-red-600"
-                    : "border-transparent hover:border-blue-600 hover:text-blue-600",
-                )}
+                className={linkClasses(current)}
               >
                 {t(key)}
               </Link>

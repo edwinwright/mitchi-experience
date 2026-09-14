@@ -81,16 +81,9 @@
   }
 }
 
-/*
- * Pip blue on white is 7.23:1. On ink it is 2.54:1, under the 3:1 minimum for
- * a non-text indicator, so the dark footer needs an inverse ring of its own
- * (Slice 5) rather than this one. Blue-500 would pass on both grounds
- * (4.78:1 and 3.84:1) at the cost of the light-ground ring; try it by hand
- * before settling on two utilities.
- */
 @utility focus-ring {
   &:focus-visible {
-    outline: 2px solid var(--color-blue-600);
+    outline: 2px solid var(--color-blue-500);
     outline-offset: 2px;
   }
 }

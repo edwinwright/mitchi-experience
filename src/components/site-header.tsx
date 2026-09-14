@@ -23,7 +23,7 @@ export function SiteHeader() {
           </Link>
 
           <div className="hidden items-center gap-8 md:flex">
-            <SiteNav />
+            <SiteNav layout="row" />
             <LanguageSwitcher />
           </div>
 
