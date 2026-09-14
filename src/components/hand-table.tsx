@@ -1,5 +1,6 @@
 import { useTranslations } from "next-intl";
 import { rankedGroups } from "@/data/hands";
+import { SectionHeading } from "./section-heading";
 import { MitchiHand } from "./mitchi-hand";
 
 export function HandTable() {
@@ -10,21 +11,15 @@ export function HandTable() {
 
   return (
     <>
-      <h2 className="text-xl font-bold mb-6">{tRanking("heading")}</h2>
+      <SectionHeading>{tRanking("heading")}</SectionHeading>
       <div className="overflow-x-auto">
-        <table className="border-collapse border border-border">
+        <table className="data-table">
           <caption>{tRanking("caption")}</caption>
           <thead>
             <tr>
-              <th scope="col" className="px-3 py-2 text-left">
-                {tRanking("groupHeader")}
-              </th>
-              <th scope="col" className="px-3 py-2 text-left">
-                {tRanking("diceHeader")}
-              </th>
-              <th scope="col" className="px-3 py-2 text-left">
-                {tRanking("handHeader")}
-              </th>
+              <th scope="col">{tRanking("groupHeader")}</th>
+              <th scope="col">{tRanking("diceHeader")}</th>
+              <th scope="col">{tRanking("handHeader")}</th>
             </tr>
           </thead>
           {groups.map((group) => (
@@ -35,15 +30,15 @@ export function HandTable() {
                     <th
                       scope="rowgroup"
                       rowSpan={group.hands.length}
-                      className="px-3 py-2 align-top text-left"
+                      className="align-top"
                     >
                       {tGroups(group.group)}
                     </th>
                   )}
-                  <td className="px-3 py-2">
+                  <td>
                     <MitchiHand high={hand.high} low={hand.low} />
                   </td>
-                  <td className="px-3 py-2">{tHands(hand.id)}</td>
+                  <td>{tHands(hand.id)}</td>
                 </tr>
               ))}
             </tbody>

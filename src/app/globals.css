@@ -111,6 +111,31 @@
   }
 }
 
+/* Shared table treatment for ScoringTable, HandTable, SpeakTable. */
+@utility data-table {
+  border-collapse: collapse;
+  border: 1px solid var(--color-border);
+
+  & caption {
+    text-align: left;
+    color: var(--color-muted);
+    margin-bottom: 0.75rem;
+  }
+
+  & th,
+  & td {
+    border: 1px solid var(--color-border);
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+  }
+
+  & thead th {
+    font-family: var(--font-sans);
+    font-weight: 700;
+    background: var(--color-surface);
+  }
+}
+
 /*
  * Unlayered deliberately. The typography plugin puts its own `.prose` in
  * @layer utilities, so the same selector in @layer base loses to it whatever

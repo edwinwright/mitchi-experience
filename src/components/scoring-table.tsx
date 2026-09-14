@@ -4,7 +4,7 @@ export function ScoringTable() {
   const t = useTranslations("reference.scoring");
   return (
     <>
-      <table>
+      <table className="data-table">
         <thead>
           <tr>
             <th scope="col">{t("roundHeader")}</th>
