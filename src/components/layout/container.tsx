@@ -9,7 +9,7 @@ export function Container({
   return (
     <div
       className={cn(
-        "w-full md:container max-w-6xl! mx-auto px-4 md:px-8",
+        "w-full max-w-7xl mx-auto px-5 md:px-9 lg:px-14",
         className,
       )}
       {...props}

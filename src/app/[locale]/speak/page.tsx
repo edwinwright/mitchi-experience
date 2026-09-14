@@ -3,6 +3,7 @@ import { useTranslations } from "next-intl";
 import { PageHeader } from "@/components/page-header";
 import { Container } from "@/components/layout/container";
 import { SpeakTable } from "@/components/speak-table";
+import { Prose } from "@/components/prose";
 import { pageMetadata } from "@/i18n/metadata";
 
 export async function generateMetadata({
@@ -19,10 +20,13 @@ export default function SpeakPage() {
   return (
     <Container className="py-8">
       <PageHeader title={t("title")} standfirst={t("standfirst")} />
-      <hr />
-      <SpeakTable />
-      <hr />
-      <p>{t("footnote")}</p>
+      <div className="py-6">
+        <SpeakTable />
+      </div>
+      <hr className="border-border" />
+      <Prose className="pt-6">
+        <p>{t("footnote")}</p>
+      </Prose>
     </Container>
   );
 }

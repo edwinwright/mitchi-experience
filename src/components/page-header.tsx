@@ -1,3 +1,5 @@
+import { Heading } from "./heading";
+
 type PageHeaderProps = {
   title: string;
   standfirst?: string;
@@ -5,10 +7,14 @@ type PageHeaderProps = {
 
 export function PageHeader({ title, standfirst }: PageHeaderProps) {
   return (
-    <header>
-      <h1 className="text-3xl font-bold mb-6">{title}</h1>
+    <header className="border-b-2 border-foreground pb-6 mb-8">
+      <Heading level={1} className="text-4xl md:text-5xl">
+        {title}
+      </Heading>
       {standfirst ? (
-        <p className="mt-2 text-lg text-muted">{standfirst}</p>
+        <p className="mt-3 font-serif text-lg text-muted md:text-xl">
+          {standfirst}
+        </p>
       ) : null}
     </header>
   );

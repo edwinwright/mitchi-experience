@@ -6,7 +6,7 @@ type StepListProps = {
 
 export function StepList({ items }: StepListProps) {
   return (
-    <ol className="list-decimal list-inside">
+    <ol className="list-decimal list-outside">
       {items.map((item, index) => (
         <li key={index}>{item}</li>
       ))}

@@ -6,5 +6,5 @@ type ProseProps = {
 };
 
 export function Prose({ children, className }: ProseProps) {
-  return <div className={cn("prose", className)}>{children}</div>;
+  return <div className={cn("prose font-serif", className)}>{children}</div>;
 }

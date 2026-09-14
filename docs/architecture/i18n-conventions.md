@@ -18,7 +18,7 @@ How message content is structured and authored. The routing decisions (`localePr
 
 Namespaces, and no twelfth without a reason: `meta`, `nav`, `home`, `rules`, `reference`, `speak`, `terms`, `about`, `groups`, `hands`, `notFound`.
 
-**`meta.*` is titles and descriptions only.** Wired through `generateMetadata` via `pageMetadata`. Each real page has `meta.<page>.title` and `meta.<page>.description` in every locale. Do not add message keys without asking. Canonicals and hreflang are built with `getPathname` from the same `PAGES` map; never list `/en/...` as a 200 URL.
+**`meta.*` is titles and descriptions only.** Wired through `generateMetadata` via `pageMetadata`. Each real page has `meta.<page>.title` and `meta.<page>.description` in every locale. Do not add message keys without asking; see Changing copy. Canonicals and hreflang are built with `getPathname` from the same `PAGES` map; never list `/en/...` as a 200 URL.
 
 ## Key rules
 
@@ -35,6 +35,22 @@ Namespaces, and no twelfth without a reason: `meta`, `nav`, `home`, `rules`, `re
 **Proper nouns stay out of the message files.** Mitchi Speak nicknames have one form in every language. They live in `src/data/speak.ts`, because putting them in `en.json` invites a translator to translate them.
 
 **Anchor IDs stay English in every locale.** `#hands`, `#round`, `#scoring`, `#tie-breaks`, `#winning`, `#terms`. Visible headings translate, IDs do not. A URL fragment is never sent to the server, so no routing layer can rewrite it the way `pathnames` rewrites a slug. Localised IDs would break every shared link on a locale switch and add a per-locale fragment map to the language switcher.
+
+## Changing copy
+
+Two locale files, and a check that catches a missing key but not a stale translation. A wording change that lands in `en.json` and stops there ships an English sentence on a Spanish page, and nothing fails: the key is present, the types pass, the build is green. The order below is what prevents it.
+
+**1. Glossary first.** If the change needs a term the site does not have, or moves running copy away from `docs/domain/glossary.md`, update the glossary before the message files. A synonym that reads better in one sentence is a new word in five languages.
+
+**2. `messages/en.json` is the translation brief.** English changes first, and it is what every other locale is translated from. Nothing else is the source.
+
+**3. Every other locale file in the same change.** Translate the same keys, in the same commit. Do not ship English-only keys, and do not leave a scaffolding marker (`[ES] `, `[PL] `) on a live locale: a marker on a shipped page is worse than the old wording it replaced.
+
+**4. Rich text tags and ICU parameter names survive untouched.** Word order around them may change; `<term>`, `<about>` and `{a}` do not. Renaming or dropping one fails at render, on a page nobody is looking at.
+
+**5. Run `npm run i18n:check` before committing.** Key parity, tags and parameters, every locale against English.
+
+**6. Do not paraphrase in code, and do not add keys unasked.** A string is changed in the message files or not at all. New keys come from the current work item's source copy, with English and every other locale written at the same time. If a string is missing, ask.
 
 ## Rich text
 

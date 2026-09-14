@@ -22,9 +22,9 @@ Not i18next, Paraglide or Intlayer. Not a second i18n or content library alongsi
 
 ## Styling
 
-Tailwind, with theme tokens declared in `globals.css` via `@theme`. Long-form copy uses the Tailwind Typography plugin (`prose` on `Prose`). Class merging through a local `cn()` helper built on `clsx` and `tailwind-merge`.
+Tailwind, with theme tokens declared in `globals.css` via `@theme`. Long-form copy uses the Tailwind Typography plugin (`prose` on `Prose`). Class merging through a local `cn()` helper built on `clsx` and `tailwind-merge`. Fonts via `next/font google`, self-hosted at build.
 
-Not CSS-in-JS, not Sass, not a CSS framework alongside Tailwind.
+Not CSS-in-JS, not Sass, not a CSS framework alongside Tailwind. Not a CDN `<link>` for fonts, and not a font package.
 
 ## Components
 

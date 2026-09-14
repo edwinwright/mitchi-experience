@@ -1,11 +1,9 @@
 import { Metadata } from "next";
-import { useTranslations } from "next-intl";
-import { PageHeader } from "@/components/page-header";
-import { Container } from "@/components/layout/container";
-import { Prose } from "@/components/prose";
-import { tags } from "@/i18n/rich-text";
 import { pageMetadata } from "@/i18n/metadata";
-import { CtaLink } from "@/components/cta-link";
+import { HomeHero } from "@/components/home-hero";
+import { HomeQuickStart } from "@/components/home-quick-start";
+import { HomeRanking } from "@/components/home-ranking";
+import { HomeProvenance } from "@/components/home-provenance";
 
 export async function generateMetadata({
   params,
@@ -17,22 +15,12 @@ export async function generateMetadata({
 }
 
 export default function HomePage() {
-  const t = useTranslations("home");
   return (
-    <Container className="py-8">
-      <PageHeader title={t("title")} standfirst={t("tagline")} />
-      <Prose>
-        <p>{t.rich("twist", tags)}</p>
-        <p>{t.rich("scoring", tags)}</p>
-        <p>{t.rich("need", tags)}</p>
-      </Prose>
-      <div className="my-4 flex gap-4">
-        <CtaLink href="/rules">{t("cta.rules")}</CtaLink>
-        <CtaLink href="/reference">{t("cta.reference")}</CtaLink>
-      </div>
-      <Prose>
-        <p>{t.rich("provenance", tags)}</p>
-      </Prose>
-    </Container>
+    <>
+      <HomeHero />
+      <HomeQuickStart />
+      <HomeRanking />
+      <HomeProvenance />
+    </>
   );
 }

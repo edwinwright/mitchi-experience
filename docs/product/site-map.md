@@ -6,7 +6,7 @@ English has no locale prefix. Spanish is `/es` plus a localised slug, except `/s
 | ------------ | --------------- | ----------------------------------------------------------------- |
 | `/`          | `/es`           | What the game is, the one twist, and where to read on.            |
 | `/rules`     | `/es/reglas`    | The full rules, from setup to the end of the game.                |
-| `/reference` | `/es/referencia`| Hand ranking and scoring on one screen, for use mid-game.         |
+| `/reference` | `/es/referencia`| Hand ranking, scoring, and terms on one screen, for use mid-game.  |
 | `/speak`     | `/es/speak`     | Table nicknames and the official hands they stand for.            |
 | `/about`     | `/es/acerca-de` | Where the game came from, and how these rules were reconstructed. |
 
@@ -28,7 +28,7 @@ Dotted paths that skip the proxy matcher (for example `/references.txt`) can sti
 
 ## Deliberately not built
 
-Score tracker, hand comparison tool, search, scroll spy, breadcrumbs, animated dice, dark-mode toggle, print stylesheet, strategy page.
+Score tracker, hand comparison tool, search, scroll spy, breadcrumbs, dice that roll or play a turn, dark-mode toggle, print stylesheet, strategy page.
 
 ## Canonical source
 

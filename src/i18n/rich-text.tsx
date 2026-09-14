@@ -19,9 +19,12 @@ export const tags: TagMap = {
   em: (chunks) => <em>{chunks}</em>,
   strong: (chunks) => <strong>{chunks}</strong>,
   term: (chunks) => (
-    <a href="#terms" className="focus-ring">
+    <Link
+      href={{ pathname: "/reference", hash: "terms" }}
+      className="focus-ring"
+    >
       {chunks}
-    </a>
+    </Link>
   ),
   about: (chunks) => (
     <Link href="/about" className="focus-ring">

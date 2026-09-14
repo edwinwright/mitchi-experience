@@ -6,12 +6,12 @@ export function SpeakTable() {
   const tHands = useTranslations("hands");
 
   return (
-    <table>
+    <table className="data-table">
       <caption>{tSpeak("caption")}</caption>
       <thead>
         <tr>
-          <th>{tSpeak("officialHeader")}</th>
-          <th>{tSpeak("speakHeader")}</th>
+          <th scope="col">{tSpeak("officialHeader")}</th>
+          <th scope="col">{tSpeak("speakHeader")}</th>
         </tr>
       </thead>
       <tbody>
