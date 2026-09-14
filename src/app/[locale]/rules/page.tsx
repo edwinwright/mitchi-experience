@@ -1,14 +1,15 @@
 import { Metadata } from "next";
 import { useTranslations } from "next-intl";
 import { PageHeader } from "@/components/page-header";
+import { SectionHeading } from "@/components/section-heading";
 import { Container } from "@/components/layout/container";
-import { TermList } from "@/components/term-list";
 import { StepList } from "@/components/step-list";
 import { RankList } from "@/components/rank-list";
 import { Example } from "@/components/example";
 import { OnThisPage } from "@/components/on-this-page";
 import { ScoringTable } from "@/components/scoring-table";
 import { Prose } from "@/components/prose";
+import { Link } from "@/i18n/navigation";
 import { tags } from "@/i18n/rich-text";
 import { pageMetadata } from "@/i18n/metadata";
 
@@ -27,10 +28,8 @@ export default function RulesPage() {
   return (
     <Container className="py-8">
       <PageHeader title={t("title")} standfirst={t("standfirst")} />
-      <hr />
       <OnThisPage
         items={[
-          { id: "quick-start", title: t("quickStart.heading") },
           { id: "overview", title: t("overview.heading") },
           { id: "what-you-need", title: t("need.heading") },
           { id: "setup", title: t("setup.heading") },
@@ -39,50 +38,26 @@ export default function RulesPage() {
           { id: "scoring", title: t("scoring.heading") },
           { id: "tie-breaks", title: t("tieBreaks.heading") },
           { id: "winning", title: t("winning.heading") },
-          { id: "terms", title: t("terms.heading") },
         ]}
       />
-      <hr />
-      <QuickStart />
-      <hr />
+      <hr className="border-border" />
       <Overview />
-      <hr />
+      <hr className="border-border" />
       <WhatYouNeed />
-      <hr />
+      <hr className="border-border" />
       <Setup />
-      <hr />
+      <hr className="border-border" />
       <Hands />
-      <hr />
+      <hr className="border-border" />
       <Round />
-      <hr />
+      <hr className="border-border" />
       <Scoring />
-      <hr />
+      <hr className="border-border" />
       <TieBreaks />
-      <hr />
+      <hr className="border-border" />
       <Winning />
-      <hr />
-      <Terms />
+      <Onward />
     </Container>
-  );
-}
-
-function QuickStart() {
-  const t = useTranslations("rules.quickStart");
-  const items = [
-    t.rich("step1", tags),
-    t.rich("step2", tags),
-    t.rich("step3", tags),
-    t.rich("step4", tags),
-    t.rich("step5", tags),
-    t.rich("step6", tags),
-  ];
-
-  return (
-    <div id="quick-start" className="py-6">
-      <h2 className="text-xl font-bold mb-6">{t("heading")}</h2>
-      <StepList items={items} />
-      <p>{t("footnote")}</p>
-    </div>
   );
 }
 
@@ -90,9 +65,11 @@ function Overview() {
   const t = useTranslations("rules.overview");
   return (
     <div id="overview" className="py-6">
-      <h2 className="text-xl font-bold mb-6">{t("heading")}</h2>
-      <p>{t("body")}</p>
-      <p>{t("objective")}</p>
+      <SectionHeading>{t("heading")}</SectionHeading>
+      <Prose>
+        <p>{t("body")}</p>
+        <p>{t("objective")}</p>
+      </Prose>
     </div>
   );
 }
@@ -101,12 +78,14 @@ function WhatYouNeed() {
   const t = useTranslations("rules.need");
   return (
     <div id="what-you-need" className="py-6">
-      <h2 className="text-xl font-bold mb-6">{t("heading")}</h2>
-      <ul>
-        <li>{t("dice")}</li>
-        <li>{t("paper")}</li>
-        <li>{t("players")}</li>
-      </ul>
+      <SectionHeading>{t("heading")}</SectionHeading>
+      <Prose>
+        <ul>
+          <li>{t("dice")}</li>
+          <li>{t("paper")}</li>
+          <li>{t("players")}</li>
+        </ul>
+      </Prose>
     </div>
   );
 }
@@ -115,8 +94,10 @@ function Setup() {
   const t = useTranslations("rules.setup");
   return (
     <div id="setup" className="py-6">
-      <h2 className="text-xl font-bold mb-6">{t("heading")}</h2>
-      <StepList items={[t("step1"), t("step2"), t("step3")]} />
+      <SectionHeading>{t("heading")}</SectionHeading>
+      <Prose>
+        <StepList items={[t("step1"), t("step2"), t("step3")]} />
+      </Prose>
     </div>
   );
 }
@@ -125,11 +106,15 @@ function Hands() {
   const t = useTranslations("rules.hands");
   return (
     <div id="hands" className="py-6">
-      <h2 className="text-xl font-bold mb-6">{t("heading")}</h2>
-      <p>{t("intro")}</p>
+      <SectionHeading>{t("heading")}</SectionHeading>
+      <Prose>
+        <p>{t("intro")}</p>
+      </Prose>
       <RankList />
-      <p>{t("withinGroup")}</p>
-      <p>{t.rich("onward", tags)}</p>
+      <Prose>
+        <p>{t("withinGroup")}</p>
+        <p>{t.rich("onward", tags)}</p>
+      </Prose>
     </div>
   );
 }
@@ -138,7 +123,7 @@ function Round() {
   const t = useTranslations("rules.round");
   return (
     <div id="round" className="py-6">
-      <h2 className="text-xl font-bold mb-6">{t("heading")}</h2>
+      <SectionHeading>{t("heading")}</SectionHeading>
       <h3 className="text-lg font-bold mb-4">{t("rollLimit.heading")}</h3>
       <Prose>
         <p>{t.rich("rollLimit.body", tags)}</p>
@@ -176,7 +161,7 @@ function Scoring() {
   const t = useTranslations("rules.scoring");
   return (
     <div id="scoring" className="py-6">
-      <h2 className="text-xl font-bold mb-6">{t("heading")}</h2>
+      <SectionHeading>{t("heading")}</SectionHeading>
       <Prose>
         <p>{t.rich("body", tags)}</p>
         <p>{t.rich("mitchis", tags)}</p>
@@ -191,7 +176,7 @@ function TieBreaks() {
   const t = useTranslations("rules.tieBreaks");
   return (
     <div id="tie-breaks" className="py-6">
-      <h2 className="text-xl font-bold mb-6">{t("heading")}</h2>
+      <SectionHeading>{t("heading")}</SectionHeading>
       <Prose>
         <p>{t.rich("body", tags)}</p>
         <p>{t.rich("rule1", tags)}</p>
@@ -211,7 +196,7 @@ function Winning() {
   const t = useTranslations("rules.winning");
   return (
     <div id="winning" className="py-6">
-      <h2 className="text-xl font-bold mb-6">{t("heading")}</h2>
+      <SectionHeading>{t("heading")}</SectionHeading>
       <Prose>
         <p>{t.rich("body", tags)}</p>
         <p>{t.rich("level", tags)}</p>
@@ -220,12 +205,16 @@ function Winning() {
   );
 }
 
-function Terms() {
-  const t = useTranslations("rules.terms");
+function Onward() {
+  const t = useTranslations("nav.onward");
   return (
-    <div id="terms" className="py-6">
-      <h2 className="text-xl font-bold mb-6">{t("heading")}</h2>
-      <TermList />
-    </div>
+    <p className="pt-8">
+      <Link
+        href="/reference"
+        className="focus-ring font-semibold text-blue-600 underline underline-offset-4 hover:text-red-600"
+      >
+        {t("reference")}
+      </Link>
+    </p>
   );
 }
