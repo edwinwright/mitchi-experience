@@ -5,6 +5,7 @@ import { Prose } from "@/components/prose";
 import { tags } from "@/i18n/rich-text";
 import { pageMetadata } from "@/i18n/metadata";
 import { HomeHero } from "@/components/home-hero";
+import { HomeQuickStart } from "@/components/home-quick-start";
 
 export async function generateMetadata({
   params,
@@ -20,6 +21,7 @@ export default function HomePage() {
   return (
     <>
       <HomeHero />
+      <HomeQuickStart />
       <Container className="py-8">
         <Prose>
           <p>{t.rich("provenance", tags)}</p>
