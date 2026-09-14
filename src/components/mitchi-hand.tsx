@@ -1,4 +1,9 @@
-import { MitchiDie, type DieFace, type DieVariant } from "@/components/mitchi-die";
+import {
+  MitchiDie,
+  type DieFace,
+  type DieVariant,
+} from "@/components/mitchi-die";
+import { cn } from "@/lib/utils";
 
 /**
  * A hand: two dice, high die first, on the system gap of 0.19 x the die.
@@ -26,8 +31,8 @@ export function MitchiHand({
 }: MitchiHandProps) {
   return (
     <span
-      className={className}
-      style={{ display: "inline-flex", alignItems: "flex-start", gap: size * 0.19 }}
+      className={cn("inline-flex items-start", className)}
+      style={{ gap: size * 0.19 }}
       role={label ? "img" : undefined}
       aria-label={label}
     >
