@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Container } from "@/components/layout/container";
 import { CtaLink } from "@/components/cta-link";
@@ -51,16 +52,25 @@ export function HomeHero() {
             </footer>
           </div>
         </Container>
-        <div className="relative mt-14 h-[210px] md:absolute md:inset-y-0 md:left-[53%] md:right-0 md:mt-0 md:h-auto">
-          <div aria-hidden="true" className="absolute inset-0 bg-red-800" />
-          <DiceHeroOverlay
+        <div className="relative mt-14 h-[210px] bg-red-800 md:absolute md:inset-y-0 md:left-[53%] md:right-0 md:mt-0 md:h-auto">
+          <div className="absolute inset-0 overflow-hidden" aria-hidden="true">
+            <Image
+              src="/img/home-hero.jpg"
+              alt=""
+              fill
+              priority
+              sizes="(min-width: 768px) 47vw, 100vw"
+              className="object-cover"
+            />
+          </div>
+          {/* <DiceHeroOverlay
             size={64}
             className="absolute left-5 top-[-34px] md:hidden"
           />
           <DiceHeroOverlay
             size={104}
             className="absolute hidden md:flex md:left-[-58px] md:top-20"
-          />
+          /> */}
         </div>
       </div>
       <div className="md:hidden bg-foreground text-white">
