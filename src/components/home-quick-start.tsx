@@ -3,6 +3,7 @@ import { Link } from "@/i18n/navigation";
 import { Container } from "./layout/container";
 import { tags } from "@/i18n/rich-text";
 import { cn } from "@/lib/utils";
+import { Heading } from "@/components/heading";
 
 const STEPS = ["step1", "step2", "step3", "step4", "step5", "step6"] as const;
 
@@ -14,9 +15,9 @@ export function HomeQuickStart() {
     <section className="bg-stone-50">
       <Container className="flex flex-col gap-6 py-10 md:gap-11 md:py-20">
         <header className="border-b-2 border-foreground pb-3.5 md:pb-5">
-          <h2 className="text-3xl font-bold leading-[1.05] tracking-[-0.03em] md:text-[46px] md:leading-none">
+          <Heading level={2} className="text-3xl md:text-5xl">
             {t("heading")}
-          </h2>
+          </Heading>
         </header>
 
         <ol className="grid grid-cols-1 gap-y-4 md:gap-x-18 md:gap-y-16 md:grid-cols-2 lg:grid-cols-3">
@@ -75,7 +76,7 @@ export function HomeQuickStart() {
               >
                 {String(i + 1).padStart(2, "0")}
               </span>
-              <div className="font-serif text-[17.5px] leading-[1.5] text-stone-900 md:text-[19px] [&_a]:text-blue-600 [&_a]:underline [&_a]:underline-offset-[3px] [&_a]:hover:text-red-600">
+              <div className="font-serif text-lg text-stone-900 md:text-xl [&_a]:text-blue-600 [&_a]:underline [&_a]:underline-offset-[3px] [&_a]:hover:text-red-600">
                 {t.rich(key, tags)}
               </div>
             </li>

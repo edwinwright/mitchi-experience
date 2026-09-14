@@ -12,6 +12,7 @@ import { Prose } from "@/components/prose";
 import { Link } from "@/i18n/navigation";
 import { tags } from "@/i18n/rich-text";
 import { pageMetadata } from "@/i18n/metadata";
+import { Heading } from "@/components/heading";
 
 export async function generateMetadata({
   params,
@@ -124,7 +125,9 @@ function Round() {
   return (
     <div id="round" className="py-6">
       <SectionHeading>{t("heading")}</SectionHeading>
-      <h3 className="text-lg font-bold mb-4">{t("rollLimit.heading")}</h3>
+      <Heading level={3} className="text-lg mb-4">
+        {t("rollLimit.heading")}
+      </Heading>
       <Prose>
         <p>{t.rich("rollLimit.body", tags)}</p>
         <p>{t.rich("rollLimit.choices", tags)}</p>
@@ -132,7 +135,9 @@ function Round() {
         <p>{t.rich("rollLimit.sets", tags)}</p>
       </Prose>
       <Example>{t.rich("rollLimit.example", tags)}</Example>
-      <h3 className="text-lg font-bold mb-4">{t("others.heading")}</h3>
+      <Heading level={3} className="text-lg mb-4">
+        {t("others.heading")}
+      </Heading>
       <Prose>
         <p>{t.rich("others.body", tags)}</p>
         <p>{t.rich("others.beat", tags)}</p>

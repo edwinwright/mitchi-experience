@@ -19,8 +19,8 @@ export function HomeProvenance() {
             aria-hidden
           />
         </div>
-        <Container className="flex flex-col justify-center py-8 md:py-[76px]">
-          <p className="font-serif text-[17.5px] leading-[1.55] text-stone-900 max-w-[44ch] md:text-xl [&_a]:font-semibold [&_a]:text-blue-600 [&_a]:underline [&_a]:underline-offset-[3px] [&_a]:hover:text-red-600">
+        <Container className="flex flex-col justify-center py-8">
+          <p className="font-serif text-lg leading-normal text-stone-900 max-w-[44ch] md:text-xl [&_a]:font-semibold [&_a]:text-blue-600 [&_a]:underline [&_a]:underline-offset-[3px] [&_a]:hover:text-red-600">
             {t.rich("provenance", tags)}
           </p>
         </Container>

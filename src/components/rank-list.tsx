@@ -50,21 +50,21 @@ function RankDefinitions({ items }: { items: RankItem[] }) {
 
 function RankCards({ items }: { items: RankItem[] }) {
   return (
-    <ol className="m-0 grid list-none grid-cols-1 gap-2.5 p-0 md:grid-cols-2 md:gap-3.5 lg:grid-cols-3">
+    <ol className="grid grid-cols-1 gap-3 p-0 md:grid-cols-2 md:gap-4 lg:grid-cols-3">
       {items.map((item) => (
         <li
           key={item.key}
           className={cn(
-            "flex min-w-0 gap-3.5 rounded-lg px-4 py-3.5 md:flex-col md:gap-3.5 md:px-[18px] md:py-[22px]",
+            "flex gap-3 rounded-lg px-4 py-3.5 md:flex-col md:px-4.5 md:py-5.5",
             item.key === "mitchi" ? "bg-red-600" : "border border-stone-800",
           )}
         >
           <GroupMark hand={item.best} />
-          <div className="min-w-0">
-            <p className="text-[17px] font-bold">{item.name}</p>
+          <div>
+            <p className="text-lg font-bold">{item.name}</p>
             <p
               className={cn(
-                "mt-1 font-serif text-sm leading-snug",
+                "mt-1 font-serif text-sm",
                 item.key === "mitchi" ? "text-white/85" : "text-stone-500",
               )}
             >
