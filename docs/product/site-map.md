@@ -28,7 +28,7 @@ Dotted paths that skip the proxy matcher (for example `/references.txt`) can sti
 
 ## Deliberately not built
 
-Score tracker, hand comparison tool, search, scroll spy, breadcrumbs, animated dice, dark-mode toggle, print stylesheet, strategy page.
+Score tracker, hand comparison tool, search, scroll spy, breadcrumbs, dice that roll or play a turn, dark-mode toggle, print stylesheet, strategy page.
 
 ## Canonical source
 

@@ -1,12 +1,9 @@
 import { Metadata } from "next";
-import { useTranslations } from "next-intl";
-import { Container } from "@/components/layout/container";
-import { Prose } from "@/components/prose";
-import { tags } from "@/i18n/rich-text";
 import { pageMetadata } from "@/i18n/metadata";
 import { HomeHero } from "@/components/home-hero";
 import { HomeQuickStart } from "@/components/home-quick-start";
 import { HomeRanking } from "@/components/home-ranking";
+import { HomeProvenance } from "@/components/home-provenance";
 
 export async function generateMetadata({
   params,
@@ -18,17 +15,12 @@ export async function generateMetadata({
 }
 
 export default function HomePage() {
-  const t = useTranslations("home");
   return (
     <>
       <HomeHero />
       <HomeQuickStart />
       <HomeRanking />
-      <Container className="py-8">
-        <Prose>
-          <p>{t.rich("provenance", tags)}</p>
-        </Prose>
-      </Container>
+      <HomeProvenance />
     </>
   );
 }

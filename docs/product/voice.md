@@ -22,11 +22,13 @@ In translation, the same split applies. Procedure takes whatever impersonal form
 
 ## The exception: Home and About
 
-Home and About are allowed warmth. They carry the one idea worth landing:
+Home and About are allowed warmth. Home carries the one idea worth landing:
 
 > You are not trying to roll the best hand, you are trying not to be left with the worst.
 
-Said once, on Home, and never again. `/rules` and `/reference` do not repeat it, and Home does not restate the hand ranking or the scoring.
+Said once, from `home.twist`, and never again. `/rules` and `/reference` do not repeat it.
+
+Home also maps the game in 60 seconds (`rules.quickStart`) and shows the six-group ranking (`RankList`). Those are the same strings as Rules and Reference; they are not a second telling of the twist.
 
 `/speak` has a voice of its own and is the only other page that does.
 
