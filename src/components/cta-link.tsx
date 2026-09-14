@@ -4,23 +4,38 @@ import { cn } from "@/lib/utils";
 
 type CtaLinkProps = ComponentProps<typeof Link> & {
   variant?: "primary" | "secondary";
+  inverse?: boolean;
 };
 
 export function CtaLink({
-  className,
   variant = "primary",
+  inverse = false,
+  className,
   ...props
 }: CtaLinkProps) {
-  return (
-    <Link
-      className={cn(
-        "inline-flex items-center justify-center rounded-md px-4 py-2 text-sm font-medium no-underline focus-ring",
-        variant === "primary"
-          ? "bg-foreground text-background"
-          : "border border-border bg-background text-foreground",
-        className,
-      )}
-      {...props}
-    />
+  const ground = inverse ? "inverse" : "regular";
+
+  const linkClassMap = {
+    regular: {
+      primary: "bg-foreground text-white hover:bg-blue-600",
+      secondary:
+        "border-[1.5px] border-foreground bg-transparent text-foreground hover:border-blue-600 hover:bg-stone-50 hover:text-blue-600",
+    },
+    inverse: {
+      primary: [
+        "bg-white text-foreground shadow-[4px_4px_0_0_var(--color-foreground)] motion-safe:transition-[transform,box-shadow] motion-safe:duration-150",
+        "motion-safe:hover:-translate-x-0.5 motion-safe:hover:-translate-y-0.5 motion-safe:hover:shadow-[6px_6px_0_0_var(--color-foreground)]",
+      ],
+      secondary:
+        "border-2 border-white/85 bg-transparent text-white hover:bg-white/15",
+    },
+  } as const;
+
+  const linkClasses = cn(
+    "focus-ring inline-flex items-center justify-center rounded-lg px-6 py-3 text-base font-semibold no-underline transition-colors",
+    linkClassMap[ground][variant],
+    className,
   );
+
+  return <Link className={linkClasses} {...props} />;
 }

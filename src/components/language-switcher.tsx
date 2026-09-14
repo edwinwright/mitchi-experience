@@ -70,13 +70,15 @@ function LocaleGroup({
   items: LocaleItem[];
   inverse: boolean;
 }) {
+  const ground = inverse ? "inverse" : "regular";
+
   const ulClasses = cn(
     "flex rounded-md border font-mono text-xs",
     inverse ? "border-white" : "border-foreground",
   );
 
-  const linkChrome = {
-    default: {
+  const linkClassMap = {
+    regular: {
       idle: "hover:bg-stone-100",
       current: "bg-foreground text-white",
     },
@@ -86,17 +88,17 @@ function LocaleGroup({
     },
   } as const;
 
-  const linkClasses = (current: boolean) =>
+  const linkClassesFor = (current: boolean) =>
     cn(
       "focus-ring block px-2.5 py-1 transition-colors",
-      linkChrome[inverse ? "inverse" : "default"][current ? "current" : "idle"],
+      linkClassMap[ground][current ? "current" : "idle"],
     );
 
   return (
     <ul className={ulClasses}>
       {items.map((item) => (
         <li key={item.locale} className="first:rounded-l last:rounded-r">
-          <Link {...item.linkProps} className={linkClasses(item.current)}>
+          <Link {...item.linkProps} className={linkClassesFor(item.current)}>
             {item.label}
           </Link>
         </li>
@@ -112,8 +114,10 @@ function LocaleList({
   items: LocaleItem[];
   inverse: boolean;
 }) {
-  const linkChrome = {
-    default: {
+  const ground = inverse ? "inverse" : "regular";
+
+  const linkClassMap = {
+    regular: {
       idle: "hover:text-blue-600",
       current: "font-medium",
     },
@@ -123,17 +127,17 @@ function LocaleList({
     },
   } as const;
 
-  const linkClasses = (current: boolean) =>
+  const linkClassesFor = (current: boolean) =>
     cn(
       "focus-ring font-mono text-xs transition-colors",
-      linkChrome[inverse ? "inverse" : "default"][current ? "current" : "idle"],
+      linkClassMap[ground][current ? "current" : "idle"],
     );
 
   return (
     <ul className="flex gap-3.5">
       {items.map((item) => (
         <li key={item.locale}>
-          <Link {...item.linkProps} className={linkClasses(item.current)}>
+          <Link {...item.linkProps} className={linkClassesFor(item.current)}>
             {item.label}
           </Link>
         </li>

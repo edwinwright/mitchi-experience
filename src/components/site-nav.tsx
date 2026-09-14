@@ -35,6 +35,7 @@ export function SiteNav({
 }: SiteNavProps) {
   const t = useTranslations("nav.main");
   const pathname = usePathname();
+  const ground = inverse ? "inverse" : "regular";
 
   const ulClasses = {
     row: "flex items-center gap-7",
@@ -42,8 +43,8 @@ export function SiteNav({
     grid: "grid grid-cols-2 gap-x-4 gap-y-3.5",
   }[layout];
 
-  const linkChrome = {
-    default: {
+  const linkClassMap = {
+    regular: {
       idle: "border-transparent hover:text-blue-600 hover:border-blue-600",
       current: "border-red-600",
     },
@@ -53,10 +54,10 @@ export function SiteNav({
     },
   } as const;
 
-  const linkClasses = (current: boolean) =>
+  const linkClassesFor = (current: boolean) =>
     cn(
       "focus-ring border-b-2 pb-0.5 text-base font-medium transition-colors",
-      linkChrome[inverse ? "inverse" : "default"][current ? "current" : "idle"],
+      linkClassMap[ground][current ? "current" : "idle"],
     );
 
   return (
@@ -69,7 +70,7 @@ export function SiteNav({
               <Link
                 href={href}
                 aria-current={current ? "page" : undefined}
-                className={linkClasses(current)}
+                className={linkClassesFor(current)}
               >
                 {t(key)}
               </Link>

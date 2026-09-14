@@ -73,6 +73,29 @@
   --font-wordmark: var(--font-lato, ui-sans-serif), sans-serif;
 }
 
+@theme {
+  --animate-mitchi-float: mitchi-float 4.8s ease-in-out infinite;
+  --animate-mitchi-float-b: mitchi-float-b 5.6s ease-in-out infinite;
+  @keyframes mitchi-float {
+    0%,
+    100% {
+      transform: translateY(0) rotate(-2deg);
+    }
+    50% {
+      transform: translateY(-7px) rotate(2deg);
+    }
+  }
+  @keyframes mitchi-float-b {
+    0%,
+    100% {
+      transform: translateY(-4px) rotate(3deg);
+    }
+    50% {
+      transform: translateY(3px) rotate(-3deg);
+    }
+  }
+}
+
 @layer base {
   body {
     background: var(--color-background);
