@@ -40,6 +40,8 @@ Copy lives in `messages/<locale>.json`. Long-form content in Markdown or MDX was
 
 Inline SVG, written here. No icon or illustration package for a site whose only graphic is a pair of dice.
 
+`public/` is organised by purpose, not file type: `brand/` for logo marks and favicons, `img/` for in-page photography, `meta/` for assets that exist only for `<head>`/metadata and are never rendered in a page.
+
 ## Testing
 
 None yet, and none added to satisfy a convention. If a unit needs a test, Vitest with Testing Library is the choice. The current checks are the build route table, a keyboard pass, and `./scripts/smoke.sh` (request-time locale routing and HTML canonical / hreflang).
@@ -47,6 +49,8 @@ None yet, and none added to satisfy a convention. If a unit needs a test, Vitest
 ## Discovery
 
 App Router `src/app/sitemap.ts` and `src/app/robots.ts`. No sitemap or robots package. Absolute URLs use `SITE_ORIGIN` from `src/lib/config.ts` (same value as `metadataBase`). Not `VERCEL_URL`.
+
+Open Graph and Twitter card images are a single static file, `public/meta/og-default.jpg`, wired into `openGraph.images`/`twitter.images` in `pageMetadata()` (`src/i18n/metadata.ts`). One shared image for every route and locale; no dynamic `opengraph-image.tsx`/`ImageResponse` route, no dependency, no per-page image yet.
 
 ## Analytics
 

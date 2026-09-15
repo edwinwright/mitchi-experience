@@ -18,7 +18,7 @@ How message content is structured and authored. The routing decisions (`localePr
 
 Namespaces, and no twelfth without a reason: `meta`, `nav`, `home`, `rules`, `reference`, `speak`, `terms`, `about`, `groups`, `hands`, `notFound`.
 
-**`meta.*` is titles and descriptions only.** Wired through `generateMetadata` via `pageMetadata`. Each real page has `meta.<page>.title` and `meta.<page>.description` in every locale. Do not add message keys without asking; see Changing copy. Canonicals and hreflang are built with `getPathname` from the same `PAGES` map; never list `/en/...` as a 200 URL.
+**`meta.*` is titles and descriptions only.** Wired through `generateMetadata` via `pageMetadata`. Each real page has `meta.<page>.title` and `meta.<page>.description` in every locale. Do not add message keys without asking; see Changing copy. Canonicals and hreflang are built with `getPathname` from the same `PAGES` map; never list `/en/...` as a 200 URL. The Open Graph/Twitter share image is locale-independent, so it is not a message key: its path and alt text are a constant in `src/i18n/metadata.ts`, not `messages/<locale>.json`.
 
 ## Key rules
 

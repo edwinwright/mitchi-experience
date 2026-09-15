@@ -13,6 +13,13 @@ export const PAGES = {
 
 type MetaPage = keyof typeof PAGES;
 
+const OG_IMAGE = {
+  url: "/meta/og-default.jpg",
+  width: 1200,
+  height: 634,
+  alt: "Friends rolling dice for Mitchi around a pub table",
+};
+
 export async function pageMetadata(
   locale: string,
   page: MetaPage,
@@ -32,8 +39,13 @@ export async function pageMetadata(
   return {
     title,
     description,
-    openGraph: { title, description },
-    twitter: { card: "summary", title, description },
+    openGraph: { title, description, images: [OG_IMAGE] },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [OG_IMAGE],
+    },
     alternates: {
       canonical,
       languages,
