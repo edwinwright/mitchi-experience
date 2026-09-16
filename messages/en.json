@@ -26,6 +26,7 @@
     "skip": "Skip to content",
     "language": "Language",
     "menu": "Menu",
+    "contents": "On this page",
     "main": {
       "rules": "Rules",
       "reference": "Reference",
@@ -37,7 +38,8 @@
     "colophon": "Built with Next.js and next-intl. English and Spanish now, more languages to come.",
     "onward": {
       "heading": "Next",
-      "reference": "Next: Quick reference",
+      "reference": "Quick reference",
+      "referenceSummary": "Hand ranking, scoring and terms on one screen.",
       "rules": "The full rules",
       "rulesSummary": "Eight sections, from setup to the end of the game.",
       "speak": "The official names"
@@ -58,6 +60,7 @@
   "rules": {
     "title": "Mitchi rules",
     "standfirst": "The full rules, from setup to the end of the game.",
+    "exampleLabel": "Example",
     "quickStart": {
       "heading": "Mitchi in 60 seconds",
       "step1": "Everyone rolls one die. The highest roll starts.",
@@ -75,6 +78,9 @@
     },
     "need": {
       "heading": "What you need",
+      "diceLabel": "Dice",
+      "paperLabel": "Paper",
+      "playersLabel": "Players",
       "dice": "Two six-sided dice.",
       "paper": "A pen and something to write on.",
       "players": "At least one other player."
@@ -201,6 +207,7 @@
     "scoring": {
       "heading": "Points in the pot",
       "roundHeader": "Round",
+      "mitchisHeader": "Mitchis",
       "potHeader": "In the pot",
       "none": "No Mitchi rolled",
       "noneValue": "1 point",
