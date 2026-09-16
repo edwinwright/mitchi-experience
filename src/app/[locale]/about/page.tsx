@@ -39,9 +39,6 @@ export default function AboutPage() {
             <p className="font-serif text-lg leading-relaxed text-pretty text-stone-900 md:text-lg xl:max-w-[56ch] xl:text-xl [&_a]:font-semibold [&_a]:text-blue-600 [&_a]:underline [&_a]:underline-offset-[3px] [&_a]:hover:text-red-600">
               {t.rich("speak", tags)}
             </p>
-            <p className="border-t border-border pt-4 font-mono text-xs leading-[1.7] text-stone-600 md:pt-[18px] md:text-xs xl:max-w-[60ch] xl:pt-5 xl:text-sm">
-              {t.rich("colophon", tags)}
-            </p>
           </div>
           <OnwardBlock
             href="/rules"

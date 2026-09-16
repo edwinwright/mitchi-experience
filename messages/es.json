@@ -34,6 +34,7 @@
     },
     "footer": "Mitchi. Las reglas, por escrito.",
     "privacy": "Sin cookies. Las visitas se cuentan de forma anónima y no se almacena nada en tu dispositivo.",
+    "colophon": "Hecho con Next.js y next-intl. De momento en inglés y español, y más idiomas en camino.",
     "onward": {
       "heading": "Siguiente",
       "reference": "Siguiente: referencia rápida",
@@ -237,8 +238,7 @@
     "standfirst": "De dónde viene el juego y cómo se reconstruyeron estas reglas.",
     "origin": "Mitchi se aprendió viajando por España, aunque no de un jugador español. De dónde venía antes no se sabe, y esta web no lo presenta como un juego tradicional español.",
     "reconstruction": "Estas reglas son una reconstrucción. Algunas se recordaban, otras se recuperaron preguntando a quienes jugaban. Donde ha habido que fijar una regla en lugar de recordarla, se ha fijado tal y como se jugaba en realidad.",
-    "speak": "También hay un vocabulario propio. Las manos tienen apodos que no significan nada para quien no estuviera en la mesa. No forman parte del juego, pero <speak>están escritos igualmente</speak>.",
-    "colophon": "Hecho con Next.js y next-intl. De momento en inglés y español, y más idiomas en camino."
+    "speak": "También hay un vocabulario propio. Las manos tienen apodos que no significan nada para quien no estuviera en la mesa. No forman parte del juego, pero <speak>están escritos igualmente</speak>."
   },
   "notFound": {
     "title": "Esa página no existe",

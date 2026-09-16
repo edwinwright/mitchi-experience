@@ -19,7 +19,7 @@ type PageHeaderProps = {
  */
 export function PageHeader({ title, standfirst, eyebrow }: PageHeaderProps) {
   return (
-    <header className="relative overflow-hidden border-b-[1.5px] border-foreground bg-stone-100">
+    <header className="relative overflow-hidden border-b border-stone-300 bg-stone-100">
       <div aria-hidden="true" className="dot-field" />
       <Container className="relative flex flex-col gap-4 pt-8 pr-6 pb-6 md:gap-5 md:pt-12 md:pr-60 md:pb-7 xl:pt-[42px] xl:pr-[584px] xl:pb-[38px]">
         {eyebrow ? (
@@ -33,12 +33,12 @@ export function PageHeader({ title, standfirst, eyebrow }: PageHeaderProps) {
         ) : null}
         <Heading
           level={1}
-          className="pr-28 text-[44px] leading-[0.96] tracking-[-0.035em] md:pr-0 md:text-[56px] xl:text-[64px]"
+          className="pr-28 text-4xl md:pr-0 md:text-5xl xl:text-6xl"
         >
           {title}
         </Heading>
         {standfirst ? (
-          <p className="font-serif text-[19px] leading-[1.45] text-muted md:text-[20px] xl:max-w-[38ch] xl:text-[21px]">
+          <p className="font-serif text-lg text-muted md:text-xl xl:max-w-[38ch]">
             {standfirst}
           </p>
         ) : null}

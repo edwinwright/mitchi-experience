@@ -4,6 +4,7 @@ import { Container } from "@/components/layout/container";
 import { LanguageSwitcher } from "@/components/language-switcher";
 import { SiteNav } from "@/components/site-nav";
 import { Wordmark } from "@/components/wordmark";
+import { tags } from "@/i18n/rich-text";
 
 export function SiteFooter() {
   const t = useTranslations("nav");
@@ -38,6 +39,9 @@ export function SiteFooter() {
             <LanguageSwitcher variant="list" inverse />
           </div>
           <p className="font-mono text-xs text-stone-500">{t("privacy")}</p>
+          <p className="font-mono text-xs text-stone-500">
+            {t.rich("colophon", tags)}
+          </p>
         </div>
       </Container>
     </footer>
