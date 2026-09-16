@@ -1,14 +1,17 @@
 import { Metadata } from "next";
 import { useTranslations } from "next-intl";
 import { PageHeader } from "@/components/page-header";
-import { SectionHeading } from "@/components/section-heading";
 import { Container } from "@/components/layout/container";
+import { RuleSection } from "@/components/rule-section";
+import { RuleBody } from "@/components/rule-body";
+import { StepList } from "@/components/step-list";
 import { OnThisPage } from "@/components/on-this-page";
-import { HandTable } from "@/components/hand-table";
+import { RankingCard } from "@/components/ranking-card";
 import { ScoringTable } from "@/components/scoring-table";
 import { TermList } from "@/components/term-list";
-import { Prose } from "@/components/prose";
-import { Link } from "@/i18n/navigation";
+import { OnwardBlock } from "@/components/onward-block";
+import { Heading } from "@/components/heading";
+import { tags } from "@/i18n/rich-text";
 import { pageMetadata } from "@/i18n/metadata";
 
 export async function generateMetadata({
@@ -24,77 +27,88 @@ export default function ReferencePage() {
   const t = useTranslations("reference");
   const tRanking = useTranslations("reference.ranking");
   const tScoring = useTranslations("reference.scoring");
-  const tTieBreaks = useTranslations("reference.tieBreaks");
-  const tEnding = useTranslations("reference.ending");
   const tTerms = useTranslations("rules.terms");
+  const tHands = useTranslations("rules.hands");
+  const tOnward = useTranslations("nav.onward");
 
   return (
     <>
       <PageHeader title={t("title")} standfirst={t("standfirst")} />
-      <Container className="py-8">
+      {/* xl:items-start is load-bearing: a stretched flex child cannot be sticky. */}
+      <Container className="pb-14 md:pb-18 xl:flex xl:items-start xl:gap-20 xl:pt-15 xl:pb-22">
         <OnThisPage
+          className="xl:sticky xl:top-7 xl:w-56 xl:shrink-0"
           items={[
             { id: "ranking", title: tRanking("heading") },
             { id: "scoring", title: tScoring("heading") },
-            { id: "tie-breaks", title: tTieBreaks("heading") },
-            { id: "ending", title: tEnding("heading") },
             { id: "terms", title: tTerms("heading") },
           ]}
         />
-        <hr className="border-border" />
-        <div id="ranking" className="py-6">
-          <HandTable />
+        <div className="pt-8 md:pt-11 xl:min-w-0 xl:flex-1 xl:pt-0">
+          <div className="divide-y divide-border">
+            <RuleSection id="ranking" number={1} heading={tRanking("heading")}>
+              <RankingCard />
+              <RuleBody>
+                <p>{tHands.rich("withinGroup", tags)}</p>
+              </RuleBody>
+            </RuleSection>
+            <Scoring />
+            <RuleSection id="terms" number={3} heading={tTerms("heading")}>
+              <TermList />
+            </RuleSection>
+          </div>
+          <OnwardBlock
+            href="/rules"
+            heading={tOnward("heading")}
+            label={tOnward("rules")}
+            summary={tOnward("rulesSummary")}
+          />
         </div>
-        <hr className="border-border" />
-        <div id="scoring" className="py-6">
-          <SectionHeading>{tScoring("heading")}</SectionHeading>
-          <Prose>
-            <p>{tScoring("note")}</p>
-          </Prose>
-          <ScoringTable />
-        </div>
-        <hr className="border-border" />
-        <div id="tie-breaks" className="py-6">
-          <SectionHeading>{tTieBreaks("heading")}</SectionHeading>
-          <Prose>
-            <ul>
-              <li>{tTieBreaks("rule1")}</li>
-              <li>{tTieBreaks("rule2")}</li>
-              <li>{tTieBreaks("rule3")}</li>
-              <li>{tTieBreaks("rule4")}</li>
-              <li>{tTieBreaks("rule5")}</li>
-              <li>{tTieBreaks("rule6")}</li>
-            </ul>
-          </Prose>
-        </div>
-        <hr className="border-border" />
-        <div id="ending" className="py-6">
-          <SectionHeading>{tEnding("heading")}</SectionHeading>
-          <Prose>
-            <p>{tEnding("body")}</p>
-          </Prose>
-        </div>
-        <hr className="border-border" />
-        <div id="terms" className="py-6">
-          <SectionHeading>{tTerms("heading")}</SectionHeading>
-          <TermList />
-        </div>
-        <Onward />
       </Container>
     </>
   );
 }
 
-function Onward() {
-  const t = useTranslations("nav.onward");
+const subHeading = "text-lg font-bold xl:text-xl";
+const subBlock = "flex flex-col gap-3 md:gap-4";
+
+function Scoring() {
+  const t = useTranslations("reference.scoring");
   return (
-    <p className="pt-8">
-      <Link
-        href="/rules"
-        className="focus-ring font-semibold text-blue-600 underline underline-offset-4 hover:text-red-600"
-      >
-        {t("rules")}
-      </Link>
-    </p>
+    <RuleSection id="scoring" number={2} heading={t("heading")}>
+      <div className={subBlock}>
+        <Heading level={3} className={subHeading}>
+          {t("perRound")}
+        </Heading>
+        <ScoringTable />
+        <RuleBody className="xl:max-w-[62ch]">
+          <p>{t.rich("note", tags)}</p>
+        </RuleBody>
+      </div>
+      {/* Sub-block ids stay as they were when these were sections: anchors are URLs, not copy. */}
+      <div id="tie-breaks" className={`${subBlock} border-t border-border pt-6`}>
+        <Heading level={3} className={subHeading}>
+          {t("tieBreak")}
+        </Heading>
+        <StepList
+          items={[
+            t("rule1"),
+            t("rule2"),
+            t("rule3"),
+            t("rule4"),
+            t("rule5"),
+            t("rule6"),
+          ]}
+        />
+      </div>
+      <div id="ending" className={`${subBlock} border-t border-border pt-6`}>
+        <Heading level={3} className={subHeading}>
+          {t("pointLimit")}
+        </Heading>
+        <RuleBody className="xl:max-w-[62ch]">
+          <p>{t.rich("limit", tags)}</p>
+        </RuleBody>
+      </div>
+    </RuleSection>
   );
 }

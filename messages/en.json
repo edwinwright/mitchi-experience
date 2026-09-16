@@ -220,36 +220,26 @@
     "standfirst": "Everything you need mid-game, on one screen.",
     "ranking": {
       "heading": "Hand ranking",
-      "caption": "Mitchi hands, ranked from best to worst",
-      "groupHeader": "Group",
-      "diceHeader": "Dice",
-      "handHeader": "Hand"
+      "caption": "Mitchi hands, ranked from best to worst"
     },
     "scoring": {
-      "heading": "Points in the pot",
-      "roundHeader": "Round",
-      "mitchisHeader": "Mitchis",
-      "potHeader": "In the pot",
-      "none": "No Mitchi rolled",
+      "heading": "Scoring",
+      "perRound": "Points per round",
+      "roundHeader": "Mitchis in a round",
+      "potHeader": "Points in the pot",
       "noneValue": "1 point",
-      "one": "One Mitchi rolled",
       "oneValue": "2 points",
-      "two": "Two Mitchis rolled",
       "twoValue": "4 points",
-      "note": "Mitchi points count whoever rolled them. The worst hand takes the pot and starts the next round."
-    },
-    "tieBreaks": {
-      "heading": "Tie-breaks",
+      "note": "Mitchi points count whoever rolled them. The worst hand takes the pot and starts the next round.",
+      "tieBreak": "Points in a tie-break",
       "rule1": "Tied players only.",
       "rule2": "One roll each, not up to three.",
       "rule3": "The pot doubles before the roll.",
       "rule4": "The order reverses, starting with the last player to roll.",
       "rule5": "Each Mitchi rolled adds 2 more points to the pot.",
-      "rule6": "Still level? Repeat. The pot doubles again and the order reverses again."
-    },
-    "ending": {
-      "heading": "Ending the game",
-      "body": "The game ends as soon as any player reaches the point limit, usually 25. Fewest points wins. If players are level on fewest points, they roll one hand each and the better hand wins."
+      "rule6": "Still level? Repeat. The pot doubles again and the order reverses again.",
+      "pointLimit": "Point limit",
+      "limit": "The game ends as soon as any player reaches the point limit, usually 25. Fewest points wins. If players are level on fewest points, they roll one hand each and the better hand wins."
     }
   },
   "speak": {
