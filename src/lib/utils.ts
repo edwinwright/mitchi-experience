@@ -16,3 +16,8 @@ import { twMerge } from "tailwind-merge";
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
+
+/** Zero-padded ordinal for rendered numbering: 1 → "01". Decoration, never copy. */
+export function twoDigit(n: number) {
+  return String(n).padStart(2, "0");
+}

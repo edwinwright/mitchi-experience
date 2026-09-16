@@ -1,4 +1,3 @@
-import { Fragment } from "react";
 import { useTranslations } from "next-intl";
 import {
   HAND_GROUPS,
@@ -35,14 +34,32 @@ export function RankList({ variant = "list" }: RankListProps) {
   return <Presentation items={items} />;
 }
 
+/*
+ * Rows with dice, name and description, for /rules. dt and dd must be direct
+ * children of the row div (a dl allows one level of div grouping), so the
+ * dice sit inside the dt. GroupMark is 30px at base and 38px at md+, so the
+ * dice column is w-18 / md:w-21, not the canvas's 88 / 104.
+ */
 function RankDefinitions({ items }: { items: RankItem[] }) {
   return (
-    <dl className="my-6 grid grid-cols-[auto_1fr] gap-x-6 gap-y-4 text-sm">
+    <dl className="divide-y divide-border">
       {items.map((item) => (
-        <Fragment key={item.key}>
-          <dt className="font-bold">{item.name}</dt>
-          <dd>{item.description}</dd>
-        </Fragment>
+        <div
+          key={item.key}
+          className="flex flex-col gap-2 px-4 py-4 md:flex-row md:items-center md:gap-4 xl:gap-5 xl:px-5"
+        >
+          <dt className="flex items-center gap-3 md:shrink-0 md:gap-4 xl:gap-5">
+            <div className="w-18 shrink-0 md:w-21">
+              <GroupMark hand={item.best} />
+            </div>
+            <span className="text-base font-bold md:w-30 xl:w-38 xl:text-lg">
+              {item.name}
+            </span>
+          </dt>
+          <dd className="font-serif text-base leading-normal text-stone-900 md:min-w-0 xl:text-lg">
+            {item.description}
+          </dd>
+        </div>
       ))}
     </dl>
   );

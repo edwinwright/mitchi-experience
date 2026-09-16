@@ -26,7 +26,7 @@
     "skip": "Saltar al contenido",
     "language": "Idioma",
     "menu": "Menú",
-    "contents": "[ES] On this page",
+    "contents": "En esta página",
     "main": {
       "rules": "Reglas",
       "reference": "Referencia",
@@ -38,8 +38,8 @@
     "colophon": "Hecho con Next.js y next-intl. De momento en inglés y español, y más idiomas en camino.",
     "onward": {
       "heading": "Siguiente",
-      "reference": "[ES] Quick reference",
-      "referenceSummary": "[ES] Hand ranking, scoring and terms on one screen.",
+      "reference": "Referencia rápida",
+      "referenceSummary": "Clasificación de manos, puntuación y términos en una sola pantalla.",
       "rules": "Las reglas completas",
       "rulesSummary": "Ocho secciones, desde la preparación hasta el final de la partida.",
       "speak": "Los nombres oficiales"
@@ -60,7 +60,7 @@
   "rules": {
     "title": "Reglas de Mitchi",
     "standfirst": "Las reglas completas, desde la preparación hasta el final de la partida.",
-    "exampleLabel": "[ES] Example",
+    "exampleLabel": "Ejemplo",
     "quickStart": {
       "heading": "Mitchi en 60 segundos",
       "step1": "Cada jugador tira un dado. Empieza quien saque el número más alto.",
@@ -78,9 +78,9 @@
     },
     "need": {
       "heading": "Qué necesitas",
-      "diceLabel": "[ES] Dice",
-      "paperLabel": "[ES] Paper",
-      "playersLabel": "[ES] Players",
+      "diceLabel": "Dados",
+      "paperLabel": "Papel",
+      "playersLabel": "Jugadores",
       "dice": "Dos dados de seis caras.",
       "paper": "Un bolígrafo y algo donde escribir.",
       "players": "Al menos otro jugador."
@@ -207,7 +207,7 @@
     "scoring": {
       "heading": "Puntos del bote",
       "roundHeader": "Ronda",
-      "mitchisHeader": "[ES] Mitchis",
+      "mitchisHeader": "Mitchis",
       "potHeader": "En el bote",
       "none": "Ningún Mitchi",
       "noneValue": "1 punto",
