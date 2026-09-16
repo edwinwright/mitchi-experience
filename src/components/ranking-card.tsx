@@ -20,15 +20,9 @@ export function RankingCard() {
   // HANDS is in rank order, so a hand's rank is its position in it.
   const rankOf = (hand: Hand) => HANDS.indexOf(hand) + 1;
   const groups = rankedGroups().map(({ group, hands }) => {
-    const first = rankOf(hands[0]!);
-    const last = rankOf(hands[hands.length - 1]!);
     return {
       group,
       hands,
-      range:
-        hands.length > 1
-          ? `${twoDigit(first)}–${twoDigit(last)}`
-          : twoDigit(first),
     };
   });
   const columns = [groups.slice(0, 3), groups.slice(3)];
@@ -48,7 +42,7 @@ export function RankingCard() {
               c === 1 && "pt-5 max-md:border-t max-md:border-border md:pt-0",
             )}
           >
-            {column.map(({ group, hands, range }) => (
+            {column.map(({ group, hands }) => (
               <div key={group} className="flex flex-col gap-2.5">
                 {/* Inset by the rank column + gap so the name sits over the dice. */}
                 <div className="flex items-baseline justify-between gap-3 border-b border-foreground pb-2 pl-8">
@@ -59,12 +53,6 @@ export function RankingCard() {
                   >
                     {tGroups(group)}
                   </Heading>
-                  <span
-                    aria-hidden="true"
-                    className="font-mono text-xs text-stone-600"
-                  >
-                    {range}
-                  </span>
                 </div>
                 <ol
                   role="list"
