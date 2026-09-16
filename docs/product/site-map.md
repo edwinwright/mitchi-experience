@@ -9,6 +9,7 @@ English has no locale prefix. Spanish is `/es` plus a localised slug, except `/s
 | `/reference` | `/es/referencia`| Hand ranking, scoring, and terms on one screen, for use mid-game.  |
 | `/speak`     | `/es/speak`     | Table nicknames and the official hands they stand for.            |
 | `/about`     | `/es/acerca-de` | Where the game came from, and how these rules were reconstructed. |
+| `/terminology` | `/es/terminologia` | **Unlisted.** Every term, then Mitchi Speak. Candidate to replace `/speak`: not in the nav or sitemap, `noindex` (`UNLISTED_PAGES` in `src/i18n/metadata.ts`). |
 
 Discovery files are unprefixed and skip the locale proxy (dotted paths):
 

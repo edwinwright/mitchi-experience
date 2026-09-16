@@ -27,5 +27,9 @@ export const routing = defineRouting({
       es: "/reglas",
     },
     "/speak": "/speak",
+    "/terminology": {
+      en: "/terminology",
+      es: "/terminologia",
+    },
   },
 });

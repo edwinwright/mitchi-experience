@@ -1,6 +1,9 @@
 import { useTranslations } from "next-intl";
+import { cn } from "@/lib/utils";
 
-export function TermList() {
+type TermListProps = { className?: string };
+
+export function TermList({ className }: TermListProps) {
   const t = useTranslations("terms");
   const items = [
     {
@@ -62,7 +65,7 @@ export function TermList() {
 
   // One row per term at every width; label beside the definition from md.
   return (
-    <dl className="divide-y divide-border xl:max-w-prose">
+    <dl className={cn("divide-y divide-border xl:max-w-prose", className)}>
       {items.map((item) => (
         <div
           key={item.key}
