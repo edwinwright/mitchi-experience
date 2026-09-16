@@ -10,7 +10,7 @@ export function SiteHeader() {
   const t = useTranslations("nav");
 
   return (
-    <header className="relative border-b border-border bg-stone-50">
+    <header className="border-b border-stone-300 bg-stone-50">
       <Container>
         <div className="flex items-center justify-between gap-4 py-4 md:py-6">
           <Link

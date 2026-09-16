@@ -27,38 +27,40 @@ export default function RulesPage() {
   const t = useTranslations("rules");
 
   return (
-    <Container className="py-8">
+    <>
       <PageHeader title={t("title")} standfirst={t("standfirst")} />
-      <OnThisPage
-        items={[
-          { id: "overview", title: t("overview.heading") },
-          { id: "what-you-need", title: t("need.heading") },
-          { id: "setup", title: t("setup.heading") },
-          { id: "hands", title: t("hands.heading") },
-          { id: "round", title: t("round.heading") },
-          { id: "scoring", title: t("scoring.heading") },
-          { id: "tie-breaks", title: t("tieBreaks.heading") },
-          { id: "winning", title: t("winning.heading") },
-        ]}
-      />
-      <hr className="border-border" />
-      <Overview />
-      <hr className="border-border" />
-      <WhatYouNeed />
-      <hr className="border-border" />
-      <Setup />
-      <hr className="border-border" />
-      <Hands />
-      <hr className="border-border" />
-      <Round />
-      <hr className="border-border" />
-      <Scoring />
-      <hr className="border-border" />
-      <TieBreaks />
-      <hr className="border-border" />
-      <Winning />
-      <Onward />
-    </Container>
+      <Container className="py-8">
+        <OnThisPage
+          items={[
+            { id: "overview", title: t("overview.heading") },
+            { id: "what-you-need", title: t("need.heading") },
+            { id: "setup", title: t("setup.heading") },
+            { id: "hands", title: t("hands.heading") },
+            { id: "round", title: t("round.heading") },
+            { id: "scoring", title: t("scoring.heading") },
+            { id: "tie-breaks", title: t("tieBreaks.heading") },
+            { id: "winning", title: t("winning.heading") },
+          ]}
+        />
+        <hr className="border-border" />
+        <Overview />
+        <hr className="border-border" />
+        <WhatYouNeed />
+        <hr className="border-border" />
+        <Setup />
+        <hr className="border-border" />
+        <Hands />
+        <hr className="border-border" />
+        <Round />
+        <hr className="border-border" />
+        <Scoring />
+        <hr className="border-border" />
+        <TieBreaks />
+        <hr className="border-border" />
+        <Winning />
+        <Onward />
+      </Container>
+    </>
   );
 }
 
