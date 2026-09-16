@@ -9,9 +9,17 @@ export const PAGES = {
   reference: "/reference",
   speak: "/speak",
   about: "/about",
+  terminology: "/terminology",
 } as const;
 
-type MetaPage = keyof typeof PAGES;
+export type MetaPage = keyof typeof PAGES;
+
+/**
+ * Real routes that are deliberately not linked, listed or indexed: they
+ * prerender and answer by URL, and nothing else. Promote one by removing
+ * it here and adding it to NAV_ITEMS.
+ */
+export const UNLISTED_PAGES: ReadonlySet<MetaPage> = new Set(["terminology"]);
 
 const OG_IMAGE = {
   url: "/meta/og-default.jpg",
@@ -26,7 +34,8 @@ export async function pageMetadata(
 ): Promise<Metadata> {
   const t = await getTranslations({ locale, namespace: "meta" });
   const title = t(`${page}.title`);
-  const description = t(`${page}.description`);
+  // An empty message means "not written yet", and no tag is better than an empty one.
+  const description = t(`${page}.description`) || undefined;
 
   const href = PAGES[page];
   const canonical = getPathname({ locale, href });
@@ -50,5 +59,8 @@ export async function pageMetadata(
       canonical,
       languages,
     },
+    ...(UNLISTED_PAGES.has(page) && {
+      robots: { index: false, follow: true },
+    }),
   };
 }

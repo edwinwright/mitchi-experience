@@ -16,6 +16,10 @@
       "title": "Mitchi Speak",
       "description": "Los apodos que se usan en la mesa y las manos oficiales a las que corresponden."
     },
+    "terminology": {
+      "title": "Terminología de Mitchi",
+      "description": ""
+    },
     "about": {
       "title": "Acerca de Mitchi",
       "description": "De dónde viene el juego y cómo se reconstruyeron estas reglas."
@@ -42,6 +46,8 @@
       "referenceSummary": "Clasificación de manos, puntuación y términos en una sola pantalla.",
       "rules": "Las reglas completas",
       "rulesSummary": "Ocho secciones, desde la preparación hasta el final de la partida.",
+      "about": "Acerca de Mitchi",
+      "aboutSummary": "De dónde viene el juego y cómo se reconstruyeron estas reglas.",
       "speak": "Los nombres oficiales"
     }
   },
@@ -249,6 +255,11 @@
     "officialHeader": "Nombre oficial",
     "speakHeader": "Mitchi Speak",
     "footnote": "La mayoría de los nombres se han olvidado. Esta lista es lo que se ha recuperado hasta ahora."
+  },
+  "terminology": {
+    "title": "Terminología",
+    "standfirst": "Todos los términos en los que se apoyan las reglas, definidos una sola vez. Y luego, los nombres que se usan de verdad en la mesa.",
+    "officialTerms": "Términos oficiales"
   },
   "about": {
     "title": "Acerca de Mitchi",

@@ -16,6 +16,10 @@
       "title": "Mitchi Speak",
       "description": "The nicknames used at the table, and the official hands they stand for."
     },
+    "terminology": {
+      "title": "Mitchi terminology",
+      "description": ""
+    },
     "about": {
       "title": "About Mitchi",
       "description": "Where the game came from, and how these rules were reconstructed."
@@ -42,6 +46,8 @@
       "referenceSummary": "Hand ranking, scoring and terms on one screen.",
       "rules": "The full rules",
       "rulesSummary": "Eight sections, from setup to the end of the game.",
+      "about": "About Mitchi",
+      "aboutSummary": "Where the game came from, and how these rules were reconstructed.",
       "speak": "The official names"
     }
   },
@@ -249,6 +255,11 @@
     "officialHeader": "Official name",
     "speakHeader": "Mitchi Speak",
     "footnote": "Most of the names have been forgotten. This list is what has been recovered so far."
+  },
+  "terminology": {
+    "title": "Terminology",
+    "standfirst": "Every term the rules rely on, defined once. Then the names the game is actually called by at the table.",
+    "officialTerms": "Official terms"
   },
   "about": {
     "title": "About Mitchi",
