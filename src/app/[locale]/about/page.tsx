@@ -29,7 +29,7 @@ export default function AboutPage() {
           their own measures, which is the one thing .prose exists to override. */}
       <Container className="pt-8 pb-12 md:pt-13 md:pb-16 xl:pt-18 xl:pb-22">
         <div className="flex flex-col gap-10 md:gap-14 xl:gap-18">
-          <div className="flex flex-col gap-8 md:gap-10 xl:max-w-[1000px] xl:gap-13">
+          <div className="flex flex-col gap-8 md:gap-10 max-w-[70ch] xl:gap-13">
             <p className="font-serif text-xl leading-relaxed text-pretty text-stone-900 md:text-2xl xl:max-w-[44ch]">
               {t.rich("origin", tags)}
             </p>

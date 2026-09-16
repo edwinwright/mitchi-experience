@@ -22,20 +22,18 @@ export function OnwardBlock({
   summary,
 }: OnwardBlockProps) {
   return (
-    <div className="flex flex-col gap-2 border-t-2 border-foreground pt-[22px] xl:flex-row xl:items-end xl:justify-between xl:gap-8 xl:pt-[26px]">
+    <div className="flex flex-col gap-2 border-t border-foreground pt-5 xl:flex-row xl:items-end xl:justify-between xl:gap-8 xl:pt-6">
       <div className="flex flex-col gap-2">
-        <p className="font-mono text-[10.5px] tracking-[0.16em] text-stone-600 uppercase md:text-[11px]">
-          {heading}
-        </p>
+        <p className="font-mono text-sm text-stone-600 uppercase">{heading}</p>
         <Link
           href={href}
-          className="focus-ring text-[22px] font-bold tracking-[-0.02em] text-blue-600 underline underline-offset-[5px] hover:text-red-600 md:text-2xl xl:text-[26px]"
+          className="focus-ring text-xl text-blue-600 underline underline-offset-4 hover:text-red-600 md:text-2xl"
         >
           {label}
           <span aria-hidden="true"> →</span>
         </Link>
       </div>
-      <p className="font-serif text-base leading-[1.5] text-stone-600 md:text-[16.5px] xl:max-w-[32ch] xl:text-right xl:text-[17px]">
+      <p className="font-serif text-base text-stone-600 xl:max-w-[32ch]">
         {summary}
       </p>
     </div>
