@@ -1,4 +1,3 @@
-import { Fragment } from "react";
 import { useTranslations } from "next-intl";
 
 export function TermList() {
@@ -61,13 +60,21 @@ export function TermList() {
     },
   ];
 
+  // One row per term at every width; label beside the definition from md.
   return (
-    <dl className="grid grid-cols-[auto_1fr] gap-x-6 gap-y-4 text-sm my-6">
+    <dl className="divide-y divide-border xl:max-w-prose">
       {items.map((item) => (
-        <Fragment key={item.key}>
-          <dt className="font-bold">{item.title}</dt>
-          <dd>{item.value}</dd>
-        </Fragment>
+        <div
+          key={item.key}
+          className="flex flex-col gap-1 py-4 first:pt-0 last:pb-0 md:flex-row md:gap-4"
+        >
+          <dt className="text-base font-semibold md:w-38 md:shrink-0">
+            {item.title}
+          </dt>
+          <dd className="font-serif text-lg leading-normal text-stone-900">
+            {item.value}
+          </dd>
+        </div>
       ))}
     </dl>
   );

@@ -77,7 +77,7 @@ export function handById(id: HandId): Hand {
   return hand;
 }
 
-/** Groups in ranked order, each with its hands. What HandTable renders. */
+/** Groups in ranked order, each with its hands. What RankingCard renders. */
 export function rankedGroups(): ReadonlyArray<{
   group: HandGroup;
   hands: readonly Hand[];

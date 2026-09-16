@@ -220,36 +220,26 @@
     "standfirst": "Todo lo que necesitas durante la partida, en una sola pantalla.",
     "ranking": {
       "heading": "Clasificación de las manos",
-      "caption": "Las manos de Mitchi, clasificadas de mejor a peor",
-      "groupHeader": "Grupo",
-      "diceHeader": "Dados",
-      "handHeader": "Mano"
+      "caption": "Las manos de Mitchi, clasificadas de mejor a peor"
     },
     "scoring": {
-      "heading": "Puntos del bote",
-      "roundHeader": "Ronda",
-      "mitchisHeader": "Mitchis",
-      "potHeader": "En el bote",
-      "none": "Ningún Mitchi",
+      "heading": "Puntuación",
+      "perRound": "Puntos por ronda",
+      "roundHeader": "Mitchis en una ronda",
+      "potHeader": "Puntos en el bote",
       "noneValue": "1 punto",
-      "one": "Un Mitchi",
       "oneValue": "2 puntos",
-      "two": "Dos Mitchis",
       "twoValue": "4 puntos",
-      "note": "Los puntos de Mitchi cuentan los saque quien los saque. La peor mano se lleva el bote y empieza la siguiente ronda."
-    },
-    "tieBreaks": {
-      "heading": "Desempates",
+      "note": "Los puntos de Mitchi cuentan los saque quien los saque. La peor mano se lleva el bote y empieza la siguiente ronda.",
+      "tieBreak": "Puntos en un desempate",
       "rule1": "Solo los jugadores empatados.",
       "rule2": "Una tirada cada uno, no hasta tres.",
       "rule3": "El bote se dobla antes de tirar.",
       "rule4": "El orden se invierte, empezando por el último jugador que tiró.",
       "rule5": "Cada Mitchi que se saque añade 2 puntos más al bote.",
-      "rule6": "¿Sigue el empate? Se repite. El bote se dobla otra vez y el orden se invierte otra vez."
-    },
-    "ending": {
-      "heading": "El final de la partida",
-      "body": "La partida termina en cuanto un jugador alcanza el límite de puntos, normalmente 25. Gana quien menos puntos tenga. Si varios jugadores empatan con la puntuación más baja, cada uno saca una mano y gana la mejor."
+      "rule6": "¿Sigue el empate? Se repite. El bote se dobla otra vez y el orden se invierte otra vez.",
+      "pointLimit": "Límite de puntos",
+      "limit": "La partida termina en cuanto un jugador alcanza el límite de puntos, normalmente 25. Gana quien menos puntos tenga. Si varios jugadores empatan con la puntuación más baja, cada uno saca una mano y gana la mejor."
     }
   },
   "speak": {
