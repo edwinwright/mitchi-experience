@@ -7,11 +7,13 @@ import { tags } from "@/i18n/rich-text";
 export default function NotFoundPage() {
   const t = useTranslations("notFound");
   return (
-    <Container className="py-8">
+    <>
       <PageHeader title={t("title")} />
-      <Prose>
-        <p>{t.rich("body", tags)}</p>
-      </Prose>
-    </Container>
+      <Container className="py-8">
+        <Prose>
+          <p>{t.rich("body", tags)}</p>
+        </Prose>
+      </Container>
+    </>
   );
 }

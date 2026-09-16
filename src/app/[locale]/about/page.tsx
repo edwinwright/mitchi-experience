@@ -18,14 +18,20 @@ export async function generateMetadata({
 export default function AboutPage() {
   const t = useTranslations("about");
   return (
-    <Container className="py-8">
-      <PageHeader title={t("title")} />
-      <Prose>
-        <p>{t.rich("origin", tags)}</p>
-        <p>{t.rich("reconstruction", tags)}</p>
-        <p>{t.rich("speak", tags)}</p>
-        <p>{t.rich("colophon", tags)}</p>
-      </Prose>
-    </Container>
+    <>
+      <PageHeader
+        title={t("title")}
+        eyebrow={t("topics")}
+        standfirst={t("standfirst")}
+      />
+      <Container className="py-8">
+        <Prose>
+          <p>{t.rich("origin", tags)}</p>
+          <p>{t.rich("reconstruction", tags)}</p>
+          <p>{t.rich("speak", tags)}</p>
+          <p>{t.rich("colophon", tags)}</p>
+        </Prose>
+      </Container>
+    </>
   );
 }

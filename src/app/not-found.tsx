@@ -1,5 +1,4 @@
 import { Container } from "@/components/layout/container";
-import { PageHeader } from "@/components/page-header";
 import { Prose } from "@/components/prose";
 import { cn } from "@/lib/utils";
 import { archivo, sourceSerif, jetbrainsMono, lato } from "@/app/fonts";
@@ -17,7 +16,11 @@ export default function NotFound() {
       )}
     >
       <div className="font-sans text-center">
-        <PageHeader title="This page does not exist" />
+        {/* Plain h1, not PageHeader: the band is site chrome, and this page has
+            none. Hardcoded English — there is no provider here. */}
+        <h1 className="mb-8 font-sans font-bold text-[44px] leading-[0.96] tracking-[-0.035em] md:text-[56px]">
+          This page does not exist
+        </h1>
         <Prose>
           <p>
             {/* eslint-disable-next-line @next/next/no-html-link-for-pages -- root 404, no locale provider */}

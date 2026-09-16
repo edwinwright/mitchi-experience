@@ -18,15 +18,17 @@ export async function generateMetadata({
 export default function SpeakPage() {
   const t = useTranslations("speak");
   return (
-    <Container className="py-8">
+    <>
       <PageHeader title={t("title")} standfirst={t("standfirst")} />
-      <div className="py-6">
-        <SpeakTable />
-      </div>
-      <hr className="border-border" />
-      <Prose className="pt-6">
-        <p>{t("footnote")}</p>
-      </Prose>
-    </Container>
+      <Container className="py-8">
+        <div className="py-6">
+          <SpeakTable />
+        </div>
+        <hr className="border-border" />
+        <Prose className="pt-6">
+          <p>{t("footnote")}</p>
+        </Prose>
+      </Container>
+    </>
   );
 }
