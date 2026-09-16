@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import { useTranslations } from "next-intl";
 import { PageHeader } from "@/components/page-header";
 import { Container } from "@/components/layout/container";
+import { OnwardBlock } from "@/components/onward-block";
 import { tags } from "@/i18n/rich-text";
 import { pageMetadata } from "@/i18n/metadata";
 
@@ -16,6 +17,7 @@ export async function generateMetadata({
 
 export default function AboutPage() {
   const t = useTranslations("about");
+  const tOnward = useTranslations("nav.onward");
   return (
     <>
       <PageHeader
@@ -41,6 +43,12 @@ export default function AboutPage() {
               {t.rich("colophon", tags)}
             </p>
           </div>
+          <OnwardBlock
+            href="/rules"
+            heading={tOnward("heading")}
+            label={tOnward("rules")}
+            summary={tOnward("rulesSummary")}
+          />
         </div>
       </Container>
     </>
