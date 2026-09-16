@@ -35,8 +35,10 @@
     "footer": "Mitchi. The rules, written down.",
     "privacy": "No cookies. Visits are counted anonymously and nothing is stored on your device.",
     "onward": {
+      "heading": "Next",
       "reference": "Next: Quick reference",
       "rules": "The full rules",
+      "rulesSummary": "Eight sections, from setup to the end of the game.",
       "speak": "The official names"
     }
   },
@@ -231,6 +233,8 @@
   },
   "about": {
     "title": "About Mitchi",
+    "topics": "Origin · reconstruction",
+    "standfirst": "Where the game came from, and how these rules were reconstructed.",
     "origin": "Mitchi was learnt while travelling in Spain, though not from a Spanish player. Where it came from before that is not known, and this site does not pretend it is a traditional Spanish game.",
     "reconstruction": "These rules are a reconstruction. Some were remembered, some were recovered by asking the people who played. Where a rule had to be settled rather than recalled, it has been settled the way the game was actually played.",
     "speak": "There is also a private vocabulary. Hands have nicknames that mean nothing to anyone who was not at the table. They are not part of the game, but they are <speak>written down anyway</speak>.",
