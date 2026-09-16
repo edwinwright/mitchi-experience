@@ -61,6 +61,27 @@
     "title": "Reglas de Mitchi",
     "standfirst": "Las reglas completas, desde la preparación hasta el final de la partida.",
     "exampleLabel": "Ejemplo",
+    "strip": {
+      "player": "Jugador {n}",
+      "rolls": "{count, plural, one {# tirada} other {# tiradas}}",
+      "limit": "límite de tiradas {count}",
+      "worstSoFar": "peor mano hasta ahora",
+      "needs": "necesita {hand} o mejor",
+      "stopsOnRoll": "se planta en la tirada {count}"
+    },
+    "stages": {
+      "stageHeader": "Fase",
+      "whatHeader": "Qué pasa",
+      "potHeader": "Bote",
+      "round": "Ronda",
+      "tieBreak": "Desempate {n}",
+      "mitchi": "Sale Mitchi",
+      "roundWhat": "Tres jugadores empatan, 1 punto en el bote",
+      "doubleWhat": "El bote se dobla",
+      "mitchiWhat": "Añade 2 puntos más",
+      "doubleAgainWhat": "El bote se dobla otra vez",
+      "stillLevelWhat": "Y otra vez, si siguen empatados"
+    },
     "quickStart": {
       "heading": "Mitchi en 60 segundos",
       "step1": "Cada jugador tira un dado. Empieza quien saque el número más alto.",

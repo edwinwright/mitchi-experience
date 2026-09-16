@@ -70,6 +70,13 @@ export function handsInGroup(group: HandGroup): readonly Hand[] {
   return HANDS.filter((hand) => hand.group === group);
 }
 
+/** One hand by id. Ids are typed, so a miss is a bug, not a case. */
+export function handById(id: HandId): Hand {
+  const hand = HANDS.find((hand) => hand.id === id);
+  if (!hand) throw new Error(`Unknown hand: ${id}`);
+  return hand;
+}
+
 /** Groups in ranked order, each with its hands. What HandTable renders. */
 export function rankedGroups(): ReadonlyArray<{
   group: HandGroup;

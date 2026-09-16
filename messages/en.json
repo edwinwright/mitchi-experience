@@ -61,6 +61,27 @@
     "title": "Mitchi rules",
     "standfirst": "The full rules, from setup to the end of the game.",
     "exampleLabel": "Example",
+    "strip": {
+      "player": "Player {n}",
+      "rolls": "{count, plural, one {# roll} other {# rolls}}",
+      "limit": "roll limit {count}",
+      "worstSoFar": "worst hand so far",
+      "needs": "needs {hand} or better",
+      "stopsOnRoll": "stops on roll {count}"
+    },
+    "stages": {
+      "stageHeader": "Stage",
+      "whatHeader": "What happens",
+      "potHeader": "Pot",
+      "round": "Round",
+      "tieBreak": "Tie-break {n}",
+      "mitchi": "Mitchi rolled",
+      "roundWhat": "Three players tie, 1 point in the pot",
+      "doubleWhat": "The pot doubles",
+      "mitchiWhat": "Adds 2 more points",
+      "doubleAgainWhat": "The pot doubles again",
+      "stillLevelWhat": "And again, if they are still level"
+    },
     "quickStart": {
       "heading": "Mitchi in 60 seconds",
       "step1": "Everyone rolls one die. The highest roll starts.",

@@ -7,6 +7,8 @@ import { RuleBody } from "@/components/rule-body";
 import { StepList } from "@/components/step-list";
 import { RankList } from "@/components/rank-list";
 import { Example } from "@/components/example";
+import { ExampleStrip } from "@/components/example-strip";
+import { StageTable } from "@/components/stage-table";
 import { OnThisPage } from "@/components/on-this-page";
 import { ScoringTable } from "@/components/scoring-table";
 import { OnwardBlock } from "@/components/onward-block";
@@ -131,6 +133,17 @@ function Hands() {
 
 function Round() {
   const t = useTranslations("rules.round");
+  const tStrip = useTranslations("rules.strip");
+  const tHands = useTranslations("hands");
+  // Players are numbered by turn order in the round; the prose gets the same
+  // numbers through its a/b/c parameters. The · and → are rendered, not copy.
+  const players = { a: "1", b: "2", c: "3" };
+  const player = (n: number) => tStrip("player", { n });
+  const rollsToLimit = (count: number) => (
+    <>
+      {tStrip("rolls", { count })} → {tStrip("limit", { count })}
+    </>
+  );
   return (
     <RuleSection id="round" number={5} heading={t("heading")}>
       <Heading level={3} className="pt-1 text-lg font-semibold xl:text-xl">
@@ -142,7 +155,25 @@ function Round() {
         <p>{t.rich("rollLimit.fresh", tags)}</p>
         <p>{t.rich("rollLimit.sets", tags)}</p>
       </RuleBody>
-      <Example>{t.rich("rollLimit.example", tags)}</Example>
+      <Example
+        strip={
+          <ExampleStrip
+            rows={[
+              {
+                label: player(1),
+                hand: "6-3",
+                note: (
+                  <>
+                    {tHands("6-3")} · {rollsToLimit(2)}
+                  </>
+                ),
+              },
+            ]}
+          />
+        }
+      >
+        {t.rich("rollLimit.example", tags)}
+      </Example>
       <Heading level={3} className="pt-1 text-lg font-semibold xl:text-xl">
         {t("others.heading")}
       </Heading>
@@ -150,21 +181,66 @@ function Round() {
         <p>{t.rich("others.body", tags)}</p>
         <p>{t.rich("others.beat", tags)}</p>
       </RuleBody>
-      <Example>
-        {t.rich("others.example1", {
-          ...tags,
-          a: "A",
-          b: "B",
-          c: "C",
-        })}
+      <Example
+        strip={
+          <ExampleStrip
+            rows={[
+              {
+                label: player(1),
+                hand: "6-4",
+                note: (
+                  <>
+                    {tHands("6-4")} · {rollsToLimit(1)}
+                  </>
+                ),
+              },
+              {
+                label: player(2),
+                hand: "5-1",
+                note: (
+                  <>
+                    {tHands("5-1")} · {tStrip("worstSoFar")}
+                  </>
+                ),
+              },
+              {
+                label: player(3),
+                hand: "5-2",
+                note: tStrip("needs", { hand: tHands("5-2") }),
+              },
+            ]}
+          />
+        }
+      >
+        {t.rich("others.example1", { ...tags, ...players })}
       </Example>
-      <Example>
-        {t.rich("others.example2", {
-          ...tags,
-          a: "A",
-          b: "B",
-          c: "C",
-        })}
+      <Example
+        strip={
+          <ExampleStrip
+            rows={[
+              {
+                label: player(1),
+                hand: "5-4",
+                note: (
+                  <>
+                    {tHands("5-4")} · {rollsToLimit(3)}
+                  </>
+                ),
+              },
+              {
+                label: player(2),
+                hand: "6-2",
+                note: (
+                  <>
+                    {tHands("6-2")} · {tStrip("stopsOnRoll", { count: 1 })}
+                  </>
+                ),
+              },
+            ]}
+          />
+        }
+      >
+        {t.rich("others.example2", { ...tags, ...players })}
       </Example>
     </RuleSection>
   );
@@ -205,7 +281,7 @@ function TieBreaks() {
         <p>{t.rich("outcome", tags)}</p>
         <p>{t.rich("again", tags)}</p>
       </RuleBody>
-      <Example>{t.rich("example", tags)}</Example>
+      <Example strip={<StageTable />}>{t.rich("example", tags)}</Example>
     </RuleSection>
   );
 }
