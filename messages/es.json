@@ -26,6 +26,7 @@
     "skip": "Saltar al contenido",
     "language": "Idioma",
     "menu": "Menú",
+    "contents": "En esta página",
     "main": {
       "rules": "Reglas",
       "reference": "Referencia",
@@ -37,7 +38,8 @@
     "colophon": "Hecho con Next.js y next-intl. De momento en inglés y español, y más idiomas en camino.",
     "onward": {
       "heading": "Siguiente",
-      "reference": "Siguiente: referencia rápida",
+      "reference": "Referencia rápida",
+      "referenceSummary": "Clasificación de manos, puntuación y términos en una sola pantalla.",
       "rules": "Las reglas completas",
       "rulesSummary": "Ocho secciones, desde la preparación hasta el final de la partida.",
       "speak": "Los nombres oficiales"
@@ -58,6 +60,28 @@
   "rules": {
     "title": "Reglas de Mitchi",
     "standfirst": "Las reglas completas, desde la preparación hasta el final de la partida.",
+    "exampleLabel": "Ejemplo",
+    "strip": {
+      "player": "Jugador {n}",
+      "rolls": "{count, plural, one {# tirada} other {# tiradas}}",
+      "limit": "límite de tiradas {count}",
+      "worstSoFar": "peor mano hasta ahora",
+      "needs": "necesita {hand} o mejor",
+      "stopsOnRoll": "se planta en la tirada {count}"
+    },
+    "stages": {
+      "stageHeader": "Fase",
+      "whatHeader": "Qué pasa",
+      "potHeader": "Bote",
+      "round": "Ronda",
+      "tieBreak": "Desempate {n}",
+      "mitchi": "Sale Mitchi",
+      "roundWhat": "Tres jugadores empatan, 1 punto en el bote",
+      "doubleWhat": "El bote se dobla",
+      "mitchiWhat": "Añade 2 puntos más",
+      "doubleAgainWhat": "El bote se dobla otra vez",
+      "stillLevelWhat": "Y otra vez, si siguen empatados"
+    },
     "quickStart": {
       "heading": "Mitchi en 60 segundos",
       "step1": "Cada jugador tira un dado. Empieza quien saque el número más alto.",
@@ -75,6 +99,9 @@
     },
     "need": {
       "heading": "Qué necesitas",
+      "diceLabel": "Dados",
+      "paperLabel": "Papel",
+      "playersLabel": "Jugadores",
       "dice": "Dos dados de seis caras.",
       "paper": "Un bolígrafo y algo donde escribir.",
       "players": "Al menos otro jugador."
@@ -201,6 +228,7 @@
     "scoring": {
       "heading": "Puntos del bote",
       "roundHeader": "Ronda",
+      "mitchisHeader": "Mitchis",
       "potHeader": "En el bote",
       "none": "Ningún Mitchi",
       "noneValue": "1 punto",
