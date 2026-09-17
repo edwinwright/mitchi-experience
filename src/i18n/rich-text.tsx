@@ -10,7 +10,8 @@ type Tag =
   | "about"
   | "reference"
   | "rules"
-  | "speak";
+  | "speak"
+  | "tieBreaks";
 
 export type TagMap = Record<Tag, (chunks: ReactNode) => ReactNode>;
 
@@ -43,6 +44,14 @@ export const tags: TagMap = {
   ),
   speak: (chunks) => (
     <Link href="/speak" className="focus-ring">
+      {chunks}
+    </Link>
+  ),
+  tieBreaks: (chunks) => (
+    <Link
+      href={{ pathname: "/rules", hash: "tie-breaks" }}
+      className="focus-ring"
+    >
       {chunks}
     </Link>
   ),

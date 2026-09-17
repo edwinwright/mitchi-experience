@@ -9,7 +9,7 @@ const STEPS = ["step1", "step2", "step3", "step4", "step5", "step6"] as const;
 
 export function HomeQuickStart() {
   const t = useTranslations("rules.quickStart");
-  const tOnward = useTranslations("nav.onward");
+  const tOnward = useTranslations("nextPage");
 
   return (
     <section className="bg-stone-50">
@@ -90,7 +90,7 @@ export function HomeQuickStart() {
             href="/rules"
             className="focus-ring font-semibold text-blue-600 underline underline-offset-4 hover:text-red-600"
           >
-            {tOnward("rules")}
+            {tOnward("rules.label")}
           </Link>
         </p>
       </Container>

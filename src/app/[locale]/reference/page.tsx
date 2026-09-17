@@ -28,8 +28,8 @@ export default function ReferencePage() {
   const tRanking = useTranslations("reference.ranking");
   const tScoring = useTranslations("reference.scoring");
   const tTerms = useTranslations("rules.terms");
-  const tHands = useTranslations("rules.hands");
-  const tOnward = useTranslations("nav.onward");
+  const tGroups = useTranslations("handGroups");
+  const tOnward = useTranslations("nextPage");
 
   return (
     <>
@@ -49,7 +49,7 @@ export default function ReferencePage() {
             <RuleSection id="ranking" number={1} heading={tRanking("heading")}>
               <RankingCard />
               <RuleBody>
-                <p>{tHands.rich("withinGroup", tags)}</p>
+                <p>{tGroups.rich("withinGroup", tags)}</p>
               </RuleBody>
             </RuleSection>
             <Scoring />
@@ -60,8 +60,8 @@ export default function ReferencePage() {
           <OnwardBlock
             href="/rules"
             heading={tOnward("heading")}
-            label={tOnward("rules")}
-            summary={tOnward("rulesSummary")}
+            label={tOnward("rules.label")}
+            summary={tOnward("rules.summary")}
           />
         </div>
       </Container>

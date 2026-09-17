@@ -25,30 +25,37 @@
       "description": "De dónde viene el juego y cómo se reconstruyeron estas reglas."
     }
   },
-  "nav": {
-    "wordmark": "Mitchi",
-    "skip": "Saltar al contenido",
+  "site": {
+    "name": "Mitchi",
+    "skipToContent": "Saltar al contenido",
     "language": "Idioma",
     "menu": "Menú",
-    "contents": "En esta página",
-    "main": {
-      "rules": "Reglas",
-      "reference": "Referencia",
-      "speak": "Speak",
-      "about": "Acerca de"
+    "onThisPage": "En esta página",
+    "footer": {
+      "tagline": "Mitchi. Las reglas, por escrito.",
+      "privacy": "Sin cookies. Las visitas se cuentan de forma anónima y no se almacena nada en tu dispositivo.",
+      "builtWith": "Hecho con Next.js y next-intl. De momento en inglés y español, y más idiomas en camino."
+    }
+  },
+  "nav": {
+    "rules": "Reglas",
+    "reference": "Referencia",
+    "about": "Acerca de",
+    "speak": "Speak"
+  },
+  "nextPage": {
+    "heading": "Siguiente",
+    "rules": {
+      "label": "Las reglas completas",
+      "summary": "[ES] Everything you need to play, from setup to the end of the game."
     },
-    "footer": "Mitchi. Las reglas, por escrito.",
-    "privacy": "Sin cookies. Las visitas se cuentan de forma anónima y no se almacena nada en tu dispositivo.",
-    "colophon": "Hecho con Next.js y next-intl. De momento en inglés y español, y más idiomas en camino.",
-    "onward": {
-      "heading": "Siguiente",
-      "reference": "Referencia rápida",
-      "referenceSummary": "Clasificación de manos, puntuación y términos en una sola pantalla.",
-      "rules": "Las reglas completas",
-      "rulesSummary": "Ocho secciones, desde la preparación hasta el final de la partida.",
-      "about": "Acerca de Mitchi",
-      "aboutSummary": "De dónde viene el juego y cómo se reconstruyeron estas reglas.",
-      "speak": "Los nombres oficiales"
+    "reference": {
+      "label": "Referencia rápida",
+      "summary": "[ES] Hand ranking and scoring on one screen."
+    },
+    "about": {
+      "label": "Acerca de Mitchi",
+      "summary": "[ES] How I learnt the game, and why the rules are written down here."
     }
   },
   "home": {
@@ -121,13 +128,6 @@
     "hands": {
       "heading": "Manos",
       "intro": "Una mano está formada por los dos dados con los que terminas tu turno. Las manos se clasifican de mejor a peor.",
-      "mitchi": "Un 2 y un 1. La mejor mano del juego.",
-      "doubles": "Ambos dados muestran el mismo número. Solo Mitchi puede vencer a un doble. Doble seis es el mejor de ellos y doble uno el peor.",
-      "sixHigh": "Un 6 y un dado de menor valor.",
-      "fiveHigh": "Un 5 y un dado de menor valor.",
-      "fourHigh": "Un 4 y un dado de menor valor.",
-      "threeHigh": "Un 3 y un dado de menor valor.",
-      "withinGroup": "Dentro de un grupo, cuanto mayor sea el dado de menor valor, mejor será la mano: seis-cinco vence a seis-cuatro. La peor mano del juego es tres-uno.",
       "onward": "Las 21 manos están incluidas en la <reference>referencia rápida</reference>."
     },
     "round": {
@@ -231,11 +231,6 @@
     "scoring": {
       "heading": "Puntuación",
       "perRound": "Puntos por ronda",
-      "roundHeader": "Mitchis en una ronda",
-      "potHeader": "Puntos en el bote",
-      "noneValue": "1 punto",
-      "oneValue": "2 puntos",
-      "twoValue": "4 puntos",
       "note": "Los puntos de Mitchi cuentan los saque quien los saque. La peor mano se lleva el bote y empieza la siguiente ronda.",
       "tieBreak": "Puntos en un desempate",
       "rule1": "Solo los jugadores empatados.",
@@ -273,13 +268,32 @@
     "title": "Esa página no existe",
     "body": "Prueba con las <rules>reglas</rules> o con la <reference>referencia rápida</reference>."
   },
-  "groups": {
-    "mitchi": "Mitchi",
-    "doubles": "Dobles",
-    "sixHigh": "Seis alto",
-    "fiveHigh": "Cinco alto",
-    "fourHigh": "Cuatro alto",
-    "threeHigh": "Tres alto"
+  "handGroups": {
+    "withinGroup": "[ES] Within a group, the higher hand wins: double-six beats double-five, and six-five beats six-four. The worst hand in the game is three-one.",
+    "mitchi": {
+      "name": "Mitchi",
+      "description": "Un 2 y un 1. La mejor mano del juego."
+    },
+    "doubles": {
+      "name": "Dobles",
+      "description": "[ES] Both dice show the same number."
+    },
+    "sixHigh": {
+      "name": "Seis alto",
+      "description": "[ES] A 6 with a 5, 4, 3, 2 or 1."
+    },
+    "fiveHigh": {
+      "name": "Cinco alto",
+      "description": "[ES] A 5 with a 4, 3, 2 or 1."
+    },
+    "fourHigh": {
+      "name": "Cuatro alto",
+      "description": "[ES] A 4 with a 3, 2 or 1."
+    },
+    "threeHigh": {
+      "name": "Tres alto",
+      "description": "[ES] A 3 with a 2 or 1."
+    }
   },
   "hands": {
     "2-1": "dos-uno",
@@ -303,5 +317,13 @@
     "4-1": "cuatro-uno",
     "3-2": "tres-dos",
     "3-1": "tres-uno"
+  },
+  "potTable": {
+    "mitchisHeader": "[ES] Mitchis rolled",
+    "pointsHeader": "[ES] Points in the pot",
+    "none": "[ES] None",
+    "one": "[ES] One",
+    "two": "[ES] Two",
+    "three": "[ES] Three"
   }
 }

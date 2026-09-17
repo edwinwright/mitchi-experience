@@ -18,7 +18,7 @@ export async function generateMetadata({
 
 export default function SpeakPage() {
   const t = useTranslations("speak");
-  const tOnward = useTranslations("nav.onward");
+  const tOnward = useTranslations("nextPage");
   return (
     <>
       <PageHeader title={t("title")} standfirst={t("standfirst")} />
@@ -34,8 +34,8 @@ export default function SpeakPage() {
           <OnwardBlock
             href="/about"
             heading={tOnward("heading")}
-            label={tOnward("about")}
-            summary={tOnward("aboutSummary")}
+            label={tOnward("about.label")}
+            summary={tOnward("about.summary")}
           />
         </div>
       </Container>

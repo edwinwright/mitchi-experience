@@ -2,7 +2,13 @@
 // same key set, and each string carries the same rich text tags and ICU
 // parameters as its English original. Exits non-zero on any mismatch.
 //
+// Also reports scaffolding markers ("[ES] " and the like) in any locale file.
+// A warning by default, so previews and local builds work mid-translation.
+// With --no-markers a marker is a failure: package.json runs that form as
+// prebuild on production deploys, so a marker can never ship.
+//
 //   npm run i18n:check
+//   node scripts/check-messages.mjs --no-markers
 
 import { readdirSync, readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
@@ -36,15 +42,27 @@ function tokens(str) {
   return [...tags, ...params].sort();
 }
 
+const failOnMarkers = process.argv.includes('--no-markers');
+const MARKER = /^\[[A-Z]{2}\] /;
+
 const enFlat = flatten(en);
 const enKeys = new Set(Object.keys(enFlat));
 let ok = true;
+const markers = [];
+
+for (const [key, value] of Object.entries(enFlat)) {
+  if (MARKER.test(value)) markers.push(`en.json: ${key}`);
+}
 
 for (const locale of locales) {
   const localePath = path.join(messagesDir, `${locale}.json`);
   const data = JSON.parse(readFileSync(localePath, 'utf8'));
   const localeFlat = flatten(data);
   const localeKeys = new Set(Object.keys(localeFlat));
+
+  for (const [key, value] of Object.entries(localeFlat)) {
+    if (MARKER.test(value)) markers.push(`${locale}.json: ${key}`);
+  }
 
   for (const key of enKeys) {
     if (!localeKeys.has(key)) {
@@ -70,6 +88,17 @@ for (const locale of locales) {
       ok = false;
     }
   }
+}
+
+if (markers.length > 0) {
+  const label = failOnMarkers ? 'error' : 'warning';
+  console[failOnMarkers ? 'error' : 'warn'](
+    `${label}: ${markers.length} untranslated marker${markers.length === 1 ? '' : 's'}:`
+  );
+  for (const entry of markers) {
+    console[failOnMarkers ? 'error' : 'warn'](`  ${entry}`);
+  }
+  if (failOnMarkers) ok = false;
 }
 
 if (!ok) {

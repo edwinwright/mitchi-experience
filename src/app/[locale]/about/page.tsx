@@ -17,7 +17,7 @@ export async function generateMetadata({
 
 export default function AboutPage() {
   const t = useTranslations("about");
-  const tOnward = useTranslations("nav.onward");
+  const tOnward = useTranslations("nextPage");
   return (
     <>
       <PageHeader
@@ -43,8 +43,8 @@ export default function AboutPage() {
           <OnwardBlock
             href="/rules"
             heading={tOnward("heading")}
-            label={tOnward("rules")}
-            summary={tOnward("rulesSummary")}
+            label={tOnward("rules.label")}
+            summary={tOnward("rules.summary")}
           />
         </div>
       </Container>

@@ -13,7 +13,7 @@ type OnThisPageProps = {
  * <a href="#…">, not the locale-aware Link.
  */
 export function OnThisPage({ items, className }: OnThisPageProps) {
-  const t = useTranslations("nav");
+  const t = useTranslations("site");
   return (
     <nav
       aria-labelledby="contents-heading"
@@ -28,7 +28,7 @@ export function OnThisPage({ items, className }: OnThisPageProps) {
         id="contents-heading"
         className="font-mono text-xs tracking-widest text-stone-600 uppercase xl:border-b xl:border-border xl:pb-3"
       >
-        {t("contents")}
+        {t("onThisPage")}
       </p>
       {/* grid-flow-col + grid-rows-4 gives the 01/05, 02/06 column order without reordering the array. */}
       <ol

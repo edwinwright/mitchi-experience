@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "prebuild": "if [ \"$VERCEL_ENV\" = production ]; then node scripts/check-messages.mjs --no-markers; fi",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",

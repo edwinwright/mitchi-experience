@@ -25,30 +25,37 @@
       "description": "Where the game came from, and how these rules were reconstructed."
     }
   },
-  "nav": {
-    "wordmark": "Mitchi",
-    "skip": "Skip to content",
+  "site": {
+    "name": "Mitchi",
+    "skipToContent": "Skip to content",
     "language": "Language",
     "menu": "Menu",
-    "contents": "On this page",
-    "main": {
-      "rules": "Rules",
-      "reference": "Reference",
-      "speak": "Speak",
-      "about": "About"
+    "onThisPage": "On this page",
+    "footer": {
+      "tagline": "Mitchi. The rules, written down.",
+      "privacy": "No cookies. Visits are counted anonymously and nothing is stored on your device.",
+      "builtWith": "Built with Next.js and next-intl. English and Spanish now, more languages to come."
+    }
+  },
+  "nav": {
+    "rules": "Rules",
+    "reference": "Reference",
+    "about": "About",
+    "speak": "Speak"
+  },
+  "nextPage": {
+    "heading": "Next",
+    "rules": {
+      "label": "The full rules",
+      "summary": "Everything you need to play, from setup to the end of the game."
     },
-    "footer": "Mitchi. The rules, written down.",
-    "privacy": "No cookies. Visits are counted anonymously and nothing is stored on your device.",
-    "colophon": "Built with Next.js and next-intl. English and Spanish now, more languages to come.",
-    "onward": {
-      "heading": "Next",
-      "reference": "Quick reference",
-      "referenceSummary": "Hand ranking, scoring and terms on one screen.",
-      "rules": "The full rules",
-      "rulesSummary": "Eight sections, from setup to the end of the game.",
-      "about": "About Mitchi",
-      "aboutSummary": "Where the game came from, and how these rules were reconstructed.",
-      "speak": "The official names"
+    "reference": {
+      "label": "Quick reference",
+      "summary": "Hand ranking and scoring on one screen."
+    },
+    "about": {
+      "label": "About Mitchi",
+      "summary": "How I learnt the game, and why the rules are written down here."
     }
   },
   "home": {
@@ -121,13 +128,6 @@
     "hands": {
       "heading": "Hands",
       "intro": "A hand is the two dice you finish your turn with. Hands are ranked from best to worst.",
-      "mitchi": "A 2 and a 1. The best hand in the game.",
-      "doubles": "Both dice showing the same number. Beaten only by a Mitchi. Double-six is the best of them, double-one the worst.",
-      "sixHigh": "A 6 with a lower die.",
-      "fiveHigh": "A 5 with a lower die.",
-      "fourHigh": "A 4 with a lower die.",
-      "threeHigh": "A 3 with a lower die.",
-      "withinGroup": "Within a group, the higher the lower die, the better the hand: six-five beats six-four. The worst hand in the game is three-one.",
       "onward": "All 21 hands are listed on the <reference>quick reference</reference>."
     },
     "round": {
@@ -231,11 +231,6 @@
     "scoring": {
       "heading": "Scoring",
       "perRound": "Points per round",
-      "roundHeader": "Mitchis in a round",
-      "potHeader": "Points in the pot",
-      "noneValue": "1 point",
-      "oneValue": "2 points",
-      "twoValue": "4 points",
       "note": "Mitchi points count whoever rolled them. The worst hand takes the pot and starts the next round.",
       "tieBreak": "Points in a tie-break",
       "rule1": "Tied players only.",
@@ -273,13 +268,32 @@
     "title": "That page does not exist",
     "body": "Try the <rules>rules</rules> or the <reference>quick reference</reference>."
   },
-  "groups": {
-    "mitchi": "Mitchi",
-    "doubles": "Doubles",
-    "sixHigh": "Six-high",
-    "fiveHigh": "Five-high",
-    "fourHigh": "Four-high",
-    "threeHigh": "Three-high"
+  "handGroups": {
+    "withinGroup": "Within a group, the higher hand wins: double-six beats double-five, and six-five beats six-four. The worst hand in the game is three-one.",
+    "mitchi": {
+      "name": "Mitchi",
+      "description": "A 2 and a 1. The best hand in the game."
+    },
+    "doubles": {
+      "name": "Doubles",
+      "description": "Both dice show the same number."
+    },
+    "sixHigh": {
+      "name": "Six-high",
+      "description": "A 6 with a 5, 4, 3, 2 or 1."
+    },
+    "fiveHigh": {
+      "name": "Five-high",
+      "description": "A 5 with a 4, 3, 2 or 1."
+    },
+    "fourHigh": {
+      "name": "Four-high",
+      "description": "A 4 with a 3, 2 or 1."
+    },
+    "threeHigh": {
+      "name": "Three-high",
+      "description": "A 3 with a 2 or 1."
+    }
   },
   "hands": {
     "2-1": "two-one",
@@ -303,5 +317,13 @@
     "4-1": "four-one",
     "3-2": "three-two",
     "3-1": "three-one"
+  },
+  "potTable": {
+    "mitchisHeader": "Mitchis rolled",
+    "pointsHeader": "Points in the pot",
+    "none": "None",
+    "one": "One",
+    "two": "Two",
+    "three": "Three"
   }
 }

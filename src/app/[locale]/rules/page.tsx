@@ -27,7 +27,7 @@ export async function generateMetadata({
 
 export default function RulesPage() {
   const t = useTranslations("rules");
-  const tOnward = useTranslations("nav.onward");
+  const tOnward = useTranslations("nextPage");
 
   return (
     <>
@@ -61,8 +61,8 @@ export default function RulesPage() {
           <OnwardBlock
             href="/reference"
             heading={tOnward("heading")}
-            label={tOnward("reference")}
-            summary={tOnward("referenceSummary")}
+            label={tOnward("reference.label")}
+            summary={tOnward("reference.summary")}
           />
         </div>
       </Container>
@@ -116,6 +116,7 @@ function Setup() {
 
 function Hands() {
   const t = useTranslations("rules.hands");
+  const tGroups = useTranslations("handGroups");
   return (
     <RuleSection id="hands" number={4} heading={t("heading")}>
       <RuleBody>
@@ -124,7 +125,7 @@ function Hands() {
       <RankList />
       {/* Page link, not a term link: blue text and a 1px rule, as /about's <speak>. */}
       <RuleBody className="[&_a]:text-blue-600 [&_a]:decoration-1 [&_a]:hover:text-red-600">
-        <p>{t.rich("withinGroup", tags)}</p>
+        <p>{tGroups.rich("withinGroup", tags)}</p>
         <p>{t.rich("onward", tags)}</p>
       </RuleBody>
     </RuleSection>

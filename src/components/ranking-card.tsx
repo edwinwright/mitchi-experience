@@ -14,7 +14,7 @@ import { cn, twoDigit } from "@/lib/utils";
  */
 export function RankingCard() {
   const tRanking = useTranslations("reference.ranking");
-  const tGroups = useTranslations("groups");
+  const tGroups = useTranslations("handGroups");
   const tHands = useTranslations("hands");
 
   // HANDS is in rank order, so a hand's rank is its position in it.
@@ -51,7 +51,7 @@ export function RankingCard() {
                     id={`group-${group}`}
                     className="text-base xl:text-lg"
                   >
-                    {tGroups(group)}
+                    {tGroups(`${group}.name`)}
                   </Heading>
                 </div>
                 <ol

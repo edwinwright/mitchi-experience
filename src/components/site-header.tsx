@@ -7,7 +7,7 @@ import { SiteNav } from "@/components/site-nav";
 import { Wordmark } from "@/components/wordmark";
 
 export function SiteHeader() {
-  const t = useTranslations("nav");
+  const t = useTranslations("site");
 
   return (
     <header className="relative z-10 border-b border-stone-300 bg-stone-50">
@@ -15,7 +15,7 @@ export function SiteHeader() {
         <div className="flex items-center justify-between gap-4 py-4 md:py-6">
           <Link
             href="/"
-            aria-label={t("wordmark")}
+            aria-label={t("name")}
             className="focus-ring inline-flex"
           >
             <Wordmark size={27} className="md:hidden" />

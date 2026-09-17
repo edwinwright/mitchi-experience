@@ -7,7 +7,7 @@ import { Wordmark } from "@/components/wordmark";
 import { tags } from "@/i18n/rich-text";
 
 export function SiteFooter() {
-  const t = useTranslations("nav");
+  const t = useTranslations("site");
 
   return (
     <footer className="bg-foreground text-white">
@@ -16,14 +16,14 @@ export function SiteFooter() {
           <div className="flex flex-col gap-4">
             <Link
               href="/"
-              aria-label={t("wordmark")}
+              aria-label={t("name")}
               className="focus-ring inline-flex"
             >
               <Wordmark inverse size={27} className="md:hidden" />
               <Wordmark inverse size={32} className="hidden md:inline-flex" />
             </Link>
             <p className="max-w-[48ch] font-serif text-base text-stone-500">
-              {t("footer")}
+              {t("footer.tagline")}
             </p>
           </div>
 
@@ -38,9 +38,11 @@ export function SiteFooter() {
             <p className="font-mono text-xs text-stone-500">mitchidice.com</p>
             <LanguageSwitcher variant="list" inverse />
           </div>
-          <p className="font-mono text-xs text-stone-500">{t("privacy")}</p>
           <p className="font-mono text-xs text-stone-500">
-            {t.rich("colophon", tags)}
+            {t("footer.privacy")}
+          </p>
+          <p className="font-mono text-xs text-stone-500">
+            {t.rich("footer.builtWith", tags)}
           </p>
         </div>
       </Container>
