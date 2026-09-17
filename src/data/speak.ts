@@ -1,27 +1,16 @@
 /**
- * Mitchi Speak: the informal names used at the table in place of the
- * official ones.
+ * Mitchi Speak: the nicknames one group gave its hands.
  *
- * Proper nouns. One form in every locale, never translated, rendered with
- * lang="en" and translate="no". They are data, not messages, so that no
- * translator is ever handed them: see docs/architecture/i18n-conventions.md.
+ * Proper nouns. One form in every locale, never translated. They are data,
+ * not messages, so that no translator is ever handed them: they enter
+ * `about.mitchiSpeak.names` as ICU values. See
+ * docs/architecture/i18n-conventions.md.
  *
- * Published on /speak. The official name in the left column comes from the
- * `hands` messages; this file supplies the right column only.
+ * Published as prose on /about#mitchi-speak. Mitchi itself is the official
+ * name of two-one, not a nickname, so it is not here.
  */
-import { HANDS, type Hand, type HandId } from "./hands";
-
-export const SPEAK_NAMES: Partial<Record<HandId, string>> = {
-  "2-1": "Mitchi",
-  "5-4": "Kenwright",
-  "5-3": "Kenwrong",
-  "3-3": "JC",
-};
-
-/** The named hands, in ranked order. What SpeakTable renders. */
-export function speakHands(): ReadonlyArray<{ hand: Hand; name: string }> {
-  return HANDS.flatMap((hand) => {
-    const name = SPEAK_NAMES[hand.id];
-    return name ? [{ hand, name }] : [];
-  });
-}
+export const SPEAK_NAMES = {
+  kenwright: "Kenwright", // five-four
+  kenwrong: "Kenwrong", // five-three
+  jc: "JC", // double-three
+} as const;

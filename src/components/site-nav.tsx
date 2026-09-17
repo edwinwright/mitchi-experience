@@ -12,7 +12,6 @@ type NavKey = keyof typeof en.nav;
 const NAV_ITEMS: { key: NavKey; href: NavHref }[] = [
   { key: "rules", href: "/rules" },
   { key: "reference", href: "/reference" },
-  { key: "speak", href: "/speak" },
   { key: "about", href: "/about" },
 ];
 

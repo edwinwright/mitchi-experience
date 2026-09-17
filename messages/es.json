@@ -12,17 +12,9 @@
       "title": "Referencia rápida de Mitchi",
       "description": "La clasificación de las manos y la puntuación en una sola pantalla, para consultar durante la partida."
     },
-    "speak": {
-      "title": "Mitchi Speak",
-      "description": "Los apodos que se usan en la mesa y las manos oficiales a las que corresponden."
-    },
-    "terminology": {
-      "title": "Terminología de Mitchi",
-      "description": ""
-    },
     "about": {
       "title": "Acerca de Mitchi",
-      "description": "De dónde viene el juego y cómo se reconstruyeron estas reglas."
+      "description": "[ES] How I learnt Mitchi in southern Spain, and why the rules are written down here."
     }
   },
   "site": {
@@ -40,8 +32,7 @@
   "nav": {
     "rules": "Reglas",
     "reference": "Referencia",
-    "about": "Acerca de",
-    "speak": "Speak"
+    "about": "Acerca de"
   },
   "nextPage": {
     "heading": "Siguiente",
@@ -197,26 +188,34 @@
       "summary": "[ES] The game ends when any player reaches the point limit, usually 25. The fewest points wins. If players are tied on the fewest points, they roll once each and the best hand wins."
     }
   },
-  "speak": {
-    "title": "Mitchi Speak",
-    "standfirst": "Los nombres que se usan en la mesa en lugar de los oficiales. Nada de esto cambia cómo se juega: una mano llamada por su nombre en Mitchi Speak se juega exactamente igual que con su nombre oficial.",
-    "caption": "Las manos y sus nombres en Mitchi Speak",
-    "officialHeader": "Nombre oficial",
-    "speakHeader": "Mitchi Speak",
-    "footnote": "La mayoría de los nombres se han olvidado. Esta lista es lo que se ha recuperado hasta ahora."
-  },
-  "terminology": {
-    "title": "Terminología",
-    "standfirst": "Todos los términos en los que se apoyan las reglas, definidos una sola vez. Y luego, los nombres que se usan de verdad en la mesa.",
-    "officialTerms": "Términos oficiales"
-  },
   "about": {
     "title": "Acerca de Mitchi",
-    "topics": "Origen · reconstrucción",
-    "standfirst": "De dónde viene el juego y cómo se reconstruyeron estas reglas.",
-    "origin": "Mitchi se aprendió viajando por España, aunque no de un jugador español. De dónde venía antes no se sabe, y esta web no lo presenta como un juego tradicional español.",
-    "reconstruction": "Estas reglas son una reconstrucción. Algunas se recordaban, otras se recuperaron preguntando a quienes jugaban. Donde ha habido que fijar una regla en lugar de recordarla, se ha fijado tal y como se jugaba en realidad.",
-    "speak": "También hay un vocabulario propio. Las manos tienen apodos que no significan nada para quien no estuviera en la mesa. No forman parte del juego, pero <speak>están escritos igualmente</speak>."
+    "intro": "[ES] How I learnt the game, and why the rules are written down here.",
+    "origin": {
+      "heading": "[ES] Where it came from",
+      "learnt": "[ES] I learnt Mitchi from my cousin around 2010, while I was living in Sanlúcar de Barrameda, in Andalucía. After work, between three and six of us would meet at La Gitana, a bar in town, and play on the bar top.",
+      "unknown": "[ES] I do not know who taught my cousin, or where the name comes from. I have never met anyone who plays it outside his group of friends."
+    },
+    "whyItStuck": {
+      "heading": "[ES] Why it stuck",
+      "easy": "[ES] It is easy to learn, and two dice fit in a pocket, so you can play almost anywhere. Rounds are fast.",
+      "tactical": "[ES] Everyone can see the scores, so it gets tactical. You might try to push the leader into taking points. Or, if someone is close to the point limit and you are not winning, you might play to keep points away from them, so the game does not end before you can catch up."
+    },
+    "writtenDown": {
+      "heading": "[ES] Why I wrote it down",
+      "reason": "[ES] I had not played for years and wanted to teach some friends, but I could not find the rules written down anywhere. So I wrote them down from memory, and checked anything I was not sure of with my cousin. This site is so anyone can learn it."
+    },
+    "mitchiSpeak": {
+      "heading": "[ES] Mitchi Speak",
+      "names": "[ES] The longer a group plays, the more it gives hands its own names. In ours, five-four was {kenwright}, because one friend would so often stop on it after a single roll. Five-three, one hand worse, became {kenwrong}. My cousin added {jc} for double-three. I never found out why.",
+      "yourOwn": "[ES] None of these change the rules. Every group ends up with its own. Make up yours."
+    },
+    "relatedGames": {
+      "heading": "[ES] Related games",
+      "intro": "[ES] Mitchi is not the only game where a 2 and a 1 is the best hand. While building this site I came across a couple of others, and there are probably more.",
+      "mia": "[ES] <strong>Mia:</strong> the dice are rolled in secret under a cup, and players call out their hand. They can bluff.",
+      "mexico": "[ES] <strong>Mexico:</strong> players roll to avoid the lowest hand, losing a life each time, until one player is left."
+    }
   },
   "notFound": {
     "title": "Esa página no existe",

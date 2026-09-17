@@ -31,6 +31,7 @@ ORIGIN="https://www.mitchidice.com"
 # 3xx code is a library detail.
 LOCALE_REDIRECT=307   # next-intl locale redirect
 DOMAIN_REDIRECT=308   # Vercel apex -> www
+RETIRED_REDIRECT=308  # next.config.ts redirects(), permanent: true
 
 # Realistic browser headers. Region subtags and q-values matter: matching
 # `es-ES` to the `es` locale is precisely the negotiation being tested.
@@ -136,6 +137,24 @@ expect "NEXT_LOCALE rewrites an English path to the Spanish slug" \
 expect "old Spanish rules slug redirects to localised slug" \
   "${LOCALE_REDIRECT}|/es/reglas" \
   "$(probe "$BASE/es/rules" -H "$EN")"
+
+# Retired pages (WO-0013). The redirect runs before the proxy, so the
+# source is the external path and the fragment rides in Location.
+expect "/speak redirects to the Mitchi Speak section of /about" \
+  "${RETIRED_REDIRECT}|/about#mitchi-speak" \
+  "$(probe "$BASE/speak" -H "$EN")"
+
+expect "/es/speak redirects to the Mitchi Speak section of /es/acerca-de" \
+  "${RETIRED_REDIRECT}|/es/acerca-de#mitchi-speak" \
+  "$(probe "$BASE/es/speak" -H "$EN")"
+
+expect "/terminology redirects to the vocabulary on /rules" \
+  "${RETIRED_REDIRECT}|/rules#vocabulary" \
+  "$(probe "$BASE/terminology" -H "$EN")"
+
+expect "/es/terminologia redirects to the vocabulary on /es/reglas" \
+  "${RETIRED_REDIRECT}|/es/reglas#vocabulary" \
+  "$(probe "$BASE/es/terminologia" -H "$EN")"
 
 # Domain-level checks only make sense against production.
 if [[ "$BASE" == "$PROD" ]]; then

@@ -1,15 +1,22 @@
 # Site map
 
-English has no locale prefix. Spanish is `/es` plus a localised slug, except `/speak`, which is a proper noun and stays untranslated in every locale.
+English has no locale prefix. Spanish is `/es` plus a localised slug.
 
-| English      | Spanish         | Purpose                                                           |
-| ------------ | --------------- | ----------------------------------------------------------------- |
-| `/`          | `/es`           | What the game is, the one twist, and where to read on.            |
-| `/rules`     | `/es/reglas`    | The full rules, from setup to the end of the game.                |
-| `/reference` | `/es/referencia`| Hand ranking, scoring, and terms on one screen, for use mid-game.  |
-| `/speak`     | `/es/speak`     | Table nicknames and the official hands they stand for.            |
-| `/about`     | `/es/acerca-de` | Where the game came from, and how these rules were reconstructed. |
-| `/terminology` | `/es/terminologia` | **Unlisted.** Every term, then Mitchi Speak. Candidate to replace `/speak`: not in the nav or sitemap, `noindex` (`UNLISTED_PAGES` in `src/i18n/metadata.ts`). |
+| English      | Spanish         | Purpose                                                                                    |
+| ------------ | --------------- | ------------------------------------------------------------------------------------------ |
+| `/`          | `/es`           | What the game is, the one key idea, and where to read on.                                  |
+| `/rules`     | `/es/reglas`    | The full rules, from setup to the end of the game, then the game vocabulary.               |
+| `/reference` | `/es/referencia`| Hand ranking and scoring on one screen, for use mid-game.                                  |
+| `/about`     | `/es/acerca-de` | How the author learnt the game, why the rules are written down, Mitchi Speak, related games. |
+
+Retired pages answer with a permanent redirect (`redirects()` in `next.config.ts`, checked by `scripts/smoke.sh`):
+
+| From | To |
+| --- | --- |
+| `/speak` | `/about#mitchi-speak` |
+| `/es/speak` | `/es/acerca-de#mitchi-speak` |
+| `/terminology` | `/rules#vocabulary` |
+| `/es/terminologia` | `/es/reglas#vocabulary` |
 
 Discovery files are unprefixed and skip the locale proxy (dotted paths):
 
