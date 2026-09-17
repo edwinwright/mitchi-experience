@@ -39,7 +39,13 @@ export async function pageMetadata(
   return {
     title,
     description,
-    openGraph: { title, description, images: [OG_IMAGE] },
+    openGraph: {
+      type: "website",
+      url: canonical,
+      title,
+      description,
+      images: [OG_IMAGE],
+    },
     twitter: {
       card: "summary_large_image",
       title,

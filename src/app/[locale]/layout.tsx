@@ -19,16 +19,9 @@ export function generateStaticParams() {
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_ORIGIN),
-  icons: {
-    icon: [
-      { url: "/brand/mitchi-favicon.svg", type: "image/svg+xml" },
-      {
-        url: "/brand/mitchi-favicon-dark.svg",
-        type: "image/svg+xml",
-        media: "(prefers-color-scheme: dark)",
-      },
-    ],
-  },
+  // icons: {
+  //   icon: [{ url: "/brand/mitchi-favicon.svg", type: "image/svg+xml" }],
+  // },
 };
 
 export default async function LocaleLayout({
