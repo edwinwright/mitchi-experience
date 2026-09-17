@@ -17,8 +17,10 @@ Variety: European Spanish, informal.
 | Roll (the noun, and the throw) | la tirada, tirar | `tirar los dados` is the idiomatic game verb. `lanzar` is the athletic one |
 | Roll (the result) | sacar | `saca seis-cuatro`. See below |
 | Roll limit | el límite de tiradas | |
+| In one, in two, in three | `[ES] pendiente` | Slice 7 of WO-0013 |
 | Stop | plantarse | The verb Spanish games use for ending a turn, from blackjack and mus. `detenerse` and `parar` read as translation |
 | Round | la ronda | |
+| Turn | `[ES] pendiente` | Slice 7 of WO-0013 |
 | Starting player | el jugador inicial | The standard term in Spanish board game rules |
 | Worst hand | la peor mano | The base term. The Spanish pair mirrors the English pair exactly |
 | Worst hand so far | la peor mano hasta ahora | A direct translation of the English, which is why the English was renamed first |
@@ -26,6 +28,7 @@ Variety: European Spanish, informal.
 | The pot | el bote | See below |
 | Take the pot | llevarse el bote | |
 | Tie-break | el desempate | Verb: `desempatar` |
+| Tied | `[ES] pendiente` | Slice 7 of WO-0013 |
 | Points | los puntos | |
 | Point limit | el límite de puntos | |
 | Mitchi Speak | Mitchi Speak | Proper noun, untranslated |
@@ -90,6 +93,8 @@ The test: if the English could say "in Mitchi", it is `el juego`. If it could sa
 
 ## Register
 
-Procedure and definitions are impersonal: `cada jugador tira`, `se tira`. The reader's own position takes the informal second person singular: `solo necesitas superar la peor mano hasta ahora`. Home and About use the second person freely. This mirrors the English, and `voice.md` is the source of the rule.
+Informal second person singular, present tense, for procedure and definitions alike: `tira los dados`, `plántate cuando estés contento con tu mano`, `solo necesitas superar la peor mano hasta ahora`. `tú` is any player. Name a role only where the role matters: `el jugador inicial fija el límite de tiradas`. This mirrors the English, and `voice.md` is the source of the rule.
 
-With procedure impersonal, the `vosotros` and `ustedes` question barely arises: the only second-person forms in the copy are singular.
+About is first person, the author speaking: `aprendí Mitchi de mi primo`.
+
+The `vosotros` and `ustedes` question does not arise: the only second-person forms in the copy are singular. Where the English says "everyone" or "each player", Spanish keeps the impersonal (`cada jugador tira un dado`) rather than switching to a plural you.

@@ -2,44 +2,53 @@
 
 How the site is written, in every language. Binding on English and on every translation.
 
-## Two registers
+## Register
 
-**Procedure and definitions are impersonal.** Third person, present tense, short sentences. The rules describe what happens and what a player does, they do not address the reader: "The starting player rolls both dice", not "Roll both dice".
+**Second person, present tense.** Short sentences, one idea each. "You" is any player: "Roll both dice", "Stop when you are happy with your hand". Name a role only where the role matters: "the starting player sets the roll limit".
 
-**The reader's own position is second person.** Where a sentence is about what you are trying to achieve rather than what the procedure is, `you` is correct and clearer: "You never need the best hand, only to avoid being left with the worst."
-
-No jokes, no asides, no "simply" and no "just". A reader mid-game wants an answer, not a personality.
+No idioms. "Tied", never "level". No jokes, no asides, no "simply" and no "just". A reader mid-game wants an answer, not a personality.
 
 | Do | Do not |
 |---|---|
-| "The starting player rolls both dice." | "Go ahead and roll both dice." |
-| "A player may re-roll either die." | "You're free to re-roll either die if you fancy it." |
-| "You never need the best hand." (the reader's position) | "You'll want to think carefully about this one." |
+| "Roll both dice." | "Go ahead and roll both dice." |
+| "You may re-roll either die." | "You're free to re-roll either die if you fancy it." |
+| "The starting player sets the roll limit." | "You set the roll limit." (when only one player does) |
 | "The worst hand takes the pot." | "Bad luck: the worst hand takes the pot." |
+| "Players tied on the worst hand" | "Players level on the worst hand" |
 | Use the terms in `docs/domain/glossary.md` | Introduce a synonym because a sentence reads better |
 
-In translation, the same split applies. Procedure takes whatever impersonal form the language uses for game instructions; the reader's position takes the informal second person singular.
+In translation, procedure takes the informal second person singular, or whatever form the language uses for game instructions addressed to the player.
+
+## Numbers
+
+- Die faces are digits: "a 2 and a 1".
+- Hand names are words: "six-three", "double-six".
+- Counts of rolls, dice and players are words: "two rolls", "three players".
+- Points are digits: "1 point", "adds 2".
+
+"In one", "in two", "in three" is how a hand's roll count is said at the table: "six-three in two". It is vocabulary, not a shortcut.
 
 ## The exception: Home and About
 
-Home and About are allowed warmth. Home carries the one idea worth landing:
+Home and About may be warmer. Home carries the one idea worth landing:
 
 > You are not trying to roll the best hand, you are trying not to be left with the worst.
 
-Said once, from `home.twist`, and never again. `/rules` and `/reference` do not repeat it.
+Said once, on Home, and never again. `/rules` and `/reference` do not repeat it.
 
-Home also maps the game in 60 seconds (`rules.quickStart`) and shows the six-group ranking (`RankList`). Those are the same strings as Rules and Reference; they are not a second telling of the twist.
+Home also maps the game in 60 seconds (`home.quickStart`) and shows the six-group ranking (`RankList`). Those are not a second telling of the key idea.
 
-`/speak` has a voice of its own and is the only other page that does.
+**About is first person.** The author writes it. It is the only page that is.
 
 ## Conventions
 
 - Sentence case headings.
 - One `h1` per page, no heading level skipped.
 - Terminology comes from the glossary. A new word means the glossary is updated first, not that a synonym is used.
-- In-text term references on `/rules` link to `#terms`.
+- In-text term references link to `/rules#vocabulary`.
 - About says nothing about the site being a practice project. The game stands on its own.
-- The origin line is fixed: learnt while travelling in Spain, origin unknown. The site does not claim Mitchi is a traditional Spanish game, and the person who taught it is not named.
+- The origin is fixed: the author learnt Mitchi from his cousin in southern Spain. The origin of the game and of its name is unknown. The site does not claim Mitchi is a traditional Spanish game. The rules are written from memory, with gaps checked with the cousin; they are not "settled".
+- Drinking is not emphasised. The site is for all players and ages.
 - The locale 404 is rulebook-neutral and uses `notFound.*`. The root 404 is a standalone English page with no chrome; it only points back to `/`. It does not use the message files.
 
 ## Why cutting matters
