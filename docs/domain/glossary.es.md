@@ -31,7 +31,6 @@ Variety: European Spanish, informal.
 | Tied | `[ES] pendiente` | Slice 7 of WO-0013 |
 | Points | los puntos | |
 | Point limit | el límite de puntos | |
-| Mitchi Speak | Mitchi Speak | Proper noun, untranslated |
 
 ## Hand and group names
 

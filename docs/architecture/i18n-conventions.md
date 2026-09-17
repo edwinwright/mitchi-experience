@@ -8,7 +8,6 @@ How message content is structured and authored. The routing decisions (`localePr
 |---|---|
 | Message content | `messages/<locale>.json`, one file per locale, dynamically imported per locale in `src/i18n/request.ts` |
 | Hand data, group order | `src/data/hands.ts` |
-| Mitchi Speak nicknames | `src/data/speak.ts` |
 | Section anchor IDs | The components that render the sections |
 | Routing and slugs | `src/i18n/routing.ts` |
 | Rich text tag map | `src/i18n/rich-text.tsx` (`tags`) |
@@ -34,9 +33,7 @@ Namespaces, and no fourteenth without a reason: `meta`, `site`, `nav`, `nextPage
 
 **Hands are data, names are messages.** The visible name of a hand comes from ``t(`hands.${hand.id}`)``. Never compose a hand name from two number words at runtime: "six-five" is not "six" plus "five" in Polish or Japanese, and "double-six" is not "six-six" in any language. Twenty-one whole strings per locale is the cheap option, not the expensive one. Group names and descriptions work the same way, under `handGroups.<group>.name` and `.description`.
 
-**Proper nouns stay out of the message files.** Mitchi Speak nicknames have one form in every language. They live in `src/data/speak.ts` and enter `about.mitchiSpeak.names` as ICU values, because putting them in `en.json` invites a translator to translate them.
-
-**Anchor IDs stay English in every locale.** `#hands`, `#round`, `#scoring`, `#tie-breaks`, `#winning`, `#vocabulary`, `#mitchi-speak`. Visible headings translate, IDs do not. A URL fragment is never sent to the server, so no routing layer can rewrite it the way `pathnames` rewrites a slug. Localised IDs would break every shared link on a locale switch and add a per-locale fragment map to the language switcher.
+**Anchor IDs stay English in every locale.** `#hands`, `#round`, `#scoring`, `#tie-breaks`, `#winning`, `#vocabulary`. Visible headings translate, IDs do not. A URL fragment is never sent to the server, so no routing layer can rewrite it the way `pathnames` rewrites a slug. Localised IDs would break every shared link on a locale switch and add a per-locale fragment map to the language switcher.
 
 ## Changing copy
 
@@ -143,7 +140,7 @@ Update `docs/product/site-map.md` when the new slugs are real in routing, not la
 
 Passing `locale` to `Link` emits a prefix even for the default locale (`/en/rules`). That is deliberate: the prefix updates `NEXT_LOCALE` before navigation; the proxy then redirects to the unprefixed English path under `localePrefix: "as-needed"`.
 
-**7. Prove the locale.** Switching must keep the same page (including localised slugs). `/es/reglas#vocabulary` (and the equivalent for the new locale) must land on the Game vocabulary section. `lang` on `<html>` comes from the locale layout. The Mitchi Speak nicknames render inside About prose as ICU values and are not translated.
+**7. Prove the locale.** Switching must keep the same page (including localised slugs). `/es/reglas#vocabulary` (and the equivalent for the new locale) must land on the Game vocabulary section. `lang` on `<html>` comes from the locale layout.
 
 **8. Build.** `npm run build`: every real route shows `●` with both (all) locale paths listed, and a `proxy` entry is present. Exactly one `ƒ` is expected: `/[locale]/[...rest]`, the 404 catch-all. It cannot get `generateStaticParams` for arbitrary paths. Do not try to make it static.
 

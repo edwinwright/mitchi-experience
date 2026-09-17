@@ -2,8 +2,6 @@
 
 The agreed vocabulary for Mitchi. Every term used in the rules, on the site and in any translation comes from this list. If a translation needs a word this file does not have, this file is updated first.
 
-Informal names are not part of the standard vocabulary. They live in `src/data/speak.ts` and appear only in the Mitchi Speak section of `/about`.
-
 ## Terms
 
 | Term                                           | Definition                                                                                               | Notes                                                                                      |
@@ -30,7 +28,6 @@ Informal names are not part of the standard vocabulary. They live in `src/data/s
 | **Tied**                                       | Two or more players with the same hand, or the same points.                                              | Use for any tie. Avoid "level".                                                            |
 | **Points**                                     | The running score. Points are bad: the lowest total wins.                                                | Not "penalty points".                                                                      |
 | **Point limit**                                | The total that ends the game when any player reaches it. Agreed before play, typically 25.               |                                                                                            |
-| **Mitchi Speak**                               | Nicknames a group gives hands. Not part of the standard game.                                            | Data in `src/data/speak.ts`, published as prose on `/about#mitchi-speak`.                  |
 
 ## Terms deliberately not used
 

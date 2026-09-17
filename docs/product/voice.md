@@ -30,13 +30,13 @@ In translation, procedure takes the informal second person singular, or whatever
 
 ## The exception: Home and About
 
-Home and About may be warmer. Home carries the one idea worth landing:
+Home and About may be warmer.
 
-> You are not trying to roll the best hand, you are trying not to be left with the worst.
+> Home and About use contractions ("don't", "it's"). Procedural copy does not: Rules, Reference, Home's 60-second quick start, and the game vocabulary.
 
-Said once, on Home, and never again. `/rules` and `/reference` do not repeat it.
+> The key idea, that you never need the best hand, only to avoid the worst, is a rule of the game. It appears wherever a page needs it. Do not copy the same sentence from page to page: say it in words that fit the page.
 
-Home also maps the game in 60 seconds (`home.quickStart`) and shows the six-group ranking (`RankList`). Those are not a second telling of the key idea.
+Home also maps the game in 60 seconds (`home.quickStart`) and shows the six-group ranking (`RankList`).
 
 **About is first person.** The author writes it. It is the only page that is.
 

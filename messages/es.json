@@ -14,7 +14,7 @@
     },
     "about": {
       "title": "Acerca de Mitchi",
-      "description": "[ES] How I learnt Mitchi in southern Spain, and why the rules are written down here."
+      "description": "[ES] Mitchi is a fast dice game for two or more players. What it is, where it came from, and games like it."
     }
   },
   "site": {
@@ -52,7 +52,7 @@
   "home": {
     "title": "Mitchi",
     "tagline": "Un juego de dados para dos o más jugadores.",
-    "keyIdea": "[ES] You do not need the best hand. You only need to avoid the worst.",
+    "keyIdea": "[ES] You don't need the best hand. You only need to avoid the worst.",
     "scoring": "[ES] Each round, the player left with the worst hand takes the points. Points are bad: the fewest points wins.",
     "youNeed": "[ES] <strong>You need:</strong> two dice, a pen and paper, and at least one other player.",
     "links": {
@@ -190,25 +190,20 @@
   },
   "about": {
     "title": "Acerca de Mitchi",
-    "intro": "[ES] How I learnt the game, and why the rules are written down here.",
+    "intro": "[ES] What the game is, and where it came from.",
+    "game": {
+      "heading": "[ES] The game",
+      "summary": "[ES] Mitchi is a fast dice game for two or more players. Each round, you roll to avoid the worst hand. Whoever ends up with it takes points. The player with the fewest points wins. You need two dice, a pen and paper, and at least one other player."
+    },
     "origin": {
       "heading": "[ES] Where it came from",
-      "learnt": "[ES] I learnt Mitchi from my cousin around 2010, while I was living in Sanlúcar de Barrameda, in Andalucía. After work, between three and six of us would meet at La Gitana, a bar in town, and play on the bar top.",
-      "unknown": "[ES] I do not know who taught my cousin, or where the name comes from. I have never met anyone who plays it outside his group of friends."
+      "learnt": "[ES] I learnt Mitchi while I was living in Sanlúcar de Barrameda, in southern Spain. A group of us used to meet at La Gitana after work and play on the bar top.",
+      "cousin": "[ES] My cousin taught us, and it caught on quickly. I don't know where he learnt it, and I've never come across it anywhere else. I couldn't find the rules written down either, so I've put them here for anyone who wants to learn."
     },
     "whyItStuck": {
       "heading": "[ES] Why it stuck",
-      "easy": "[ES] It is easy to learn, and two dice fit in a pocket, so you can play almost anywhere. Rounds are fast.",
-      "tactical": "[ES] Everyone can see the scores, so it gets tactical. You might try to push the leader into taking points. Or, if someone is close to the point limit and you are not winning, you might play to keep points away from them, so the game does not end before you can catch up."
-    },
-    "writtenDown": {
-      "heading": "[ES] Why I wrote it down",
-      "reason": "[ES] I had not played for years and wanted to teach some friends, but I could not find the rules written down anywhere. So I wrote them down from memory, and checked anything I was not sure of with my cousin. This site is so anyone can learn it."
-    },
-    "mitchiSpeak": {
-      "heading": "[ES] Mitchi Speak",
-      "names": "[ES] The longer a group plays, the more it gives hands its own names. In ours, five-four was {kenwright}, because one friend would so often stop on it after a single roll. Five-three, one hand worse, became {kenwrong}. My cousin added {jc} for double-three. I never found out why.",
-      "yourOwn": "[ES] None of these change the rules. Every group ends up with its own. Make up yours."
+      "easy": "[ES] It's easy to learn and quick to play. Rounds are fast, and you only need two dice and somewhere to roll them.",
+      "tactical": "[ES] It's tactical too. Everyone can see the scores, so every round matters, and once the Mitchis start rolling, the pot soon climbs."
     },
     "relatedGames": {
       "heading": "[ES] Related games",

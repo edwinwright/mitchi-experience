@@ -140,21 +140,13 @@ expect "old Spanish rules slug redirects to localised slug" \
 
 # Retired pages (WO-0013). The redirect runs before the proxy, so the
 # source is the external path and the fragment rides in Location.
-expect "/speak redirects to the Mitchi Speak section of /about" \
-  "${RETIRED_REDIRECT}|/about#mitchi-speak" \
+expect "/speak redirects to /about" \
+  "${RETIRED_REDIRECT}|/about" \
   "$(probe "$BASE/speak" -H "$EN")"
 
-expect "/es/speak redirects to the Mitchi Speak section of /es/acerca-de" \
-  "${RETIRED_REDIRECT}|/es/acerca-de#mitchi-speak" \
+expect "/es/speak redirects to /es/acerca-de" \
+  "${RETIRED_REDIRECT}|/es/acerca-de" \
   "$(probe "$BASE/es/speak" -H "$EN")"
-
-expect "/terminology redirects to the vocabulary on /rules" \
-  "${RETIRED_REDIRECT}|/rules#vocabulary" \
-  "$(probe "$BASE/terminology" -H "$EN")"
-
-expect "/es/terminologia redirects to the vocabulary on /es/reglas" \
-  "${RETIRED_REDIRECT}|/es/reglas#vocabulary" \
-  "$(probe "$BASE/es/terminologia" -H "$EN")"
 
 # Domain-level checks only make sense against production.
 if [[ "$BASE" == "$PROD" ]]; then

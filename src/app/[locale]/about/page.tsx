@@ -4,7 +4,6 @@ import { PageHeader } from "@/components/page-header";
 import { Container } from "@/components/layout/container";
 import { Heading } from "@/components/heading";
 import { OnwardBlock } from "@/components/onward-block";
-import { SPEAK_NAMES } from "@/data/speak";
 import { tags } from "@/i18n/rich-text";
 import { pageMetadata } from "@/i18n/metadata";
 
@@ -17,28 +16,22 @@ export async function generateMetadata({
   return pageMetadata(locale, "about");
 }
 
-// Section ids are anchors, English in every locale. /speak redirects to
-// #mitchi-speak, so that one is a published URL.
+// Section ids are anchors, English in every locale.
 const SECTIONS = [
+  {
+    id: "game",
+    key: "game",
+    paragraphs: ["game.summary"],
+  },
   {
     id: "origin",
     key: "origin",
-    paragraphs: ["origin.learnt", "origin.unknown"],
+    paragraphs: ["origin.learnt", "origin.cousin"],
   },
   {
     id: "why-it-stuck",
     key: "whyItStuck",
     paragraphs: ["whyItStuck.easy", "whyItStuck.tactical"],
-  },
-  {
-    id: "written-down",
-    key: "writtenDown",
-    paragraphs: ["writtenDown.reason"],
-  },
-  {
-    id: "mitchi-speak",
-    key: "mitchiSpeak",
-    paragraphs: ["mitchiSpeak.names", "mitchiSpeak.yourOwn"],
   },
   {
     id: "related-games",
@@ -77,7 +70,7 @@ export default function AboutPage() {
                 </Heading>
                 {section.paragraphs.map((key) => (
                   <p key={key} className={paragraph}>
-                    {t.rich(key, { ...tags, ...SPEAK_NAMES })}
+                    {t.rich(key, tags)}
                   </p>
                 ))}
                 {section.key === "relatedGames" && (
