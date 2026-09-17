@@ -27,7 +27,7 @@ export default function ReferencePage() {
   const t = useTranslations("reference");
   const tRanking = useTranslations("reference.ranking");
   const tScoring = useTranslations("reference.scoring");
-  const tTerms = useTranslations("rules.terms");
+  const tTerms = useTranslations("rules.vocabulary");
   const tGroups = useTranslations("handGroups");
   const tOnward = useTranslations("nextPage");
 

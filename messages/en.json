@@ -86,143 +86,89 @@
   },
   "rules": {
     "title": "Mitchi rules",
-    "standfirst": "The full rules, from setup to the end of the game.",
+    "intro": "Everything you need to play, from setup to the end of the game.",
     "exampleLabel": "Example",
-    "strip": {
+    "exampleLabels": {
       "player": "Player {n}",
-      "rolls": "{count, plural, one {# roll} other {# rolls}}",
-      "limit": "roll limit {count}",
-      "worstSoFar": "worst hand so far",
+      "rolledIn": "{hand} in {count, select, 1 {one} 2 {two} other {three}}",
+      "rollLimit": "roll limit {count, select, 1 {one} 2 {two} other {three}}",
+      "worstHandSoFar": "worst hand so far",
       "needs": "needs {hand} or better",
-      "stopsOnRoll": "stops on roll {count}"
-    },
-    "stages": {
-      "stageHeader": "Stage",
-      "whatHeader": "What happens",
-      "potHeader": "Pot",
-      "round": "Round",
-      "tieBreak": "Tie-break {n}",
-      "mitchi": "Mitchi rolled",
-      "roundWhat": "Three players tie, 1 point in the pot",
-      "doubleWhat": "The pot doubles",
-      "mitchiWhat": "Adds 2 more points",
-      "doubleAgainWhat": "The pot doubles again",
-      "stillLevelWhat": "And again, if they are still level"
+      "stops": "stops"
     },
     "overview": {
       "heading": "Overview",
-      "body": "Mitchi is a dice game for two or more players, played over a series of rounds. Each round, players roll to avoid being left with the worst hand.",
-      "objective": "The objective is to finish the game with the fewest points."
+      "summary": "Mitchi is a dice game for two or more players, played over a series of rounds. Each round, you roll to avoid being left with the worst hand. The player with the worst hand takes the points in the pot. When the game ends, the player with the fewest points wins."
     },
-    "need": {
+    "youNeed": {
       "heading": "What you need",
-      "diceLabel": "Dice",
-      "paperLabel": "Paper",
-      "playersLabel": "Players",
-      "dice": "Two six-sided dice.",
-      "paper": "A pen and something to write on.",
-      "players": "At least one other player."
+      "dice": "<strong>Two dice</strong>, the standard six-sided kind",
+      "paper": "<strong>A pen and paper</strong> to keep score",
+      "players": "<strong>Two or more players</strong>"
     },
     "setup": {
       "heading": "Setup",
-      "step1": "Agree the point limit before play begins. 25 is typical.",
-      "step2": "Decide who starts. Everyone rolls a single die once, in any order, and the highest roll starts. If players tie for the highest roll, those players roll again until one is highest.",
-      "step3": "Play proceeds clockwise."
+      "pointLimit": "<strong>Agree a point limit.</strong> 25 is usual. Choose a lower limit for a shorter game.",
+      "whoStarts": "<strong>Decide who starts.</strong> Everyone rolls one die, and the highest roll starts. If the highest roll is tied, those players roll again. Play goes clockwise."
     },
     "hands": {
       "heading": "Hands",
-      "intro": "A hand is the two dice you finish your turn with. Hands are ranked from best to worst.",
-      "onward": "All 21 hands are listed on the <reference>quick reference</reference>."
+      "intro": "A hand is the two dice you finish your turn with. There are six groups of hands, from best to worst:",
+      "allHandsLink": "All hands are listed on the <reference>quick reference</reference>."
     },
     "round": {
       "heading": "Playing a round",
       "rollLimit": {
-        "heading": "The roll limit",
-        "body": "The starting player rolls both dice, and may roll up to three times.",
-        "choices": "After each roll they may re-roll both dice, keep either die and re-roll the other, or stop and keep the hand they have.",
-        "fresh": "Every roll is a fresh choice. Keeping a die on one roll does not commit them to keeping it on the next. Re-rolling a single die still counts as a roll.",
-        "sets": "The number of rolls the starting player uses is the <term>roll limit</term> for the round. One roll, and every other player gets one. Three rolls, and every other player gets up to three.",
-        "example": "The starting player rolls six-three in two rolls, so every other player gets up to two rolls."
+        "heading": "The starting player sets the roll limit",
+        "rolls": "The starting player rolls both dice, up to three times, and can stop after any roll. After each roll, they can:",
+        "rerollBoth": "re-roll both dice",
+        "keepOne": "keep one die and re-roll the other",
+        "stop": "stop and keep their hand",
+        "newChoice": "Each roll is a new choice. Keeping a die on one roll does not mean keeping it on the next. Re-rolling one die still counts as a roll.",
+        "setsLimit": "The number of rolls the starting player uses is the <term>roll limit</term> for everyone else that round.",
+        "example": "The starting player rolls six-three in two rolls. Everyone else gets up to two rolls."
       },
-      "others": {
-        "heading": "The other players",
-        "body": "Each remaining player rolls in clockwise order, under the same rules, up to the roll limit. You do not have to use every roll: stop as soon as you are happy with your hand.",
-        "beat": "You never need the best hand, only to avoid being left with the worst. The hand to beat is the <term>worst hand so far</term>, the lowest-ranked hand rolled this round. It changes as players finish, so a later player may have less to do than an earlier one.",
-        "example1": "Player {a} starts and rolls six-four in one roll. Player {b} rolls five-one. Player {c} now needs five-two or better, because five-one is the worst hand so far.",
-        "example2": "Player {a} starts and rolls five-four in three rolls. Player {b} rolls six-two on the first roll, which already beats it, so Player {b} stops rather than using the other two."
+      "everyoneElse": {
+        "heading": "Everyone else",
+        "turn": "Everyone else takes a turn in clockwise order, with the same choices, up to the roll limit. You do not have to use every roll. Stop when you are happy with your hand.",
+        "worstHandSoFar": "You never need the best hand. You only need to beat the <term>worst hand so far</term>: the lowest-ranked hand rolled this round. It changes as players finish their turn, so a later player may have less to beat than an earlier one.",
+        "example1": "Player {a} rolls six-four in one. Player {b} rolls five-one. Player {c} now needs five-two or better, because five-one is the worst hand so far.",
+        "example2": "Player {a} rolls five-four in three. Player {b} rolls six-two in one. That already beats five-four, so Player {b} stops."
       }
     },
     "scoring": {
       "heading": "Scoring the round",
-      "body": "Every round is played for the points in <term>the pot</term>. The player left with the worst hand <term>takes the pot</term>, adding those points to their score.",
-      "mitchis": "Mitchi points count whoever rolled them.",
-      "next": "The player who took the pot starts the next round."
+      "startingPot": "Every round starts with 1 point in <term>the pot</term>.",
+      "mitchis": "The first Mitchi rolled replaces that point with 2 points. Each Mitchi after that adds 2 more, so the pot is 2 points for every Mitchi rolled.",
+      "takeThePot": "At the end of the round, the player with the worst hand <term>takes the pot</term> and adds the points to their score. They start the next round."
     },
     "tieBreaks": {
       "heading": "Tie-breaks",
-      "body": "If two or more players are level on the worst hand, they play a tie-break. A tie-break is not a normal round.",
-      "rule1": "Only the tied players take part.",
-      "rule2": "Each player gets one roll, not up to three.",
-      "rule3": "The points in the pot double before the tie-break is rolled.",
-      "rule4": "The order reverses, starting with the last player to roll.",
-      "rule5": "Each Mitchi rolled adds 2 more points to the pot.",
-      "outcome": "The player left with the worst hand in the tie-break takes the pot.",
-      "again": "If players are level again, only those still level play another tie-break. The pot doubles again and the order reverses again. This repeats until one player is left with the worst hand.",
-      "example": "<p>Three players tie in the round, with 1 point in the pot.</p><p>The first tie-break doubles the pot to 2 points. One player rolls a Mitchi, adding 2 more, and the other two tie again.</p><p>The second tie-break doubles the pot to 8 points. If they tie again, the third starts on 16.</p>"
+      "intro": "If two or more players are tied on the worst hand, they play a <term>tie-break</term> to decide who takes the pot.",
+      "doublePot": "<strong>Double the pot.</strong>",
+      "rollOnce": "<strong>Roll once each.</strong> Only the tied players roll, with no re-rolls. Go in the opposite direction to the last round or tie-break, starting with the last player to roll.",
+      "addMitchis": "<strong>Add 2 points for each Mitchi</strong> rolled in the tie-break.",
+      "worstHandTakes": "<strong>The worst hand takes the pot.</strong> If players tie again, go back to step 1 with only those players.",
+      "example": {
+        "whatHappensHeader": "What happens",
+        "calculationHeader": "Calculation",
+        "potHeader": "Pot",
+        "round": "Round",
+        "tieBreak": "Tie-break {n}",
+        "tied": "Three players tie on the worst hand",
+        "potDoubles": "The pot doubles",
+        "mitchi": "One player rolls a Mitchi",
+        "tiedAgain": "The other two tie again",
+        "takesPot": "One player has the worst hand and takes the pot"
+      }
     },
     "winning": {
       "heading": "Winning the game",
-      "body": "The game ends as soon as any player reaches or exceeds the point limit. The player with the fewest points wins.",
-      "level": "If players are level on fewest points, they roll one hand each and the better hand wins."
+      "gameEnds": "The game ends when any player reaches the point limit. The player with the fewest points wins.",
+      "tiedOnFewest": "If players are tied on the fewest points, they roll once each, and the best hand wins."
     },
-    "terms": {
-      "heading": "Terms"
-    }
-  },
-  "terms": {
-    "mitchi": {
-      "name": "Mitchi",
-      "definition": "The game, and also its best hand: a 2 and a 1."
-    },
-    "hand": {
-      "name": "Hand",
-      "definition": "The two dice you finish your turn with."
-    },
-    "roll": {
-      "name": "Roll",
-      "definition": "One throw of one or both dice. Re-rolling a single die still counts as a roll."
-    },
-    "rollLimit": {
-      "name": "Roll limit",
-      "definition": "The number of rolls available to each player in a round, set by the starting player."
-    },
-    "worstHand": {
-      "name": "Worst hand",
-      "definition": "The lowest-ranked hand. At the end of a round, the player left with it takes the pot."
-    },
-    "worstHandSoFar": {
-      "name": "Worst hand so far",
-      "definition": "The worst hand during a round, while players are still to roll. What you have to beat, and it can still change."
-    },
-    "pot": {
-      "name": "The pot",
-      "definition": "The points at stake in the current round."
-    },
-    "takeThePot": {
-      "name": "Take the pot",
-      "definition": "To add every point in the pot to your score."
-    },
-    "tieBreak": {
-      "name": "Tie-break",
-      "definition": "A play-off between players level on the worst hand."
-    },
-    "points": {
-      "name": "Points",
-      "definition": "The running score. Points are bad: you take them by losing a round, and the fewest wins."
-    },
-    "pointLimit": {
-      "name": "Point limit",
-      "definition": "The score that ends the game once any player reaches it. Usually 25."
+    "vocabulary": {
+      "heading": "Game vocabulary"
     }
   },
   "reference": {
@@ -329,5 +275,71 @@
     "one": "One",
     "two": "Two",
     "three": "Three"
+  },
+  "vocabulary": {
+    "mitchi": {
+      "name": "Mitchi",
+      "definition": "The game, and its best hand: a 2 and a 1."
+    },
+    "die": {
+      "name": "Die",
+      "definition": "One of the dice."
+    },
+    "hand": {
+      "name": "Hand",
+      "definition": "The two dice you finish your turn with."
+    },
+    "roll": {
+      "name": "Roll",
+      "definition": "One throw of one or both dice. Re-rolling one die still counts as a roll."
+    },
+    "rolledIn": {
+      "name": "In one, in two, in three",
+      "definition": "How many rolls a hand took: six-three in two."
+    },
+    "round": {
+      "name": "Round",
+      "definition": "Every player takes one turn, then the worst hand takes the pot."
+    },
+    "turn": {
+      "name": "Turn",
+      "definition": "Your rolls in a round, up to the roll limit."
+    },
+    "startingPlayer": {
+      "name": "Starting player",
+      "definition": "The player who rolls first in a round and sets the roll limit."
+    },
+    "rollLimit": {
+      "name": "Roll limit",
+      "definition": "The number of rolls everyone gets in a round, set by the starting player."
+    },
+    "doubles": {
+      "name": "Doubles",
+      "definition": "Both dice showing the same number."
+    },
+    "worstHandSoFar": {
+      "name": "Worst hand so far",
+      "definition": "The lowest-ranked hand rolled so far in a round. The hand you need to beat."
+    },
+    "pot": {
+      "name": "The pot",
+      "definition": "The points at stake in a round. It starts at 1."
+    },
+    "takeThePot": {
+      "name": "Take the pot",
+      "definition": "Add the points in the pot to your score."
+    },
+    "tieBreak": {
+      "name": "Tie-break",
+      "definition": "A play-off between players tied on the worst hand."
+    },
+    "points": {
+      "name": "Points",
+      "definition": "Your score. Points are bad: the fewest wins."
+    },
+    "pointLimit": {
+      "name": "Point limit",
+      "definition": "The score that ends the game. Usually 25."
+    }
   }
 }

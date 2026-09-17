@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import { useTranslations } from "next-intl";
 import { cn, twoDigit } from "@/lib/utils";
 
@@ -30,10 +31,11 @@ export function OnThisPage({ items, className }: OnThisPageProps) {
       >
         {t("onThisPage")}
       </p>
-      {/* grid-flow-col + grid-rows-4 gives the 01/05, 02/06 column order without reordering the array. */}
+      {/* grid-flow-col with half the items per row gives the 01/06, 02/07 column order without reordering the array. */}
       <ol
         role="list"
-        className="flex flex-col gap-3 md:max-xl:grid md:max-xl:grid-flow-col md:max-xl:grid-rows-4 md:max-xl:gap-x-10"
+        style={{ "--rows": Math.ceil(items.length / 2) } as CSSProperties}
+        className="flex flex-col gap-3 md:max-xl:grid md:max-xl:grid-flow-col md:max-xl:grid-rows-[repeat(var(--rows),auto)] md:max-xl:gap-x-10"
       >
         {items.map((item, index) => (
           <li key={item.id}>
