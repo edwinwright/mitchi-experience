@@ -17,8 +17,10 @@ Variety: European Spanish, informal.
 | Roll (the noun, and the throw) | la tirada, tirar | `tirar los dados` is the idiomatic game verb. `lanzar` is the athletic one |
 | Roll (the result) | sacar | `saca seis-cuatro`. See below |
 | Roll limit | el límite de tiradas | |
+| In one, in two, in three | en una, en dos, en tres | Compact form, used in the example strip and the vocabulary definition (`seis-tres en dos`). Prose elsewhere spells it out (`en dos tiradas`), see below |
 | Stop | plantarse | The verb Spanish games use for ending a turn, from blackjack and mus. `detenerse` and `parar` read as translation |
 | Round | la ronda | |
+| Turn | el turno | Standard term for a player's rolls in a round, up to the roll limit |
 | Starting player | el jugador inicial | The standard term in Spanish board game rules |
 | Worst hand | la peor mano | The base term. The Spanish pair mirrors the English pair exactly |
 | Worst hand so far | la peor mano hasta ahora | A direct translation of the English, which is why the English was renamed first |
@@ -26,9 +28,25 @@ Variety: European Spanish, informal.
 | The pot | el bote | See below |
 | Take the pot | llevarse el bote | |
 | Tie-break | el desempate | Verb: `desempatar` |
+| Tied | empatado/a | From `empatar`, "to tie". Pairs with `desempate`/`desempatar` |
 | Points | los puntos | |
 | Point limit | el límite de puntos | |
-| Mitchi Speak | Mitchi Speak | Proper noun, untranslated |
+
+## Addressing the player
+
+**Rule**
+
+- Numbered steps addressed to the whole table use the infinitive: `Acordar un límite de puntos`, `Decidir quién empieza`, `Doblar el bote`.
+- Prose addressed to the reader, as one player, uses `tú`: `No tienes que usar todas las tiradas`.
+- A step keeps the same form from start to finish. If the bold lead-in is an infinitive, every sentence that follows it in that step is an infinitive too. Do not switch to `tú` partway through a step.
+
+**Reasoning**
+
+- The setup and tie-break steps ("Agree a point limit", "Decide who starts", the tie-break steps) are things the whole table does together, not one player. `Tú` reads oddly for a group action, and this file already rules out `vosotros` and `ustedes`.
+- The infinitive is the standard form for written instructions in Spanish: rulebooks, recipes, signs (`Barajar las cartas`, `No fumar`). The Diccionario panhispánico de dudas accepts it for general written instructions that are not aimed at one particular person, which is what these steps are.
+- It matches the English. "Agree a point limit" is an instruction to everyone, not to "you" as one player.
+- Infinitives for step lists and `tú` for prose is a normal split in Spanish rulebooks, not an inconsistency. Mixing forms inside one step is the inconsistency: it reads as if two people wrote it.
+- It is written down so a later edit does not mix the forms back up.
 
 ## Hand and group names
 
@@ -90,6 +108,8 @@ The test: if the English could say "in Mitchi", it is `el juego`. If it could sa
 
 ## Register
 
-Procedure and definitions are impersonal: `cada jugador tira`, `se tira`. The reader's own position takes the informal second person singular: `solo necesitas superar la peor mano hasta ahora`. Home and About use the second person freely. This mirrors the English, and `voice.md` is the source of the rule.
+Informal second person singular, present tense, for procedure and definitions alike: `tira los dados`, `plántate cuando estés contento con tu mano`, `solo necesitas superar la peor mano hasta ahora`. `tú` is any player. Name a role only where the role matters: `el jugador inicial fija el límite de tiradas`. This mirrors the English, and `voice.md` is the source of the rule.
 
-With procedure impersonal, the `vosotros` and `ustedes` question barely arises: the only second-person forms in the copy are singular.
+About is first person, the author speaking: `aprendí Mitchi de mi primo`.
+
+The `vosotros` and `ustedes` question does not arise: the only second-person forms in the copy are singular. Where the English says "everyone" or "each player", Spanish keeps the impersonal (`cada jugador tira un dado`) rather than switching to a plural you.

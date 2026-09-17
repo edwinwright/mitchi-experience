@@ -32,7 +32,7 @@ export function LanguageSwitcher({
   inverse = false,
   className,
 }: LanguageSwitcherProps) {
-  const t = useTranslations("nav");
+  const t = useTranslations("site");
   const pathname = usePathname();
   const currentLocale = useLocale();
   const compact = variant === "group";

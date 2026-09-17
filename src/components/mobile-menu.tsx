@@ -10,7 +10,7 @@ type MobileMenuProps = {
 };
 
 export function MobileMenu({ children, className }: MobileMenuProps) {
-  const t = useTranslations("nav");
+  const t = useTranslations("site");
   const pathname = usePathname();
   const menu = useRef<HTMLDetailsElement>(null);
 

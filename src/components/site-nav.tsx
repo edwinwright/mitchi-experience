@@ -7,12 +7,11 @@ import { cn } from "@/lib/utils";
 import type en from "../../messages/en.json";
 
 type NavHref = ComponentProps<typeof Link>["href"];
-type NavKey = keyof typeof en.nav.main;
+type NavKey = keyof typeof en.nav;
 
 const NAV_ITEMS: { key: NavKey; href: NavHref }[] = [
   { key: "rules", href: "/rules" },
   { key: "reference", href: "/reference" },
-  { key: "speak", href: "/speak" },
   { key: "about", href: "/about" },
 ];
 
@@ -33,7 +32,7 @@ export function SiteNav({
   inverse = false,
   className,
 }: SiteNavProps) {
-  const t = useTranslations("nav.main");
+  const t = useTranslations("nav");
   const pathname = usePathname();
   const ground = inverse ? "inverse" : "regular";
 

@@ -1,15 +1,21 @@
 import { useTranslations } from "next-intl";
-import { Link } from "@/i18n/navigation";
 import { Container } from "./layout/container";
 import { tags } from "@/i18n/rich-text";
 import { cn } from "@/lib/utils";
 import { Heading } from "@/components/heading";
+import { proseLink } from "@/lib/prose";
 
-const STEPS = ["step1", "step2", "step3", "step4", "step5", "step6"] as const;
+const STEPS = [
+  "whoStarts",
+  "rollLimit",
+  "everyoneElse",
+  "handRanking",
+  "pot",
+  "winning",
+] as const;
 
 export function HomeQuickStart() {
-  const t = useTranslations("rules.quickStart");
-  const tOnward = useTranslations("nav.onward");
+  const t = useTranslations("home.quickStart");
 
   return (
     <section className="bg-stone-50">
@@ -76,22 +82,17 @@ export function HomeQuickStart() {
               >
                 {String(i + 1).padStart(2, "0")}
               </span>
-              <div className="font-serif text-lg text-stone-900 md:text-xl [&_a]:text-blue-600 [&_a]:underline [&_a]:underline-offset-[3px] [&_a]:hover:text-red-600">
+              <div
+                className={`font-serif text-lg text-stone-900 md:text-xl ${proseLink}`}
+              >
                 {t.rich(key, tags)}
               </div>
             </li>
           ))}
         </ol>
 
-        <p className="font-serif text-base text-stone-600">{t("footnote")}</p>
-
-        <p>
-          <Link
-            href="/rules"
-            className="focus-ring font-semibold text-blue-600 underline underline-offset-4 hover:text-red-600"
-          >
-            {tOnward("rules")}
-          </Link>
+        <p className={`font-semibold ${proseLink}`}>
+          {t.rich("fullRulesLink", tags)}
         </p>
       </Container>
     </section>

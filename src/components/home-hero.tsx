@@ -24,7 +24,7 @@ export function HomeHero() {
                 {t("title")}
               </Heading>
               <div className="font-serif text-lg md:text-xl leading-normal max-w-[34ch] text-white/85">
-                <p className="mb-4">{t.rich("twist", tags)}</p>
+                <p className="mb-4">{t.rich("keyIdea", tags)}</p>
                 <p>{t.rich("scoring", tags)}</p>
               </div>
             </header>
@@ -36,7 +36,7 @@ export function HomeHero() {
                   variant="primary"
                   inverse
                 >
-                  {t("cta.rules")}
+                  {t("links.rules")}
                 </CtaLink>
                 <CtaLink
                   className="w-full md:w-auto"
@@ -44,11 +44,11 @@ export function HomeHero() {
                   variant="secondary"
                   inverse
                 >
-                  {t("cta.reference")}
+                  {t("links.reference")}
                 </CtaLink>
               </nav>
               <p className="font-mono text-sm leading-normal max-w-[45ch] text-white/85 hidden md:block mt-2">
-                {t.rich("need", tags)}
+                {t.rich("youNeed", tags)}
               </p>
             </footer>
           </div>
@@ -77,7 +77,7 @@ export function HomeHero() {
       <div className="md:hidden bg-foreground text-white">
         <Container className="py-5">
           <div className="font-mono text-sm leading-normal text-white/85">
-            {t.rich("need", tags)}
+            {t.rich("youNeed", tags)}
           </div>
         </Container>
       </div>

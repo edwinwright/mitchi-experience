@@ -2,7 +2,7 @@
  * Hand data for Mitchi.
  *
  * Hands are data, hand *names* are messages: the visible name comes from
- * t(`hands.${hand.id}`) and the group name from t(`groups.${hand.group}`).
+ * t(`hands.${hand.id}`) and the group name from t(`handGroups.${hand.group}.name`).
  * Never compose a name from two number words at runtime.
  * See docs/architecture/i18n-conventions.md.
  */

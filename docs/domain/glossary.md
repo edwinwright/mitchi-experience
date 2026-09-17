@@ -2,8 +2,6 @@
 
 The agreed vocabulary for Mitchi. Every term used in the rules, on the site and in any translation comes from this list. If a translation needs a word this file does not have, this file is updated first.
 
-Informal names are not part of the standard vocabulary. They live in `src/data/hands.ts` and appear only on `/speak`.
-
 ## Terms
 
 | Term                                           | Definition                                                                                               | Notes                                                                                      |
@@ -15,19 +13,21 @@ Informal names are not part of the standard vocabulary. They live in `src/data/h
 | **Die / dice**                                 | A standard six-sided die. Mitchi uses two.                                                               |                                                                                            |
 | **Roll**                                       | One throw of one or both dice. Re-rolling a single die still counts as a roll.                           | Also used for the single-die throw that decides who starts.                                |
 | **Roll limit**                                 | The number of rolls available to each player in a round, set by the number the starting player uses.     | Replaces the older, ambiguous term "target".                                               |
+| **In one, in two, in three**                   | How many rolls a hand took: "six-three in two".                                                          | How a roll count is said at the table. Used in example labels and the vocabulary.          |
 | **Stop**                                       | To end a turn and keep the current hand, rather than using a remaining roll.                             | A player may stop at any point up to the roll limit.                                       |
 | **Round**                                      | One pass around the table, ending when a player takes the pot.                                           |                                                                                            |
+| **Turn**                                       | A player's rolls in a round, up to the roll limit.                                                       |                                                                                            |
 | **Starting player**                            | The player who rolls first in a round and sets the roll limit. The loser of a round starts the next one. |                                                                                            |
 | **Worst hand**                                 | The lowest-ranked hand. At the end of a round, the player left with it takes the pot.                    | Also used absolutely: the worst hand in the game is three-one.                             |
 | **Worst hand so far**                          | The worst hand during a round, while players are still to roll. What each remaining player has to beat.  | Changes as players finish.                                                                 |
-| **Doubles**                                    | Both dice showing the same number. Beaten only by a Mitchi. Higher doubles beat lower.                   | Individual hands: double-six down to double-one.                                           |
+| **Doubles**                                    | Both dice showing the same number. Higher doubles beat lower.                                            | Site copy says only "Both dice show the same number". Individual hands: double-six down to double-one. |
 | **Six-high, five-high, four-high, three-high** | A non-double hand named by its higher die, then its lower: six-five, six-four, down to three-one.        |                                                                                            |
-| **The pot**                                    | The points at stake in the current round.                                                                | Doubles at each tie-break.                                                                 |
+| **The pot**                                    | The points at stake in the current round.                                                                | Starts at 1. The first Mitchi replaces it with 2; each further Mitchi adds 2. Doubles at each tie-break. |
 | **Take the pot**                               | To add every point in the pot to your score.                                                             |                                                                                            |
-| **Tie-break**                                  | A play-off between players level on the worst hand. One roll each, table doubled, order reversed.        | Always "tie-break", never "tie-breaker".                                                   |
+| **Tie-break**                                  | A play-off between players tied on the worst hand. One roll each, pot doubled, order reversed.           | Always "tie-break", never "tie-breaker".                                                   |
+| **Tied**                                       | Two or more players with the same hand, or the same points.                                              | Use for any tie. Avoid "level".                                                            |
 | **Points**                                     | The running score. Points are bad: the lowest total wins.                                                | Not "penalty points".                                                                      |
-| **Point limit**                                | The total that ends the game when any player reaches or exceeds it. Agreed before play, typically 25.    |                                                                                            |
-| **Mitchi Speak**                               | Informal alternative names for hands and events. Not part of the standard game.                          | Data in `src/data/hands.ts`, published on `/speak`.                                        |
+| **Point limit**                                | The total that ends the game when any player reaches it. Agreed before play, typically 25.               |                                                                                            |
 
 ## Terms deliberately not used
 
@@ -39,6 +39,7 @@ Informal names are not part of the standard vocabulary. They live in `src/data/h
 | Best hand          | Worst hand so far                | You are not trying to roll the best hand, only to avoid the worst.                                                                                  |
 | The table          | The pot                          | Renamed because it collided with the literal table.                                                                                                 |
 | Current worst hand | Worst hand so far                | "Current" was a clumsy way of saying what "so far" says plainly.                                                                                    |
+| Level (on)         | Tied (on)                        | British idiom. "Tied" is plain in every English and translates cleanly.                                                                             |
 
 ## Hands
 

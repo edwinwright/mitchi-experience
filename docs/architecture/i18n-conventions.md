@@ -8,7 +8,6 @@ How message content is structured and authored. The routing decisions (`localePr
 |---|---|
 | Message content | `messages/<locale>.json`, one file per locale, dynamically imported per locale in `src/i18n/request.ts` |
 | Hand data, group order | `src/data/hands.ts` |
-| Mitchi Speak nicknames | `src/data/speak.ts` |
 | Section anchor IDs | The components that render the sections |
 | Routing and slugs | `src/i18n/routing.ts` |
 | Rich text tag map | `src/i18n/rich-text.tsx` (`tags`) |
@@ -16,7 +15,7 @@ How message content is structured and authored. The routing decisions (`localePr
 | Production origin | `src/lib/config.ts` (`SITE_ORIGIN`) — `metadataBase`, sitemap, robots |
 | Sitemap and robots | `src/app/sitemap.ts`, `src/app/robots.ts` (App Router built-ins; outside `[locale]`) |
 
-Namespaces, and no twelfth without a reason: `meta`, `nav`, `home`, `rules`, `reference`, `speak`, `terms`, `about`, `groups`, `hands`, `notFound`.
+Namespaces, and no fourteenth without a reason: `meta`, `site`, `nav`, `nextPage`, `home`, `rules`, `reference`, `about`, `notFound`, `handGroups`, `hands`, `potTable`, `vocabulary`.
 
 **`meta.*` is titles and descriptions only.** Wired through `generateMetadata` via `pageMetadata`. Each real page has `meta.<page>.title` and `meta.<page>.description` in every locale. Do not add message keys without asking; see Changing copy. Canonicals and hreflang are built with `getPathname` from the same `PAGES` map; never list `/en/...` as a 200 URL. The Open Graph/Twitter share image is locale-independent, so it is not a message key: its path and alt text are a constant in `src/i18n/metadata.ts`, not `messages/<locale>.json`.
 
@@ -24,17 +23,17 @@ Namespaces, and no twelfth without a reason: `meta`, `nav`, `home`, `rules`, `re
 
 **One key per independently translatable unit.** A heading, a paragraph, a list item, a button label. Named for its job, `rules.round.rollLimit`, not `rules.round.p3`. Never one key per sentence: a sentence is not a translatable unit, and splitting it into prefix/suffix fragments stops translators from reordering. Never a whole section in one string: headings, paragraphs and lists are document structure, and they belong in the component.
 
-**No arrays.** `t()` throws on an array value and `t.raw()` gives up type safety. Use numbered keys: `rules.quickStart.step1` to `step6`.
+**No arrays.** `t()` throws on an array value and `t.raw()` gives up type safety. Use one key per item.
+
+**Keys name content, not layout.** `home.keyIdea`, not `home.twist`; `rules.setup.whoStarts`, not `rules.setup.step2`. Numbered keys only where the items have no individual meaning. Keys that stay generic: `title`, `heading`, `intro`, `summary`, `label`, `example`. Numbers that a table renders (pot values, tie-break operators) are data in the component, not messages.
 
 **No markup inside strings.** Translators should never have to preserve asterisks, HTML, attributes or URLs. Inline emphasis and in-text actions use next-intl rich text tags (`t.rich`), listed below. Mapped in one place, `tags` in `src/i18n/rich-text.tsx`. No component maps its own tags. Do not use `defaultTranslationValues`, it is deprecated.
 
 **Variables, not concatenation.** Worked examples take player letters as ICU parameters, so one pattern is translated once and A, B and C are substituted.
 
-**Hands are data, names are messages.** The visible name of a hand comes from ``t(`hands.${hand.id}`)``. Never compose a hand name from two number words at runtime: "six-five" is not "six" plus "five" in Polish or Japanese, and "double-six" is not "six-six" in any language. Twenty-one whole strings per locale is the cheap option, not the expensive one. Group names work the same way, under `groups`.
+**Hands are data, names are messages.** The visible name of a hand comes from ``t(`hands.${hand.id}`)``. Never compose a hand name from two number words at runtime: "six-five" is not "six" plus "five" in Polish or Japanese, and "double-six" is not "six-six" in any language. Twenty-one whole strings per locale is the cheap option, not the expensive one. Group names and descriptions work the same way, under `handGroups.<group>.name` and `.description`.
 
-**Proper nouns stay out of the message files.** Mitchi Speak nicknames have one form in every language. They live in `src/data/speak.ts`, because putting them in `en.json` invites a translator to translate them.
-
-**Anchor IDs stay English in every locale.** `#hands`, `#round`, `#scoring`, `#tie-breaks`, `#winning`, `#terms`. Visible headings translate, IDs do not. A URL fragment is never sent to the server, so no routing layer can rewrite it the way `pathnames` rewrites a slug. Localised IDs would break every shared link on a locale switch and add a per-locale fragment map to the language switcher.
+**Anchor IDs stay English in every locale.** `#hands`, `#round`, `#scoring`, `#tie-breaks`, `#winning`, `#vocabulary`. Visible headings translate, IDs do not. A URL fragment is never sent to the server, so no routing layer can rewrite it the way `pathnames` rewrites a slug. Localised IDs would break every shared link on a locale switch and add a per-locale fragment map to the language switcher.
 
 ## Changing copy
 
@@ -44,7 +43,7 @@ Two locale files, and a check that catches a missing key but not a stale transla
 
 **2. `messages/en.json` is the translation brief.** English changes first, and it is what every other locale is translated from. Nothing else is the source.
 
-**3. Every other locale file in the same change.** Translate the same keys, in the same commit. Do not ship English-only keys, and do not leave a scaffolding marker (`[ES] `, `[PL] `) on a live locale: a marker on a shipped page is worse than the old wording it replaced.
+**3. Every other locale file in the same change, marked until translated.** Add the same keys, in the same commit. A changed or new value goes in as `[ES] ` + the English until the translation is written and signed off; a value whose meaning did not change keeps its existing translation. Translation is its own pass, at the end of the work item. Markers may sit in the working tree and on preview deploys. They must never reach production: `npm run i18n:check` lists them as warnings, and `prebuild` runs `node scripts/check-messages.mjs --no-markers` when `VERCEL_ENV` is `production`, which fails the build on any marker.
 
 **4. Rich text tags and ICU parameter names survive untouched.** Word order around them may change; `<term>`, `<about>` and `{a}` do not. Renaming or dropping one fails at render, on a page nobody is looking at.
 
@@ -64,21 +63,19 @@ Messages own linguistic structure. Components own document structure: `<p>`, `<h
 |---|---|
 | `<em>` | Emphasis |
 | `<strong>` | Strong emphasis |
-| `<term>` | Glossary reference. Jumps to `#terms` on `/rules`. |
-| `<speak>` | Opens `/speak`. |
+| `<term>` | Vocabulary reference. Jumps to `/rules#vocabulary`. |
+| `<tieBreaks>` | Jumps to `/rules#tie-breaks`. |
 | `<about>` | Opens `/about`. |
 | `<rules>` | Opens `/rules`. |
 | `<reference>` | Opens `/reference`. |
 
-Names are identifiers: letters only, so they are valid ICU tags and unquoted keys in the `tags` map. Not `<speak-link>`, `<link-to-about>` or `<a>`. A `Link` suffix would show translators that the span is a link; at this size the table above is the legend. If the site grows a large set of in-text actions, revisit.
+Names are identifiers: letters only, so they are valid ICU tags and unquoted keys in the `tags` map. Not `<tie-breaks>`, `<link-to-about>` or `<a>`. A `Link` suffix would show translators that the span is a link; at this size the table above is the legend. If the site grows a large set of in-text actions, revisit.
 
 Add a tag to this table and to `tags` when a message needs a new action. Do not invent a tag on a page.
 
 `t.rich`'s second argument is one object: tag mappers (functions) and ICU values (strings, numbers). A tag name and a variable cannot share a key.
 
 Body copy rendered in a `<p>` (or other inline-rich block) always goes through `t.rich(key, tags)`, even when the current English string has no tags, so a later locale can add them. Titles, headings, nav labels and CTA labels stay on `t()`: they are `string`s, and `t.rich` returns a `ReactNode`.
-
-`rules.tieBreaks.example` still uses `<p>` in one key; that is the remaining exception. New copy follows this table.
 
 ## Type safety
 
@@ -113,9 +110,8 @@ Decisions first, then scaffolding, then translation. Doing it in that order is w
 Binding from the Spanish pass, and from the glossary translation rules:
 
 - **Mitchi** stays untranslated and uninflected in every language.
-- **Mitchi Speak** is a proper noun: `/speak` stays `/speak` in every locale (plain string in `pathnames`, not a per-locale object).
 - Hand names keep higher-die-first order. Translate the number words, not the structure. Never compose a name at runtime.
-- Anchor IDs stay English in every locale (`#terms`, `#hands`, …). Visible headings translate; fragments do not.
+- Anchor IDs stay English in every locale (`#vocabulary`, `#hands`, …). Visible headings translate; fragments do not.
 
 **2. Write `docs/domain/glossary.<locale>.md`.** Term forms and the reasoning behind contested choices. Not definitions: those live in the message file, and repeating them here gives the site two sources of truth for the same sentence.
 
@@ -131,20 +127,20 @@ There is no mirror script. Key parity is maintained by hand and enforced by `i18
 
 **4. Add the locale to `src/i18n/routing.ts`.** Append it to `locales`. In `pathnames`:
 
-- Paths that are the same in every language stay plain strings (`/`, `/speak`).
+- Paths that are the same in every language stay plain strings (`/`).
 - Paths whose slug differs become per-locale objects, e.g. `/rules`: `{ en: "/rules", es: "/reglas", … }`.
 
 Update `docs/product/site-map.md` when the new slugs are real in routing, not later: the site map describes what the site does. Sitemap entries follow `routing.locales` and `PAGES` in `src/i18n/metadata.ts` — no hand-edited URL list.
 
 **5. Translate,** deleting the `[XX] ` marker from each string as you go. The markers are the only progress bar this work has, and once they are gone a silent fallback looks exactly like a correct page. Rich text tags and ICU parameter names survive untouched; word order around them may change.
 
-`nav.main` holds the main-nav link labels only (grouped by function). Other `nav.*` keys are chrome and onward CTAs. Do not put autonyms (English, Español, …) in the message files.
+`nav.*` holds the main-nav link labels only. Chrome (skip link, footer, on-this-page label) is `site.*`; the next-page block is `nextPage.*`. Do not put autonyms (English, Español, …) in the message files.
 
 **6. Add the language to the switcher.** `src/components/language-switcher.tsx` is a client leaf: it needs `usePathname()` from `@/i18n/navigation`, and reading the path on the server would turn the locale layout dynamic. Add the locale to `LOCALE_NAMES` with the language named in its own language. Keep it a nav of links with `locale`, `hreflang`, `lang` and `aria-current` — not a `<select>`.
 
 Passing `locale` to `Link` emits a prefix even for the default locale (`/en/rules`). That is deliberate: the prefix updates `NEXT_LOCALE` before navigation; the proxy then redirects to the unprefixed English path under `localePrefix: "as-needed"`.
 
-**7. Prove the locale.** Switching must keep the same page (including localised slugs). `/es/reglas#terms` (and the equivalent for the new locale) must land on the Terms section. `lang` on `<html>` comes from the locale layout; Speak nicknames stay `lang="en"` and `translate="no"`.
+**7. Prove the locale.** Switching must keep the same page (including localised slugs). `/es/reglas#vocabulary` (and the equivalent for the new locale) must land on the Game vocabulary section. `lang` on `<html>` comes from the locale layout.
 
 **8. Build.** `npm run build`: every real route shows `●` with both (all) locale paths listed, and a `proxy` entry is present. Exactly one `ƒ` is expected: `/[locale]/[...rest]`, the 404 catch-all. It cannot get `generateStaticParams` for arbitrary paths. Do not try to make it static.
 

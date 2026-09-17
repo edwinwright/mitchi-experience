@@ -3,24 +3,16 @@ import { Link } from "@/i18n/navigation";
 
 // These tags are available
 type Tag =
-  | "p"
-  | "em"
-  | "strong"
-  | "term"
-  | "about"
-  | "reference"
-  | "rules"
-  | "speak";
+  "em" | "strong" | "term" | "about" | "reference" | "rules" | "tieBreaks";
 
 export type TagMap = Record<Tag, (chunks: ReactNode) => ReactNode>;
 
 export const tags: TagMap = {
-  p: (chunks) => <p>{chunks}</p>,
   em: (chunks) => <em>{chunks}</em>,
   strong: (chunks) => <strong>{chunks}</strong>,
   term: (chunks) => (
     <Link
-      href={{ pathname: "/reference", hash: "terms" }}
+      href={{ pathname: "/rules", hash: "vocabulary" }}
       className="focus-ring"
     >
       {chunks}
@@ -41,8 +33,11 @@ export const tags: TagMap = {
       {chunks}
     </Link>
   ),
-  speak: (chunks) => (
-    <Link href="/speak" className="focus-ring">
+  tieBreaks: (chunks) => (
+    <Link
+      href={{ pathname: "/rules", hash: "tie-breaks" }}
+      className="focus-ring"
+    >
       {chunks}
     </Link>
   ),

@@ -20,12 +20,11 @@ type RankItem = {
 };
 
 export function RankList({ variant = "list" }: RankListProps) {
-  const tGroups = useTranslations("groups");
-  const tHands = useTranslations("rules.hands");
+  const t = useTranslations("handGroups");
   const items: RankItem[] = HAND_GROUPS.map((group) => ({
     key: group,
-    name: tGroups(group),
-    description: tHands(group),
+    name: t(`${group}.name`),
+    description: t(`${group}.description`),
     best: handsInGroup(group)[0]!,
   }));
 

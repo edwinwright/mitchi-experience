@@ -1,13 +1,11 @@
 import type { MetadataRoute } from "next";
 import { getPathname } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
-import { PAGES, UNLISTED_PAGES, type MetaPage } from "@/i18n/metadata";
+import { PAGES } from "@/i18n/metadata";
 import { SITE_ORIGIN } from "@/lib/config";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const hrefs = (Object.keys(PAGES) as MetaPage[])
-    .filter((page) => !UNLISTED_PAGES.has(page))
-    .map((page) => PAGES[page]);
+  const hrefs = Object.values(PAGES);
 
   return hrefs.flatMap((href) =>
     routing.locales.map((locale) => {
