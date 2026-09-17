@@ -173,24 +173,28 @@
   },
   "reference": {
     "title": "Referencia rápida",
-    "standfirst": "Todo lo que necesitas durante la partida, en una sola pantalla.",
+    "intro": "[ES] Everything you need mid-game, on one screen.",
     "ranking": {
       "heading": "Clasificación de las manos",
-      "caption": "Las manos de Mitchi, clasificadas de mejor a peor"
+      "intro": "[ES] Best at the top, worst at the bottom. Within a group, the higher hand wins. The worst hand in the game is three-one.",
+      "tableCaption": "Las manos de Mitchi, clasificadas de mejor a peor"
     },
     "scoring": {
       "heading": "Puntuación",
-      "perRound": "Puntos por ronda",
-      "note": "Los puntos de Mitchi cuentan los saque quien los saque. La peor mano se lleva el bote y empieza la siguiente ronda.",
-      "tieBreak": "Puntos en un desempate",
-      "rule1": "Solo los jugadores empatados.",
-      "rule2": "Una tirada cada uno, no hasta tres.",
-      "rule3": "El bote se dobla antes de tirar.",
-      "rule4": "El orden se invierte, empezando por el último jugador que tiró.",
-      "rule5": "Cada Mitchi que se saque añade 2 puntos más al bote.",
-      "rule6": "¿Sigue el empate? Se repite. El bote se dobla otra vez y el orden se invierte otra vez.",
-      "pointLimit": "Límite de puntos",
-      "limit": "La partida termina en cuanto un jugador alcanza el límite de puntos, normalmente 25. Gana quien menos puntos tenga. Si varios jugadores empatan con la puntuación más baja, cada uno saca una mano y gana la mejor."
+      "intro": "[ES] Every round starts with 1 point in the pot. The first Mitchi replaces it with 2 points, and each Mitchi after that adds 2 more. The worst hand takes the pot and starts the next round."
+    },
+    "tieBreaks": {
+      "heading": "Desempates",
+      "intro": "[ES] Tied players roll once each. The worst hand takes the pot.",
+      "whenHeader": "[ES] When",
+      "potHeader": "Bote",
+      "eachTieBreak": "[ES] Each tie-break starts",
+      "eachMitchi": "[ES] Each Mitchi rolled in a tie-break",
+      "fullRulesLink": "[ES] <tieBreaks>Full tie-break rules</tieBreaks>"
+    },
+    "pointLimit": {
+      "heading": "Límite de puntos",
+      "summary": "[ES] The game ends when any player reaches the point limit, usually 25. The fewest points wins. If players are tied on the fewest points, they roll once each and the best hand wins."
     }
   },
   "speak": {

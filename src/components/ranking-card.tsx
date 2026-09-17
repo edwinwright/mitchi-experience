@@ -30,7 +30,7 @@ export function RankingCard() {
   return (
     <div className="flex flex-col gap-4 md:gap-5 xl:gap-6">
       <p className="font-serif text-lg leading-normal text-stone-600">
-        {tRanking("caption")}
+        {tRanking("tableCaption")}
       </p>
       <div className="rounded-xl border border-border bg-white p-4 md:grid md:grid-cols-2 md:gap-x-6 md:p-5 xl:gap-x-8 xl:p-6">
         {columns.map((column, c) => (

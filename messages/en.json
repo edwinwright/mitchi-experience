@@ -173,24 +173,28 @@
   },
   "reference": {
     "title": "Quick reference",
-    "standfirst": "Everything you need mid-game, on one screen.",
+    "intro": "Everything you need mid-game, on one screen.",
     "ranking": {
       "heading": "Hand ranking",
-      "caption": "Mitchi hands, ranked from best to worst"
+      "intro": "Best at the top, worst at the bottom. Within a group, the higher hand wins. The worst hand in the game is three-one.",
+      "tableCaption": "Mitchi hands, ranked from best to worst"
     },
     "scoring": {
       "heading": "Scoring",
-      "perRound": "Points per round",
-      "note": "Mitchi points count whoever rolled them. The worst hand takes the pot and starts the next round.",
-      "tieBreak": "Points in a tie-break",
-      "rule1": "Tied players only.",
-      "rule2": "One roll each, not up to three.",
-      "rule3": "The pot doubles before the roll.",
-      "rule4": "The order reverses, starting with the last player to roll.",
-      "rule5": "Each Mitchi rolled adds 2 more points to the pot.",
-      "rule6": "Still level? Repeat. The pot doubles again and the order reverses again.",
-      "pointLimit": "Point limit",
-      "limit": "The game ends as soon as any player reaches the point limit, usually 25. Fewest points wins. If players are level on fewest points, they roll one hand each and the better hand wins."
+      "intro": "Every round starts with 1 point in the pot. The first Mitchi replaces it with 2 points, and each Mitchi after that adds 2 more. The worst hand takes the pot and starts the next round."
+    },
+    "tieBreaks": {
+      "heading": "Tie-breaks",
+      "intro": "Tied players roll once each. The worst hand takes the pot.",
+      "whenHeader": "When",
+      "potHeader": "Pot",
+      "eachTieBreak": "Each tie-break starts",
+      "eachMitchi": "Each Mitchi rolled in a tie-break",
+      "fullRulesLink": "<tieBreaks>Full tie-break rules</tieBreaks>"
+    },
+    "pointLimit": {
+      "heading": "Point limit",
+      "summary": "The game ends when any player reaches the point limit, usually 25. The fewest points wins. If players are tied on the fewest points, they roll once each and the best hand wins."
     }
   },
   "speak": {
