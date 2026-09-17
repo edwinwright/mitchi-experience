@@ -32,6 +32,22 @@ Variety: European Spanish, informal.
 | Points | los puntos | |
 | Point limit | el límite de puntos | |
 
+## Addressing the player
+
+**Rule**
+
+- Numbered steps addressed to the whole table use the infinitive: `Acordar un límite de puntos`, `Decidir quién empieza`, `Doblar el bote`.
+- Prose addressed to the reader, as one player, uses `tú`: `No tienes que usar todas las tiradas`.
+- A step keeps the same form from start to finish. If the bold lead-in is an infinitive, every sentence that follows it in that step is an infinitive too. Do not switch to `tú` partway through a step.
+
+**Reasoning**
+
+- The setup and tie-break steps ("Agree a point limit", "Decide who starts", the tie-break steps) are things the whole table does together, not one player. `Tú` reads oddly for a group action, and this file already rules out `vosotros` and `ustedes`.
+- The infinitive is the standard form for written instructions in Spanish: rulebooks, recipes, signs (`Barajar las cartas`, `No fumar`). The Diccionario panhispánico de dudas accepts it for general written instructions that are not aimed at one particular person, which is what these steps are.
+- It matches the English. "Agree a point limit" is an instruction to everyone, not to "you" as one player.
+- Infinitives for step lists and `tú` for prose is a normal split in Spanish rulebooks, not an inconsistency. Mixing forms inside one step is the inconsistency: it reads as if two people wrote it.
+- It is written down so a later edit does not mix the forms back up.
+
 ## Hand and group names
 
 **Pattern:** `seis-cinco` for non-doubles, `doble seis` for doubles.

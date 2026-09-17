@@ -137,9 +137,9 @@
       "heading": "Desempates",
       "intro": "Si dos o más jugadores empatan en la peor mano, juegan un <term>desempate</term> para decidir quién se lleva el bote.",
       "doublePot": "<strong>Doblar el bote.</strong>",
-      "rollOnce": "<strong>Tirar una vez cada uno.</strong> Solo tiran los jugadores empatados, sin volver a tirar. Se juega en el sentido contrario a la última ronda o desempate, empezando por el último jugador en tirar.",
+      "rollOnce": "<strong>Tirar una vez cada uno.</strong> Solo tiran los jugadores empatados, sin volver a tirar. Seguir el sentido contrario a la última ronda o desempate, empezando por el último jugador en tirar.",
       "addMitchis": "<strong>Añadir 2 puntos por cada Mitchi</strong> que se saque en el desempate.",
-      "worstHandTakes": "<strong>La peor mano se lleva el bote.</strong> Si vuelve a haber empate, se repite desde el paso 1 solo con esos jugadores.",
+      "worstHandTakes": "<strong>La peor mano se lleva el bote.</strong> Si vuelve a haber empate, volver al paso 1 solo con esos jugadores.",
       "example": {
         "whatHappensHeader": "Qué pasa",
         "calculationHeader": "Cálculo",

@@ -17,7 +17,7 @@ No idioms. "Tied", never "level". No jokes, no asides, no "simply" and no "just"
 | "Players tied on the worst hand" | "Players level on the worst hand" |
 | Use the terms in `docs/domain/glossary.md` | Introduce a synonym because a sentence reads better |
 
-In translation, procedure takes the informal second person singular, or whatever form the language uses for game instructions addressed to the player.
+In translation, procedure takes the informal second person singular, or whatever form the language uses for game instructions addressed to the player. For Spanish, this holds for prose addressed to one player; numbered steps addressed to the whole table take the infinitive instead, see `docs/domain/glossary.es.md`.
 
 ## Numbers
 
