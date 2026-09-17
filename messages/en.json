@@ -61,14 +61,28 @@
   "home": {
     "title": "Mitchi",
     "tagline": "A dice game for two or more players.",
-    "twist": "You are never trying to roll the best hand. You are trying not to be left with the worst.",
-    "scoring": "Whoever ends the round with the worst hand takes the points, and points are bad: the lowest score wins.",
-    "need": "<strong>You need:</strong> two dice, a pen, something to write on, and at least one other player.",
-    "cta": {
+    "keyIdea": "You do not need the best hand. You only need to avoid the worst.",
+    "scoring": "Each round, the player left with the worst hand takes the points. Points are bad: the fewest points wins.",
+    "youNeed": "<strong>You need:</strong> two dice, a pen and paper, and at least one other player.",
+    "links": {
       "rules": "Read the rules",
       "reference": "Quick reference"
     },
-    "provenance": "Learnt while travelling in Spain. Origin unknown. <about>More about the game</about>"
+    "quickStart": {
+      "heading": "Mitchi in 60 seconds",
+      "whoStarts": "Everyone rolls one die. The highest roll starts.",
+      "rollLimit": "The starting player rolls both dice, up to three times. The number of rolls they use is the <term>roll limit</term> for everyone else.",
+      "everyoneElse": "Everyone else takes a turn, up to the roll limit. You only need to beat the <term>worst hand so far</term>.",
+      "handRanking": "The best hand is a Mitchi, a 2 and a 1. Then doubles, then six-high down to three-high.",
+      "pot": "The player left with the worst hand <term>takes the pot</term>: 1 point, or 2 points for each Mitchi rolled.",
+      "winning": "The game ends when a player reaches the point limit, usually 25. The fewest points wins.",
+      "fullRulesLink": "<rules>Read the full rules</rules>"
+    },
+    "ranking": {
+      "heading": "Hand ranking",
+      "allHandsLink": "All hands are listed on the <reference>quick reference</reference>."
+    },
+    "origin": "I learnt Mitchi from my cousin in southern Spain. <about>More about the game</about>"
   },
   "rules": {
     "title": "Mitchi rules",
@@ -94,16 +108,6 @@
       "mitchiWhat": "Adds 2 more points",
       "doubleAgainWhat": "The pot doubles again",
       "stillLevelWhat": "And again, if they are still level"
-    },
-    "quickStart": {
-      "heading": "Mitchi in 60 seconds",
-      "step1": "Everyone rolls one die. The highest roll starts.",
-      "step2": "The starting player rolls both dice and may roll up to three times. The number of rolls they use is the <term>roll limit</term> for everyone else that round.",
-      "step3": "Everyone else rolls in turn, up to that limit. You only need to beat the <term>worst hand so far</term>, the lowest-ranked hand rolled this round. You never need the best.",
-      "step4": "The best hand is a Mitchi, a 2 and a 1. Then doubles, then six-high, five-high, four-high, three-high. The worst hand in the game is three-one.",
-      "step5": "Whoever is left with the worst hand <term>takes the pot</term>: 1 point, or 2 points for every Mitchi rolled that round.",
-      "step6": "First player to 25 points ends the game. Fewest points wins.",
-      "footnote": "The full rules are below."
     },
     "overview": {
       "heading": "Overview",

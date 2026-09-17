@@ -61,14 +61,28 @@
   "home": {
     "title": "Mitchi",
     "tagline": "Un juego de dados para dos o más jugadores.",
-    "twist": "Nunca intentas sacar la mejor mano. Intentas no quedarte con la peor.",
-    "scoring": "Quien termina la ronda con la peor mano se lleva los puntos, y los puntos son malos: gana quien menos tenga.",
-    "need": "<strong>Necesitas:</strong> dos dados, un bolígrafo, algo donde escribir y al menos otro jugador.",
-    "cta": {
+    "keyIdea": "[ES] You do not need the best hand. You only need to avoid the worst.",
+    "scoring": "[ES] Each round, the player left with the worst hand takes the points. Points are bad: the fewest points wins.",
+    "youNeed": "[ES] <strong>You need:</strong> two dice, a pen and paper, and at least one other player.",
+    "links": {
       "rules": "Leer las reglas",
       "reference": "Referencia rápida"
     },
-    "provenance": "Aprendido viajando por España. Origen desconocido. <about>Más sobre el juego</about>"
+    "quickStart": {
+      "heading": "Mitchi en 60 segundos",
+      "whoStarts": "[ES] Everyone rolls one die. The highest roll starts.",
+      "rollLimit": "[ES] The starting player rolls both dice, up to three times. The number of rolls they use is the <term>roll limit</term> for everyone else.",
+      "everyoneElse": "[ES] Everyone else takes a turn, up to the roll limit. You only need to beat the <term>worst hand so far</term>.",
+      "handRanking": "[ES] The best hand is a Mitchi, a 2 and a 1. Then doubles, then six-high down to three-high.",
+      "pot": "[ES] The player left with the worst hand <term>takes the pot</term>: 1 point, or 2 points for each Mitchi rolled.",
+      "winning": "[ES] The game ends when a player reaches the point limit, usually 25. The fewest points wins.",
+      "fullRulesLink": "[ES] <rules>Read the full rules</rules>"
+    },
+    "ranking": {
+      "heading": "Clasificación de las manos",
+      "allHandsLink": "[ES] All hands are listed on the <reference>quick reference</reference>."
+    },
+    "origin": "[ES] I learnt Mitchi from my cousin in southern Spain. <about>More about the game</about>"
   },
   "rules": {
     "title": "Reglas de Mitchi",
@@ -94,16 +108,6 @@
       "mitchiWhat": "Añade 2 puntos más",
       "doubleAgainWhat": "El bote se dobla otra vez",
       "stillLevelWhat": "Y otra vez, si siguen empatados"
-    },
-    "quickStart": {
-      "heading": "Mitchi en 60 segundos",
-      "step1": "Cada jugador tira un dado. Empieza quien saque el número más alto.",
-      "step2": "El jugador inicial tira los dos dados y puede tirar hasta tres veces. El número de tiradas que use es el <term>límite de tiradas</term> para el resto de jugadores en esa ronda.",
-      "step3": "Los demás jugadores tiran por turno, hasta ese límite. Solo necesitas superar la <term>peor mano hasta ahora</term>, la mano peor clasificada de esta ronda. Nunca necesitas la mejor.",
-      "step4": "La mejor mano es Mitchi, un 2 y un 1. Después los dobles, y luego seis alto, cinco alto, cuatro alto y tres alto. La peor mano del juego es tres-uno.",
-      "step5": "Quien se queda con la peor mano <term>se lleva el bote</term>: 1 punto, o 2 puntos por cada Mitchi que se saque en la ronda.",
-      "step6": "El primer jugador que llegue a 25 puntos termina la partida. Gana quien menos puntos tenga.",
-      "footnote": "Las reglas completas están más abajo."
     },
     "overview": {
       "heading": "Resumen",

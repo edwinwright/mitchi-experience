@@ -21,7 +21,7 @@ export function HomeProvenance() {
         </div>
         <Container className="flex flex-col justify-center py-8">
           <p className="font-serif text-lg leading-normal text-stone-900 max-w-[44ch] md:text-xl [&_a]:font-semibold [&_a]:text-blue-600 [&_a]:underline [&_a]:underline-offset-[3px] [&_a]:hover:text-red-600">
-            {t.rich("provenance", tags)}
+            {t.rich("origin", tags)}
           </p>
         </Container>
       </div>

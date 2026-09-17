@@ -1,15 +1,20 @@
 import { useTranslations } from "next-intl";
-import { Link } from "@/i18n/navigation";
 import { Container } from "./layout/container";
 import { tags } from "@/i18n/rich-text";
 import { cn } from "@/lib/utils";
 import { Heading } from "@/components/heading";
 
-const STEPS = ["step1", "step2", "step3", "step4", "step5", "step6"] as const;
+const STEPS = [
+  "whoStarts",
+  "rollLimit",
+  "everyoneElse",
+  "handRanking",
+  "pot",
+  "winning",
+] as const;
 
 export function HomeQuickStart() {
-  const t = useTranslations("rules.quickStart");
-  const tOnward = useTranslations("nextPage");
+  const t = useTranslations("home.quickStart");
 
   return (
     <section className="bg-stone-50">
@@ -83,15 +88,8 @@ export function HomeQuickStart() {
           ))}
         </ol>
 
-        <p className="font-serif text-base text-stone-600">{t("footnote")}</p>
-
-        <p>
-          <Link
-            href="/rules"
-            className="focus-ring font-semibold text-blue-600 underline underline-offset-4 hover:text-red-600"
-          >
-            {tOnward("rules.label")}
-          </Link>
+        <p className="font-semibold [&_a]:text-blue-600 [&_a]:underline [&_a]:underline-offset-4 [&_a]:hover:text-red-600">
+          {t.rich("fullRulesLink", tags)}
         </p>
       </Container>
     </section>
