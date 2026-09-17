@@ -36,10 +36,60 @@ function flatten(value, prefix = '') {
   throw new Error(`Unsupported message value at "${prefix}": ${JSON.stringify(value)}`);
 }
 
+// An ICU select/plural/selectordinal block's branch output ("1 {one} 2
+// {two} other {three}") is translated text, not a parameter, so it must not
+// be compared word-for-word across locales. Its case labels ("1", "2",
+// "other") are structure, not translated content, so they must still match
+// — a locale silently dropping the mandatory "other" case, or renaming a
+// case, would otherwise pass and only fail at render time. Pull each whole
+// block out as its argument name plus its case labels (`{count, select, 1
+// {one} other {two}}` -> `{count}`, `{count:1}`, `{count:other}`) before the
+// plain tag/param scan runs on what is left of the string.
+function extractIcuArgs(str) {
+  const argTokens = [];
+  let rest = '';
+  let lastIndex = 0;
+  const opener = /\{(\w+),\s*(?:select|plural|selectordinal)\s*,/g;
+  let match;
+  while ((match = opener.exec(str))) {
+    const blockStart = match.index;
+    const argName = match[1];
+    const bodyStart = opener.lastIndex;
+    let depth = 1; // already inside the block's opening '{'
+    let caseStart = bodyStart;
+    let end = -1;
+    const cases = [];
+    for (let i = bodyStart; i < str.length; i++) {
+      if (str[i] === '{') {
+        if (depth === 1) {
+          const label = str.slice(caseStart, i).trim();
+          if (label) cases.push(label);
+        }
+        depth++;
+      } else if (str[i] === '}') {
+        depth--;
+        if (depth === 0) {
+          end = i;
+          break;
+        }
+        if (depth === 1) caseStart = i + 1;
+      }
+    }
+    if (end === -1) break; // unbalanced braces; leave for the caller to fail elsewhere
+    argTokens.push(`{${argName}}`, ...cases.map((c) => `{${argName}:${c}}`));
+    rest += str.slice(lastIndex, blockStart);
+    lastIndex = end + 1;
+    opener.lastIndex = end + 1;
+  }
+  rest += str.slice(lastIndex);
+  return { argTokens, rest };
+}
+
 function tokens(str) {
-  const tags = [...str.matchAll(/<\/?(\w+)>/g)].map((m) => m[0]);
-  const params = [...str.matchAll(/\{(\w+)\}/g)].map((m) => m[0]);
-  return [...tags, ...params].sort();
+  const { argTokens, rest } = extractIcuArgs(str);
+  const tags = [...rest.matchAll(/<\/?(\w+)>/g)].map((m) => m[0]);
+  const params = [...rest.matchAll(/\{(\w+)\}/g)].map((m) => m[0]);
+  return [...tags, ...params, ...argTokens].sort();
 }
 
 const failOnMarkers = process.argv.includes('--no-markers');
