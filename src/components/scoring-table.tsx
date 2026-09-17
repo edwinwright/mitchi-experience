@@ -1,9 +1,5 @@
 import { useTranslations } from "next-intl";
-
-const th = "px-3 py-3 text-left text-sm leading-snug font-bold md:px-4";
-const countCell = "px-3 py-3 font-serif text-base text-stone-900 md:px-4";
-const pointsCell =
-  "px-3 py-3 text-right font-mono text-sm font-medium tabular-nums md:px-4";
+import { TwoColumnTable } from "@/components/two-column-table";
 
 /*
  * Points per round: how many Mitchis were rolled, and what that puts in the
@@ -21,27 +17,14 @@ const ROWS = [
 export function ScoringTable() {
   const t = useTranslations("potTable");
   return (
-    <div className="overflow-hidden rounded-lg border border-border xl:max-w-xl">
-      <table className="w-full border-collapse">
-        <thead className="bg-stone-100">
-          <tr className="divide-x divide-border">
-            <th scope="col" className={th}>
-              {t("mitchisHeader")}
-            </th>
-            <th scope="col" className={`${th} w-30 text-right md:w-40`}>
-              {t("pointsHeader")}
-            </th>
-          </tr>
-        </thead>
-        <tbody className="divide-y divide-border">
-          {ROWS.map((row) => (
-            <tr key={row.count} className="divide-x divide-border">
-              <td className={countCell}>{t(row.count)}</td>
-              <td className={pointsCell}>{row.points}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+    <TwoColumnTable
+      leftHeader={t("mitchisHeader")}
+      rightHeader={t("pointsHeader")}
+      rows={ROWS.map((row) => ({
+        key: row.count,
+        left: t(row.count),
+        right: row.points,
+      }))}
+    />
   );
 }

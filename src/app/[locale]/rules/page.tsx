@@ -6,7 +6,7 @@ import { RuleSection } from "@/components/rule-section";
 import { RuleBody } from "@/components/rule-body";
 import { StepList } from "@/components/step-list";
 import { RankList } from "@/components/rank-list";
-import { Example } from "@/components/example";
+import { ExampleCard } from "@/components/example-card";
 import { ExampleStrip } from "@/components/example-strip";
 import { TieBreakExampleTable } from "@/components/tie-break-example-table";
 import { TermList } from "@/components/term-list";
@@ -17,6 +17,7 @@ import type { HandId } from "@/data/hands";
 import { tags } from "@/i18n/rich-text";
 import { pageMetadata } from "@/i18n/metadata";
 import { Heading } from "@/components/heading";
+import { bullet } from "@/lib/prose";
 
 export async function generateMetadata({
   params,
@@ -85,10 +86,11 @@ function Overview() {
   );
 }
 
-// Bulleted items inside a RuleBody: the square marker matches the ordinal red
-// nowhere, on purpose; it is a list, not a step.
-const bullet =
-  "relative pl-7 before:absolute before:top-3 before:left-0 before:size-1.5 before:bg-foreground";
+// The strip/prose split inside an ExampleCard: a dashed rule between the dice
+// strip and the prose underneath it, only when both are present.
+const exampleStripWrap = "border-b border-dashed border-border pb-4 md:pb-5";
+const exampleProse =
+  "flex flex-col gap-3 font-serif text-base leading-relaxed text-stone-900 xl:text-lg";
 
 function WhatYouNeed() {
   const t = useTranslations("rules.youNeed");
@@ -168,17 +170,16 @@ function Round() {
         <p>{t.rich("rollLimit.newChoice", tags)}</p>
         <p>{t.rich("rollLimit.setsLimit", tags)}</p>
       </RuleBody>
-      <Example
-        strip={
+      <ExampleCard>
+        <div className={exampleStripWrap}>
           <ExampleStrip
             rows={[
               { label: player(1), hand: "6-3", note: setsLimit("6-3", 2) },
             ]}
           />
-        }
-      >
-        {t.rich("rollLimit.example", tags)}
-      </Example>
+        </div>
+        <div className={exampleProse}>{t.rich("rollLimit.example", tags)}</div>
+      </ExampleCard>
       <Heading level={3} className="pt-1 text-lg font-semibold xl:text-xl">
         {t("everyoneElse.heading")}
       </Heading>
@@ -186,8 +187,8 @@ function Round() {
         <p>{t.rich("everyoneElse.turn", tags)}</p>
         <p>{t.rich("everyoneElse.worstHandSoFar", tags)}</p>
       </RuleBody>
-      <Example
-        strip={
+      <ExampleCard>
+        <div className={exampleStripWrap}>
           <ExampleStrip
             rows={[
               { label: player(1), hand: "6-4", note: setsLimit("6-4", 1) },
@@ -207,12 +208,13 @@ function Round() {
               },
             ]}
           />
-        }
-      >
-        {t.rich("everyoneElse.example1", { ...tags, ...players })}
-      </Example>
-      <Example
-        strip={
+        </div>
+        <div className={exampleProse}>
+          {t.rich("everyoneElse.example1", { ...tags, ...players })}
+        </div>
+      </ExampleCard>
+      <ExampleCard>
+        <div className={exampleStripWrap}>
           <ExampleStrip
             rows={[
               { label: player(1), hand: "5-4", note: setsLimit("5-4", 3) },
@@ -227,10 +229,11 @@ function Round() {
               },
             ]}
           />
-        }
-      >
-        {t.rich("everyoneElse.example2", { ...tags, ...players })}
-      </Example>
+        </div>
+        <div className={exampleProse}>
+          {t.rich("everyoneElse.example2", { ...tags, ...players })}
+        </div>
+      </ExampleCard>
     </RuleSection>
   );
 }
@@ -263,7 +266,9 @@ function TieBreaks() {
           ))}
         </ol>
       </RuleBody>
-      <Example strip={<TieBreakExampleTable />} />
+      <ExampleCard>
+        <TieBreakExampleTable />
+      </ExampleCard>
     </RuleSection>
   );
 }

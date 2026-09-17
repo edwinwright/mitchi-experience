@@ -6,6 +6,7 @@ import { Heading } from "@/components/heading";
 import { OnwardBlock } from "@/components/onward-block";
 import { tags } from "@/i18n/rich-text";
 import { pageMetadata } from "@/i18n/metadata";
+import { bullet } from "@/lib/prose";
 
 export async function generateMetadata({
   params,
@@ -78,7 +79,7 @@ export default function AboutPage() {
                     {(["mia", "mexico"] as const).map((key) => (
                       <li
                         key={key}
-                        className={`${paragraph} relative pl-7 before:absolute before:top-3 before:left-0 before:size-1.5 before:bg-foreground`}
+                        className={`${paragraph} ${bullet}`}
                       >
                         {t.rich(`relatedGames.${key}`, tags)}
                       </li>

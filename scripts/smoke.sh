@@ -140,6 +140,9 @@ expect "old Spanish rules slug redirects to localised slug" \
 
 # Retired pages (WO-0013). The redirect runs before the proxy, so the
 # source is the external path and the fragment rides in Location.
+# /es/acerca-de below is hand-typed (bash can't import next.config.ts's
+# routing.ts import): if src/i18n/routing.ts's "/about".es slug changes,
+# update it here too.
 expect "/speak redirects to /about" \
   "${RETIRED_REDIRECT}|/about" \
   "$(probe "$BASE/speak" -H "$EN")"

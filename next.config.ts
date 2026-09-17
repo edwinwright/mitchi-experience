@@ -1,5 +1,6 @@
 import type { NextConfig } from "next";
 import createNextIntlPlugin from "next-intl/plugin";
+import { routing } from "./src/i18n/routing";
 
 const nextConfig: NextConfig = {
   // Retired pages. Sources are the external paths a visitor typed or shared,
@@ -9,7 +10,7 @@ const nextConfig: NextConfig = {
       { source: "/speak", destination: "/about", permanent: true },
       {
         source: "/es/speak",
-        destination: "/es/acerca-de",
+        destination: `/es${routing.pathnames["/about"].es}`,
         permanent: true,
       },
     ];

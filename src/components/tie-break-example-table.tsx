@@ -8,7 +8,7 @@ type Row = {
 
 type Phase = {
   key: string;
-  label: { key: "round" } | { key: "tieBreak"; n: number };
+  label: { n?: number };
   rows: Row[];
 };
 
@@ -19,10 +19,10 @@ type Phase = {
  * calculations and pot values are data, the same in every locale.
  */
 const PHASES: Phase[] = [
-  { key: "round", label: { key: "round" }, rows: [{ what: "tied", pot: 1 }] },
+  { key: "round", label: {}, rows: [{ what: "tied", pot: 1 }] },
   {
     key: "tie-break-1",
-    label: { key: "tieBreak", n: 1 },
+    label: { n: 1 },
     rows: [
       { what: "potDoubles", calculation: "1 × 2", pot: 2 },
       { what: "mitchi", calculation: "2 + 2", pot: 4 },
@@ -31,7 +31,7 @@ const PHASES: Phase[] = [
   },
   {
     key: "tie-break-2",
-    label: { key: "tieBreak", n: 2 },
+    label: { n: 2 },
     rows: [
       { what: "potDoubles", calculation: "4 × 2", pot: 8 },
       { what: "takesPot", pot: 8 },
@@ -68,7 +68,7 @@ export function TieBreakExampleTable() {
               scope="rowgroup"
               className="pt-4 pb-2 text-left font-mono text-xs font-medium md:text-sm"
             >
-              {phase.label.key === "round"
+              {phase.label.n === undefined
                 ? t("round")
                 : t("tieBreak", { n: phase.label.n })}
             </th>

@@ -11,6 +11,8 @@ import { OnwardBlock } from "@/components/onward-block";
 import { Heading } from "@/components/heading";
 import { tags } from "@/i18n/rich-text";
 import { pageMetadata } from "@/i18n/metadata";
+import { proseLink } from "@/lib/prose";
+import { TwoColumnTable } from "@/components/two-column-table";
 
 export async function generateMetadata({
   params,
@@ -90,7 +92,7 @@ function Scoring() {
           <p>{tTieBreaks.rich("intro", tags)}</p>
         </RuleBody>
         <TieBreakTable />
-        <p className="font-semibold [&_a]:text-blue-600 [&_a]:underline [&_a]:underline-offset-4 [&_a]:hover:text-red-600">
+        <p className={`font-semibold ${proseLink}`}>
           {tTieBreaks.rich("fullRulesLink", tags)}
         </p>
       </div>
@@ -106,11 +108,6 @@ function Scoring() {
   );
 }
 
-const th = "px-3 py-3 text-left text-sm leading-snug font-bold md:px-4";
-const whenCell = "px-3 py-3 font-serif text-base text-stone-900 md:px-4";
-const potCell =
-  "px-3 py-3 text-right font-mono text-sm font-medium tabular-nums md:px-4";
-
 // What happens to the pot in a tie-break. The operators are data, the same
 // in every locale; the row labels are messages.
 const TIE_BREAK_ROWS = [
@@ -121,27 +118,14 @@ const TIE_BREAK_ROWS = [
 function TieBreakTable() {
   const t = useTranslations("reference.tieBreaks");
   return (
-    <div className="overflow-hidden rounded-lg border border-border xl:max-w-xl">
-      <table className="w-full border-collapse">
-        <thead className="bg-stone-100">
-          <tr className="divide-x divide-border">
-            <th scope="col" className={th}>
-              {t("whenHeader")}
-            </th>
-            <th scope="col" className={`${th} w-30 text-right md:w-40`}>
-              {t("potHeader")}
-            </th>
-          </tr>
-        </thead>
-        <tbody className="divide-y divide-border">
-          {TIE_BREAK_ROWS.map((row) => (
-            <tr key={row.when} className="divide-x divide-border">
-              <td className={whenCell}>{t(row.when)}</td>
-              <td className={potCell}>{row.pot}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+    <TwoColumnTable
+      leftHeader={t("whenHeader")}
+      rightHeader={t("potHeader")}
+      rows={TIE_BREAK_ROWS.map((row) => ({
+        key: row.when,
+        left: t(row.when),
+        right: row.pot,
+      }))}
+    />
   );
 }

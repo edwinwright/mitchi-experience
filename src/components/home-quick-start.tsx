@@ -3,6 +3,7 @@ import { Container } from "./layout/container";
 import { tags } from "@/i18n/rich-text";
 import { cn } from "@/lib/utils";
 import { Heading } from "@/components/heading";
+import { proseLink } from "@/lib/prose";
 
 const STEPS = [
   "whoStarts",
@@ -81,14 +82,16 @@ export function HomeQuickStart() {
               >
                 {String(i + 1).padStart(2, "0")}
               </span>
-              <div className="font-serif text-lg text-stone-900 md:text-xl [&_a]:text-blue-600 [&_a]:underline [&_a]:underline-offset-[3px] [&_a]:hover:text-red-600">
+              <div
+                className={`font-serif text-lg text-stone-900 md:text-xl ${proseLink}`}
+              >
                 {t.rich(key, tags)}
               </div>
             </li>
           ))}
         </ol>
 
-        <p className="font-semibold [&_a]:text-blue-600 [&_a]:underline [&_a]:underline-offset-4 [&_a]:hover:text-red-600">
+        <p className={`font-semibold ${proseLink}`}>
           {t.rich("fullRulesLink", tags)}
         </p>
       </Container>

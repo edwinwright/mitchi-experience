@@ -93,7 +93,7 @@ function tokens(str) {
 }
 
 const failOnMarkers = process.argv.includes('--no-markers');
-const MARKER = /^\[[A-Z]{2}\] /;
+const MARKER = /^\[[A-Z]{2}(-[A-Z]{2})?\] /;
 
 const enFlat = flatten(en);
 const enKeys = new Set(Object.keys(enFlat));
