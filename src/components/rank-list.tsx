@@ -71,8 +71,11 @@ function RankCards({ items }: { items: RankItem[] }) {
         <li
           key={item.key}
           className={cn(
-            "flex gap-3 rounded-lg px-4 py-3.5 md:flex-col md:px-4.5 md:py-5.5",
-            item.key === "mitchi" ? "bg-red-600" : "border border-stone-800",
+            "flex gap-3 rounded-lg px-4 py-3.5 border border-stone-800 md:flex-col md:px-4.5 md:py-5.5",
+            {
+              "bg-red-600": item.key === "mitchi",
+              "bg-blue-600": item.key === "doubles",
+            },
           )}
         >
           <GroupMark hand={item.best} />
@@ -81,7 +84,9 @@ function RankCards({ items }: { items: RankItem[] }) {
             <p
               className={cn(
                 "mt-1 font-serif text-sm",
-                item.key === "mitchi" ? "text-white/85" : "text-stone-500",
+                item.key === "mitchi" || item.key === "doubles"
+                  ? "text-white/85"
+                  : "text-stone-500",
               )}
             >
               {item.description}

@@ -13,8 +13,8 @@ import { cn } from "@/lib/utils";
  * trimming the text box.
  */
 
-const DIE = 0.662;
-const GAP = 0.26;
+const DIE = 0.68;
+const GAP = 0.25;
 
 export type WordmarkProps = {
   /** Type size in px. The dice derive from it. Default 34, the header desktop size. */
@@ -32,7 +32,7 @@ export function Wordmark({
   return (
     <span
       className={cn(
-        "inline-flex items-baseline font-wordmark leading-none tracking-[0.01em]",
+        "inline-flex items-baseline font-wordmark leading-none",
         inverse && "text-white",
         className,
       )}
@@ -45,9 +45,7 @@ export function Wordmark({
         variant="offset"
         inverse={inverse}
       />
-      <span>
-        Mi<span className="pl-[0.055em]">TCHi</span>
-      </span>
+      <span>MiTCHi</span>
     </span>
   );
 }

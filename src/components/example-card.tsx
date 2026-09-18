@@ -10,11 +10,14 @@ type ExampleCardProps = { title?: string; children: ReactNode };
 export function ExampleCard({ title, children }: ExampleCardProps) {
   const t = useTranslations("rules");
   return (
-    <aside className="flex flex-col gap-4 rounded-xl border border-border bg-white p-4 md:p-5 xl:max-w-2xl xl:p-6">
-      <p className="font-mono text-xs tracking-widest text-stone-600 uppercase">
+    <aside className="flex flex-col gap-4 rounded-xl border border-border bg-white xl:max-w-2xl">
+      <h3 className="px-4 py-4 md:px-5 xl:px-6 font-mono font-bold text-xs tracking-widest text-stone-600 uppercase bg-stone-100">
         {title ?? t("exampleLabel")}
-      </p>
-      {children}
+      </h3>
+      {/* <p className="font-mono text-xs tracking-widest text-stone-600 uppercase bg-stone-100">
+        
+      </p> */}
+      <div className="p-4 md:p-5 xl:p-6">{children}</div>
     </aside>
   );
 }

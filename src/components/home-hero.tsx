@@ -13,7 +13,7 @@ export function HomeHero() {
     <section>
       <div className="bg-red-600 text-white relative overflow-hidden">
         <Container className="relative z-2 min-h-0 md:min-h-150 py-9 md:py-18">
-          <div className="w-full md:w-[54%] flex flex-col justify-between gap-11">
+          <div className="w-full md:w-1/2 flex flex-col justify-between gap-11">
             <header className="flex flex-col gap-6">
               <p className="font-mono uppercase  tracking-widest text-xs text-white/85 pt-8">
                 <span className="before:hidden md:before:inline-block before:content-[''] before:w-8 before:h-px before:bg-white/85  before:mr-4 before:align-middle">
@@ -53,7 +53,7 @@ export function HomeHero() {
             </footer>
           </div>
         </Container>
-        <div className="relative mt-14 h-[210px] bg-red-800 md:absolute md:inset-y-0 md:left-[53%] md:right-0 md:mt-0 md:h-auto">
+        <div className="relative mt-14 h-52 bg-red-800 md:absolute md:inset-y-0 md:left-1/2 md:right-0 md:mt-0 md:h-auto">
           <div className="absolute inset-0 overflow-hidden" aria-hidden="true">
             <Image
               src="/img/home-hero.jpg"
@@ -66,11 +66,11 @@ export function HomeHero() {
           </div>
           {/* <DiceHeroOverlay
             size={64}
-            className="absolute left-5 top-[-34px] md:hidden"
+            className="absolute left-5 -top-8 md:hidden"
           />
           <DiceHeroOverlay
             size={104}
-            className="absolute hidden md:flex md:left-[-58px] md:top-20"
+            className="absolute hidden md:flex md:-left-14 md:top-20"
           /> */}
         </div>
       </div>

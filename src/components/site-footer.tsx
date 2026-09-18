@@ -28,7 +28,7 @@ export function SiteFooter() {
           </div>
 
           <div className="flex flex-col items-start gap-6">
-            <SiteNav inverse layout="grid" className="md:hidden" />
+            <SiteNav inverse layout="row" className="md:hidden" />
             <SiteNav inverse layout="stack" className="hidden md:block" />
           </div>
         </div>

@@ -29,7 +29,7 @@ export function RuleSection({
     >
       <span
         aria-hidden="true"
-        className="hidden w-12 shrink-0 pt-2 font-mono text-base font-medium text-red-600 md:block xl:w-13 xl:text-lg"
+        className="hidden w-12 shrink-0 pt-1 font-mono text-base font-medium text-red-600 md:block xl:w-13 xl:text-lg"
       >
         {label}
       </span>

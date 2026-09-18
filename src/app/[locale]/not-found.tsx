@@ -1,19 +1,19 @@
 import { useTranslations } from "next-intl";
 import { Container } from "@/components/layout/container";
-import { PageHeader } from "@/components/page-header";
 import { Prose } from "@/components/prose";
 import { tags } from "@/i18n/rich-text";
+import { Heading } from "@/components/heading";
 
 export default function NotFoundPage() {
   const t = useTranslations("notFound");
   return (
-    <>
-      <PageHeader title={t("title")} />
-      <Container className="py-8">
-        <Prose>
-          <p>{t.rich("body", tags)}</p>
-        </Prose>
-      </Container>
-    </>
+    <Container className="py-8 flex flex-col items-center justify-center">
+      <Heading level={1} className="mb-4 text-3xl">
+        {t("title")}
+      </Heading>
+      <Prose>
+        <p>{t.rich("body", tags)}</p>
+      </Prose>
+    </Container>
   );
 }

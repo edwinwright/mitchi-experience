@@ -41,11 +41,11 @@ export function OnThisPage({ items, className }: OnThisPageProps) {
           <li key={item.id}>
             <a
               href={`#${item.id}`}
-              className="focus-ring flex gap-2 text-base font-medium hover:text-blue-600 xl:text-sm"
+              className="focus-ring flex gap-2 text-base leading-normal font-medium hover:text-blue-600"
             >
               <span
                 aria-hidden="true"
-                className="w-6 shrink-0 font-mono text-xs text-stone-600"
+                className="w-6 shrink-0 font-mono text-xs pt-[0.35em] text-stone-600"
               >
                 {twoDigit(index + 1)}
               </span>

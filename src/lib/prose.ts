@@ -7,4 +7,4 @@ export const proseLink =
 // Bulleted items inside prose: the square marker matches the ordinal red
 // nowhere, on purpose; it is a list, not a step. Shared by /rules and /about.
 export const bullet =
-  "relative pl-7 before:absolute before:top-3 before:left-0 before:size-1.5 before:bg-foreground";
+  "relative pl-6 ml-3 before:absolute before:top-3 before:left-0 before:size-1.5 before:bg-foreground";

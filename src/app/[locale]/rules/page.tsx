@@ -258,7 +258,7 @@ function TieBreaks() {
     <RuleSection id="tie-breaks" number={7} heading={t("heading")}>
       <RuleBody>
         <p>{t.rich("intro", tags)}</p>
-        <ol className="flex flex-col gap-3 pl-7 [&_li]:list-decimal [&_li::marker]:font-mono [&_li::marker]:text-sm [&_li::marker]:text-stone-600">
+        <ol className="flex flex-col gap-3 pl-9 [&_li]:list-decimal [&_li::marker]:font-mono [&_li::marker]:text-sm [&_li::marker]:text-stone-600">
           {(
             ["doublePot", "rollOnce", "addMitchis", "worstHandTakes"] as const
           ).map((key) => (

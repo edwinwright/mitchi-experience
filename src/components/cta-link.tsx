@@ -19,7 +19,7 @@ export function CtaLink({
     regular: {
       primary: "bg-foreground text-white hover:bg-blue-600",
       secondary:
-        "border-[1.5px] border-foreground bg-transparent text-foreground hover:border-blue-600 hover:bg-stone-50 hover:text-blue-600",
+        "border border-foreground bg-transparent text-foreground hover:border-blue-600 hover:bg-stone-50 hover:text-blue-600",
     },
     inverse: {
       primary: [

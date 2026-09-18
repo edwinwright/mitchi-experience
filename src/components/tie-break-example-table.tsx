@@ -1,4 +1,5 @@
 import { useTranslations } from "next-intl";
+import { cn } from "@/lib/utils";
 
 type Row = {
   what: "tied" | "potDoubles" | "mitchi" | "tiedAgain" | "takesPot";
@@ -41,7 +42,7 @@ const PHASES: Phase[] = [
 
 const th =
   "pb-2 text-left font-mono text-xs tracking-widest text-stone-600 uppercase";
-const numeric = "text-right font-mono tabular-nums";
+const numeric = "text-center font-mono tabular-nums";
 
 export function TieBreakExampleTable() {
   const t = useTranslations("rules.tieBreaks.example");
@@ -52,10 +53,10 @@ export function TieBreakExampleTable() {
           <th scope="col" className={th}>
             {t("whatHappensHeader")}
           </th>
-          <th scope="col" className={`${th} ${numeric} w-20 md:w-24`}>
+          <th scope="col" className={cn(th, numeric, "w-20 md:w-24")}>
             {t("calculationHeader")}
           </th>
-          <th scope="col" className={`${th} ${numeric} w-12 md:w-16`}>
+          <th scope="col" className={cn(th, numeric, "w-12 md:w-16")}>
             {t("potHeader")}
           </th>
         </tr>
@@ -78,10 +79,12 @@ export function TieBreakExampleTable() {
               <td className="py-3 pr-4 font-serif text-base leading-snug text-stone-900">
                 {t(row.what)}
               </td>
-              <td className={`${numeric} py-3 pr-4 text-sm text-stone-600`}>
+              <td className={cn(numeric, "py-3 pr-4 text-sm text-stone-600")}>
                 {row.calculation}
               </td>
-              <td className={`${numeric} py-3 text-lg font-medium md:text-xl`}>
+              <td
+                className={cn(numeric, "py-3 text-lg font-medium md:text-xl")}
+              >
                 {row.pot}
               </td>
             </tr>

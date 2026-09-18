@@ -28,7 +28,7 @@ export function SiteHeader() {
           </div>
 
           <MobileMenu className="md:hidden">
-            <div className="flex flex-col items-end gap-4">
+            <div className="flex flex-row justify-between items-end gap-4">
               <SiteNav layout="stack" />
               <LanguageSwitcher />
             </div>

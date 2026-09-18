@@ -16,7 +16,7 @@ export function StepList({ items }: StepListProps) {
         <li key={index} className="flex gap-2 py-4 first:pt-0 last:pb-0">
           <span
             aria-hidden="true"
-            className="w-8 shrink-0 pt-1 font-mono text-xs font-medium md:w-10 xl:w-11 xl:text-sm"
+            className="w-8 shrink-0 pt-[0.6em] font-mono text-xs font-medium md:w-10 xl:w-11 xl:text-sm"
           >
             {twoDigit(index + 1)}
           </span>

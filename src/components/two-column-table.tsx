@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import { cn } from "@/lib/utils";
 
 type Row = { key: string; left: ReactNode; right: ReactNode };
 
@@ -11,7 +12,7 @@ type TwoColumnTableProps = {
 const th = "px-3 py-3 text-left text-sm leading-snug font-bold md:px-4";
 const leftCell = "px-3 py-3 font-serif text-base text-stone-900 md:px-4";
 const rightCell =
-  "px-3 py-3 text-right font-mono text-sm font-medium tabular-nums md:px-4";
+  "px-3 py-3 text-center font-mono text-sm font-medium tabular-nums md:px-4";
 
 /*
  * The narrow rounded-border table shared by /rules and /reference's scoring
@@ -30,7 +31,7 @@ export function TwoColumnTable({
             <th scope="col" className={th}>
               {leftHeader}
             </th>
-            <th scope="col" className={`${th} w-30 text-right md:w-40`}>
+            <th scope="col" className={cn(th, "w-30 text-center md:w-40")}>
               {rightHeader}
             </th>
           </tr>

@@ -78,7 +78,7 @@ export function HomeQuickStart() {
             >
               <span
                 aria-hidden="true"
-                className="w-8 shrink-0 pt-1 font-mono text-xs font-medium text-red-600 md:w-auto md:pt-0 md:text-sm"
+                className="w-8 shrink-0 pt-1 font-mono text-sm font-medium text-red-600 md:w-auto md:pt-0 md:text-base"
               >
                 {String(i + 1).padStart(2, "0")}
               </span>
@@ -91,9 +91,7 @@ export function HomeQuickStart() {
           ))}
         </ol>
 
-        <p className={`font-semibold ${proseLink}`}>
-          {t.rich("fullRulesLink", tags)}
-        </p>
+        <p className={proseLink}>{t.rich("fullRulesLink", tags)}</p>
       </Container>
     </section>
   );

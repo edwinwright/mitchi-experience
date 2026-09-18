@@ -10,7 +10,7 @@ export function HomeProvenance() {
   return (
     <section className="bg-stone-100">
       <div className="flex flex-col md:grid md:grid-cols-2">
-        <div className="relative h-[240px] overflow-hidden bg-stone-300 md:min-h-[440px]">
+        <div className="relative h-60 overflow-hidden bg-stone-300 md:min-h-110">
           <Image
             src="/img/home-provenance.jpg"
             alt=""
@@ -22,7 +22,7 @@ export function HomeProvenance() {
         </div>
         <Container className="flex flex-col justify-center py-8">
           <p
-            className={`font-serif text-lg leading-normal text-stone-900 max-w-[44ch] md:text-xl [&_a]:font-semibold ${proseLink}`}
+            className={`font-serif text-lg text-stone-900 max-w-[44ch] md:text-xl ${proseLink}`}
           >
             {t.rich("origin", tags)}
           </p>
