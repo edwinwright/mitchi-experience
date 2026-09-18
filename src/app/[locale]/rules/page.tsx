@@ -88,9 +88,9 @@ function Overview() {
 
 // The strip/prose split inside an ExampleCard: a dashed rule between the dice
 // strip and the prose underneath it, only when both are present.
-const exampleStripWrap = "border-b border-dashed border-border pb-4 md:pb-5";
-const exampleProse =
-  "flex flex-col gap-3 font-serif text-base leading-relaxed text-stone-900 xl:text-lg";
+const exampleStripWrap =
+  "mb-4 md:mb-5 border-b border-dashed border-border pb-4 md:pb-5";
+const exampleProse = "font-serif text-base text-stone-900 xl:text-lg";
 
 function WhatYouNeed() {
   const t = useTranslations("rules.youNeed");

@@ -11,8 +11,7 @@ type TwoColumnTableProps = {
 
 const th = "px-3 py-3 text-left text-sm leading-snug font-bold md:px-4";
 const leftCell = "px-3 py-3 font-serif text-base text-stone-900 md:px-4";
-const rightCell =
-  "px-3 py-3 text-center font-mono text-sm font-medium tabular-nums md:px-4";
+const rightCell = "px-3 py-3 font-mono text-sm font-medium text-center md:px-4";
 
 /*
  * The narrow rounded-border table shared by /rules and /reference's scoring
@@ -24,14 +23,14 @@ export function TwoColumnTable({
   rows,
 }: TwoColumnTableProps) {
   return (
-    <div className="overflow-hidden rounded-lg border border-border xl:max-w-xl">
+    <div className="overflow-hidden rounded-lg border border-border max-w-xl">
       <table className="w-full border-collapse">
         <thead className="bg-stone-100">
           <tr className="divide-x divide-border">
             <th scope="col" className={th}>
               {leftHeader}
             </th>
-            <th scope="col" className={cn(th, "w-30 text-center md:w-40")}>
+            <th scope="col" className={cn(th, "w-20 text-center md:w-24")}>
               {rightHeader}
             </th>
           </tr>

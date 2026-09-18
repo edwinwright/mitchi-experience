@@ -10,7 +10,7 @@ type ExampleCardProps = { title?: string; children: ReactNode };
 export function ExampleCard({ title, children }: ExampleCardProps) {
   const t = useTranslations("rules");
   return (
-    <aside className="flex flex-col gap-4 rounded-xl border border-border bg-white xl:max-w-2xl">
+    <aside className="rounded-xl border border-border bg-white xl:max-w-2xl">
       <h3 className="px-4 py-4 md:px-5 xl:px-6 font-mono font-bold text-xs tracking-widest text-stone-600 uppercase bg-stone-100">
         {title ?? t("exampleLabel")}
       </h3>

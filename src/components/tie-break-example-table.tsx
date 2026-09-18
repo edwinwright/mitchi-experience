@@ -1,6 +1,8 @@
 import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 
+// type Calculation = { a: number; op: "×" | "+"; b: number };
+
 type Row = {
   what: "tied" | "potDoubles" | "mitchi" | "tiedAgain" | "takesPot";
   calculation?: string;
@@ -25,8 +27,8 @@ const PHASES: Phase[] = [
     key: "tie-break-1",
     label: { n: 1 },
     rows: [
-      { what: "potDoubles", calculation: "1 × 2", pot: 2 },
-      { what: "mitchi", calculation: "2 + 2", pot: 4 },
+      { what: "potDoubles", calculation: "× 2", pot: 2 },
+      { what: "mitchi", calculation: "+ 2", pot: 4 },
       { what: "tiedAgain", pot: 4 },
     ],
   },
@@ -34,7 +36,7 @@ const PHASES: Phase[] = [
     key: "tie-break-2",
     label: { n: 2 },
     rows: [
-      { what: "potDoubles", calculation: "4 × 2", pot: 8 },
+      { what: "potDoubles", calculation: "× 2", pot: 8 },
       { what: "takesPot", pot: 8 },
     ],
   },
@@ -42,7 +44,7 @@ const PHASES: Phase[] = [
 
 const th =
   "pb-2 text-left font-mono text-xs tracking-widest text-stone-600 uppercase";
-const numeric = "text-center font-mono tabular-nums";
+const numeric = "font-mono text-center";
 
 export function TieBreakExampleTable() {
   const t = useTranslations("rules.tieBreaks.example");
@@ -53,10 +55,7 @@ export function TieBreakExampleTable() {
           <th scope="col" className={th}>
             {t("whatHappensHeader")}
           </th>
-          <th scope="col" className={cn(th, numeric, "w-20 md:w-24")}>
-            {t("calculationHeader")}
-          </th>
-          <th scope="col" className={cn(th, numeric, "w-12 md:w-16")}>
+          <th scope="col" className={cn(th, numeric, "w-24 md:w-32")}>
             {t("potHeader")}
           </th>
         </tr>
@@ -77,16 +76,9 @@ export function TieBreakExampleTable() {
           {phase.rows.map((row, index) => (
             <tr key={index}>
               <td className="py-3 pr-4 font-serif text-base leading-snug text-stone-900">
-                {t(row.what)}
+                {t(row.what)} {row.calculation && `(${row.calculation})`}
               </td>
-              <td className={cn(numeric, "py-3 pr-4 text-sm text-stone-600")}>
-                {row.calculation}
-              </td>
-              <td
-                className={cn(numeric, "py-3 text-lg font-medium md:text-xl")}
-              >
-                {row.pot}
-              </td>
+              <td className={cn(numeric, "py-3")}>{row.pot}</td>
             </tr>
           ))}
         </tbody>

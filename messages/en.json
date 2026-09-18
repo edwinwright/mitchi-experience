@@ -73,7 +73,7 @@
       "heading": "Hand ranking",
       "allHandsLink": "All hands are listed on the <reference>quick reference</reference>."
     },
-    "origin": "I learnt Mitchi from my cousin in southern Spain. <about>More about the game</about>"
+    "origin": "Curious where Mitchi comes from? <about>Read the story</about>"
   },
   "rules": {
     "title": "Mitchi rules",
@@ -142,8 +142,7 @@
       "worstHandTakes": "<strong>The worst hand takes the pot.</strong> If players tie again, go back to step 1 with only those players.",
       "example": {
         "whatHappensHeader": "What happens",
-        "calculationHeader": "Calculation",
-        "potHeader": "Pot",
+        "potHeader": "Points",
         "round": "Round",
         "tieBreak": "Tie-break {n}",
         "tied": "Three players tie on the worst hand",
@@ -178,7 +177,7 @@
       "heading": "Tie-breaks",
       "intro": "Tied players roll once each. The worst hand takes the pot.",
       "whenHeader": "When",
-      "potHeader": "Pot",
+      "potHeader": "Points",
       "eachTieBreak": "Each tie-break starts",
       "eachMitchi": "Each Mitchi rolled in a tie-break",
       "fullRulesLink": "<tieBreaks>Full tie-break rules</tieBreaks>"
@@ -268,7 +267,7 @@
   },
   "potTable": {
     "mitchisHeader": "Mitchis rolled",
-    "pointsHeader": "Points in the pot",
+    "pointsHeader": "Points",
     "none": "None",
     "one": "One",
     "two": "Two",

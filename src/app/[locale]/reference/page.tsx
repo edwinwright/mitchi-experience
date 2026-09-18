@@ -111,8 +111,8 @@ function Scoring() {
 // What happens to the pot in a tie-break. The operators are data, the same
 // in every locale; the row labels are messages.
 const TIE_BREAK_ROWS = [
-  { when: "eachTieBreak", pot: "× 2" },
-  { when: "eachMitchi", pot: "+ 2" },
+  { when: "eachTieBreak", op: "×", n: 2 },
+  { when: "eachMitchi", op: "+", n: 2 },
 ] as const;
 
 function TieBreakTable() {
@@ -124,7 +124,12 @@ function TieBreakTable() {
       rows={TIE_BREAK_ROWS.map((row) => ({
         key: row.when,
         left: t(row.when),
-        right: row.pot,
+        right: (
+          <>
+            <span className="mx-1">{row.op}</span>
+            {row.n}
+          </>
+        ),
       }))}
     />
   );

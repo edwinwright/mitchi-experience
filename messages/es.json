@@ -73,7 +73,7 @@
       "heading": "Clasificación de las manos",
       "allHandsLink": "Todas las manos están en la <reference>referencia rápida</reference>."
     },
-    "origin": "Aprendí Mitchi de mi primo, en el sur de España. <about>Más sobre el juego</about>"
+    "origin": "¿Quieres saber de dónde viene Mitchi? <about>Descubre la historia</about>"
   },
   "rules": {
     "title": "Reglas de Mitchi",
@@ -142,8 +142,7 @@
       "worstHandTakes": "<strong>La peor mano se lleva el bote.</strong> Si vuelve a haber empate, volver al paso 1 solo con esos jugadores.",
       "example": {
         "whatHappensHeader": "Qué pasa",
-        "calculationHeader": "Cálculo",
-        "potHeader": "Bote",
+        "potHeader": "Puntos",
         "round": "Ronda",
         "tieBreak": "Desempate {n}",
         "tied": "Tres jugadores empatan en la peor mano",
@@ -178,7 +177,7 @@
       "heading": "Desempates",
       "intro": "Los jugadores empatados tiran una vez cada uno. La peor mano se lleva el bote.",
       "whenHeader": "Cuándo",
-      "potHeader": "Bote",
+      "potHeader": "Puntos",
       "eachTieBreak": "Cada desempate empieza",
       "eachMitchi": "Cada Mitchi que se saca en un desempate",
       "fullRulesLink": "<tieBreaks>Reglas completas de los desempates</tieBreaks>"
@@ -268,7 +267,7 @@
   },
   "potTable": {
     "mitchisHeader": "Mitchis sacados",
-    "pointsHeader": "Puntos en el bote",
+    "pointsHeader": "Puntos",
     "none": "Ninguno",
     "one": "Uno",
     "two": "Dos",
