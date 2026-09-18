@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import { useTranslations } from "next-intl";
 import { PageHeader } from "@/components/page-header";
-import { Container } from "@/components/layout/container";
+import { Container } from "@/components/container";
 import { RuleSection } from "@/components/rule-section";
 import { RuleBody } from "@/components/rule-body";
 import { StepList } from "@/components/step-list";

@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import { useTranslations } from "next-intl";
 import { PageHeader } from "@/components/page-header";
-import { Container } from "@/components/layout/container";
+import { Container } from "@/components/container";
 import { Heading } from "@/components/heading";
 import { OnwardBlock } from "@/components/onward-block";
 import { tags } from "@/i18n/rich-text";
@@ -77,10 +77,7 @@ export default function AboutPage() {
                 {section.key === "relatedGames" && (
                   <ul role="list" className="flex flex-col gap-3">
                     {(["mia", "mexico"] as const).map((key) => (
-                      <li
-                        key={key}
-                        className={`${paragraph} ${bullet}`}
-                      >
+                      <li key={key} className={`${paragraph} ${bullet}`}>
                         {t.rich(`relatedGames.${key}`, tags)}
                       </li>
                     ))}

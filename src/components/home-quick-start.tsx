@@ -1,5 +1,5 @@
 import { useTranslations } from "next-intl";
-import { Container } from "./layout/container";
+import { Container } from "./container";
 import { tags } from "@/i18n/rich-text";
 import { cn } from "@/lib/utils";
 import { Heading } from "@/components/heading";

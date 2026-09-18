@@ -1,6 +1,6 @@
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import { Container } from "@/components/layout/container";
+import { Container } from "@/components/container";
 import { LanguageSwitcher } from "@/components/language-switcher";
 import { MobileMenu } from "@/components/mobile-menu";
 import { SiteNav } from "@/components/site-nav";

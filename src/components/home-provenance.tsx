@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import { Container } from "@/components/layout/container";
+import { Container } from "@/components/container";
 import { tags } from "@/i18n/rich-text";
 import { proseLink } from "@/lib/prose";
 

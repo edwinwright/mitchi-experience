@@ -1,5 +1,5 @@
 import { useTranslations } from "next-intl";
-import { Container } from "@/components/layout/container";
+import { Container } from "@/components/container";
 import { RankList } from "@/components/rank-list";
 import { tags } from "@/i18n/rich-text";
 import { Heading } from "./heading";

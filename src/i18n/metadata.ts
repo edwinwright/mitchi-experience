@@ -16,7 +16,7 @@ const OG_IMAGE = {
   url: "/meta/og-default.jpg",
   width: 1200,
   height: 634,
-  alt: "Friends rolling dice for Mitchi around a table",
+  alt: "Dice being rolled on a table",
 };
 
 export async function pageMetadata(
@@ -47,7 +47,7 @@ export async function pageMetadata(
       images: [OG_IMAGE],
     },
     twitter: {
-      card: "summary_large_image",
+      card: "summary",
       title,
       description,
       images: [OG_IMAGE],

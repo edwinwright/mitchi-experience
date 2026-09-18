@@ -1,4 +1,4 @@
-import { Container } from "@/components/layout/container";
+import { Container } from "@/components/container";
 import { Prose } from "@/components/prose";
 import { cn } from "@/lib/utils";
 import { archivo, sourceSerif, jetbrainsMono, lato } from "@/app/fonts";
