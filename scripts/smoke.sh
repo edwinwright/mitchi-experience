@@ -36,6 +36,7 @@ RETIRED_REDIRECT=308  # next.config.ts redirects(), permanent: true
 # Realistic browser headers. Region subtags and q-values matter: matching
 # `es-ES` to the `es` locale is precisely the negotiation being tested.
 ES='Accept-Language: es-ES,es;q=0.9,en;q=0.8'
+PL='Accept-Language: pl-PL,pl;q=0.9,en;q=0.8'
 EN='Accept-Language: en-GB,en;q=0.9'
 
 FAILS=0
@@ -137,6 +138,24 @@ expect "NEXT_LOCALE rewrites an English path to the Spanish slug" \
 expect "old Spanish rules slug redirects to localised slug" \
   "${LOCALE_REDIRECT}|/es/reglas" \
   "$(probe "$BASE/es/rules" -H "$EN")"
+
+# Polish (WO-0014). Same four shapes as Spanish; hreflang blocks for
+# /pl/zasady are added once the page carries real metadata.
+expect "Polish speaker is redirected to /pl" \
+  "${LOCALE_REDIRECT}|/pl" \
+  "$(probe "$BASE/" -H "$PL")"
+
+expect "localised Polish rules slug serves" \
+  "200|" \
+  "$(probe "$BASE/pl/zasady" -H "$EN")"
+
+expect "NEXT_LOCALE rewrites an English path to the Polish slug" \
+  "${LOCALE_REDIRECT}|/pl/zasady" \
+  "$(probe "$BASE/rules" -H "$EN" -H 'Cookie: NEXT_LOCALE=pl')"
+
+expect "old Polish rules slug redirects to localised slug" \
+  "${LOCALE_REDIRECT}|/pl/zasady" \
+  "$(probe "$BASE/pl/rules" -H "$EN")"
 
 # Retired pages (WO-0013). The redirect runs before the proxy, so the
 # source is the external path and the fragment rides in Location.

@@ -1,13 +1,13 @@
 # Site map
 
-English has no locale prefix. Spanish is `/es` plus a localised slug.
+English has no locale prefix. Spanish is `/es` and Polish is `/pl`, each plus a localised slug.
 
-| English      | Spanish          | Purpose                                                                        |
-| ------------ | ---------------- | ------------------------------------------------------------------------------ |
-| `/`          | `/es`            | What the game is, the one key idea, and where to read on.                      |
-| `/rules`     | `/es/reglas`     | The full rules, from setup to the end of the game, then the game vocabulary.   |
-| `/reference` | `/es/referencia` | Hand ranking and scoring on one screen, for use mid-game.                      |
-| `/about`     | `/es/acerca-de`  | How the author learnt the game, why the rules are written down, related games. |
+| English      | Spanish          | Polish          | Purpose                                                                        |
+| ------------ | ---------------- | --------------- | ------------------------------------------------------------------------------ |
+| `/`          | `/es`            | `/pl`           | What the game is, the one key idea, and where to read on.                      |
+| `/rules`     | `/es/reglas`     | `/pl/zasady`    | The full rules, from setup to the end of the game, then the game vocabulary.   |
+| `/reference` | `/es/referencia` | `/pl/sciagawka` | Hand ranking and scoring on one screen, for use mid-game.                      |
+| `/about`     | `/es/acerca-de`  | `/pl/o-grze`    | How the author learnt the game, why the rules are written down, related games. |
 
 Retired pages answer with a permanent redirect (`redirects()` in `next.config.ts`, checked by `scripts/smoke.sh`):
 

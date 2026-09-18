@@ -1,0 +1,358 @@
+{
+  "meta": {
+    "home": {
+      "title": "[PL] Mitchi, a dice game",
+      "description": "[PL] A dice game for two or more players. Avoid the worst hand, take the fewest points, win."
+    },
+    "rules": {
+      "title": "[PL] Mitchi rules",
+      "description": "[PL] The full rules of Mitchi: hands, the roll limit, scoring and tie-breaks."
+    },
+    "reference": {
+      "title": "[PL] Mitchi quick reference",
+      "description": "[PL] Hand ranking and scoring on one screen, for use mid-game."
+    },
+    "about": {
+      "title": "[PL] About Mitchi",
+      "description": "[PL] Mitchi is a fast dice game for two or more players. What it is, where it came from, and games like it."
+    }
+  },
+  "site": {
+    "name": "[PL] Mitchi",
+    "skipToContent": "[PL] Skip to content",
+    "language": "[PL] Language",
+    "menu": "[PL] Menu",
+    "onThisPage": "[PL] On this page",
+    "footer": {
+      "tagline": "[PL] Mitchi. The rules, written down.",
+      "privacy": "[PL] No cookies. Visits are counted anonymously and nothing is stored on your device.",
+      "builtWith": "[PL] Built with Next.js and next-intl."
+    }
+  },
+  "nav": {
+    "rules": "[PL] Rules",
+    "reference": "[PL] Reference",
+    "about": "[PL] About"
+  },
+  "nextPage": {
+    "heading": "[PL] Next",
+    "rules": {
+      "label": "[PL] The full rules",
+      "summary": "[PL] Everything you need to play, from setup to the end of the game."
+    },
+    "reference": {
+      "label": "[PL] Quick reference",
+      "summary": "[PL] Hand ranking and scoring on one screen."
+    },
+    "about": {
+      "label": "[PL] About Mitchi",
+      "summary": "[PL] How I learnt the game, and why the rules are written down here."
+    }
+  },
+  "home": {
+    "title": "[PL] Mitchi",
+    "tagline": "[PL] A dice game for two or more players.",
+    "keyIdea": "[PL] You don't need the best hand. You only need to avoid the worst.",
+    "scoring": "[PL] Each round, the player left with the worst hand takes the points. Points are bad: the fewest points wins.",
+    "youNeed": "[PL] <strong>You need:</strong> two dice, a pen and paper, and at least one other player.",
+    "links": {
+      "rules": "[PL] Read the rules",
+      "reference": "[PL] Quick reference"
+    },
+    "quickStart": {
+      "heading": "[PL] Mitchi in 60 seconds",
+      "whoStarts": "[PL] Everyone rolls one die. The highest roll starts.",
+      "rollLimit": "[PL] The starting player rolls both dice, up to three times. The number of rolls they use is the <term>roll limit</term> for everyone else.",
+      "everyoneElse": "[PL] Everyone else takes a turn, up to the roll limit. You only need to beat the <term>worst hand so far</term>.",
+      "handRanking": "[PL] The best hand is a Mitchi, a 2 and a 1. Then doubles, then six-high down to three-high.",
+      "pot": "[PL] The player left with the worst hand <term>takes the pot</term>: 1 point, or 2 points for each Mitchi rolled.",
+      "winning": "[PL] The game ends when a player reaches the point limit, usually 25. The fewest points wins.",
+      "fullRulesLink": "[PL] <rules>Read the full rules</rules>"
+    },
+    "ranking": {
+      "heading": "[PL] Hand ranking",
+      "allHandsLink": "[PL] All hands are listed on the <reference>quick reference</reference>."
+    },
+    "origin": "[PL] Curious where Mitchi comes from? <about>Read the story</about>"
+  },
+  "rules": {
+    "title": "[PL] Mitchi rules",
+    "intro": "[PL] Everything you need to play, from setup to the end of the game.",
+    "exampleLabel": "[PL] Example",
+    "overview": {
+      "heading": "[PL] Overview",
+      "summary": "[PL] Mitchi is a dice game for two or more players, played over a series of rounds. Each round, you roll to avoid being left with the worst hand. The player with the worst hand takes the points in the pot. When the game ends, the player with the fewest points wins."
+    },
+    "youNeed": {
+      "heading": "[PL] What you need",
+      "dice": "[PL] <strong>Two dice</strong>, the standard six-sided kind",
+      "paper": "[PL] <strong>A pen and paper</strong> to keep score",
+      "players": "[PL] <strong>Two or more players</strong>"
+    },
+    "setup": {
+      "heading": "[PL] Setup",
+      "pointLimit": "[PL] <strong>Agree a point limit.</strong> 25 is usual. Choose a lower limit for a shorter game.",
+      "whoStarts": "[PL] <strong>Decide who starts.</strong> Everyone rolls one die, and the highest roll starts. If the highest roll is tied, those players roll again. Play goes clockwise."
+    },
+    "hands": {
+      "heading": "[PL] Hands",
+      "intro": "[PL] A hand is the two dice you finish your turn with. There are six groups of hands, from best to worst:",
+      "allHandsLink": "[PL] All hands are listed on the <reference>quick reference</reference>."
+    },
+    "round": {
+      "heading": "[PL] Playing a round",
+      "rollLimit": {
+        "heading": "[PL] The starting player sets the roll limit",
+        "rolls": "[PL] The starting player rolls both dice, up to three times, and can stop after any roll. After each roll, they can:",
+        "rerollBoth": "[PL] re-roll both dice",
+        "keepOne": "[PL] keep one die and re-roll the other",
+        "stop": "[PL] stop and keep their hand",
+        "newChoice": "[PL] Each roll is a new choice. Keeping a die on one roll does not mean keeping it on the next. Re-rolling one die still counts as a roll.",
+        "setsLimit": "[PL] The number of rolls the starting player uses is the <term>roll limit</term> for everyone else that round.",
+        "example": "[PL] The starting player rolls six-three in two rolls. Everyone else gets up to two rolls.",
+        "exampleStrip": {
+          "player": "[PL] Player 1",
+          "rolled": "[PL] six-three in two",
+          "limit": "[PL] roll limit two"
+        }
+      },
+      "everyoneElse": {
+        "heading": "[PL] Everyone else",
+        "turn": "[PL] Everyone else takes a turn in clockwise order, with the same choices, up to the roll limit. You do not have to use every roll. Stop when you are happy with your hand.",
+        "worstHandSoFar": "[PL] You never need the best hand. You only need to beat the <term>worst hand so far</term>: the lowest-ranked hand rolled this round. It changes as players finish their turn, so a later player may have less to beat than an earlier one.",
+        "example1": "[PL] Player 1 rolls six-four in one. Player 2 rolls five-one. Player 3 now needs five-two or better, because five-one is the worst hand so far.",
+        "example1Strip": {
+          "player1": "[PL] Player 1",
+          "player1Rolled": "[PL] six-four in one",
+          "player1Limit": "[PL] roll limit one",
+          "player2": "[PL] Player 2",
+          "player2Rolled": "[PL] five-one",
+          "player2Note": "[PL] worst hand so far",
+          "player3": "[PL] Player 3",
+          "player3Note": "[PL] needs five-two or better"
+        },
+        "example2": "[PL] Player 1 rolls five-four in three. Player 2 rolls six-two in one. That already beats five-four, so Player 2 stops.",
+        "example2Strip": {
+          "player1": "[PL] Player 1",
+          "player1Rolled": "[PL] five-four in three",
+          "player1Limit": "[PL] roll limit three",
+          "player2": "[PL] Player 2",
+          "player2Rolled": "[PL] six-two in one",
+          "player2Note": "[PL] stops"
+        }
+      }
+    },
+    "scoring": {
+      "heading": "[PL] Scoring the round",
+      "startingPot": "[PL] Every round starts with 1 point in <term>the pot</term>.",
+      "mitchis": "[PL] The first Mitchi rolled replaces that point with 2 points. Each Mitchi after that adds 2 more, so the pot is 2 points for every Mitchi rolled.",
+      "takeThePot": "[PL] At the end of the round, the player with the worst hand <term>takes the pot</term> and adds the points to their score. They start the next round."
+    },
+    "tieBreaks": {
+      "heading": "[PL] Tie-breaks",
+      "intro": "[PL] If two or more players are tied on the worst hand, they play a <term>tie-break</term> to decide who takes the pot.",
+      "doublePot": "[PL] <strong>Double the pot.</strong>",
+      "rollOnce": "[PL] <strong>Roll once each.</strong> Only the tied players roll, with no re-rolls. Go in the opposite direction to the last round or tie-break, starting with the last player to roll.",
+      "addMitchis": "[PL] <strong>Add 2 points for each Mitchi</strong> rolled in the tie-break.",
+      "worstHandTakes": "[PL] <strong>The worst hand takes the pot.</strong> If players tie again, go back to step 1 with only those players.",
+      "example": {
+        "whatHappensHeader": "[PL] What happens",
+        "potHeader": "[PL] Points",
+        "round": "[PL] Round",
+        "tieBreak1": "[PL] Tie-break 1",
+        "tieBreak2": "[PL] Tie-break 2",
+        "tied": "[PL] Three players tie on the worst hand",
+        "potDoubles": "[PL] The pot doubles",
+        "mitchi": "[PL] One player rolls a Mitchi",
+        "tiedAgain": "[PL] The other two tie again",
+        "takesPot": "[PL] One player has the worst hand and takes the pot"
+      }
+    },
+    "winning": {
+      "heading": "[PL] Winning the game",
+      "gameEnds": "[PL] The game ends when any player reaches the point limit. The player with the fewest points wins.",
+      "tiedOnFewest": "[PL] If players are tied on the fewest points, they roll once each, and the best hand wins."
+    },
+    "vocabulary": {
+      "heading": "[PL] Game vocabulary"
+    }
+  },
+  "reference": {
+    "title": "[PL] Quick reference",
+    "intro": "[PL] Everything you need mid-game, on one screen.",
+    "ranking": {
+      "heading": "[PL] Hand ranking",
+      "intro": "[PL] Best at the top, worst at the bottom. Within a group, the higher hand wins. The worst hand in the game is three-one.",
+      "tableCaption": "[PL] Mitchi hands, ranked from best to worst"
+    },
+    "scoring": {
+      "heading": "[PL] Scoring",
+      "intro": "[PL] Every round starts with 1 point in the pot. The first Mitchi replaces it with 2 points, and each Mitchi after that adds 2 more. The worst hand takes the pot and starts the next round."
+    },
+    "tieBreaks": {
+      "heading": "[PL] Tie-breaks",
+      "intro": "[PL] Tied players roll once each. The worst hand takes the pot.",
+      "whenHeader": "[PL] When",
+      "potHeader": "[PL] Points",
+      "eachTieBreak": "[PL] Each tie-break starts",
+      "eachMitchi": "[PL] Each Mitchi rolled in a tie-break",
+      "fullRulesLink": "[PL] <tieBreaks>Full tie-break rules</tieBreaks>"
+    },
+    "pointLimit": {
+      "heading": "[PL] Point limit",
+      "summary": "[PL] The game ends when any player reaches the point limit, usually 25. The fewest points wins. If players are tied on the fewest points, they roll once each and the best hand wins."
+    }
+  },
+  "about": {
+    "title": "[PL] About Mitchi",
+    "intro": "[PL] What the game is, and where it came from.",
+    "game": {
+      "heading": "[PL] The game",
+      "summary": "[PL] Mitchi is a fast dice game for two or more players. Each round, you roll to avoid the worst hand. Whoever ends up with it takes points. The player with the fewest points wins. You need two dice, a pen and paper, and at least one other player."
+    },
+    "origin": {
+      "heading": "[PL] Where it came from",
+      "learnt": "[PL] I learnt Mitchi while I was living in Sanlúcar de Barrameda, in southern Spain. A group of us used to meet at La Gitana after work and play on the bar top.",
+      "cousin": "[PL] My cousin taught us, and it caught on quickly. I don't know where he learnt it, and I've never come across it anywhere else. I couldn't find the rules written down either, so I've put them here for anyone who wants to learn."
+    },
+    "whyItStuck": {
+      "heading": "[PL] Why it stuck",
+      "easy": "[PL] It's easy to learn and quick to play. Rounds are fast, and you only need two dice and somewhere to roll them.",
+      "tactical": "[PL] It's tactical too. Everyone can see the scores, so every round matters, and once the Mitchis start rolling, the pot soon climbs."
+    },
+    "relatedGames": {
+      "heading": "[PL] Related games",
+      "intro": "[PL] Mitchi is not the only game where a 2 and a 1 is the best hand. While building this site I came across a couple of others, and there are probably more.",
+      "mia": "[PL] <strong>Mia:</strong> the dice are rolled in secret under a cup, and players call out their hand. They can bluff.",
+      "mexico": "[PL] <strong>Mexico:</strong> players roll to avoid the lowest hand, losing a life each time, until one player is left."
+    }
+  },
+  "notFound": {
+    "title": "[PL] That page does not exist",
+    "body": "[PL] Try the <rules>rules</rules> or the <reference>quick reference</reference>."
+  },
+  "handGroups": {
+    "withinGroup": "[PL] Within a group, the higher hand wins: double-six beats double-five, and six-five beats six-four. The worst hand in the game is three-one.",
+    "mitchi": {
+      "name": "[PL] Mitchi",
+      "description": "[PL] A 2 and a 1. The best hand in the game."
+    },
+    "doubles": {
+      "name": "[PL] Doubles",
+      "description": "[PL] Both dice show the same number."
+    },
+    "sixHigh": {
+      "name": "[PL] Six-high",
+      "description": "[PL] A 6 with a 5, 4, 3, 2 or 1."
+    },
+    "fiveHigh": {
+      "name": "[PL] Five-high",
+      "description": "[PL] A 5 with a 4, 3, 2 or 1."
+    },
+    "fourHigh": {
+      "name": "[PL] Four-high",
+      "description": "[PL] A 4 with a 3, 2 or 1."
+    },
+    "threeHigh": {
+      "name": "[PL] Three-high",
+      "description": "[PL] A 3 with a 2 or 1."
+    }
+  },
+  "hands": {
+    "2-1": "[PL] two-one",
+    "6-6": "[PL] double-six",
+    "5-5": "[PL] double-five",
+    "4-4": "[PL] double-four",
+    "3-3": "[PL] double-three",
+    "2-2": "[PL] double-two",
+    "1-1": "[PL] double-one",
+    "6-5": "[PL] six-five",
+    "6-4": "[PL] six-four",
+    "6-3": "[PL] six-three",
+    "6-2": "[PL] six-two",
+    "6-1": "[PL] six-one",
+    "5-4": "[PL] five-four",
+    "5-3": "[PL] five-three",
+    "5-2": "[PL] five-two",
+    "5-1": "[PL] five-one",
+    "4-3": "[PL] four-three",
+    "4-2": "[PL] four-two",
+    "4-1": "[PL] four-one",
+    "3-2": "[PL] three-two",
+    "3-1": "[PL] three-one"
+  },
+  "potTable": {
+    "mitchisHeader": "[PL] Mitchis rolled",
+    "pointsHeader": "[PL] Points",
+    "none": "[PL] None",
+    "one": "[PL] One",
+    "two": "[PL] Two",
+    "three": "[PL] Three"
+  },
+  "vocabulary": {
+    "mitchi": {
+      "name": "[PL] Mitchi",
+      "definition": "[PL] The game, and its best hand: a 2 and a 1."
+    },
+    "die": {
+      "name": "[PL] Die",
+      "definition": "[PL] One of the dice."
+    },
+    "hand": {
+      "name": "[PL] Hand",
+      "definition": "[PL] The two dice you finish your turn with."
+    },
+    "roll": {
+      "name": "[PL] Roll",
+      "definition": "[PL] One throw of one or both dice. Re-rolling one die still counts as a roll."
+    },
+    "rolledIn": {
+      "name": "[PL] In one, in two, in three",
+      "definition": "[PL] How many rolls a hand took: six-three in two."
+    },
+    "round": {
+      "name": "[PL] Round",
+      "definition": "[PL] Every player takes one turn, then the worst hand takes the pot."
+    },
+    "turn": {
+      "name": "[PL] Turn",
+      "definition": "[PL] Your rolls in a round, up to the roll limit."
+    },
+    "startingPlayer": {
+      "name": "[PL] Starting player",
+      "definition": "[PL] The player who rolls first in a round and sets the roll limit."
+    },
+    "rollLimit": {
+      "name": "[PL] Roll limit",
+      "definition": "[PL] The number of rolls everyone gets in a round, set by the starting player."
+    },
+    "doubles": {
+      "name": "[PL] Doubles",
+      "definition": "[PL] Both dice showing the same number."
+    },
+    "worstHandSoFar": {
+      "name": "[PL] Worst hand so far",
+      "definition": "[PL] The lowest-ranked hand rolled so far in a round. The hand you need to beat."
+    },
+    "pot": {
+      "name": "[PL] The pot",
+      "definition": "[PL] The points at stake in a round. It starts at 1."
+    },
+    "takeThePot": {
+      "name": "[PL] Take the pot",
+      "definition": "[PL] Add the points in the pot to your score."
+    },
+    "tieBreak": {
+      "name": "[PL] Tie-break",
+      "definition": "[PL] A play-off between players tied on the worst hand."
+    },
+    "points": {
+      "name": "[PL] Points",
+      "definition": "[PL] Your score. Points are bad: the fewest wins."
+    },
+    "pointLimit": {
+      "name": "[PL] Point limit",
+      "definition": "[PL] The score that ends the game. Usually 25."
+    }
+  }
+}

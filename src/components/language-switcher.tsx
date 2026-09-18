@@ -8,8 +8,12 @@ import { cn } from "@/lib/utils";
 
 type Locale = (typeof routing.locales)[number];
 
-const LOCALE_NAMES: Record<Locale, string> = { en: "English", es: "Español" };
-const LOCALE_CODES: Record<Locale, string> = { en: "EN", es: "ES" };
+const LOCALE_NAMES: Record<Locale, string> = {
+  en: "English",
+  es: "Español",
+  pl: "Polski",
+};
+const LOCALE_CODES: Record<Locale, string> = { en: "EN", es: "ES", pl: "PL" };
 
 type LocaleItem = {
   locale: Locale;
