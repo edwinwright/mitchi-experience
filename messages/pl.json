@@ -18,62 +18,62 @@
     }
   },
   "site": {
-    "name": "[PL] Mitchi",
-    "skipToContent": "[PL] Skip to content",
-    "language": "[PL] Language",
-    "menu": "[PL] Menu",
-    "onThisPage": "[PL] On this page",
+    "name": "Mitchi",
+    "skipToContent": "Przejdź do treści",
+    "language": "Język",
+    "menu": "Menu",
+    "onThisPage": "Na tej stronie",
     "footer": {
-      "tagline": "[PL] Mitchi. The rules, written down.",
-      "privacy": "[PL] No cookies. Visits are counted anonymously and nothing is stored on your device.",
-      "builtWith": "[PL] Built with Next.js and next-intl."
+      "tagline": "Mitchi. Zasady, spisane.",
+      "privacy": "Bez ciasteczek. Odwiedziny są liczone anonimowo i nic nie jest zapisywane na twoim urządzeniu.",
+      "builtWith": "Zbudowano z użyciem Next.js i next-intl."
     }
   },
   "nav": {
-    "rules": "[PL] Rules",
-    "reference": "[PL] Reference",
-    "about": "[PL] About"
+    "rules": "Zasady",
+    "reference": "Ściągawka",
+    "about": "O grze"
   },
   "nextPage": {
-    "heading": "[PL] Next",
+    "heading": "Dalej",
     "rules": {
-      "label": "[PL] The full rules",
-      "summary": "[PL] Everything you need to play, from setup to the end of the game."
+      "label": "Pełne zasady",
+      "summary": "Wszystko, czego potrzebujesz, żeby zagrać: od przygotowania po koniec gry."
     },
     "reference": {
-      "label": "[PL] Quick reference",
-      "summary": "[PL] Hand ranking and scoring on one screen."
+      "label": "Ściągawka",
+      "summary": "Ranking układów i punktacja na jednym ekranie."
     },
     "about": {
-      "label": "[PL] About Mitchi",
-      "summary": "[PL] How I learnt the game, and why the rules are written down here."
+      "label": "O Mitchi",
+      "summary": "Jak nauczyłem się grać i dlaczego zasady są spisane właśnie tutaj."
     }
   },
   "home": {
-    "title": "[PL] Mitchi",
-    "tagline": "[PL] A dice game for two or more players.",
-    "keyIdea": "[PL] You don't need the best hand. You only need to avoid the worst.",
-    "scoring": "[PL] Each round, the player left with the worst hand takes the points. Points are bad: the fewest points wins.",
-    "youNeed": "[PL] <strong>You need:</strong> two dice, a pen and paper, and at least one other player.",
+    "title": "Mitchi",
+    "tagline": "Gra w kości dla dwóch lub więcej graczy.",
+    "keyIdea": "Nie potrzebujesz najlepszego układu. Musisz tylko uniknąć najgorszego.",
+    "scoring": "W każdej rundzie gracz, który zostaje z najgorszym układem, bierze punkty. Punkty są złe: wygrywa ten, kto ma ich najmniej.",
+    "youNeed": "<strong>Potrzebujesz:</strong> dwóch kości, kartki i długopisu oraz co najmniej jednego innego gracza.",
     "links": {
-      "rules": "[PL] Read the rules",
-      "reference": "[PL] Quick reference"
+      "rules": "Przeczytaj zasady",
+      "reference": "Ściągawka"
     },
     "quickStart": {
-      "heading": "[PL] Mitchi in 60 seconds",
-      "whoStarts": "[PL] Everyone rolls one die. The highest roll starts.",
-      "rollLimit": "[PL] The starting player rolls both dice, up to three times. The number of rolls they use is the <term>roll limit</term> for everyone else.",
-      "everyoneElse": "[PL] Everyone else takes a turn, up to the roll limit. You only need to beat the <term>worst hand so far</term>.",
-      "handRanking": "[PL] The best hand is a Mitchi, a 2 and a 1. Then doubles, then six-high down to three-high.",
-      "pot": "[PL] The player left with the worst hand <term>takes the pot</term>: 1 point, or 2 points for each Mitchi rolled.",
-      "winning": "[PL] The game ends when a player reaches the point limit, usually 25. The fewest points wins.",
-      "fullRulesLink": "[PL] <rules>Read the full rules</rules>"
+      "heading": "Mitchi w 60 sekund",
+      "whoStarts": "Każdy rzuca jedną kością. Zaczyna ten, kto wyrzuci najwięcej oczek.",
+      "rollLimit": "Gracz rozpoczynający rzuca dwiema kośćmi, maksymalnie trzy razy. Liczba rzutów, które wykorzysta, to <term>limit rzutów</term> dla pozostałych.",
+      "everyoneElse": "Pozostali gracze rozgrywają po jednej turze, do limitu rzutów. Musisz tylko pobić <term>najgorszy jak dotąd układ</term>.",
+      "handRanking": "Najlepszy układ to Mitchi: 2 i 1. Potem dublety, potem od najwyżej szóstki w dół do najwyżej trójki.",
+      "pot": "Gracz, który zostaje z najgorszym układem, <term>zgarnia pulę</term>: 1 punkt albo 2 punkty za każde wyrzucone Mitchi.",
+      "winning": "Gra kończy się, gdy któryś gracz osiągnie limit punktów, zwykle 25. Wygrywa ten, kto ma najmniej punktów.",
+      "fullRulesLink": "<rules>Przeczytaj pełne zasady</rules>"
     },
     "ranking": {
-      "heading": "[PL] Hand ranking",
-      "allHandsLink": "[PL] All hands are listed on the <reference>quick reference</reference>."
+      "heading": "Ranking układów",
+      "allHandsLink": "Wszystkie układy są wypisane w <reference>ściągawce</reference>."
     },
-    "origin": "[PL] Curious where Mitchi comes from? <about>Read the story</about>"
+    "origin": "Ciekawi cię, skąd pochodzi Mitchi? <about>Poznaj historię</about>"
   },
   "rules": {
     "title": "[PL] Mitchi rules",
@@ -228,131 +228,131 @@
     }
   },
   "notFound": {
-    "title": "[PL] That page does not exist",
-    "body": "[PL] Try the <rules>rules</rules> or the <reference>quick reference</reference>."
+    "title": "Ta strona nie istnieje",
+    "body": "Zajrzyj do <rules>zasad</rules> albo do <reference>ściągawki</reference>."
   },
   "handGroups": {
-    "withinGroup": "[PL] Within a group, the higher hand wins: double-six beats double-five, and six-five beats six-four. The worst hand in the game is three-one.",
+    "withinGroup": "W obrębie grupy wygrywa wyższy układ: dwie szóstki biją dwie piątki, a sześć-pięć bije sześć-cztery. Najgorszy układ w grze to trzy-jeden.",
     "mitchi": {
-      "name": "[PL] Mitchi",
-      "description": "[PL] A 2 and a 1. The best hand in the game."
+      "name": "Mitchi",
+      "description": "2 i 1. Najlepszy układ w grze."
     },
     "doubles": {
-      "name": "[PL] Doubles",
-      "description": "[PL] Both dice show the same number."
+      "name": "Dublety",
+      "description": "Obie kości pokazują tę samą liczbę."
     },
     "sixHigh": {
-      "name": "[PL] Six-high",
-      "description": "[PL] A 6 with a 5, 4, 3, 2 or 1."
+      "name": "Najwyżej szóstka",
+      "description": "6 z 5, 4, 3, 2 lub 1."
     },
     "fiveHigh": {
-      "name": "[PL] Five-high",
-      "description": "[PL] A 5 with a 4, 3, 2 or 1."
+      "name": "Najwyżej piątka",
+      "description": "5 z 4, 3, 2 lub 1."
     },
     "fourHigh": {
-      "name": "[PL] Four-high",
-      "description": "[PL] A 4 with a 3, 2 or 1."
+      "name": "Najwyżej czwórka",
+      "description": "4 z 3, 2 lub 1."
     },
     "threeHigh": {
-      "name": "[PL] Three-high",
-      "description": "[PL] A 3 with a 2 or 1."
+      "name": "Najwyżej trójka",
+      "description": "3 z 2 lub 1."
     }
   },
   "hands": {
-    "2-1": "[PL] two-one",
-    "6-6": "[PL] double-six",
-    "5-5": "[PL] double-five",
-    "4-4": "[PL] double-four",
-    "3-3": "[PL] double-three",
-    "2-2": "[PL] double-two",
-    "1-1": "[PL] double-one",
-    "6-5": "[PL] six-five",
-    "6-4": "[PL] six-four",
-    "6-3": "[PL] six-three",
-    "6-2": "[PL] six-two",
-    "6-1": "[PL] six-one",
-    "5-4": "[PL] five-four",
-    "5-3": "[PL] five-three",
-    "5-2": "[PL] five-two",
-    "5-1": "[PL] five-one",
-    "4-3": "[PL] four-three",
-    "4-2": "[PL] four-two",
-    "4-1": "[PL] four-one",
-    "3-2": "[PL] three-two",
-    "3-1": "[PL] three-one"
+    "2-1": "dwa-jeden",
+    "6-6": "dwie szóstki",
+    "5-5": "dwie piątki",
+    "4-4": "dwie czwórki",
+    "3-3": "dwie trójki",
+    "2-2": "dwie dwójki",
+    "1-1": "dwie jedynki",
+    "6-5": "sześć-pięć",
+    "6-4": "sześć-cztery",
+    "6-3": "sześć-trzy",
+    "6-2": "sześć-dwa",
+    "6-1": "sześć-jeden",
+    "5-4": "pięć-cztery",
+    "5-3": "pięć-trzy",
+    "5-2": "pięć-dwa",
+    "5-1": "pięć-jeden",
+    "4-3": "cztery-trzy",
+    "4-2": "cztery-dwa",
+    "4-1": "cztery-jeden",
+    "3-2": "trzy-dwa",
+    "3-1": "trzy-jeden"
   },
   "potTable": {
-    "mitchisHeader": "[PL] Mitchis rolled",
-    "pointsHeader": "[PL] Points",
-    "none": "[PL] None",
-    "one": "[PL] One",
-    "two": "[PL] Two",
-    "three": "[PL] Three"
+    "mitchisHeader": "Wyrzucone Mitchi",
+    "pointsHeader": "Punkty",
+    "none": "Brak",
+    "one": "Jedno",
+    "two": "Dwa",
+    "three": "Trzy"
   },
   "vocabulary": {
     "mitchi": {
-      "name": "[PL] Mitchi",
-      "definition": "[PL] The game, and its best hand: a 2 and a 1."
+      "name": "Mitchi",
+      "definition": "Gra, a także jej najlepszy układ: 2 i 1."
     },
     "die": {
-      "name": "[PL] Die",
-      "definition": "[PL] One of the dice."
+      "name": "Kość",
+      "definition": "Jedna z dwóch kości."
     },
     "hand": {
-      "name": "[PL] Hand",
-      "definition": "[PL] The two dice you finish your turn with."
+      "name": "Układ",
+      "definition": "Dwie kości, z którymi kończysz turę."
     },
     "roll": {
-      "name": "[PL] Roll",
-      "definition": "[PL] One throw of one or both dice. Re-rolling one die still counts as a roll."
+      "name": "Rzut",
+      "definition": "Jeden rzut jedną lub obiema kośćmi. Przerzucenie jednej kości nadal liczy się jako rzut."
     },
     "rolledIn": {
-      "name": "[PL] In one, in two, in three",
-      "definition": "[PL] How many rolls a hand took: six-three in two."
+      "name": "W jednym, w dwóch, w trzech",
+      "definition": "Ile rzutów zajął układ: sześć-trzy w dwóch."
     },
     "round": {
-      "name": "[PL] Round",
-      "definition": "[PL] Every player takes one turn, then the worst hand takes the pot."
+      "name": "Runda",
+      "definition": "Każdy gracz rozgrywa jedną turę, a potem najgorszy układ zgarnia pulę."
     },
     "turn": {
-      "name": "[PL] Turn",
-      "definition": "[PL] Your rolls in a round, up to the roll limit."
+      "name": "Tura",
+      "definition": "Twoje rzuty w rundzie, do limitu rzutów."
     },
     "startingPlayer": {
-      "name": "[PL] Starting player",
-      "definition": "[PL] The player who rolls first in a round and sets the roll limit."
+      "name": "Gracz rozpoczynający",
+      "definition": "Gracz, który rzuca pierwszy w rundzie i ustala limit rzutów."
     },
     "rollLimit": {
-      "name": "[PL] Roll limit",
-      "definition": "[PL] The number of rolls everyone gets in a round, set by the starting player."
+      "name": "Limit rzutów",
+      "definition": "Liczba rzutów, jaką każdy ma w rundzie, ustalona przez gracza rozpoczynającego."
     },
     "doubles": {
-      "name": "[PL] Doubles",
-      "definition": "[PL] Both dice showing the same number."
+      "name": "Dublety",
+      "definition": "Obie kości pokazują tę samą liczbę."
     },
     "worstHandSoFar": {
-      "name": "[PL] Worst hand so far",
-      "definition": "[PL] The lowest-ranked hand rolled so far in a round. The hand you need to beat."
+      "name": "Najgorszy jak dotąd układ",
+      "definition": "Najniższy układ wyrzucony dotąd w rundzie. Układ, który musisz pobić."
     },
     "pot": {
-      "name": "[PL] The pot",
-      "definition": "[PL] The points at stake in a round. It starts at 1."
+      "name": "Pula",
+      "definition": "Punkty, o które toczy się runda. Zaczyna się od 1."
     },
     "takeThePot": {
-      "name": "[PL] Take the pot",
-      "definition": "[PL] Add the points in the pot to your score."
+      "name": "Zgarnąć pulę",
+      "definition": "Dodać punkty z puli do swojego wyniku."
     },
     "tieBreak": {
-      "name": "[PL] Tie-break",
-      "definition": "[PL] A play-off between players tied on the worst hand."
+      "name": "Dogrywka",
+      "definition": "Rozgrywka między graczami, którzy mają ten sam najgorszy układ."
     },
     "points": {
-      "name": "[PL] Points",
-      "definition": "[PL] Your score. Points are bad: the fewest wins."
+      "name": "Punkty",
+      "definition": "Twój wynik. Punkty są złe: wygrywa ten, kto ma najmniej."
     },
     "pointLimit": {
-      "name": "[PL] Point limit",
-      "definition": "[PL] The score that ends the game. Usually 25."
+      "name": "Limit punktów",
+      "definition": "Wynik, przy którym gra się kończy. Zwykle 25."
     }
   }
 }
