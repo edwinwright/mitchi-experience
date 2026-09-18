@@ -110,7 +110,7 @@ Unknown paths that the proxy has already placed in `[locale]` are caught by `src
 
 ## Adding a locale
 
-Decisions first, then scaffolding, then translation. Doing it in that order is what stops one concept acquiring three words in the same locale. Spanish (WO-0003) is the worked example; Polish, German and Japanese repeat this sequence.
+Decisions first, then scaffolding, then translation. Doing it in that order is what stops one concept acquiring three words in the same locale. Spanish (WO-0003) and Polish (WO-0014) are the worked examples; German and Japanese repeat this sequence.
 
 **1. Settle the vocabulary and the slugs.** Before a word of copy is written, agree that locale's form for every term in `docs/domain/glossary.md`, the hand and group naming pattern, and the localised pathnames. Where a choice is contested, decide it once and write down why. Terms run through every page, so translating them in flow guarantees inconsistency. Slugs are expensive once indexed and shared: settle them before implementing `pathnames`.
 
@@ -120,7 +120,7 @@ Binding from the Spanish pass, and from the glossary translation rules:
 - Hand names keep higher-die-first order. Translate the number words, not the structure. Never compose a name at runtime.
 - Anchor IDs stay English in every locale (`#vocabulary`, `#hands`, …). Visible headings translate; fragments do not.
 
-**2. Write `docs/domain/glossary.<locale>.md`.** Term forms and the reasoning behind contested choices. Not definitions: those live in the message file, and repeating them here gives the site two sources of truth for the same sentence.
+**2. Write `docs/domain/glossary.<locale>.md`.** Term forms and the reasoning behind contested choices. Not definitions: those live in the message file, and repeating them here gives the site two sources of truth for the same sentence. The file opens with a **Status** line saying what review the locale has had and what it has not (a B1 reader, a native speaker, nobody). A green build is not a review, and the status line is the only committed record of the difference. For an inflected language, list every form of a term that occurs in the copy, not just the headword, so a later edit can check a form rather than guess it.
 
 **3. Scaffold the message file.**
 
@@ -130,7 +130,7 @@ npm run i18n:new -- <locale>
 
 Copies `en.json` with `[XX] ` on every string, so an untranslated string is visible rather than a silent fallback to English. It refuses to overwrite an existing file and has no force flag: regenerating a locale means deleting its file yourself.
 
-There is no mirror script. Key parity is maintained by hand and enforced by `i18n:check` (step 9).
+There is no mirror script. Key parity is maintained by hand and enforced by `i18n:check` (step 10).
 
 **4. Add the locale to `src/i18n/routing.ts`.** Append it to `locales`. In `pathnames`:
 
@@ -139,29 +139,33 @@ There is no mirror script. Key parity is maintained by hand and enforced by `i18
 
 Update `docs/product/site-map.md` when the new slugs are real in routing, not later: the site map describes what the site does. Sitemap entries follow `routing.locales` and `PAGES` in `src/i18n/metadata.ts` — no hand-edited URL list.
 
-**5. Translate,** deleting the `[XX] ` marker from each string as you go. The markers are the only progress bar this work has, and once they are gone a silent fallback looks exactly like a correct page. Rich text tags and ICU parameter names survive untouched; word order around them may change.
+`src/proxy.ts` needs no edit: it is `createMiddleware(routing)`, so the new locale is negotiated, redirected and cookie-persisted as soon as it is in `locales`. The same goes for `hreflang` alternates, canonicals and the sitemap, which all loop over `routing.locales`. Adding Polish touched none of those files.
+
+**5. Check the font subsets.** `src/app/fonts.ts` names the Google Fonts subsets each face loads. `latin` covers Spanish (its accented letters are Latin-1) but not Polish: ą ć ę ł ń ś ź ż are Latin Extended-A, and without `latin-ext` every one of them renders in the fallback font on every page of that locale, with nothing failing. Add the subset a language needs and confirm it in the built CSS (a preloaded `@font-face` per family with the right `unicode-range`) and then in a browser on real text, a heading, a body paragraph and a mono label. Japanese is a separate font decision, not a subset.
+
+**6. Translate,** deleting the `[XX] ` marker from each string as you go. The markers are the only progress bar this work has, and once they are gone a silent fallback looks exactly like a correct page. Rich text tags and ICU parameter names survive untouched; word order around them may change.
 
 `nav.*` holds the main-nav link labels only. Chrome (skip link, footer, on-this-page label) is `site.*`; the next-page block is `nextPage.*`. Do not put autonyms (English, Español, …) in the message files.
 
-**6. Add the language to the switcher.** `src/components/language-switcher.tsx` is a client leaf: it needs `usePathname()` from `@/i18n/navigation`, and reading the path on the server would turn the locale layout dynamic. Add the locale to `LOCALE_NAMES` with the language named in its own language. Keep it a nav of links with `locale`, `hreflang`, `lang` and `aria-current` — not a `<select>`.
+**7. Add the language to the switcher.** `src/components/language-switcher.tsx` is a client leaf: it needs `usePathname()` from `@/i18n/navigation`, and reading the path on the server would turn the locale layout dynamic. Add the locale to `LOCALE_NAMES` with the language named in its own language. Keep it a nav of links with `locale`, `hreflang`, `lang` and `aria-current` — not a `<select>`.
 
 Passing `locale` to `Link` emits a prefix even for the default locale (`/en/rules`). That is deliberate: the prefix updates `NEXT_LOCALE` before navigation; the proxy then redirects to the unprefixed English path under `localePrefix: "as-needed"`.
 
-**7. Prove the locale.** Switching must keep the same page (including localised slugs). `/es/reglas#vocabulary` (and the equivalent for the new locale) must land on the Game vocabulary section. `lang` on `<html>` comes from the locale layout.
+**8. Prove the locale.** Switching must keep the same page (including localised slugs). `/es/reglas#vocabulary` (and the equivalent for the new locale) must land on the Game vocabulary section. `lang` on `<html>` comes from the locale layout.
 
-**8. Build.** `npm run build`: every real route shows `●` with both (all) locale paths listed, and a `proxy` entry is present. Exactly one `ƒ` is expected: `/[locale]/[...rest]`, the 404 catch-all. It cannot get `generateStaticParams` for arbitrary paths. Do not try to make it static.
+**9. Build.** `npm run build`: every real route shows `●` with both (all) locale paths listed, and a `proxy` entry is present. Exactly one `ƒ` is expected: `/[locale]/[...rest]`, the 404 catch-all. It cannot get `generateStaticParams` for arbitrary paths. Do not try to make it static.
 
 The build route table lists **internal** App Router paths (e.g. `/es/rules`). External localised URLs are what `Link` and the proxy emit; confirm those with smoke and prerendered HTML if needed.
 
-**9. Run the checks before committing.**
+**10. Run the checks before committing.**
 
 ```bash
 npm run i18n:check
 ./scripts/smoke.sh http://localhost:3000   # or production, no args
 ```
 
-`i18n:check` compares every locale file to `en.json` for key parity and for matching rich text tags and ICU parameters. A string that drops `<term>` or renames `{a}` fails at render, on a page nobody is looking at.
+`i18n:check` compares every locale file to `en.json` for key parity and for matching rich text tags and ICU parameters. A string that drops `<term>` or renames a parameter fails at render, on a page nobody is looking at. It also lists every remaining `[XX] ` marker, which is the progress bar for step 6; the batch is done when the count drops by exactly the number of strings in it and no more.
 
-`scripts/smoke.sh` is the request-time half the build cannot cover: Accept-Language negotiation, `NEXT_LOCALE` precedence, a localised slug (`/es/reglas`), the English switcher prefix strip (`/en/reference` → `/reference`), cookie rewrite of an English path to the localised slug, and HTML `rel="canonical"` / `hreflang` on `/rules` and `/es/reglas` (absolute hrefs use `SITE_ORIGIN`, not the smoke base URL).
+`scripts/smoke.sh` is the request-time half the build cannot cover: Accept-Language negotiation, `NEXT_LOCALE` precedence, a localised slug (`/es/reglas`, `/pl/zasady`), the English switcher prefix strip (`/en/reference` → `/reference`), cookie rewrite of an English path to the localised slug, and HTML `rel="canonical"` / `hreflang` on `/rules`, `/es/reglas` and `/pl/zasady` (absolute hrefs use `SITE_ORIGIN`, not the smoke base URL). It grows with every locale, in two steps: the four routing checks (speaker redirected to the prefix, localised rules slug serves, cookie rewrite, unlocalised slug redirects) as soon as the locale is in routing, and the canonical/hreflang block for its rules page, plus an `hreflang` line for it on every existing block, once the page carries real metadata. Run it against a preview deploy as well as `localhost`; the only expected difference off production is the apex redirect, which the script skips.
 
 Locale message files are separate chunks, so an added locale does not grow any other locale's bundle.

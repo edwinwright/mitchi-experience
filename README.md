@@ -1,8 +1,10 @@
 # Mitchi
 
 Mitchi is a two-dice game for two or more players. This repository is the
-public rules site: a statically generated Next.js app, English and Spanish
-now, with more locales later. Live at [www.mitchidice.com](https://www.mitchidice.com).
+public rules site: a statically generated Next.js app, in English, Spanish
+and Polish, with more locales later. The Polish is unreviewed machine
+translation pending a native speaker; see `docs/domain/glossary.pl.md`.
+Live at [www.mitchidice.com](https://www.mitchidice.com).
 
 ## Run locally
 

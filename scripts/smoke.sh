@@ -181,6 +181,7 @@ fi
 # These assert the Slice 2 contract: canonical + hreflang on 200 URLs only.
 RULES_HTML="$(fetch_html "$BASE/rules" -H "$EN")"
 REGLAS_HTML="$(fetch_html "$BASE/es/reglas" -H "$EN")"
+ZASADY_HTML="$(fetch_html "$BASE/pl/zasady" -H "$EN")"
 
 expect "/rules has rel=canonical for unprefixed English URL" \
   "yes" \
@@ -193,6 +194,10 @@ expect "/rules hreflang=en points at /rules" \
 expect "/rules hreflang=es points at /es/reglas" \
   "yes" \
   "$(html_hreflang_has "$RULES_HTML" "es" "${ORIGIN}/es/reglas")"
+
+expect "/rules hreflang=pl points at /pl/zasady" \
+  "yes" \
+  "$(html_hreflang_has "$RULES_HTML" "pl" "${ORIGIN}/pl/zasady")"
 
 expect "/rules hreflang=x-default points at /rules" \
   "yes" \
@@ -214,6 +219,10 @@ expect "/es/reglas hreflang=es points at /es/reglas" \
   "yes" \
   "$(html_hreflang_has "$REGLAS_HTML" "es" "${ORIGIN}/es/reglas")"
 
+expect "/es/reglas hreflang=pl points at /pl/zasady" \
+  "yes" \
+  "$(html_hreflang_has "$REGLAS_HTML" "pl" "${ORIGIN}/pl/zasady")"
+
 expect "/es/reglas hreflang=x-default points at /rules" \
   "yes" \
   "$(html_hreflang_has "$REGLAS_HTML" "x-default" "${ORIGIN}/rules")"
@@ -221,6 +230,30 @@ expect "/es/reglas hreflang=x-default points at /rules" \
 expect "/es/reglas never advertises /en/rules" \
   "yes" \
   "$(html_lacks "$REGLAS_HTML" "${ORIGIN}/en/rules")"
+
+expect "/pl/zasady has rel=canonical for Polish URL" \
+  "yes" \
+  "$(html_link_has "$ZASADY_HTML" "canonical" "${ORIGIN}/pl/zasady")"
+
+expect "/pl/zasady hreflang=en points at /rules" \
+  "yes" \
+  "$(html_hreflang_has "$ZASADY_HTML" "en" "${ORIGIN}/rules")"
+
+expect "/pl/zasady hreflang=es points at /es/reglas" \
+  "yes" \
+  "$(html_hreflang_has "$ZASADY_HTML" "es" "${ORIGIN}/es/reglas")"
+
+expect "/pl/zasady hreflang=pl points at /pl/zasady" \
+  "yes" \
+  "$(html_hreflang_has "$ZASADY_HTML" "pl" "${ORIGIN}/pl/zasady")"
+
+expect "/pl/zasady hreflang=x-default points at /rules" \
+  "yes" \
+  "$(html_hreflang_has "$ZASADY_HTML" "x-default" "${ORIGIN}/rules")"
+
+expect "/pl/zasady never advertises /en/rules" \
+  "yes" \
+  "$(html_lacks "$ZASADY_HTML" "${ORIGIN}/en/rules")"
 
 echo
 if (( FAILS > 0 )); then
