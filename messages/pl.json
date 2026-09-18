@@ -1,20 +1,20 @@
 {
   "meta": {
     "home": {
-      "title": "[PL] Mitchi, a dice game",
-      "description": "[PL] A dice game for two or more players. Avoid the worst hand, take the fewest points, win."
+      "title": "Mitchi, gra w kości",
+      "description": "Gra w kości dla dwóch lub więcej graczy. Unikaj najgorszego układu, zbieraj najmniej punktów, wygrywaj."
     },
     "rules": {
-      "title": "[PL] Mitchi rules",
-      "description": "[PL] The full rules of Mitchi: hands, the roll limit, scoring and tie-breaks."
+      "title": "Zasady Mitchi",
+      "description": "Pełne zasady Mitchi: układy, limit rzutów, punktacja i dogrywki."
     },
     "reference": {
-      "title": "[PL] Mitchi quick reference",
-      "description": "[PL] Hand ranking and scoring on one screen, for use mid-game."
+      "title": "Ściągawka Mitchi",
+      "description": "Ranking układów i punktacja na jednym ekranie, do zajrzenia w trakcie gry."
     },
     "about": {
-      "title": "[PL] About Mitchi",
-      "description": "[PL] Mitchi is a fast dice game for two or more players. What it is, where it came from, and games like it."
+      "title": "O Mitchi",
+      "description": "Mitchi to szybka gra w kości dla dwóch lub więcej graczy. Czym jest, skąd pochodzi i podobne gry."
     }
   },
   "site": {
@@ -178,53 +178,53 @@
     }
   },
   "reference": {
-    "title": "[PL] Quick reference",
-    "intro": "[PL] Everything you need mid-game, on one screen.",
+    "title": "Ściągawka",
+    "intro": "Wszystko, czego potrzebujesz w trakcie gry, na jednym ekranie.",
     "ranking": {
-      "heading": "[PL] Hand ranking",
-      "intro": "[PL] Best at the top, worst at the bottom. Within a group, the higher hand wins. The worst hand in the game is three-one.",
-      "tableCaption": "[PL] Mitchi hands, ranked from best to worst"
+      "heading": "Ranking układów",
+      "intro": "Najlepszy na górze, najgorszy na dole. W obrębie grupy wygrywa wyższy układ. Najgorszy układ w grze to trzy-jeden.",
+      "tableCaption": "Układy w Mitchi, od najlepszego do najgorszego"
     },
     "scoring": {
-      "heading": "[PL] Scoring",
-      "intro": "[PL] Every round starts with 1 point in the pot. The first Mitchi replaces it with 2 points, and each Mitchi after that adds 2 more. The worst hand takes the pot and starts the next round."
+      "heading": "Punktacja",
+      "intro": "Każda runda zaczyna się od 1 punktu w puli. Pierwsze Mitchi zastępuje go 2 punktami, a każde kolejne Mitchi dodaje 2 więcej. Najgorszy układ zgarnia pulę i zaczyna następną rundę."
     },
     "tieBreaks": {
-      "heading": "[PL] Tie-breaks",
-      "intro": "[PL] Tied players roll once each. The worst hand takes the pot.",
-      "whenHeader": "[PL] When",
-      "potHeader": "[PL] Points",
-      "eachTieBreak": "[PL] Each tie-break starts",
-      "eachMitchi": "[PL] Each Mitchi rolled in a tie-break",
-      "fullRulesLink": "[PL] <tieBreaks>Full tie-break rules</tieBreaks>"
+      "heading": "Dogrywki",
+      "intro": "Remisujący gracze rzucają po jednym razie. Najgorszy układ zgarnia pulę.",
+      "whenHeader": "Kiedy",
+      "potHeader": "Punkty",
+      "eachTieBreak": "Każda dogrywka zaczyna się",
+      "eachMitchi": "Każde Mitchi wyrzucone w dogrywce",
+      "fullRulesLink": "<tieBreaks>Pełne zasady dogrywek</tieBreaks>"
     },
     "pointLimit": {
-      "heading": "[PL] Point limit",
-      "summary": "[PL] The game ends when any player reaches the point limit, usually 25. The fewest points wins. If players are tied on the fewest points, they roll once each and the best hand wins."
+      "heading": "Limit punktów",
+      "summary": "Gra kończy się, gdy którykolwiek gracz osiągnie limit punktów, zwykle 25. Wygrywa ten, kto ma najmniej punktów. Przy remisie na najmniejszą liczbę punktów ci gracze rzucają po jednym razie i wygrywa najlepszy układ."
     }
   },
   "about": {
-    "title": "[PL] About Mitchi",
-    "intro": "[PL] What the game is, and where it came from.",
+    "title": "O Mitchi",
+    "intro": "Czym jest ta gra i skąd pochodzi.",
     "game": {
-      "heading": "[PL] The game",
-      "summary": "[PL] Mitchi is a fast dice game for two or more players. Each round, you roll to avoid the worst hand. Whoever ends up with it takes points. The player with the fewest points wins. You need two dice, a pen and paper, and at least one other player."
+      "heading": "Gra",
+      "summary": "Mitchi to szybka gra w kości dla dwóch lub więcej graczy. W każdej rundzie rzucasz, żeby uniknąć najgorszego układu. Kto z nim zostanie, bierze punkty. Wygrywa gracz z najmniejszą liczbą punktów. Potrzebujesz dwóch kości, kartki i długopisu oraz co najmniej jednego innego gracza."
     },
     "origin": {
-      "heading": "[PL] Where it came from",
-      "learnt": "[PL] I learnt Mitchi while I was living in Sanlúcar de Barrameda, in southern Spain. A group of us used to meet at La Gitana after work and play on the bar top.",
-      "cousin": "[PL] My cousin taught us, and it caught on quickly. I don't know where he learnt it, and I've never come across it anywhere else. I couldn't find the rules written down either, so I've put them here for anyone who wants to learn."
+      "heading": "Skąd pochodzi",
+      "learnt": "Nauczyłem się Mitchi, kiedy mieszkałem w Sanlúcar de Barrameda, na południu Hiszpanii. Spotykaliśmy się w kilka osób w La Gitana po pracy i graliśmy na barze.",
+      "cousin": "Nauczył nas mój kuzyn i gra szybko się przyjęła. Nie wiem, skąd on ją znał, a ja nigdzie indziej się z nią nie spotkałem. Nie znalazłem też nigdzie spisanych zasad, więc umieściłem je tutaj dla każdego, kto chce się nauczyć."
     },
     "whyItStuck": {
-      "heading": "[PL] Why it stuck",
-      "easy": "[PL] It's easy to learn and quick to play. Rounds are fast, and you only need two dice and somewhere to roll them.",
-      "tactical": "[PL] It's tactical too. Everyone can see the scores, so every round matters, and once the Mitchis start rolling, the pot soon climbs."
+      "heading": "Dlaczego się przyjęła",
+      "easy": "Łatwo się jej nauczyć i szybko się w nią gra. Rundy są krótkie, a potrzebujesz tylko dwóch kości i miejsca, żeby nimi rzucić.",
+      "tactical": "Jest też taktyczna. Wszyscy widzą wyniki, więc każda runda ma znaczenie, a kiedy zaczynają padać Mitchi, pula szybko rośnie."
     },
     "relatedGames": {
-      "heading": "[PL] Related games",
-      "intro": "[PL] Mitchi is not the only game where a 2 and a 1 is the best hand. While building this site I came across a couple of others, and there are probably more.",
-      "mia": "[PL] <strong>Mia:</strong> the dice are rolled in secret under a cup, and players call out their hand. They can bluff.",
-      "mexico": "[PL] <strong>Mexico:</strong> players roll to avoid the lowest hand, losing a life each time, until one player is left."
+      "heading": "Podobne gry",
+      "intro": "Mitchi nie jest jedyną grą, w której 2 i 1 to najlepszy układ. Budując tę stronę, natknąłem się na kilka innych, a pewnie jest ich więcej.",
+      "mia": "<strong>Mia:</strong> kośćmi rzuca się w ukryciu pod kubkiem, a gracze zapowiadają swój układ. Mogą blefować.",
+      "mexico": "<strong>Mexico:</strong> gracze rzucają, żeby uniknąć najniższego układu, tracąc za każdym razem jedno życie, aż zostanie tylko jeden gracz."
     }
   },
   "notFound": {
