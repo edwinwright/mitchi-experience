@@ -29,7 +29,14 @@ Namespaces, and no fourteenth without a reason: `meta`, `site`, `nav`, `nextPage
 
 **No markup inside strings.** Translators should never have to preserve asterisks, HTML, attributes or URLs. Inline emphasis and in-text actions use next-intl rich text tags (`t.rich`), listed below. Mapped in one place, `tags` in `src/i18n/rich-text.tsx`. No component maps its own tags. Do not use `defaultTranslationValues`, it is deprecated.
 
-**Variables, not concatenation.** Worked examples take player letters as ICU parameters, so one pattern is translated once and A, B and C are substituted.
+**Fixed values are flat strings; only runtime values are ICU arguments.** Two questions, in order:
+
+1. Does the value change at runtime? No: write the whole string. Stop here. The `/rules` example strips broke this rule until WO-0014: `{hand} in {count, select, …}`, `needs {hand} or better`, `Player {n}`, `Tie-break {n}` were templates whose every value was fixed in the component. English and Spanish survived because their nouns do not inflect; Polish exposed it, since the host sentence dictates the case of the slot and the slot can supply only one form. Each template is now one whole string per note (`rules.round.everyoneElse.example1Strip.player3Note`), and a translator inflects in place.
+2. If it does change at runtime, is the value grammar-opaque: a number, an identifier, an indeclinable name? Yes: an ICU argument, with `plural` or `select` where the language needs it. No, it is a translated phrase: redesign the string, because the host sentence will demand a case the value cannot supply.
+
+At present no message file contains an ICU argument. `i18n:check` still compares parameters across locales for the day one is needed.
+
+**Strip keys name content, not layout.** `rules.round.rollLimit.exampleStrip` and `rules.round.everyoneElse.example1Strip` sit beside the prose example they decorate, and each note inside is a complete phrase (`player1Rolled`, `player1Limit`, `player2Note`). Separator glyphs (`→`, `·`) are rendered by the component, never part of the string.
 
 **Hands are data, names are messages.** The visible name of a hand comes from ``t(`hands.${hand.id}`)``. Never compose a hand name from two number words at runtime: "six-five" is not "six" plus "five" in Polish or Japanese, and "double-six" is not "six-six" in any language. Twenty-one whole strings per locale is the cheap option, not the expensive one. Group names and descriptions work the same way, under `handGroups.<group>.name` and `.description`.
 

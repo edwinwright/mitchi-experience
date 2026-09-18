@@ -13,7 +13,6 @@ import { TermList } from "@/components/term-list";
 import { OnThisPage } from "@/components/on-this-page";
 import { ScoringTable } from "@/components/scoring-table";
 import { OnwardBlock } from "@/components/onward-block";
-import type { HandId } from "@/data/hands";
 import { tags } from "@/i18n/rich-text";
 import { pageMetadata } from "@/i18n/metadata";
 import { Heading } from "@/components/heading";
@@ -140,19 +139,8 @@ function Hands() {
 
 function Round() {
   const t = useTranslations("rules.round");
-  const tLabels = useTranslations("rules.exampleLabels");
-  const tHands = useTranslations("hands");
-  // Players are numbered by turn order in the round; the prose gets the same
-  // numbers through its a/b/c parameters. The · and → are rendered, not copy.
-  const players = { a: "1", b: "2", c: "3" };
-  const player = (n: number) => tLabels("player", { n });
-  const rolledIn = (hand: HandId, count: number) =>
-    tLabels("rolledIn", { hand: tHands(hand), count });
-  const setsLimit = (hand: HandId, count: number) => (
-    <>
-      {rolledIn(hand, count)} → {tLabels("rollLimit", { count })}
-    </>
-  );
+  // Every strip note is a whole string per locale, so a translator inflects
+  // hand names and counts in place. The · and → are rendered, not copy.
   return (
     <RuleSection id="round" number={5} heading={t("heading")}>
       <Heading level={3} className="pt-1 text-lg font-semibold xl:text-xl">
@@ -174,7 +162,16 @@ function Round() {
         <div className={exampleStripWrap}>
           <ExampleStrip
             rows={[
-              { label: player(1), hand: "6-3", note: setsLimit("6-3", 2) },
+              {
+                label: t("rollLimit.exampleStrip.player"),
+                hand: "6-3",
+                note: (
+                  <>
+                    {t("rollLimit.exampleStrip.rolled")} →{" "}
+                    {t("rollLimit.exampleStrip.limit")}
+                  </>
+                ),
+              },
             ]}
           />
         </div>
@@ -191,39 +188,59 @@ function Round() {
         <div className={exampleStripWrap}>
           <ExampleStrip
             rows={[
-              { label: player(1), hand: "6-4", note: setsLimit("6-4", 1) },
               {
-                label: player(2),
-                hand: "5-1",
+                label: t("everyoneElse.example1Strip.player1"),
+                hand: "6-4",
                 note: (
                   <>
-                    {tHands("5-1")} · {tLabels("worstHandSoFar")}
+                    {t("everyoneElse.example1Strip.player1Rolled")} →{" "}
+                    {t("everyoneElse.example1Strip.player1Limit")}
                   </>
                 ),
               },
               {
-                label: player(3),
+                label: t("everyoneElse.example1Strip.player2"),
+                hand: "5-1",
+                note: (
+                  <>
+                    {t("everyoneElse.example1Strip.player2Rolled")} ·{" "}
+                    {t("everyoneElse.example1Strip.player2Note")}
+                  </>
+                ),
+              },
+              {
+                label: t("everyoneElse.example1Strip.player3"),
                 hand: "5-2",
-                note: tLabels("needs", { hand: tHands("5-2") }),
+                note: t("everyoneElse.example1Strip.player3Note"),
               },
             ]}
           />
         </div>
         <div className={exampleProse}>
-          {t.rich("everyoneElse.example1", { ...tags, ...players })}
+          {t.rich("everyoneElse.example1", tags)}
         </div>
       </ExampleCard>
       <ExampleCard>
         <div className={exampleStripWrap}>
           <ExampleStrip
             rows={[
-              { label: player(1), hand: "5-4", note: setsLimit("5-4", 3) },
               {
-                label: player(2),
+                label: t("everyoneElse.example2Strip.player1"),
+                hand: "5-4",
+                note: (
+                  <>
+                    {t("everyoneElse.example2Strip.player1Rolled")} →{" "}
+                    {t("everyoneElse.example2Strip.player1Limit")}
+                  </>
+                ),
+              },
+              {
+                label: t("everyoneElse.example2Strip.player2"),
                 hand: "6-2",
                 note: (
                   <>
-                    {rolledIn("6-2", 1)} · {tLabels("stops")}
+                    {t("everyoneElse.example2Strip.player2Rolled")} ·{" "}
+                    {t("everyoneElse.example2Strip.player2Note")}
                   </>
                 ),
               },
@@ -231,7 +248,7 @@ function Round() {
           />
         </div>
         <div className={exampleProse}>
-          {t.rich("everyoneElse.example2", { ...tags, ...players })}
+          {t.rich("everyoneElse.example2", tags)}
         </div>
       </ExampleCard>
     </RuleSection>

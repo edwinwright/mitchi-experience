@@ -26,7 +26,7 @@
     "footer": {
       "tagline": "Mitchi. Las reglas, por escrito.",
       "privacy": "Sin cookies. Las visitas se cuentan de forma anónima y no se almacena nada en tu dispositivo.",
-      "builtWith": "Hecho con Next.js y next-intl. De momento en inglés y español, y más idiomas en camino."
+      "builtWith": "Hecho con Next.js y next-intl."
     }
   },
   "nav": {
@@ -79,14 +79,6 @@
     "title": "Reglas de Mitchi",
     "intro": "Todo lo que necesitas para jugar, desde la preparación hasta el final de la partida.",
     "exampleLabel": "Ejemplo",
-    "exampleLabels": {
-      "player": "Jugador {n}",
-      "rolledIn": "{hand} en {count, select, 1 {una} 2 {dos} other {tres}}",
-      "rollLimit": "límite de tiradas {count, select, 1 {uno} 2 {dos} other {tres}}",
-      "worstHandSoFar": "peor mano hasta ahora",
-      "needs": "necesita {hand} o mejor",
-      "stops": "se planta"
-    },
     "overview": {
       "heading": "Resumen",
       "summary": "Mitchi es un juego de dados para dos o más jugadores, que se juega a lo largo de varias rondas. En cada ronda, tiras los dados para evitar quedarte con la peor mano. El jugador con la peor mano se lleva los puntos del bote. Cuando termina la partida, gana quien tenga menos puntos."
@@ -117,14 +109,37 @@
         "stop": "plantarse y quedarse con su mano",
         "newChoice": "Cada tirada es una decisión nueva. Quedarte un dado en una tirada no significa quedártelo en la siguiente. Volver a tirar un solo dado sigue contando como una tirada.",
         "setsLimit": "El número de tiradas que usa el jugador inicial es el <term>límite de tiradas</term> para los demás en esa ronda.",
-        "example": "El jugador inicial saca seis-tres en dos tiradas. Los demás tienen hasta dos tiradas."
+        "example": "El jugador inicial saca seis-tres en dos tiradas. Los demás tienen hasta dos tiradas.",
+        "exampleStrip": {
+          "player": "Jugador 1",
+          "rolled": "seis-tres en dos",
+          "limit": "límite de tiradas dos"
+        }
       },
       "everyoneElse": {
         "heading": "Los demás",
         "turn": "Los demás juegan su turno en el sentido de las agujas del reloj, con las mismas opciones, hasta el límite de tiradas. No tienes que usar todas las tiradas. Plántate cuando estés contento con tu mano.",
         "worstHandSoFar": "Nunca necesitas la mejor mano. Solo tienes que superar la <term>peor mano hasta ahora</term>: la mano peor clasificada que se ha sacado en esta ronda. Cambia a medida que los jugadores terminan su turno, así que un jugador que juega más tarde puede tener menos que superar que uno anterior.",
-        "example1": "El jugador {a} saca seis-cuatro en una tirada. El jugador {b} saca cinco-uno. El jugador {c} ahora necesita cinco-dos o mejor, porque cinco-uno es la peor mano hasta ahora.",
-        "example2": "El jugador {a} saca cinco-cuatro en tres tiradas. El jugador {b} saca seis-dos en una tirada. Eso ya supera a cinco-cuatro, así que el jugador {b} se planta."
+        "example1": "El jugador 1 saca seis-cuatro en una tirada. El jugador 2 saca cinco-uno. El jugador 3 ahora necesita cinco-dos o mejor, porque cinco-uno es la peor mano hasta ahora.",
+        "example1Strip": {
+          "player1": "Jugador 1",
+          "player1Rolled": "seis-cuatro en una",
+          "player1Limit": "límite de tiradas uno",
+          "player2": "Jugador 2",
+          "player2Rolled": "cinco-uno",
+          "player2Note": "peor mano hasta ahora",
+          "player3": "Jugador 3",
+          "player3Note": "necesita cinco-dos o mejor"
+        },
+        "example2": "El jugador 1 saca cinco-cuatro en tres tiradas. El jugador 2 saca seis-dos en una tirada. Eso ya supera a cinco-cuatro, así que el jugador 2 se planta.",
+        "example2Strip": {
+          "player1": "Jugador 1",
+          "player1Rolled": "cinco-cuatro en tres",
+          "player1Limit": "límite de tiradas tres",
+          "player2": "Jugador 2",
+          "player2Rolled": "seis-dos en una",
+          "player2Note": "se planta"
+        }
       }
     },
     "scoring": {
@@ -144,7 +159,8 @@
         "whatHappensHeader": "Qué pasa",
         "potHeader": "Puntos",
         "round": "Ronda",
-        "tieBreak": "Desempate {n}",
+        "tieBreak1": "Desempate 1",
+        "tieBreak2": "Desempate 2",
         "tied": "Tres jugadores empatan en la peor mano",
         "potDoubles": "El bote se dobla",
         "mitchi": "Un jugador saca un Mitchi",

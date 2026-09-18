@@ -11,7 +11,7 @@ type Row = {
 
 type Phase = {
   key: string;
-  label: { n?: number };
+  label: "round" | "tieBreak1" | "tieBreak2";
   rows: Row[];
 };
 
@@ -19,13 +19,14 @@ type Phase = {
  * The worked tie-break example: a running pot through a round and two
  * tie-breaks. One tbody per phase, each opened by a full-width group row,
  * so a screen reader hears the phase before its rows without rowspan. The
- * calculations and pot values are data, the same in every locale.
+ * calculations and pot values are data, the same in every locale; the
+ * phase labels are whole messages, not a numbered template.
  */
 const PHASES: Phase[] = [
-  { key: "round", label: {}, rows: [{ what: "tied", pot: 1 }] },
+  { key: "round", label: "round", rows: [{ what: "tied", pot: 1 }] },
   {
     key: "tie-break-1",
-    label: { n: 1 },
+    label: "tieBreak1",
     rows: [
       { what: "potDoubles", calculation: "× 2", pot: 2 },
       { what: "mitchi", calculation: "+ 2", pot: 4 },
@@ -34,7 +35,7 @@ const PHASES: Phase[] = [
   },
   {
     key: "tie-break-2",
-    label: { n: 2 },
+    label: "tieBreak2",
     rows: [
       { what: "potDoubles", calculation: "× 2", pot: 8 },
       { what: "takesPot", pot: 8 },
@@ -68,9 +69,7 @@ export function TieBreakExampleTable() {
               scope="rowgroup"
               className="pt-4 pb-2 text-left font-mono text-xs font-medium md:text-sm"
             >
-              {phase.label.n === undefined
-                ? t("round")
-                : t("tieBreak", { n: phase.label.n })}
+              {t(phase.label)}
             </th>
           </tr>
           {phase.rows.map((row, index) => (

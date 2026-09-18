@@ -6,6 +6,8 @@ This file holds **term forms and the reasoning behind contested ones**. It does 
 
 Variety: European Spanish, informal.
 
+**Status: reviewed by a B1 reader, not by a native speaker.** Every Spanish string on the site was drafted by a language model and read through by the author (Spanish at B1) in WO-0003 and again in WO-0013. No native Spanish speaker has read the deployed `/es` pages. The gate for removing this notice is a native speaker reading those pages, not the JSON, and signing them off.
+
 ## Terms
 
 | English | Spanish | Note |

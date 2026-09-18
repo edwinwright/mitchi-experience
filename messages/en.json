@@ -26,7 +26,7 @@
     "footer": {
       "tagline": "Mitchi. The rules, written down.",
       "privacy": "No cookies. Visits are counted anonymously and nothing is stored on your device.",
-      "builtWith": "Built with Next.js and next-intl. English and Spanish now, more languages to come."
+      "builtWith": "Built with Next.js and next-intl."
     }
   },
   "nav": {
@@ -79,14 +79,6 @@
     "title": "Mitchi rules",
     "intro": "Everything you need to play, from setup to the end of the game.",
     "exampleLabel": "Example",
-    "exampleLabels": {
-      "player": "Player {n}",
-      "rolledIn": "{hand} in {count, select, 1 {one} 2 {two} other {three}}",
-      "rollLimit": "roll limit {count, select, 1 {one} 2 {two} other {three}}",
-      "worstHandSoFar": "worst hand so far",
-      "needs": "needs {hand} or better",
-      "stops": "stops"
-    },
     "overview": {
       "heading": "Overview",
       "summary": "Mitchi is a dice game for two or more players, played over a series of rounds. Each round, you roll to avoid being left with the worst hand. The player with the worst hand takes the points in the pot. When the game ends, the player with the fewest points wins."
@@ -117,14 +109,37 @@
         "stop": "stop and keep their hand",
         "newChoice": "Each roll is a new choice. Keeping a die on one roll does not mean keeping it on the next. Re-rolling one die still counts as a roll.",
         "setsLimit": "The number of rolls the starting player uses is the <term>roll limit</term> for everyone else that round.",
-        "example": "The starting player rolls six-three in two rolls. Everyone else gets up to two rolls."
+        "example": "The starting player rolls six-three in two rolls. Everyone else gets up to two rolls.",
+        "exampleStrip": {
+          "player": "Player 1",
+          "rolled": "six-three in two",
+          "limit": "roll limit two"
+        }
       },
       "everyoneElse": {
         "heading": "Everyone else",
         "turn": "Everyone else takes a turn in clockwise order, with the same choices, up to the roll limit. You do not have to use every roll. Stop when you are happy with your hand.",
         "worstHandSoFar": "You never need the best hand. You only need to beat the <term>worst hand so far</term>: the lowest-ranked hand rolled this round. It changes as players finish their turn, so a later player may have less to beat than an earlier one.",
-        "example1": "Player {a} rolls six-four in one. Player {b} rolls five-one. Player {c} now needs five-two or better, because five-one is the worst hand so far.",
-        "example2": "Player {a} rolls five-four in three. Player {b} rolls six-two in one. That already beats five-four, so Player {b} stops."
+        "example1": "Player 1 rolls six-four in one. Player 2 rolls five-one. Player 3 now needs five-two or better, because five-one is the worst hand so far.",
+        "example1Strip": {
+          "player1": "Player 1",
+          "player1Rolled": "six-four in one",
+          "player1Limit": "roll limit one",
+          "player2": "Player 2",
+          "player2Rolled": "five-one",
+          "player2Note": "worst hand so far",
+          "player3": "Player 3",
+          "player3Note": "needs five-two or better"
+        },
+        "example2": "Player 1 rolls five-four in three. Player 2 rolls six-two in one. That already beats five-four, so Player 2 stops.",
+        "example2Strip": {
+          "player1": "Player 1",
+          "player1Rolled": "five-four in three",
+          "player1Limit": "roll limit three",
+          "player2": "Player 2",
+          "player2Rolled": "six-two in one",
+          "player2Note": "stops"
+        }
       }
     },
     "scoring": {
@@ -144,7 +159,8 @@
         "whatHappensHeader": "What happens",
         "potHeader": "Points",
         "round": "Round",
-        "tieBreak": "Tie-break {n}",
+        "tieBreak1": "Tie-break 1",
+        "tieBreak2": "Tie-break 2",
         "tied": "Three players tie on the worst hand",
         "potDoubles": "The pot doubles",
         "mitchi": "One player rolls a Mitchi",
