@@ -76,105 +76,105 @@
     "origin": "Ciekawi cię, skąd pochodzi Mitchi? <about>Poznaj historię</about>"
   },
   "rules": {
-    "title": "[PL] Mitchi rules",
-    "intro": "[PL] Everything you need to play, from setup to the end of the game.",
-    "exampleLabel": "[PL] Example",
+    "title": "Zasady Mitchi",
+    "intro": "Wszystko, czego potrzebujesz, żeby zagrać: od przygotowania po koniec gry.",
+    "exampleLabel": "Przykład",
     "overview": {
-      "heading": "[PL] Overview",
-      "summary": "[PL] Mitchi is a dice game for two or more players, played over a series of rounds. Each round, you roll to avoid being left with the worst hand. The player with the worst hand takes the points in the pot. When the game ends, the player with the fewest points wins."
+      "heading": "W skrócie",
+      "summary": "Mitchi to gra w kości dla dwóch lub więcej graczy, rozgrywana w serii rund. W każdej rundzie rzucasz, żeby nie zostać z najgorszym układem. Gracz z najgorszym układem bierze punkty z puli. Gdy gra się kończy, wygrywa gracz z najmniejszą liczbą punktów."
     },
     "youNeed": {
-      "heading": "[PL] What you need",
-      "dice": "[PL] <strong>Two dice</strong>, the standard six-sided kind",
-      "paper": "[PL] <strong>A pen and paper</strong> to keep score",
-      "players": "[PL] <strong>Two or more players</strong>"
+      "heading": "Czego potrzebujesz",
+      "dice": "<strong>Dwie kości</strong>, zwykłe sześciościenne",
+      "paper": "<strong>Kartka i długopis</strong> do zapisywania punktów",
+      "players": "<strong>Dwóch lub więcej graczy</strong>"
     },
     "setup": {
-      "heading": "[PL] Setup",
-      "pointLimit": "[PL] <strong>Agree a point limit.</strong> 25 is usual. Choose a lower limit for a shorter game.",
-      "whoStarts": "[PL] <strong>Decide who starts.</strong> Everyone rolls one die, and the highest roll starts. If the highest roll is tied, those players roll again. Play goes clockwise."
+      "heading": "Przygotowanie",
+      "pointLimit": "<strong>Ustalcie limit punktów.</strong> Zwykle 25. Na krótszą grę wybierzcie niższy limit.",
+      "whoStarts": "<strong>Zdecydujcie, kto zaczyna.</strong> Każdy rzuca jedną kością i zaczyna ten, kto wyrzuci najwięcej oczek. Przy remisie o najwyższy wynik ci gracze rzucają jeszcze raz. Gra toczy się zgodnie z ruchem wskazówek zegara."
     },
     "hands": {
-      "heading": "[PL] Hands",
-      "intro": "[PL] A hand is the two dice you finish your turn with. There are six groups of hands, from best to worst:",
-      "allHandsLink": "[PL] All hands are listed on the <reference>quick reference</reference>."
+      "heading": "Układy",
+      "intro": "Układ to dwie kości, z którymi kończysz turę. Jest sześć grup układów, od najlepszej do najgorszej:",
+      "allHandsLink": "Wszystkie układy są wypisane w <reference>ściągawce</reference>."
     },
     "round": {
-      "heading": "[PL] Playing a round",
+      "heading": "Przebieg rundy",
       "rollLimit": {
-        "heading": "[PL] The starting player sets the roll limit",
-        "rolls": "[PL] The starting player rolls both dice, up to three times, and can stop after any roll. After each roll, they can:",
-        "rerollBoth": "[PL] re-roll both dice",
-        "keepOne": "[PL] keep one die and re-roll the other",
-        "stop": "[PL] stop and keep their hand",
-        "newChoice": "[PL] Each roll is a new choice. Keeping a die on one roll does not mean keeping it on the next. Re-rolling one die still counts as a roll.",
-        "setsLimit": "[PL] The number of rolls the starting player uses is the <term>roll limit</term> for everyone else that round.",
-        "example": "[PL] The starting player rolls six-three in two rolls. Everyone else gets up to two rolls.",
+        "heading": "Gracz rozpoczynający ustala limit rzutów",
+        "rolls": "Gracz rozpoczynający rzuca dwiema kośćmi, maksymalnie trzy razy, i może zatrzymać się po dowolnym rzucie. Po każdym rzucie może:",
+        "rerollBoth": "przerzucić obie kości",
+        "keepOne": "zostawić jedną kość i przerzucić drugą",
+        "stop": "zatrzymać się i zachować swój układ",
+        "newChoice": "Każdy rzut to nowa decyzja. Zostawienie kości w jednym rzucie nie oznacza zostawienia jej w następnym. Przerzucenie jednej kości nadal liczy się jako rzut.",
+        "setsLimit": "Liczba rzutów, które wykorzysta gracz rozpoczynający, to <term>limit rzutów</term> dla pozostałych w tej rundzie.",
+        "example": "Gracz rozpoczynający wyrzuca sześć-trzy w dwóch rzutach. Pozostali mają do dwóch rzutów.",
         "exampleStrip": {
-          "player": "[PL] Player 1",
-          "rolled": "[PL] six-three in two",
-          "limit": "[PL] roll limit two"
+          "player": "Gracz 1",
+          "rolled": "sześć-trzy w dwóch",
+          "limit": "limit rzutów dwa"
         }
       },
       "everyoneElse": {
-        "heading": "[PL] Everyone else",
-        "turn": "[PL] Everyone else takes a turn in clockwise order, with the same choices, up to the roll limit. You do not have to use every roll. Stop when you are happy with your hand.",
-        "worstHandSoFar": "[PL] You never need the best hand. You only need to beat the <term>worst hand so far</term>: the lowest-ranked hand rolled this round. It changes as players finish their turn, so a later player may have less to beat than an earlier one.",
-        "example1": "[PL] Player 1 rolls six-four in one. Player 2 rolls five-one. Player 3 now needs five-two or better, because five-one is the worst hand so far.",
+        "heading": "Pozostali gracze",
+        "turn": "Pozostali gracze rozgrywają po jednej turze, zgodnie z ruchem wskazówek zegara, z tymi samymi opcjami, do limitu rzutów. Nie musisz wykorzystać wszystkich rzutów. Zatrzymaj się, gdy układ ci odpowiada.",
+        "worstHandSoFar": "Nigdy nie potrzebujesz najlepszego układu. Musisz tylko pobić <term>najgorszy jak dotąd układ</term>: najniższy układ wyrzucony w tej rundzie. Zmienia się on, gdy kolejni gracze kończą turę, więc późniejszy gracz może mieć mniej do pobicia niż wcześniejszy.",
+        "example1": "Gracz 1 wyrzuca sześć-cztery w jednym rzucie. Gracz 2 wyrzuca pięć-jeden. Gracz 3 potrzebuje teraz pięć-dwa lub lepiej, bo pięć-jeden to najgorszy jak dotąd układ.",
         "example1Strip": {
-          "player1": "[PL] Player 1",
-          "player1Rolled": "[PL] six-four in one",
-          "player1Limit": "[PL] roll limit one",
-          "player2": "[PL] Player 2",
-          "player2Rolled": "[PL] five-one",
-          "player2Note": "[PL] worst hand so far",
-          "player3": "[PL] Player 3",
-          "player3Note": "[PL] needs five-two or better"
+          "player1": "Gracz 1",
+          "player1Rolled": "sześć-cztery w jednym",
+          "player1Limit": "limit rzutów jeden",
+          "player2": "Gracz 2",
+          "player2Rolled": "pięć-jeden",
+          "player2Note": "najgorszy jak dotąd układ",
+          "player3": "Gracz 3",
+          "player3Note": "potrzebuje pięć-dwa lub lepiej"
         },
-        "example2": "[PL] Player 1 rolls five-four in three. Player 2 rolls six-two in one. That already beats five-four, so Player 2 stops.",
+        "example2": "Gracz 1 wyrzuca pięć-cztery w trzech rzutach. Gracz 2 wyrzuca sześć-dwa w jednym rzucie. To już bije pięć-cztery, więc Gracz 2 się zatrzymuje.",
         "example2Strip": {
-          "player1": "[PL] Player 1",
-          "player1Rolled": "[PL] five-four in three",
-          "player1Limit": "[PL] roll limit three",
-          "player2": "[PL] Player 2",
-          "player2Rolled": "[PL] six-two in one",
-          "player2Note": "[PL] stops"
+          "player1": "Gracz 1",
+          "player1Rolled": "pięć-cztery w trzech",
+          "player1Limit": "limit rzutów trzy",
+          "player2": "Gracz 2",
+          "player2Rolled": "sześć-dwa w jednym",
+          "player2Note": "zatrzymuje się"
         }
       }
     },
     "scoring": {
-      "heading": "[PL] Scoring the round",
-      "startingPot": "[PL] Every round starts with 1 point in <term>the pot</term>.",
-      "mitchis": "[PL] The first Mitchi rolled replaces that point with 2 points. Each Mitchi after that adds 2 more, so the pot is 2 points for every Mitchi rolled.",
-      "takeThePot": "[PL] At the end of the round, the player with the worst hand <term>takes the pot</term> and adds the points to their score. They start the next round."
+      "heading": "Punktacja rundy",
+      "startingPot": "Każda runda zaczyna się od 1 punktu w <term>puli</term>.",
+      "mitchis": "Pierwsze wyrzucone Mitchi zastępuje ten punkt 2 punktami. Każde kolejne Mitchi dodaje 2 więcej, więc w puli są 2 punkty za każde wyrzucone Mitchi.",
+      "takeThePot": "Na koniec rundy gracz z najgorszym układem <term>zgarnia pulę</term> i dodaje te punkty do swojego wyniku. On zaczyna następną rundę."
     },
     "tieBreaks": {
-      "heading": "[PL] Tie-breaks",
-      "intro": "[PL] If two or more players are tied on the worst hand, they play a <term>tie-break</term> to decide who takes the pot.",
-      "doublePot": "[PL] <strong>Double the pot.</strong>",
-      "rollOnce": "[PL] <strong>Roll once each.</strong> Only the tied players roll, with no re-rolls. Go in the opposite direction to the last round or tie-break, starting with the last player to roll.",
-      "addMitchis": "[PL] <strong>Add 2 points for each Mitchi</strong> rolled in the tie-break.",
-      "worstHandTakes": "[PL] <strong>The worst hand takes the pot.</strong> If players tie again, go back to step 1 with only those players.",
+      "heading": "Dogrywki",
+      "intro": "Jeśli dwóch lub więcej graczy ma ten sam najgorszy układ, rozgrywają <term>dogrywkę</term>, która rozstrzyga, kto zgarnia pulę.",
+      "doublePot": "<strong>Podwójcie pulę.</strong>",
+      "rollOnce": "<strong>Rzućcie po jednym razie.</strong> Rzucają tylko remisujący gracze, bez przerzutów. Idźcie w kierunku przeciwnym niż w ostatniej rundzie lub dogrywce, zaczynając od gracza, który rzucał jako ostatni.",
+      "addMitchis": "<strong>Dodajcie 2 punkty za każde Mitchi</strong> wyrzucone w dogrywce.",
+      "worstHandTakes": "<strong>Najgorszy układ zgarnia pulę.</strong> Jeśli znów jest remis, wróćcie do kroku 1 tylko z tymi graczami.",
       "example": {
-        "whatHappensHeader": "[PL] What happens",
-        "potHeader": "[PL] Points",
-        "round": "[PL] Round",
-        "tieBreak1": "[PL] Tie-break 1",
-        "tieBreak2": "[PL] Tie-break 2",
-        "tied": "[PL] Three players tie on the worst hand",
-        "potDoubles": "[PL] The pot doubles",
-        "mitchi": "[PL] One player rolls a Mitchi",
-        "tiedAgain": "[PL] The other two tie again",
-        "takesPot": "[PL] One player has the worst hand and takes the pot"
+        "whatHappensHeader": "Co się dzieje",
+        "potHeader": "Punkty",
+        "round": "Runda",
+        "tieBreak1": "Dogrywka 1",
+        "tieBreak2": "Dogrywka 2",
+        "tied": "Trzech graczy ma ten sam najgorszy układ",
+        "potDoubles": "Pula się podwaja",
+        "mitchi": "Jeden gracz wyrzuca Mitchi",
+        "tiedAgain": "Pozostali dwaj znów remisują",
+        "takesPot": "Jeden gracz ma najgorszy układ i zgarnia pulę"
       }
     },
     "winning": {
-      "heading": "[PL] Winning the game",
-      "gameEnds": "[PL] The game ends when any player reaches the point limit. The player with the fewest points wins.",
-      "tiedOnFewest": "[PL] If players are tied on the fewest points, they roll once each, and the best hand wins."
+      "heading": "Kto wygrywa",
+      "gameEnds": "Gra kończy się, gdy którykolwiek gracz osiągnie limit punktów. Wygrywa gracz z najmniejszą liczbą punktów.",
+      "tiedOnFewest": "Przy remisie na najmniejszą liczbę punktów ci gracze rzucają po jednym razie i wygrywa najlepszy układ."
     },
     "vocabulary": {
-      "heading": "[PL] Game vocabulary"
+      "heading": "Słowniczek"
     }
   },
   "reference": {
