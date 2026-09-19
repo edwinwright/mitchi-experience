@@ -73,7 +73,7 @@ function LocaleGroup({
   const ground = inverse ? "inverse" : "regular";
 
   const ulClasses = cn(
-    "flex rounded-md border font-mono text-xs",
+    "flex rounded-md border font-mono text-xs overflow-hidden",
     inverse ? "border-white" : "border-foreground",
   );
 
@@ -97,7 +97,7 @@ function LocaleGroup({
   return (
     <ul className={ulClasses}>
       {items.map((item) => (
-        <li key={item.locale} className="first:rounded-l last:rounded-r">
+        <li key={item.locale}>
           <Link {...item.linkProps} className={linkClassesFor(item.current)}>
             {item.label}
           </Link>
