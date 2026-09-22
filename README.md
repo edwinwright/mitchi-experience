@@ -79,7 +79,6 @@ files.
 ## Licence
 
 Source-available, not open source. You can read the code, clone it and run it
-locally, but you can't deploy it or republish its content elsewhere.
-Corrections are welcome, especially from native speakers: open an issue or a
-pull request. Anything you send is covered by the contributions terms in
-[LICENCE.md](LICENCE.md).
+locally, but you can't deploy it or republish its content elsewhere. Anything
+you send, including translation suggestions, is covered by the contributions
+terms in [LICENCE.md](LICENCE.md).
