@@ -36,6 +36,7 @@ RETIRED_REDIRECT=308  # next.config.ts redirects(), permanent: true
 # Realistic browser headers. Region subtags and q-values matter: matching
 # `es-ES` to the `es` locale is precisely the negotiation being tested.
 ES='Accept-Language: es-ES,es;q=0.9,en;q=0.8'
+PL='Accept-Language: pl-PL,pl;q=0.9,en;q=0.8'
 EN='Accept-Language: en-GB,en;q=0.9'
 
 FAILS=0
@@ -138,6 +139,24 @@ expect "old Spanish rules slug redirects to localised slug" \
   "${LOCALE_REDIRECT}|/es/reglas" \
   "$(probe "$BASE/es/rules" -H "$EN")"
 
+# Polish (WO-0014). Same four shapes as Spanish; hreflang blocks for
+# /pl/zasady are added once the page carries real metadata.
+expect "Polish speaker is redirected to /pl" \
+  "${LOCALE_REDIRECT}|/pl" \
+  "$(probe "$BASE/" -H "$PL")"
+
+expect "localised Polish rules slug serves" \
+  "200|" \
+  "$(probe "$BASE/pl/zasady" -H "$EN")"
+
+expect "NEXT_LOCALE rewrites an English path to the Polish slug" \
+  "${LOCALE_REDIRECT}|/pl/zasady" \
+  "$(probe "$BASE/rules" -H "$EN" -H 'Cookie: NEXT_LOCALE=pl')"
+
+expect "old Polish rules slug redirects to localised slug" \
+  "${LOCALE_REDIRECT}|/pl/zasady" \
+  "$(probe "$BASE/pl/rules" -H "$EN")"
+
 # Retired pages (WO-0013). The redirect runs before the proxy, so the
 # source is the external path and the fragment rides in Location.
 # /es/acerca-de below is hand-typed (bash can't import next.config.ts's
@@ -162,6 +181,7 @@ fi
 # These assert the Slice 2 contract: canonical + hreflang on 200 URLs only.
 RULES_HTML="$(fetch_html "$BASE/rules" -H "$EN")"
 REGLAS_HTML="$(fetch_html "$BASE/es/reglas" -H "$EN")"
+ZASADY_HTML="$(fetch_html "$BASE/pl/zasady" -H "$EN")"
 
 expect "/rules has rel=canonical for unprefixed English URL" \
   "yes" \
@@ -174,6 +194,10 @@ expect "/rules hreflang=en points at /rules" \
 expect "/rules hreflang=es points at /es/reglas" \
   "yes" \
   "$(html_hreflang_has "$RULES_HTML" "es" "${ORIGIN}/es/reglas")"
+
+expect "/rules hreflang=pl points at /pl/zasady" \
+  "yes" \
+  "$(html_hreflang_has "$RULES_HTML" "pl" "${ORIGIN}/pl/zasady")"
 
 expect "/rules hreflang=x-default points at /rules" \
   "yes" \
@@ -195,6 +219,10 @@ expect "/es/reglas hreflang=es points at /es/reglas" \
   "yes" \
   "$(html_hreflang_has "$REGLAS_HTML" "es" "${ORIGIN}/es/reglas")"
 
+expect "/es/reglas hreflang=pl points at /pl/zasady" \
+  "yes" \
+  "$(html_hreflang_has "$REGLAS_HTML" "pl" "${ORIGIN}/pl/zasady")"
+
 expect "/es/reglas hreflang=x-default points at /rules" \
   "yes" \
   "$(html_hreflang_has "$REGLAS_HTML" "x-default" "${ORIGIN}/rules")"
@@ -202,6 +230,30 @@ expect "/es/reglas hreflang=x-default points at /rules" \
 expect "/es/reglas never advertises /en/rules" \
   "yes" \
   "$(html_lacks "$REGLAS_HTML" "${ORIGIN}/en/rules")"
+
+expect "/pl/zasady has rel=canonical for Polish URL" \
+  "yes" \
+  "$(html_link_has "$ZASADY_HTML" "canonical" "${ORIGIN}/pl/zasady")"
+
+expect "/pl/zasady hreflang=en points at /rules" \
+  "yes" \
+  "$(html_hreflang_has "$ZASADY_HTML" "en" "${ORIGIN}/rules")"
+
+expect "/pl/zasady hreflang=es points at /es/reglas" \
+  "yes" \
+  "$(html_hreflang_has "$ZASADY_HTML" "es" "${ORIGIN}/es/reglas")"
+
+expect "/pl/zasady hreflang=pl points at /pl/zasady" \
+  "yes" \
+  "$(html_hreflang_has "$ZASADY_HTML" "pl" "${ORIGIN}/pl/zasady")"
+
+expect "/pl/zasady hreflang=x-default points at /rules" \
+  "yes" \
+  "$(html_hreflang_has "$ZASADY_HTML" "x-default" "${ORIGIN}/rules")"
+
+expect "/pl/zasady never advertises /en/rules" \
+  "yes" \
+  "$(html_lacks "$ZASADY_HTML" "${ORIGIN}/en/rules")"
 
 echo
 if (( FAILS > 0 )); then

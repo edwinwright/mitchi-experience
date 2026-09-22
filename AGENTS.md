@@ -11,7 +11,7 @@ A statically generated Next.js site publishing the rules of Mitchi, a two-dice g
 | `docs/domain/glossary.md` | The game's vocabulary. Binding on copy in every language. |
 | `docs/product/voice.md` | How the site is written. |
 | `docs/product/site-map.md` | The routes, and what the site deliberately does not have. |
-| `docs/work/WO-000n/PLAN.md` | The work item currently in progress. Start here. |
+| `docs/work/` | Local, ephemeral work-order notes, not committed. One subdirectory per work order, check for one in progress before starting; naming and file layout may vary. |
 
 Read the plan for the current work item and do one slice at a time. Stop at the end of a slice and show the diff.
 
@@ -44,3 +44,5 @@ npm run build         # read the route table
 ## Not in this repo
 
 Drafting notes, phase plans and rules working drafts live in the author's vault, not here. `docs/` holds durable facts and the work item in progress. Do not add project management, status or planning files beyond the current work item.
+
+`docs/work/` is not committed. Never add a link or reference to a specific file or folder inside it (e.g. `docs/work/WO-0014/PLAN.md`) from a committed doc: the path won't exist for anyone else reading the repo once that work order's local folder is gone. A bare citation of a work order number as a ticket-style label (e.g. "fixed in WO-0014") is fine, the same as citing an issue or epic number from an external tracker.

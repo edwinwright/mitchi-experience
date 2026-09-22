@@ -1,0 +1,358 @@
+{
+  "meta": {
+    "home": {
+      "title": "Mitchi, gra w kości",
+      "description": "Gra w kości dla dwóch lub więcej graczy. Unikaj najgorszego układu, zbieraj najmniej punktów, wygrywaj."
+    },
+    "rules": {
+      "title": "Zasady Mitchi",
+      "description": "Pełne zasady Mitchi: układy, limit rzutów, punktacja i dogrywki."
+    },
+    "reference": {
+      "title": "Ściągawka Mitchi",
+      "description": "Ranking układów i punktacja na jednym ekranie, do zajrzenia w trakcie gry."
+    },
+    "about": {
+      "title": "O Mitchi",
+      "description": "Mitchi to szybka gra w kości dla dwóch lub więcej graczy. Czym jest, skąd pochodzi i podobne gry."
+    }
+  },
+  "site": {
+    "name": "Mitchi",
+    "skipToContent": "Przejdź do treści",
+    "language": "Język",
+    "menu": "Menu",
+    "onThisPage": "Na tej stronie",
+    "footer": {
+      "tagline": "Mitchi. Zasady, spisane.",
+      "privacy": "Bez ciasteczek. Odwiedziny są liczone anonimowo i nic nie jest zapisywane na twoim urządzeniu.",
+      "builtWith": "Zbudowano z użyciem Next.js i next-intl."
+    }
+  },
+  "nav": {
+    "rules": "Zasady",
+    "reference": "Ściągawka",
+    "about": "O grze"
+  },
+  "nextPage": {
+    "heading": "Dalej",
+    "rules": {
+      "label": "Pełne zasady",
+      "summary": "Wszystko, czego potrzebujesz, żeby zagrać: od przygotowania po koniec gry."
+    },
+    "reference": {
+      "label": "Ściągawka",
+      "summary": "Ranking układów i punktacja na jednym ekranie."
+    },
+    "about": {
+      "label": "O Mitchi",
+      "summary": "Jak nauczyłem się grać i dlaczego zasady są spisane właśnie tutaj."
+    }
+  },
+  "home": {
+    "title": "Mitchi",
+    "tagline": "Gra w kości dla dwóch lub więcej graczy.",
+    "keyIdea": "Nie potrzebujesz najlepszego układu. Musisz tylko uniknąć najgorszego.",
+    "scoring": "W każdej rundzie gracz, który zostaje z najgorszym układem, bierze punkty. Punkty są złe: wygrywa ten, kto ma ich najmniej.",
+    "youNeed": "<strong>Potrzebujesz:</strong> dwóch kości, kartki i długopisu oraz co najmniej jednego innego gracza.",
+    "links": {
+      "rules": "Przeczytaj zasady",
+      "reference": "Ściągawka"
+    },
+    "quickStart": {
+      "heading": "Mitchi w 60 sekund",
+      "whoStarts": "Każdy rzuca jedną kością. Zaczyna ten, kto wyrzuci najwięcej oczek.",
+      "rollLimit": "Gracz rozpoczynający rzuca dwiema kośćmi, maksymalnie trzy razy. Liczba rzutów, które wykorzysta, to <term>limit rzutów</term> dla pozostałych.",
+      "everyoneElse": "Pozostali gracze rozgrywają po jednej turze, do limitu rzutów. Musisz tylko pobić <term>najgorszy jak dotąd układ</term>.",
+      "handRanking": "Najlepszy układ to Mitchi: 2 i 1. Potem dublety, potem od najwyżej szóstki w dół do najwyżej trójki.",
+      "pot": "Gracz, który zostaje z najgorszym układem, <term>zgarnia pulę</term>: 1 punkt albo 2 punkty za każde wyrzucone Mitchi.",
+      "winning": "Gra kończy się, gdy któryś gracz osiągnie limit punktów, zwykle 25. Wygrywa ten, kto ma najmniej punktów.",
+      "fullRulesLink": "<rules>Przeczytaj pełne zasady</rules>"
+    },
+    "ranking": {
+      "heading": "Ranking układów",
+      "allHandsLink": "Wszystkie układy są wypisane w <reference>ściągawce</reference>."
+    },
+    "origin": "Ciekawi cię, skąd pochodzi Mitchi? <about>Poznaj historię</about>"
+  },
+  "rules": {
+    "title": "Zasady Mitchi",
+    "intro": "Wszystko, czego potrzebujesz, żeby zagrać: od przygotowania po koniec gry.",
+    "exampleLabel": "Przykład",
+    "overview": {
+      "heading": "W skrócie",
+      "summary": "Mitchi to gra w kości dla dwóch lub więcej graczy, rozgrywana w serii rund. W każdej rundzie rzucasz, żeby nie zostać z najgorszym układem. Gracz z najgorszym układem bierze punkty z puli. Gdy gra się kończy, wygrywa gracz z najmniejszą liczbą punktów."
+    },
+    "youNeed": {
+      "heading": "Czego potrzebujesz",
+      "dice": "<strong>Dwie kości</strong>, zwykłe sześciościenne",
+      "paper": "<strong>Kartka i długopis</strong> do zapisywania punktów",
+      "players": "<strong>Dwóch lub więcej graczy</strong>"
+    },
+    "setup": {
+      "heading": "Przygotowanie",
+      "pointLimit": "<strong>Ustalcie limit punktów.</strong> Zwykle 25. Na krótszą grę wybierzcie niższy limit.",
+      "whoStarts": "<strong>Zdecydujcie, kto zaczyna.</strong> Każdy rzuca jedną kością i zaczyna ten, kto wyrzuci najwięcej oczek. Przy remisie o najwyższy wynik ci gracze rzucają jeszcze raz. Gra toczy się zgodnie z ruchem wskazówek zegara."
+    },
+    "hands": {
+      "heading": "Układy",
+      "intro": "Układ to dwie kości, z którymi kończysz turę. Jest sześć grup układów, od najlepszej do najgorszej:",
+      "allHandsLink": "Wszystkie układy są wypisane w <reference>ściągawce</reference>."
+    },
+    "round": {
+      "heading": "Przebieg rundy",
+      "rollLimit": {
+        "heading": "Gracz rozpoczynający ustala limit rzutów",
+        "rolls": "Gracz rozpoczynający rzuca dwiema kośćmi, maksymalnie trzy razy, i może zatrzymać się po dowolnym rzucie. Po każdym rzucie może:",
+        "rerollBoth": "przerzucić obie kości",
+        "keepOne": "zostawić jedną kość i przerzucić drugą",
+        "stop": "zatrzymać się i zachować swój układ",
+        "newChoice": "Każdy rzut to nowa decyzja. Zostawienie kości w jednym rzucie nie oznacza zostawienia jej w następnym. Przerzucenie jednej kości nadal liczy się jako rzut.",
+        "setsLimit": "Liczba rzutów, które wykorzysta gracz rozpoczynający, to <term>limit rzutów</term> dla pozostałych w tej rundzie.",
+        "example": "Gracz rozpoczynający wyrzuca sześć-trzy w dwóch rzutach. Pozostali mają do dwóch rzutów.",
+        "exampleStrip": {
+          "player": "Gracz 1",
+          "rolled": "sześć-trzy w dwóch",
+          "limit": "limit rzutów dwa"
+        }
+      },
+      "everyoneElse": {
+        "heading": "Pozostali gracze",
+        "turn": "Pozostali gracze rozgrywają po jednej turze, zgodnie z ruchem wskazówek zegara, z tymi samymi opcjami, do limitu rzutów. Nie musisz wykorzystać wszystkich rzutów. Zatrzymaj się, gdy układ ci odpowiada.",
+        "worstHandSoFar": "Nigdy nie potrzebujesz najlepszego układu. Musisz tylko pobić <term>najgorszy jak dotąd układ</term>: najniższy układ wyrzucony w tej rundzie. Zmienia się on, gdy kolejni gracze kończą turę, więc późniejszy gracz może mieć mniej do pobicia niż wcześniejszy.",
+        "example1": "Gracz 1 wyrzuca sześć-cztery w jednym rzucie. Gracz 2 wyrzuca pięć-jeden. Gracz 3 potrzebuje teraz pięć-dwa lub lepiej, bo pięć-jeden to najgorszy jak dotąd układ.",
+        "example1Strip": {
+          "player1": "Gracz 1",
+          "player1Rolled": "sześć-cztery w jednym",
+          "player1Limit": "limit rzutów jeden",
+          "player2": "Gracz 2",
+          "player2Rolled": "pięć-jeden",
+          "player2Note": "najgorszy jak dotąd układ",
+          "player3": "Gracz 3",
+          "player3Note": "potrzebuje pięć-dwa lub lepiej"
+        },
+        "example2": "Gracz 1 wyrzuca pięć-cztery w trzech rzutach. Gracz 2 wyrzuca sześć-dwa w jednym rzucie. To już bije pięć-cztery, więc Gracz 2 się zatrzymuje.",
+        "example2Strip": {
+          "player1": "Gracz 1",
+          "player1Rolled": "pięć-cztery w trzech",
+          "player1Limit": "limit rzutów trzy",
+          "player2": "Gracz 2",
+          "player2Rolled": "sześć-dwa w jednym",
+          "player2Note": "zatrzymuje się"
+        }
+      }
+    },
+    "scoring": {
+      "heading": "Punktacja rundy",
+      "startingPot": "Każda runda zaczyna się od 1 punktu w <term>puli</term>.",
+      "mitchis": "Pierwsze wyrzucone Mitchi zastępuje ten punkt 2 punktami. Każde kolejne Mitchi dodaje 2 więcej, więc w puli są 2 punkty za każde wyrzucone Mitchi.",
+      "takeThePot": "Na koniec rundy gracz z najgorszym układem <term>zgarnia pulę</term> i dodaje te punkty do swojego wyniku. On zaczyna następną rundę."
+    },
+    "tieBreaks": {
+      "heading": "Dogrywki",
+      "intro": "Jeśli dwóch lub więcej graczy ma ten sam najgorszy układ, rozgrywają <term>dogrywkę</term>, która rozstrzyga, kto zgarnia pulę.",
+      "doublePot": "<strong>Podwójcie pulę.</strong>",
+      "rollOnce": "<strong>Rzućcie po jednym razie.</strong> Rzucają tylko remisujący gracze, bez przerzutów. Idźcie w kierunku przeciwnym niż w ostatniej rundzie lub dogrywce, zaczynając od gracza, który rzucał jako ostatni.",
+      "addMitchis": "<strong>Dodajcie 2 punkty za każde Mitchi</strong> wyrzucone w dogrywce.",
+      "worstHandTakes": "<strong>Najgorszy układ zgarnia pulę.</strong> Jeśli znów jest remis, wróćcie do kroku 1 tylko z tymi graczami.",
+      "example": {
+        "whatHappensHeader": "Co się dzieje",
+        "potHeader": "Punkty",
+        "round": "Runda",
+        "tieBreak1": "Dogrywka 1",
+        "tieBreak2": "Dogrywka 2",
+        "tied": "Trzech graczy ma ten sam najgorszy układ",
+        "potDoubles": "Pula się podwaja",
+        "mitchi": "Jeden gracz wyrzuca Mitchi",
+        "tiedAgain": "Pozostali dwaj znów remisują",
+        "takesPot": "Jeden gracz ma najgorszy układ i zgarnia pulę"
+      }
+    },
+    "winning": {
+      "heading": "Kto wygrywa",
+      "gameEnds": "Gra kończy się, gdy którykolwiek gracz osiągnie limit punktów. Wygrywa gracz z najmniejszą liczbą punktów.",
+      "tiedOnFewest": "Przy remisie na najmniejszą liczbę punktów ci gracze rzucają po jednym razie i wygrywa najlepszy układ."
+    },
+    "vocabulary": {
+      "heading": "Słowniczek"
+    }
+  },
+  "reference": {
+    "title": "Ściągawka",
+    "intro": "Wszystko, czego potrzebujesz w trakcie gry, na jednym ekranie.",
+    "ranking": {
+      "heading": "Ranking układów",
+      "intro": "Najlepszy na górze, najgorszy na dole. W obrębie grupy wygrywa wyższy układ. Najgorszy układ w grze to trzy-jeden.",
+      "tableCaption": "Układy w Mitchi, od najlepszego do najgorszego"
+    },
+    "scoring": {
+      "heading": "Punktacja",
+      "intro": "Każda runda zaczyna się od 1 punktu w puli. Pierwsze Mitchi zastępuje go 2 punktami, a każde kolejne Mitchi dodaje 2 więcej. Najgorszy układ zgarnia pulę i zaczyna następną rundę."
+    },
+    "tieBreaks": {
+      "heading": "Dogrywki",
+      "intro": "Remisujący gracze rzucają po jednym razie. Najgorszy układ zgarnia pulę.",
+      "whenHeader": "Kiedy",
+      "potHeader": "Punkty",
+      "eachTieBreak": "Każda dogrywka zaczyna się",
+      "eachMitchi": "Każde Mitchi wyrzucone w dogrywce",
+      "fullRulesLink": "<tieBreaks>Pełne zasady dogrywek</tieBreaks>"
+    },
+    "pointLimit": {
+      "heading": "Limit punktów",
+      "summary": "Gra kończy się, gdy którykolwiek gracz osiągnie limit punktów, zwykle 25. Wygrywa ten, kto ma najmniej punktów. Przy remisie na najmniejszą liczbę punktów ci gracze rzucają po jednym razie i wygrywa najlepszy układ."
+    }
+  },
+  "about": {
+    "title": "O Mitchi",
+    "intro": "Czym jest ta gra i skąd pochodzi.",
+    "game": {
+      "heading": "Gra",
+      "summary": "Mitchi to szybka gra w kości dla dwóch lub więcej graczy. W każdej rundzie rzucasz, żeby uniknąć najgorszego układu. Kto z nim zostanie, bierze punkty. Wygrywa gracz z najmniejszą liczbą punktów. Potrzebujesz dwóch kości, kartki i długopisu oraz co najmniej jednego innego gracza."
+    },
+    "origin": {
+      "heading": "Skąd pochodzi",
+      "learnt": "Nauczyłem się Mitchi, kiedy mieszkałem w Sanlúcar de Barrameda, na południu Hiszpanii. Spotykaliśmy się w kilka osób w La Gitana po pracy i graliśmy na barze.",
+      "cousin": "Nauczył nas mój kuzyn i gra szybko się przyjęła. Nie wiem, skąd on ją znał, a ja nigdzie indziej się z nią nie spotkałem. Nie znalazłem też nigdzie spisanych zasad, więc umieściłem je tutaj dla każdego, kto chce się nauczyć."
+    },
+    "whyItStuck": {
+      "heading": "Dlaczego się przyjęła",
+      "easy": "Łatwo się jej nauczyć i szybko się w nią gra. Rundy są krótkie, a potrzebujesz tylko dwóch kości i miejsca, żeby nimi rzucić.",
+      "tactical": "Jest też taktyczna. Wszyscy widzą wyniki, więc każda runda ma znaczenie, a kiedy zaczynają padać Mitchi, pula szybko rośnie."
+    },
+    "relatedGames": {
+      "heading": "Podobne gry",
+      "intro": "Mitchi nie jest jedyną grą, w której 2 i 1 to najlepszy układ. Budując tę stronę, natknąłem się na kilka innych, a pewnie jest ich więcej.",
+      "mia": "<strong>Mia:</strong> kośćmi rzuca się w ukryciu pod kubkiem, a gracze zapowiadają swój układ. Mogą blefować.",
+      "mexico": "<strong>Mexico:</strong> gracze rzucają, żeby uniknąć najniższego układu, tracąc za każdym razem jedno życie, aż zostanie tylko jeden gracz."
+    }
+  },
+  "notFound": {
+    "title": "Ta strona nie istnieje",
+    "body": "Zajrzyj do <rules>zasad</rules> albo do <reference>ściągawki</reference>."
+  },
+  "handGroups": {
+    "withinGroup": "W obrębie grupy wygrywa wyższy układ: dwie szóstki biją dwie piątki, a sześć-pięć bije sześć-cztery. Najgorszy układ w grze to trzy-jeden.",
+    "mitchi": {
+      "name": "Mitchi",
+      "description": "2 i 1. Najlepszy układ w grze."
+    },
+    "doubles": {
+      "name": "Dublety",
+      "description": "Obie kości pokazują tę samą liczbę."
+    },
+    "sixHigh": {
+      "name": "Najwyżej szóstka",
+      "description": "6 z 5, 4, 3, 2 lub 1."
+    },
+    "fiveHigh": {
+      "name": "Najwyżej piątka",
+      "description": "5 z 4, 3, 2 lub 1."
+    },
+    "fourHigh": {
+      "name": "Najwyżej czwórka",
+      "description": "4 z 3, 2 lub 1."
+    },
+    "threeHigh": {
+      "name": "Najwyżej trójka",
+      "description": "3 z 2 lub 1."
+    }
+  },
+  "hands": {
+    "2-1": "dwa-jeden",
+    "6-6": "dwie szóstki",
+    "5-5": "dwie piątki",
+    "4-4": "dwie czwórki",
+    "3-3": "dwie trójki",
+    "2-2": "dwie dwójki",
+    "1-1": "dwie jedynki",
+    "6-5": "sześć-pięć",
+    "6-4": "sześć-cztery",
+    "6-3": "sześć-trzy",
+    "6-2": "sześć-dwa",
+    "6-1": "sześć-jeden",
+    "5-4": "pięć-cztery",
+    "5-3": "pięć-trzy",
+    "5-2": "pięć-dwa",
+    "5-1": "pięć-jeden",
+    "4-3": "cztery-trzy",
+    "4-2": "cztery-dwa",
+    "4-1": "cztery-jeden",
+    "3-2": "trzy-dwa",
+    "3-1": "trzy-jeden"
+  },
+  "potTable": {
+    "mitchisHeader": "Wyrzucone Mitchi",
+    "pointsHeader": "Punkty",
+    "none": "Brak",
+    "one": "Jedno",
+    "two": "Dwa",
+    "three": "Trzy"
+  },
+  "vocabulary": {
+    "mitchi": {
+      "name": "Mitchi",
+      "definition": "Gra, a także jej najlepszy układ: 2 i 1."
+    },
+    "die": {
+      "name": "Kość",
+      "definition": "Jedna z dwóch kości."
+    },
+    "hand": {
+      "name": "Układ",
+      "definition": "Dwie kości, z którymi kończysz turę."
+    },
+    "roll": {
+      "name": "Rzut",
+      "definition": "Jeden rzut jedną lub obiema kośćmi. Przerzucenie jednej kości nadal liczy się jako rzut."
+    },
+    "rolledIn": {
+      "name": "W jednym, w dwóch, w trzech",
+      "definition": "Ile rzutów zajął układ: sześć-trzy w dwóch."
+    },
+    "round": {
+      "name": "Runda",
+      "definition": "Każdy gracz rozgrywa jedną turę, a potem najgorszy układ zgarnia pulę."
+    },
+    "turn": {
+      "name": "Tura",
+      "definition": "Twoje rzuty w rundzie, do limitu rzutów."
+    },
+    "startingPlayer": {
+      "name": "Gracz rozpoczynający",
+      "definition": "Gracz, który rzuca pierwszy w rundzie i ustala limit rzutów."
+    },
+    "rollLimit": {
+      "name": "Limit rzutów",
+      "definition": "Liczba rzutów, jaką każdy ma w rundzie, ustalona przez gracza rozpoczynającego."
+    },
+    "doubles": {
+      "name": "Dublety",
+      "definition": "Obie kości pokazują tę samą liczbę."
+    },
+    "worstHandSoFar": {
+      "name": "Najgorszy jak dotąd układ",
+      "definition": "Najniższy układ wyrzucony dotąd w rundzie. Układ, który musisz pobić."
+    },
+    "pot": {
+      "name": "Pula",
+      "definition": "Punkty, o które toczy się runda. Zaczyna się od 1."
+    },
+    "takeThePot": {
+      "name": "Zgarnąć pulę",
+      "definition": "Dodać punkty z puli do swojego wyniku."
+    },
+    "tieBreak": {
+      "name": "Dogrywka",
+      "definition": "Rozgrywka między graczami, którzy mają ten sam najgorszy układ."
+    },
+    "points": {
+      "name": "Punkty",
+      "definition": "Twój wynik. Punkty są złe: wygrywa ten, kto ma najmniej."
+    },
+    "pointLimit": {
+      "name": "Limit punktów",
+      "definition": "Wynik, przy którym gra się kończy. Zwykle 25."
+    }
+  }
+}
