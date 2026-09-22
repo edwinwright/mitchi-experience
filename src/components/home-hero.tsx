@@ -13,17 +13,15 @@ export function HomeHero() {
     <section>
       <div className="bg-red-600 text-white relative overflow-hidden">
         <Container className="relative z-2 min-h-0 md:min-h-150 py-9 md:py-18">
-          <div className="w-full md:w-1/2 flex flex-col justify-between gap-11">
+          <div className="w-full md:w-1/2 md:pr-8 flex flex-col justify-between gap-11">
             <header className="flex flex-col gap-6">
-              <p className="font-mono uppercase  tracking-widest text-xs text-white/85 pt-8">
-                <span className="before:hidden md:before:inline-block before:content-[''] before:w-8 before:h-px before:bg-white/85  before:mr-4 before:align-middle">
-                  {t("tagline")}
-                </span>
-              </p>
               <Heading level={1} className="text-5xl md:text-7xl">
                 {t("title")}
               </Heading>
-              <div className="font-serif text-lg md:text-xl leading-normal max-w-[34ch] text-white/85">
+              <div className="font-serif text-lg md:text-xl leading-normal text-white/85 max-w-[75ch]">
+                <p className="border-b border-white/50 pb-4 mb-4">
+                  {t("tagline")}
+                </p>
                 <p className="mb-4">{t.rich("keyIdea", tags)}</p>
                 <p>{t.rich("scoring", tags)}</p>
               </div>
