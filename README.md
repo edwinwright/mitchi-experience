@@ -69,7 +69,9 @@ on any marker, so an untranslated string cannot ship.
 
 Corrections are welcome, particularly from native speakers. The Polish is the
 newest and has had only an initial check; see
-`docs/domain/translation-rationale.pl.md` for what is still open.
+`docs/domain/translation-rationale.pl.md` for what is still open. Anything you
+send is covered by the contributions terms in [LICENCE.md](LICENCE.md), so read
+those first.
 
 Open an issue rather than a pull request for wording. Terminology is governed
 by the glossary in `docs/domain`, so a change to one sentence usually means a
@@ -79,6 +81,5 @@ files.
 ## Licence
 
 Source-available, not open source. You can read the code, clone it and run it
-locally, but you can't deploy it or republish its content elsewhere. Anything
-you send, including translation suggestions, is covered by the contributions
-terms in [LICENCE.md](LICENCE.md).
+locally, but you can't deploy it or republish its content elsewhere. See
+[LICENCE.md](LICENCE.md).
