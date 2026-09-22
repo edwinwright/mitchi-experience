@@ -110,7 +110,7 @@ Unknown paths that the proxy has already placed in `[locale]` are caught by `src
 
 ## Adding a locale
 
-Decisions first, then scaffolding, then translation. Doing it in that order is what stops one concept acquiring three words in the same locale. Spanish (WO-0003) and Polish (WO-0014) are the worked examples; German and Japanese repeat this sequence.
+Decisions first, then scaffolding, then translation. Doing it in that order is what stops one concept acquiring three words in the same locale. Spanish and Polish are the worked examples; German and Japanese repeat this sequence.
 
 **1. Settle the vocabulary and the slugs.** Before a word of copy is written, agree that locale's form for every term in `docs/domain/glossary.md`, the hand and group naming pattern, and the localised pathnames. Where a choice is contested, decide it once and write down why. Terms run through every page, so translating them in flow guarantees inconsistency. Slugs are expensive once indexed and shared: settle them before implementing `pathnames`.
 
